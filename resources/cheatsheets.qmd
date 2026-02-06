@@ -1,0 +1,12 @@
+---
+title: "Cheatsheets"
+description: "Quick-reference command summaries."
+---
+
+## Overview
+
+Printable and bookmarkable command summaries for the tools we use in the workgroup.
+
+::: {.callout-note}
+Content in progress. Cheatsheets for bash, Git, and Claude Code will be added as tutorials are published.
+:::

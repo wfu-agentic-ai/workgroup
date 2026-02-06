@@ -1,0 +1,11 @@
+---
+title: "Resources"
+subtitle: "Reference materials, tools, and help"
+---
+
+Quick-reference materials to support your learning. Bookmark this page.
+
+- **[Cheatsheets](cheatsheets.qmd)** — Command summaries for bash, Git, and Claude Code
+- **[Tools](tools.qmd)** — Software and services used in the workgroup, with install instructions
+- **[Troubleshooting](troubleshooting.qmd)** — Common problems and how to fix them
+- **[Glossary](glossary.qmd)** — Definitions of terms used in tutorials and sessions

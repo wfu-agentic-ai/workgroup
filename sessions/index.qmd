@@ -1,0 +1,14 @@
+---
+title: "Sessions"
+subtitle: "Meeting notes and materials"
+---
+
+Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.
+
+*No sessions yet — check back after the first meeting.*
+
+<!-- Add new sessions at the top of this list:
+
+- [YYYY-MM-DD: Session title](YYYY-MM-DD.qmd)
+
+-->

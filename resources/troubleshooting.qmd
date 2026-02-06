@@ -1,0 +1,12 @@
+---
+title: "Troubleshooting"
+description: "Common problems and how to fix them."
+---
+
+## Overview
+
+Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.
+
+::: {.callout-note}
+Content in progress. Troubleshooting entries will be added as participants encounter common issues.
+:::

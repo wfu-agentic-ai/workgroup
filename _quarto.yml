@@ -1,0 +1,56 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "WFU Agentic AI Workgroup"
+  site-url: https://francojc.github.io/wfu-claude-workgroup/
+  repo-url: https://github.com/francojc/wfu-claude-workgroup
+  repo-actions: [edit, issue]
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Sessions
+        href: sessions/index.qmd
+      - text: Tutorials
+        href: tutorials/index.qmd
+      - text: Resources
+        href: resources/index.qmd
+      - text: About
+        href: about.qmd
+    tools:
+      - icon: github
+        href: https://github.com/francojc/wfu-claude-workgroup
+
+  sidebar:
+    - id: tutorials
+      title: Tutorials
+      style: docked
+      contents:
+        - tutorials/index.qmd
+        - section: "Getting started"
+          contents:
+            - tutorials/cli-basics.qmd
+            - tutorials/working-with-paths.qmd
+            - tutorials/shell-configuration.qmd
+        - section: "Version control"
+          contents:
+            - tutorials/git-fundamentals.qmd
+            - tutorials/github-collaboration.qmd
+        - section: "AI tools"
+          contents:
+            - tutorials/claude-code-intro.qmd
+            - tutorials/apis-and-mcps.qmd
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-tools: true
+    link-external-newwindow: true

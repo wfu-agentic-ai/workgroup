@@ -1,0 +1,16 @@
+---
+title: "Git fundamentals"
+description: "Track changes to your files with Git: init, add, commit, log, and diff."
+date: "2026-02-06"
+---
+
+## Overview
+
+Git is a version control system that tracks changes to your files over time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing snapshots, and reviewing history.
+
+**Prerequisites:** [Shell configuration](shell-configuration.qmd)
+**Estimated time:** 30 minutes
+
+::: {.callout-note}
+Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
+:::

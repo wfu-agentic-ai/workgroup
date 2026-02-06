@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Quarto
+/.quarto/
+_site/
+_freeze/
+*_cache/
+*_files/
+
+# Nix
+.direnv/
+result
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+.env
+*.log
+
+# Project management (don't publish to site)
+specs/

@@ -1,0 +1,16 @@
+---
+title: "CLI basics"
+description: "Open a terminal, run your first commands, and work with files and directories."
+date: "2026-02-06"
+---
+
+## Overview
+
+This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS, run basic commands, and create, move, and delete files and directories.
+
+**Prerequisites:** None
+**Estimated time:** 30 minutes
+
+::: {.callout-note}
+Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
+:::
