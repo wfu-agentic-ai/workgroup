@@ -48,8 +48,6 @@
         shellHook = ''
           echo "Academic project environment loaded"
           echo "Core tools: git, pandoc, quarto"
-          echo "R: tidyverse ecosystem with targets workflow"
-          echo "Python: data science stack with ruff formatting"
           echo "Use 'direnv allow' to auto-load this environment"
         '';
       };
