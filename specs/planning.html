@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>planning – Agentic AI: Workgroup</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2de1e8b0b87e8e1de7d48e418018ebab.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Agentic AI: Workgroup</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sessions/index.html"> 
+<span class="menu-text">Sessions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tutorials/index.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources/index.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/wfu-agentic-ai/workgroup" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workgroup-planning" id="toc-workgroup-planning" class="nav-link active" data-scroll-target="#workgroup-planning">Workgroup Planning</a>
+  <ul class="collapse">
+  <li><a href="#workgroup-context" id="toc-workgroup-context" class="nav-link" data-scroll-target="#workgroup-context">Workgroup context</a>
+  <ul class="collapse">
+  <li><a href="#basic-information" id="toc-basic-information" class="nav-link" data-scroll-target="#basic-information">Basic information</a></li>
+  <li><a href="#target-participants" id="toc-target-participants" class="nav-link" data-scroll-target="#target-participants">Target participants</a></li>
+  <li><a href="#format-and-logistics" id="toc-format-and-logistics" class="nav-link" data-scroll-target="#format-and-logistics">Format and logistics</a></li>
+  </ul></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a>
+  <ul class="collapse">
+  <li><a href="#workgroup-level-outcomes" id="toc-workgroup-level-outcomes" class="nav-link" data-scroll-target="#workgroup-level-outcomes">Workgroup-level outcomes</a></li>
+  <li><a href="#key-competencies" id="toc-key-competencies" class="nav-link" data-scroll-target="#key-competencies">Key competencies</a></li>
+  </ul></li>
+  <li><a href="#topic-progression-map" id="toc-topic-progression-map" class="nav-link" data-scroll-target="#topic-progression-map">Topic progression map</a>
+  <ul class="collapse">
+  <li><a href="#foundation-first-sessions" id="toc-foundation-first-sessions" class="nav-link" data-scroll-target="#foundation-first-sessions">Foundation (first sessions)</a></li>
+  <li><a href="#shell-environment" id="toc-shell-environment" class="nav-link" data-scroll-target="#shell-environment">Shell environment</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version control</a></li>
+  <li><a href="#ai-tools" id="toc-ai-tools" class="nav-link" data-scroll-target="#ai-tools">AI tools</a></li>
+  </ul></li>
+  <li><a href="#onboarding-strategy" id="toc-onboarding-strategy" class="nav-link" data-scroll-target="#onboarding-strategy">Onboarding strategy</a></li>
+  <li><a href="#pedagogical-approach" id="toc-pedagogical-approach" class="nav-link" data-scroll-target="#pedagogical-approach">Pedagogical approach</a>
+  <ul class="collapse">
+  <li><a href="#instructional-framework" id="toc-instructional-framework" class="nav-link" data-scroll-target="#instructional-framework">Instructional framework</a></li>
+  <li><a href="#content-design" id="toc-content-design" class="nav-link" data-scroll-target="#content-design">Content design</a></li>
+  <li><a href="#self-assessment-and-feedback" id="toc-self-assessment-and-feedback" class="nav-link" data-scroll-target="#self-assessment-and-feedback">Self-assessment and feedback</a></li>
+  </ul></li>
+  <li><a href="#resources-and-materials" id="toc-resources-and-materials" class="nav-link" data-scroll-target="#resources-and-materials">Resources and materials</a>
+  <ul class="collapse">
+  <li><a href="#required-tools" id="toc-required-tools" class="nav-link" data-scroll-target="#required-tools">Required tools</a></li>
+  <li><a href="#workgroup-created-content" id="toc-workgroup-created-content" class="nav-link" data-scroll-target="#workgroup-created-content">Workgroup-created content</a></li>
+  </ul></li>
+  <li><a href="#success-metrics" id="toc-success-metrics" class="nav-link" data-scroll-target="#success-metrics">Success metrics</a>
+  <ul class="collapse">
+  <li><a href="#participant-engagement" id="toc-participant-engagement" class="nav-link" data-scroll-target="#participant-engagement">Participant engagement</a></li>
+  <li><a href="#content-quality" id="toc-content-quality" class="nav-link" data-scroll-target="#content-quality">Content quality</a></li>
+  <li><a href="#community-health" id="toc-community-health" class="nav-link" data-scroll-target="#community-health">Community health</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/wfu-agentic-ai/workgroup/edit/main/specs/planning.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wfu-agentic-ai/workgroup/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="workgroup-planning" class="level1">
+<h1>Workgroup Planning</h1>
+<p><strong>Workgroup:</strong> WFU Agentic AI Workgroup <strong>Status:</strong> Planning <strong>Last Updated:</strong> 2026-02-06</p>
+<section id="workgroup-context" class="level2">
+<h2 class="anchored" data-anchor-id="workgroup-context">Workgroup context</h2>
+<section id="basic-information" class="level3">
+<h3 class="anchored" data-anchor-id="basic-information">Basic information</h3>
+<ul>
+<li><strong>Title:</strong> Agentic AI Tools in the CLI</li>
+<li><strong>Level:</strong> Faculty/staff professional development</li>
+<li><strong>Discipline:</strong> Cross-disciplinary (digital literacy, AI tools)</li>
+<li><strong>Prerequisites:</strong> None — assumes zero CLI experience</li>
+</ul>
+</section>
+<section id="target-participants" class="level3">
+<h3 class="anchored" data-anchor-id="target-participants">Target participants</h3>
+<ul>
+<li><strong>Primary audience:</strong> WFU faculty and staff</li>
+<li><strong>Expected size:</strong> 8–15 active participants (rolling membership)</li>
+<li><strong>Background:</strong> Varies widely; most have no terminal experience</li>
+<li><strong>Diverse needs:</strong> Range of comfort with technology, varying schedules</li>
+</ul>
+</section>
+<section id="format-and-logistics" class="level3">
+<h3 class="anchored" data-anchor-id="format-and-logistics">Format and logistics</h3>
+<ul>
+<li><strong>Frequency:</strong> Weekly meetings, ongoing (no fixed end date)</li>
+<li><strong>Format:</strong> In-person meetings + async web content</li>
+<li><strong>Meeting duration:</strong> ~60 minutes</li>
+<li><strong>Tools provided:</strong> Workgroup website with tutorials, session notes, and resources</li>
+</ul>
+</section>
+</section>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<section id="workgroup-level-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="workgroup-level-outcomes">Workgroup-level outcomes</h3>
+<ol type="1">
+<li>Participants can navigate the file system and execute basic commands in a terminal</li>
+<li>Participants can use Git and GitHub for version control</li>
+<li>Participants can configure their shell environment</li>
+<li>Participants can use Claude Code for agentic coding workflows</li>
+<li>Participants can access and configure AI APIs</li>
+<li>Participants can set up and use MCP servers</li>
+<li>Participants can author documents with Markdown and Quarto</li>
+</ol>
+</section>
+<section id="key-competencies" class="level3">
+<h3 class="anchored" data-anchor-id="key-competencies">Key competencies</h3>
+<ul>
+<li><strong>CLI literacy:</strong> Comfort working in a terminal environment</li>
+<li><strong>Version control:</strong> Tracking changes and collaborating via GitHub</li>
+<li><strong>AI tool fluency:</strong> Using agentic AI assistants effectively</li>
+<li><strong>Reproducibility:</strong> Creating shareable, reproducible workflows</li>
+</ul>
+</section>
+</section>
+<section id="topic-progression-map" class="level2">
+<h2 class="anchored" data-anchor-id="topic-progression-map">Topic progression map</h2>
+<p>The workgroup follows a progressive sequence, but participants who join late can catch up via tutorials on the website.</p>
+<section id="foundation-first-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="foundation-first-sessions">Foundation (first sessions)</h3>
+<ul>
+<li>What is a terminal? Why use one?</li>
+<li>Navigating the file system (<code>cd</code>, <code>ls</code>, <code>pwd</code>)</li>
+<li>Working with files and directories (<code>mkdir</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>)</li>
+<li>Reading and editing files from the command line</li>
+<li>Understanding paths (absolute vs.&nbsp;relative)</li>
+</ul>
+</section>
+<section id="shell-environment" class="level3">
+<h3 class="anchored" data-anchor-id="shell-environment">Shell environment</h3>
+<ul>
+<li>Shell configuration files (<code>.bashrc</code>, <code>.bash_profile</code>, <code>.zshrc</code>)</li>
+<li>Environment variables and <code>$PATH</code></li>
+<li>Aliases and shell functions</li>
+<li>Package managers (Homebrew on macOS)</li>
+</ul>
+</section>
+<section id="version-control" class="level3">
+<h3 class="anchored" data-anchor-id="version-control">Version control</h3>
+<ul>
+<li>Git fundamentals (<code>init</code>, <code>add</code>, <code>commit</code>, <code>log</code>, <code>diff</code>)</li>
+<li>Branching and merging</li>
+<li>GitHub: remote repos, push/pull, collaboration</li>
+<li>Pull requests and code review</li>
+</ul>
+</section>
+<section id="ai-tools" class="level3">
+<h3 class="anchored" data-anchor-id="ai-tools">AI tools</h3>
+<ul>
+<li>Installing and configuring Claude Code</li>
+<li>Working with Claude Code in a project</li>
+<li>API keys and authentication</li>
+<li>MCP servers: what they are and how to use them</li>
+<li>Building custom workflows with AI tools</li>
+</ul>
+</section>
+</section>
+<section id="onboarding-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="onboarding-strategy">Onboarding strategy</h2>
+<p>New participants who join after the workgroup has started:</p>
+<ol type="1">
+<li><strong>Self-paced tutorials:</strong> The website provides written tutorials covering all foundation topics</li>
+<li><strong>Buddy system:</strong> Pair new participants with someone who’s been attending</li>
+<li><strong>Office hours:</strong> Facilitator available for one-on-one help</li>
+<li><strong>No penalty for gaps:</strong> Content is modular; missing sessions doesn’t block progress</li>
+</ol>
+</section>
+<section id="pedagogical-approach" class="level2">
+<h2 class="anchored" data-anchor-id="pedagogical-approach">Pedagogical approach</h2>
+<section id="instructional-framework" class="level3">
+<h3 class="anchored" data-anchor-id="instructional-framework">Instructional framework</h3>
+<ul>
+<li><strong>Primary approach:</strong> Hands-on, task-driven learning</li>
+<li><strong>Session structure:</strong> Brief demo → guided practice → independent exploration</li>
+<li><strong>Scaffolding:</strong> Early sessions provide step-by-step instructions; later sessions give goals and let participants find the path</li>
+<li><strong>Peer learning:</strong> Participants help each other; facilitator is not the only source of knowledge</li>
+</ul>
+</section>
+<section id="content-design" class="level3">
+<h3 class="anchored" data-anchor-id="content-design">Content design</h3>
+<ul>
+<li><strong>Modular organization:</strong> Each tutorial is self-contained</li>
+<li><strong>Progressive difficulty:</strong> Foundation → intermediate → advanced</li>
+<li><strong>Worked examples:</strong> Every concept is illustrated with a concrete task</li>
+<li><strong>Real tasks:</strong> Use participants’ actual work as practice material when possible</li>
+</ul>
+</section>
+<section id="self-assessment-and-feedback" class="level3">
+<h3 class="anchored" data-anchor-id="self-assessment-and-feedback">Self-assessment and feedback</h3>
+<p>There are no grades. Instead:</p>
+<ul>
+<li><strong>Check-your-understanding prompts</strong> at the end of tutorials (try this, verify that)</li>
+<li><strong>Session feedback:</strong> Quick verbal or written check-ins at end of meetings</li>
+<li><strong>Self-assessment questions:</strong> “Can you do X without looking at the tutorial?”</li>
+<li><strong>Peer feedback:</strong> Participants review each other’s work in Git/GitHub exercises</li>
+</ul>
+</section>
+</section>
+<section id="resources-and-materials" class="level2">
+<h2 class="anchored" data-anchor-id="resources-and-materials">Resources and materials</h2>
+<section id="required-tools" class="level3">
+<h3 class="anchored" data-anchor-id="required-tools">Required tools</h3>
+<ul>
+<li>A Mac with Terminal.app (or iTerm2)</li>
+<li>A GitHub account</li>
+<li>A text editor (VS Code recommended but not required)</li>
+<li>Claude Code (installed during an early session)</li>
+</ul>
+</section>
+<section id="workgroup-created-content" class="level3">
+<h3 class="anchored" data-anchor-id="workgroup-created-content">Workgroup-created content</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">CLI basics tutorial</label></li>
+<li><label><input type="checkbox">Path navigation tutorial</label></li>
+<li><label><input type="checkbox">Shell configuration tutorial</label></li>
+<li><label><input type="checkbox">Git fundamentals tutorial</label></li>
+<li><label><input type="checkbox">GitHub collaboration tutorial</label></li>
+<li><label><input type="checkbox">Claude Code introduction tutorial</label></li>
+<li><label><input type="checkbox">APIs and MCPs tutorial</label></li>
+<li><label><input type="checkbox">Cheatsheets for common commands</label></li>
+<li><label><input type="checkbox">Troubleshooting guide</label></li>
+<li><label><input type="checkbox">Glossary of terms</label></li>
+</ul>
+</section>
+</section>
+<section id="success-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="success-metrics">Success metrics</h2>
+<section id="participant-engagement" class="level3">
+<h3 class="anchored" data-anchor-id="participant-engagement">Participant engagement</h3>
+<ul>
+<li><strong>Attendance:</strong> Consistent participation (recognizing rolling membership)</li>
+<li><strong>Tutorial completion:</strong> Participants working through async content</li>
+<li><strong>Peer support:</strong> Participants helping each other in and outside meetings</li>
+<li><strong>Independent use:</strong> Participants using CLI tools in their own work</li>
+</ul>
+</section>
+<section id="content-quality" class="level3">
+<h3 class="anchored" data-anchor-id="content-quality">Content quality</h3>
+<ul>
+<li><strong>Coverage:</strong> All planned tutorials published and up to date</li>
+<li><strong>Clarity:</strong> Content is accessible to beginners; feedback incorporated</li>
+<li><strong>Usability:</strong> Website navigation is intuitive; resources are findable</li>
+</ul>
+</section>
+<section id="community-health" class="level3">
+<h3 class="anchored" data-anchor-id="community-health">Community health</h3>
+<ul>
+<li><strong>New member onboarding:</strong> New participants can get started independently</li>
+<li><strong>Retention:</strong> Participants continue attending over time</li>
+<li><strong>Skill growth:</strong> Observable progression in participant capabilities</li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/wfu-agentic-ai\.github\.io\/workgroup\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/wfu-agentic-ai/workgroup/edit/main/specs/planning.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wfu-agentic-ai/workgroup/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

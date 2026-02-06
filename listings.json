@@ -1,0 +1,29 @@
+[
+  {
+    "listing": "/tutorials/index.html",
+    "items": [
+      "/tutorials/01-cli-basics.html",
+      "/tutorials/02-working-with-paths.html",
+      "/tutorials/03-shell-configuration.html",
+      "/tutorials/04-git-fundamentals.html",
+      "/tutorials/05-github-collaboration.html",
+      "/tutorials/06-claude-code-intro.html",
+      "/tutorials/07-apis-and-mcps.html"
+    ]
+  },
+  {
+    "listing": "/sessions/index.html",
+    "items": [
+      "/sessions/2026-02-06.html"
+    ]
+  },
+  {
+    "listing": "/resources/index.html",
+    "items": [
+      "/resources/cheatsheets.html",
+      "/resources/glossary.html",
+      "/resources/tools.html",
+      "/resources/troubleshooting.html"
+    ]
+  }
+]
