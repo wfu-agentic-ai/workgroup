@@ -9,7 +9,7 @@ categories: ["AI tools"]
 
 Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.
 
-**Prerequisites:** [GitHub collaboration](github-collaboration.qmd)
+**Prerequisites:** [GitHub collaboration](05-github-collaboration.qmd)
 **Estimated time:** 30 minutes
 
 ::: {.callout-note}

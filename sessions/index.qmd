@@ -10,8 +10,8 @@ listing:
   filter-ui: false
   categories: false
   fields: [date, title, description]
-page-layout: full
-toc: false
+page-layout: article
+toc: true
 ---
 
 Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.

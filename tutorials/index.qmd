@@ -1,24 +1,24 @@
 ---
 title: "Tutorials"
-subtitle: "Self-paced guides from the basics to AI tools"
+subtitle: "Self-paced guides from the fundamentals to advanced AI agent applications"
 listing:
   id: tutorials-listing
   contents: "*.qmd"
-  type: table
-  sort: "date"
+  type: grid
+  sort: "filename"
   sort-ui: false
   filter-ui: true
   categories: numbered
-  fields: [title, description, categories]
+  fields: [image, title, description, categories]
   field-display-names:
     title: "Tutorial"
     description: "Description"
     categories: "Topic"
-page-layout: full
-toc: false
+page-layout: article
+toc: true
 ---
 
-Work through these tutorials in order, or jump to whichever topic you need. Each tutorial is self-contained with worked examples and practice exercises.
+Work through these tutorials in order, or jump to whichever topic you need.
 
 ::: {#tutorials-listing}
 :::

@@ -4,14 +4,14 @@ subtitle: "Reference materials, tools, and help"
 listing:
   id: resources-listing
   contents: "*.qmd"
-  type: default
+  type: table
   sort: "title"
   sort-ui: false
   filter-ui: false
   categories: false
   fields: [title, description]
-page-layout: full
-toc: false
+page-layout: article
+toc: true
 ---
 
 Quick-reference materials to support your learning. Bookmark this page.

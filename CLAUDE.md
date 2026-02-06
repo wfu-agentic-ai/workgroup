@@ -1,4 +1,6 @@
-# WFU Agentic AI Workgroup — Project instructions
+# WFU Agentic AI Workgroup
+
+> Project instructions
 
 ## Workgroup overview
 
@@ -6,7 +8,7 @@ This is a faculty/staff workgroup at Wake Forest University focused on agentic A
 
 - **Audience:** WFU faculty and staff with little or no CLI experience
 - **Format:** Weekly in-person meetings + async web content
-- **Facilitator:** Jerid Francom (Department of Spanish and Italian)
+- **Facilitator:** Will Fleeson (Department of Psychology)
 - **Deliverable:** A Quarto website deployed to GitHub Pages
 
 ## Learning goals
@@ -29,7 +31,7 @@ When writing tutorials, session notes, or resource pages:
 - **Progressive difficulty.** Early content covers basic navigation and file operations. Later content introduces Git, Claude Code, APIs, and MCPs.
 - **Worked examples over abstractions.** Show a concrete task, walk through the steps, then generalize. Avoid leading with theory.
 - **Copy-paste friendly.** Code blocks should be runnable as-is. Include expected output where helpful.
-- **Platform awareness.** Participants use macOS (most common at WFU). Note Linux/Windows differences only when relevant.
+- **Platform awareness.** Most participants use macOS, but some use Windows. Tutorials should default to macOS examples and note Windows differences (e.g., PowerShell vs bash, path separators, installer commands) in callouts or inline when behavior diverges.
 - **No jargon without context.** If a term is unavoidable, define it inline or link to the glossary.
 
 ## Technology stack
@@ -50,13 +52,13 @@ sessions/          — Session notes, one file per meeting (date-based)
   index.qmd        — Session log, reverse chronological
 tutorials/         — Self-contained topic tutorials
   index.qmd        — Tutorial catalog with difficulty indicators
-  cli-basics.qmd
-  working-with-paths.qmd
-  shell-configuration.qmd
-  git-fundamentals.qmd
-  github-collaboration.qmd
-  claude-code-intro.qmd
-  apis-and-mcps.qmd
+  01-cli-basics.qmd
+  02-working-with-paths.qmd
+  03-shell-configuration.qmd
+  04-git-fundamentals.qmd
+  05-github-collaboration.qmd
+  06-claude-code-intro.qmd
+  07-apis-and-mcps.qmd
 resources/         — Reference material
   index.qmd        — Resource hub
   cheatsheets.qmd

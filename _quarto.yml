@@ -32,5 +32,4 @@ format:
     css: styles.css
     toc: true
     code-copy: true
-    code-tools: true
     link-external-newwindow: true

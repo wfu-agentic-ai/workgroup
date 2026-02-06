@@ -9,7 +9,7 @@ categories: ["Getting started"]
 
 Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.
 
-**Prerequisites:** [Working with paths](working-with-paths.qmd)
+**Prerequisites:** [Working with paths](02-working-with-paths.qmd)
 **Estimated time:** 25 minutes
 
 ::: {.callout-note}

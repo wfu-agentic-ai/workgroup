@@ -9,7 +9,7 @@ categories: ["Version control"]
 
 GitHub hosts Git repositories online and provides tools for collaboration. This tutorial covers working with remote repositories, pushing and pulling changes, creating pull requests, and reviewing code.
 
-**Prerequisites:** [Git fundamentals](git-fundamentals.qmd)
+**Prerequisites:** [Git fundamentals](04-git-fundamentals.qmd)
 **Estimated time:** 30 minutes
 
 ::: {.callout-note}
