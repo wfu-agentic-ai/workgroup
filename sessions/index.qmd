@@ -1,14 +1,20 @@
 ---
 title: "Sessions"
 subtitle: "Meeting notes and materials"
+listing:
+  id: sessions-listing
+  contents: "*.qmd"
+  type: default
+  sort: "date desc"
+  sort-ui: false
+  filter-ui: false
+  categories: false
+  fields: [date, title, description]
+page-layout: full
+toc: false
 ---
 
 Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.
 
-*No sessions yet — check back after the first meeting.*
-
-<!-- Add new sessions at the top of this list:
-
-- [YYYY-MM-DD: Session title](YYYY-MM-DD.qmd)
-
--->
+::: {#sessions-listing}
+:::

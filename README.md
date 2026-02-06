@@ -9,7 +9,7 @@ This workgroup brings together WFU faculty and staff interested in integrating A
 ## Format
 
 - **Meetings:** Weekly, in person at Wake Forest University (day/time TBD based on participant availability) or via Zoom for remote attendees
-- **Async content:** Published on the [workgroup website](https://francojc.github.io/wfu-claude-workgroup/)
+- **Async content:** Published on the [workgroup website](https://wfu-agentic-ai.github.io/workgroup/)
 - **Membership:** Rolling — join anytime
 - **Assessment:** None — self-directed exploration with peer support
 
@@ -25,7 +25,7 @@ This workgroup brings together WFU faculty and staff interested in integrating A
 
 ## Getting started
 
-1. Visit the [workgroup website](https://francojc.github.io/wfu-claude-workgroup/) for tutorials and session notes
+1. Visit the [workgroup website](https://wfu-agentic-ai.github.io/workgroup/) for tutorials and session notes
 2. Work through the CLI basics tutorial if you're new to the terminal
 3. Attend a weekly session or follow along asynchronously
 

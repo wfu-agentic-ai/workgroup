@@ -2,6 +2,7 @@
 title: "Git fundamentals"
 description: "Track changes to your files with Git: init, add, commit, log, and diff."
 date: "2026-02-06"
+categories: ["Version control"]
 ---
 
 ## Overview

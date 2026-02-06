@@ -36,4 +36,4 @@ By the end of the tutorial sequence, participants will be able to:
 
 **Will Fleeson** -- Department of Psychology, Wake Forest University
 
-Questions? Open an [issue on GitHub](https://github.com/francojc/wfu-claude-workgroup/issues) or reach out directly.
+Questions? Open an [issue on GitHub](https://github.com/wfu-agentic-ai/workgroup/issues) or reach out directly.

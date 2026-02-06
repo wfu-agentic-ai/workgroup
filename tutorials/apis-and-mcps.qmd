@@ -2,6 +2,7 @@
 title: "APIs and MCPs"
 description: "Configure API keys for AI services and set up Model Context Protocol servers."
 date: "2026-02-06"
+categories: ["AI tools"]
 ---
 
 ## Overview

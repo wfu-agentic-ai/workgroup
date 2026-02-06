@@ -2,6 +2,7 @@
 title: "Shell configuration"
 description: "Customize your terminal with dotfiles, environment variables, and aliases."
 date: "2026-02-06"
+categories: ["Getting started"]
 ---
 
 ## Overview

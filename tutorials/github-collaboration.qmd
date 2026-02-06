@@ -2,6 +2,7 @@
 title: "GitHub collaboration"
 description: "Push code to GitHub, collaborate with pull requests, and review changes."
 date: "2026-02-06"
+categories: ["Version control"]
 ---
 
 ## Overview

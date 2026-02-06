@@ -1,34 +1,24 @@
 ---
 title: "Tutorials"
 subtitle: "Self-paced guides from the basics to AI tools"
+listing:
+  id: tutorials-listing
+  contents: "*.qmd"
+  type: table
+  sort: "date"
+  sort-ui: false
+  filter-ui: true
+  categories: numbered
+  fields: [title, description, categories]
+  field-display-names:
+    title: "Tutorial"
+    description: "Description"
+    categories: "Topic"
+page-layout: full
+toc: false
 ---
 
 Work through these tutorials in order, or jump to whichever topic you need. Each tutorial is self-contained with worked examples and practice exercises.
 
-## Getting started
-
-Build a foundation with the terminal and file system.
-
-| Tutorial | Description | Difficulty |
-|----------|-------------|------------|
-| [CLI basics](cli-basics.qmd) | Open a terminal, run commands, work with files | Beginner |
-| [Working with paths](working-with-paths.qmd) | Absolute and relative paths, home directory, navigation | Beginner |
-| [Shell configuration](shell-configuration.qmd) | Dotfiles, environment variables, aliases | Beginner–Intermediate |
-
-## Version control
-
-Track changes and collaborate with Git and GitHub.
-
-| Tutorial | Description | Difficulty |
-|----------|-------------|------------|
-| [Git fundamentals](git-fundamentals.qmd) | Init, add, commit, log, diff — the core workflow | Intermediate |
-| [GitHub collaboration](github-collaboration.qmd) | Remotes, push/pull, pull requests, code review | Intermediate |
-
-## AI tools
-
-Use agentic AI assistants from the command line.
-
-| Tutorial | Description | Difficulty |
-|----------|-------------|------------|
-| [Claude Code introduction](claude-code-intro.qmd) | Install, configure, and work with Claude Code | Intermediate |
-| [APIs and MCPs](apis-and-mcps.qmd) | API keys, MCP servers, and tool integration | Advanced |
+::: {#tutorials-listing}
+:::

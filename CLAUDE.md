@@ -77,13 +77,22 @@ description: "Brief summary of what was covered."
 ---
 ```
 
-Then add a link to `sessions/index.qmd` at the top of the list (most recent first).
+The listing on `sessions/index.qmd` picks up new session files automatically.
 
 ### Adding a new tutorial
 
-1. Create `tutorials/topic-name.qmd` with appropriate front matter
-2. Add the file to the sidebar contents in `_quarto.yml` under the relevant section
-3. Add a card or link in `tutorials/index.qmd`
+Create `tutorials/topic-name.qmd` with front matter that includes `categories` (one of `"Getting started"`, `"Version control"`, or `"AI tools"`):
+
+```yaml
+---
+title: "Tutorial title"
+description: "Brief description of the tutorial."
+date: "YYYY-MM-DD"
+categories: ["Getting started"]
+---
+```
+
+The listing on `tutorials/index.qmd` picks up new tutorial files automatically.
 
 ## Quarto conventions
 

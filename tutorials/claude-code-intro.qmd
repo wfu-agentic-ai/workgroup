@@ -2,6 +2,7 @@
 title: "Claude Code introduction"
 description: "Install Claude Code, configure it for your projects, and start an agentic coding workflow."
 date: "2026-02-06"
+categories: ["AI tools"]
 ---
 
 ## Overview

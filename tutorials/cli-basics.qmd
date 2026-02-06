@@ -2,6 +2,7 @@
 title: "CLI basics"
 description: "Open a terminal, run your first commands, and work with files and directories."
 date: "2026-02-06"
+categories: ["Getting started"]
 ---
 
 ## Overview
