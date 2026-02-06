@@ -8,7 +8,7 @@ This workgroup brings together WFU faculty and staff interested in integrating A
 
 ## Format
 
-- **Meetings:** Weekly, in person
+- **Meetings:** Weekly, in person at Wake Forest University (day/time TBD based on participant availability) or via Zoom for remote attendees
 - **Async content:** Published on the [workgroup website](https://francojc.github.io/wfu-claude-workgroup/)
 - **Membership:** Rolling — join anytime
 - **Assessment:** None — self-directed exploration with peer support
@@ -21,6 +21,7 @@ This workgroup brings together WFU faculty and staff interested in integrating A
 - API access and configuration
 - MCP servers and tool integration
 - Markdown and Quarto for reproducible documents
+- ... and more based on participant interests and questions
 
 ## Getting started
 
@@ -34,4 +35,5 @@ This repo contains the source files for the workgroup's Quarto website. Session 
 
 ## Facilitator
 
-Jerid Francom — Department of Spanish and Italian, WFU
+**Will Fleeson** -- Department of Psychology, Wake Forest University (contact: fleesonw@wfu.edu)
+

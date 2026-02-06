@@ -1,5 +1,5 @@
 ---
-title: "About the workgroup"
+title: "About"
 ---
 
 ## Purpose
@@ -13,7 +13,7 @@ By the end of the tutorial sequence, participants will be able to:
 1. Navigate the file system and run commands in a terminal
 2. Use Git and GitHub for version control and collaboration
 3. Configure shell environments and dotfiles
-4. Work with Claude Code for agentic coding workflows
+4. Work with Claude Code (and/or other CLI tools) for agentic coding workflows
 5. Access and configure APIs for AI services
 6. Set up and use MCP servers for tool integration
 7. Author reproducible documents with Markdown and Quarto
@@ -23,7 +23,7 @@ By the end of the tutorial sequence, participants will be able to:
 - **Weekly meetings** — Brief demos followed by hands-on practice. Meetings are standalone; missing one doesn't block your progress.
 - **Async content** — All topics are covered in written tutorials on this site. You can learn entirely at your own pace.
 - **Rolling membership** — Join anytime. New participants start with the [CLI basics tutorial](tutorials/cli-basics.qmd) and work forward.
-- **No grades** — This is professional development, not a course. Self-assessment prompts in tutorials help you gauge your own progress.
+- **Professional development** — Self-assessment prompts in tutorials help you gauge your own progress.
 
 ## What you'll need
 
@@ -34,6 +34,6 @@ By the end of the tutorial sequence, participants will be able to:
 
 ## Facilitator
 
-**Jerid Francom** — Department of Spanish and Italian, Wake Forest University
+**Will Fleeson** -- Department of Psychology, Wake Forest University
 
 Questions? Open an [issue on GitHub](https://github.com/francojc/wfu-claude-workgroup/issues) or reach out directly.

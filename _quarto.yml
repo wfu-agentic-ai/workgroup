@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "WFU Agentic AI Workgroup"
+  title: "Agentic AI: Workgroup"
   site-url: https://francojc.github.io/wfu-claude-workgroup/
   repo-url: https://github.com/francojc/wfu-claude-workgroup
   repo-actions: [edit, issue]

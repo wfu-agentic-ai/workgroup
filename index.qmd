@@ -10,7 +10,7 @@ This workgroup brings together Wake Forest University faculty and staff who want
 ## Meeting info
 
 - **When:** Weekly (see [sessions](sessions/index.qmd) for schedule)
-- **Where:** In person at WFU (location TBA)
+- **Where:** In person at WFU (location TBA)/ or via Zoom (link in calendar invite)
 - **Who:** Any WFU faculty or staff member — join anytime
 
 ## Getting started
