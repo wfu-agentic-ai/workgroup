@@ -5,11 +5,11 @@ listing:
   id: tutorials-listing
   contents: "*.qmd"
   type: grid
-  sort: "filename"
+  sort: "order"
   sort-ui: false
   filter-ui: true
   categories: numbered
-  fields: [image, title, description, categories]
+  fields: [image, title, description, categories, reading-time]
   field-display-names:
     title: "Tutorial"
     description: "Description"

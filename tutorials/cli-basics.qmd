@@ -1,0 +1,27 @@
+---
+title: "CLI fundamentals"
+description: |
+  Open a terminal, run your first commands, and work with files and directories.
+order: 1
+date: 2026-02-06
+date-modified: today
+categories: ["Getting started"]
+---
+
+## Overview
+
+::: {layout-ncol=2}
+
+This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS/Linux or Windows, run basic commands, and create, move, and delete files and directories.
+
+![](images/terminal-logo.png){width=50%}
+:::
+
+
+**Prerequisites:** None
+
+---
+
+::: {.callout-note}
+Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
+:::

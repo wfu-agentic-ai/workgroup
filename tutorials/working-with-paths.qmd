@@ -1,7 +1,9 @@
 ---
 title: "Working with paths"
 description: "Understand absolute and relative paths, the home directory, and how to navigate the file system."
+order: 2
 date: "2026-02-06"
+date-modified: today
 categories: ["Getting started"]
 ---
 
@@ -9,7 +11,7 @@ categories: ["Getting started"]
 
 Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.
 
-**Prerequisites:** [CLI basics](01-cli-basics.qmd)
+**Prerequisites:** [CLI basics](cli-basics.qmd)
 **Estimated time:** 20 minutes
 
 ::: {.callout-note}

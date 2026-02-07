@@ -6,7 +6,9 @@ listing:
   contents:
     - "sessions/*.qmd"
     - "!sessions/index.qmd"
-  type: default
+  type: table
+  filter-ui: false
+  sort-ui: false
   sort: "date desc"
   max-items: 3
   fields: [date, title, description]
@@ -26,11 +28,11 @@ This workgroup brings together Wake Forest University faculty and staff who want
 
 New to the workgroup? Start here:
 
-1. **[CLI basics](tutorials/01-cli-basics.qmd)** — Open a terminal and run your first commands
-2. **[Working with paths](tutorials/02-working-with-paths.qmd)** — Navigate the file system with confidence
-3. **[Shell configuration](tutorials/03-shell-configuration.qmd)** — Customize your terminal environment
+1. **[CLI basics](tutorials/cli-basics.qmd)** — Open a terminal and run your first commands
+2. **[Working with paths](tutorials/working-with-paths.qmd)** — Navigate the file system with confidence
+3. **[Shell configuration](tutorials/shell-configuration.qmd)** — Customize your terminal environment
 
-Then move on to [version control](tutorials/04-git-fundamentals.qmd) and [AI tools](tutorials/06-claude-code-intro.qmd) when you're ready.
+Then move on to [version control](tutorials/git-fundamentals.qmd) and [AI tools](tutorials/claude-code-intro.qmd) when you're ready.
 
 ## Recent sessions
 

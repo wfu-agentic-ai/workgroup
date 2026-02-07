@@ -22,7 +22,7 @@ By the end of the tutorial sequence, participants will be able to:
 
 - **Weekly meetings** — Brief demos followed by hands-on practice. Meetings are standalone; missing one doesn't block your progress.
 - **Async content** — All topics are covered in written tutorials on this site. You can learn entirely at your own pace.
-- **Rolling membership** — Join anytime. New participants start with the [CLI basics tutorial](tutorials/01-cli-basics.qmd) and work forward.
+- **Rolling membership** — Join anytime. New participants start with the [CLI basics tutorial](tutorials/cli-basics.qmd) and work forward.
 - **Professional development** — Self-assessment prompts in tutorials help you gauge your own progress.
 
 ## What you'll need

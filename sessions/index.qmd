@@ -3,7 +3,9 @@ title: "Sessions"
 subtitle: "Meeting notes and materials"
 listing:
   id: sessions-listing
-  contents: "*.qmd"
+  contents:
+    - "*.qmd"
+    - "!index.qmd"
   type: default
   sort: "date desc"
   sort-ui: false

@@ -41,3 +41,6 @@ format:
     toc: true
     code-copy: true
     link-external-newwindow: true
+
+execute:
+  freeze: true

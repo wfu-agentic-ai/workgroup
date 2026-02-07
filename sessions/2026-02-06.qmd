@@ -1,9 +1,23 @@
 ---
 title: "Meeting Notes"
 description: |
-  Notes and materials from the AI Workgroup meeting held on February 6, 2026.
+  Introductions, discussion of goals and expectations, and working to get Claude Code set up on participants' machines.
 date: 2026-02-06
+date-modified: today
 ---
 
-...
+Facilitator: Will Fleeson
+
+## Agenda
+
+1. Introductions -- I will describe my goals and expected course for this group, and I ask each of you to state what you hope to learn, including a project you hope to accomplish.
+2. Collective Exploration -- we simultaneously try to get Claude Code going on our computers and doing something.
+3. Planning -- compile our next steps and questions to resolve
+4. Scheduling -- decide on frequency and timing of meetings.
+
+## Notes
+
+
+## Resources
+
 

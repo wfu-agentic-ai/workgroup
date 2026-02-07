@@ -1,7 +1,10 @@
 ---
 title: "Claude Code introduction"
-description: "Install Claude Code, configure it for your projects, and start an agentic coding workflow."
-date: "2026-02-06"
+description: |
+  Install Claude Code, configure it for your projects, and start an agentic coding workflow.
+order: 6
+date: 2026-02-06
+date-modified: today
 categories: ["AI tools"]
 ---
 
@@ -9,7 +12,7 @@ categories: ["AI tools"]
 
 Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.
 
-**Prerequisites:** [GitHub collaboration](05-github-collaboration.qmd)
+**Prerequisites:** [GitHub collaboration](github-collaboration.qmd)
 **Estimated time:** 30 minutes
 
 ::: {.callout-note}

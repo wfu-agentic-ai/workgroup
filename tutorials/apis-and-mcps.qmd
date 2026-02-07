@@ -1,7 +1,9 @@
 ---
 title: "APIs and MCPs"
 description: "Configure API keys for AI services and set up Model Context Protocol servers."
+order: 7
 date: "2026-02-06"
+date-modified: today
 categories: ["AI tools"]
 ---
 
@@ -9,7 +11,7 @@ categories: ["AI tools"]
 
 APIs let you access AI models programmatically. MCP (Model Context Protocol) servers extend what AI assistants can do by connecting them to external tools and data sources. This tutorial covers API key management, basic API usage, and setting up MCP servers.
 
-**Prerequisites:** [Claude Code introduction](06-claude-code-intro.qmd)
+**Prerequisites:** [Claude Code introduction](claude-code-intro.qmd)
 **Estimated time:** 35 minutes
 
 ::: {.callout-note}
