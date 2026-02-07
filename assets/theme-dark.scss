@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+
+// Core colors — invert for dark mode
+$body-bg: #1a1a2e !default;
+$body-color: #e0e0e0 !default;
+
+// Slightly lighten the simplex red for readability on dark bg
+$primary: #e6453a !default;
+$secondary: #2a2a3e !default;
+
+$link-color: #5cacee !default;
+
+// Gray scale adjustments
+$gray-100: #2a2a3e !default;
+$gray-200: #333348 !default;
+$gray-300: #444460 !default;
+$gray-400: #666680 !default;
+$gray-500: #8888a0 !default;
+$gray-600: #aaaabc !default;
+$gray-700: #ccccdd !default;
+$gray-800: #ddddee !default;
+$gray-900: #eeeef5 !default;
+
+// Component overrides
+$card-bg: #222240 !default;
+$card-border-color: #333348 !default;
+$nav-tabs-border-color: #333348 !default;
+$border-color: #333348 !default;
+$input-bg: #222240 !default;
+$input-color: #e0e0e0 !default;
+$input-border-color: #444460 !default;
+
+// Code blocks
+$code-color: #e88a7a !default;
+$pre-color: #e0e0e0 !default;
+
+// Tables
+$table-color: #e0e0e0 !default;
+$table-border-color: #333348 !default;
+
+/*-- scss:rules --*/
+
+// Ensure code blocks have dark backgrounds
+pre.sourceCode {
+  background-color: #16162a;
+  border: 1px solid #333348;
+}
+
+// Callout adjustments for dark mode
+.callout {
+  border-left-width: 4px;
+}

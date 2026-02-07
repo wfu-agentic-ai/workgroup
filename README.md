@@ -35,5 +35,6 @@ This repo contains the source files for the workgroup's Quarto website. Session 
 
 ## Facilitator
 
+
 **Will Fleeson** -- Department of Psychology, Wake Forest University (contact: fleesonw@wfu.edu)
 

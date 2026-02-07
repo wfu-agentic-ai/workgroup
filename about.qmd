@@ -34,6 +34,6 @@ By the end of the tutorial sequence, participants will be able to:
 
 ## Facilitator
 
-**Will Fleeson** -- Department of Psychology, Wake Forest University
+**{{< var group.facilitator >}}** -- {{< var group.facilitator_dept >}}, Wake Forest University
 
-Questions? Open an [issue on GitHub](https://github.com/wfu-agentic-ai/workgroup/issues) or reach out directly.
+Questions? Visit the [Discussion board on GitHub](https://github.com/wfu-agentic-ai/workgroup/discussions) or reach out directly {{< var group.facilitator_email >}}.

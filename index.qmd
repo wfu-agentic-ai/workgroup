@@ -1,6 +1,15 @@
 ---
 title: "WFU Agentic AI Workgroup"
 subtitle: "Exploring AI-powered CLI tools for academic work"
+listing:
+  id: sessions-listing
+  contents:
+    - "sessions/*.qmd"
+    - "!sessions/index.qmd"
+  type: default
+  sort: "date desc"
+  max-items: 3
+  fields: [date, title, description]
 ---
 
 ## Welcome
@@ -9,9 +18,9 @@ This workgroup brings together Wake Forest University faculty and staff who want
 
 ## Meeting info
 
-- **When:** Weekly (see [sessions](sessions/index.qmd) for schedule)
-- **Where:** In person at WFU (location TBA)/ or via Zoom (link in calendar invite)
-- **Who:** Any WFU faculty or staff member — join anytime
+- **When:** Fridays 10:00-11:30am (tentatively)
+- **Where:** In person (location TBA)/ or via Zoom (link in calendar invite)
+- **Who:** Any WFU faculty or staff member — [join anytime](about.qmd#facilitator)
 
 ## Getting started
 
@@ -26,3 +35,6 @@ Then move on to [version control](tutorials/04-git-fundamentals.qmd) and [AI too
 ## Recent sessions
 
 *Session notes will appear here as meetings take place. See the [full session log](sessions/index.qmd).*
+
+::: {#sessions-listing}
+:::

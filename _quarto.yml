@@ -3,6 +3,12 @@ project:
   output-dir: _site
 
 website:
+  announcement:
+    content: "This website is a work in progress. Please check back for updates."
+    icon: info-circle
+    position: below-navbar
+    type: primary
+  open-graph: true
   title: "Agentic AI: Workgroup"
   site-url: https://wfu-agentic-ai.github.io/workgroup/
   repo-url: https://github.com/wfu-agentic-ai/workgroup
@@ -28,7 +34,9 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: [simplex, assets/theme-light.scss]
+      dark: [simplex, assets/theme-dark.scss]
     css: styles.css
     toc: true
     code-copy: true
