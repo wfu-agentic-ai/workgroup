@@ -77,13 +77,6 @@
     "text": "APIs let you access AI models programmatically. MCP (Model Context Protocol) servers extend what AI assistants can do by connecting them to external tools and data sources. This tutorial covers API key management, basic API usage, and setting up MCP servers.\nPrerequisites: Claude Code introduction Estimated time: 35 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
   },
   {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI basics\n\n\n\nGetting started\n\n\n\nOpen a terminal, run your first commands, and work with files and directories.\n\n\n\n\n\n\n\n\n\n\nWorking with paths\n\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, the home directory, and how to navigate the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, and aliases.\n\n\n\n\n\n\n\n\n\n\nGit fundamentals\n\n\n\nVersion control\n\n\n\nTrack changes to your files with Git: init, add, commit, log, and diff.\n\n\n\n\n\n\n\n\n\n\nGitHub collaboration\n\n\n\nVersion control\n\n\n\nPush code to GitHub, collaborate with pull requests, and review changes.\n\n\n\n\n\n\n\n\n\n\nClaude Code introduction\n\n\n\nAI tools\n\n\n\nInstall Claude Code, configure it for your projects, and start an agentic coding workflow.\n\n\n\n\n\n\n\n\n\n\nAPIs and MCPs\n\n\n\nAI tools\n\n\n\nConfigure API keys for AI services and set up Model Context Protocol servers.\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "tutorials/05-github-collaboration.html",
     "href": "tutorials/05-github-collaboration.html",
     "title": "GitHub collaboration",
@@ -98,18 +91,25 @@
     "text": "GitHub hosts Git repositories online and provides tools for collaboration. This tutorial covers working with remote repositories, pushing and pulling changes, creating pull requests, and reviewing code.\nPrerequisites: Git fundamentals Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
   },
   {
-    "objectID": "tutorials/02-working-with-paths.html",
-    "href": "tutorials/02-working-with-paths.html",
-    "title": "Working with paths",
+    "objectID": "tutorials/03-shell-configuration.html",
+    "href": "tutorials/03-shell-configuration.html",
+    "title": "Shell configuration",
     "section": "",
-    "text": "Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.\nPrerequisites: CLI basics Estimated time: 20 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.\nPrerequisites: Working with paths Estimated time: 25 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
   },
   {
-    "objectID": "tutorials/02-working-with-paths.html#overview",
-    "href": "tutorials/02-working-with-paths.html#overview",
-    "title": "Working with paths",
+    "objectID": "tutorials/03-shell-configuration.html#overview",
+    "href": "tutorials/03-shell-configuration.html#overview",
+    "title": "Shell configuration",
     "section": "",
-    "text": "Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.\nPrerequisites: CLI basics Estimated time: 20 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.\nPrerequisites: Working with paths Estimated time: 25 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI basics\n\n\n\nGetting started\n\n\n\nOpen a terminal, run your first commands, and work with files and directories.\n\n\n\n\n\n\n\n\n\n\nWorking with paths\n\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, the home directory, and how to navigate the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, and aliases.\n\n\n\n\n\n\n\n\n\n\nGit fundamentals\n\n\n\nVersion control\n\n\n\nTrack changes to your files with Git: init, add, commit, log, and diff.\n\n\n\n\n\n\n\n\n\n\nGitHub collaboration\n\n\n\nVersion control\n\n\n\nPush code to GitHub, collaborate with pull requests, and review changes.\n\n\n\n\n\n\n\n\n\n\nClaude Code introduction\n\n\n\nAI tools\n\n\n\nInstall Claude Code, configure it for your projects, and start an agentic coding workflow.\n\n\n\n\n\n\n\n\n\n\nAPIs and MCPs\n\n\n\nAI tools\n\n\n\nConfigure API keys for AI services and set up Model Context Protocol servers.\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "sessions/index.html",
@@ -117,6 +117,41 @@
     "title": "Sessions",
     "section": "",
     "text": "Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.\n\n\n\n\n\nMeeting Notes\n\n\nNotes and materials from the AI Workgroup meeting held on February 6, 2026.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources/troubleshooting.html",
+    "href": "resources/troubleshooting.html",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/troubleshooting.html#overview",
+    "href": "resources/troubleshooting.html#overview",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/tools.html",
+    "href": "resources/tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool."
+  },
+  {
+    "objectID": "resources/tools.html#overview",
+    "href": "resources/tools.html#overview",
+    "title": "Tools",
+    "section": "",
+    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -152,230 +187,6 @@
     "title": "WFU Agentic AI Workgroup",
     "section": "Recent sessions",
     "text": "Recent sessions\nSession notes will appear here as meetings take place. See the full session log."
-  },
-  {
-    "objectID": "resources/troubleshooting.html",
-    "href": "resources/troubleshooting.html",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
-  },
-  {
-    "objectID": "resources/troubleshooting.html#overview",
-    "href": "resources/troubleshooting.html#overview",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
-  },
-  {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "specs/progress.html",
-    "href": "specs/progress.html",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "Workgroup: WFU Agentic AI Workgroup Status: Active Last Updated: 2026-02-06\n\n\n\n\n\nCurrent focus: Project setup and foundation content\nContent development: Early stage\nActive participants: TBD\n\n\n\n\n\n[Project scaffolding created — 2026-02-06]\n\n\n\n\n\nFinalize website structure and deploy to GitHub Pages\nDraft CLI basics tutorial\nDraft working-with-paths tutorial\nSchedule first in-person session\n\n\n\n\n\n\n\n\nActive members: [To be tracked as workgroup begins]\nNew members this period: —\nMembers on hiatus: —\n\n\n\n\nTrack rolling membership here as participants join and leave:\n\n\n\nDate\nName\nStatus\nNotes\n\n\n\n\n—\n—\n—\n—\n\n\n\n\n\n\n\nCLI confidence: [Baseline survey TBD]\nGit usage: [Track as sessions progress]\nAI tool adoption: [Track as sessions progress]\n\n\n\n\n\n\n\n\nCLI basics tutorial\nWorking with paths tutorial\nShell configuration tutorial\nGit fundamentals tutorial\nGitHub collaboration tutorial\nClaude Code intro tutorial\nAPIs and MCPs tutorial\n\n\n\n\n\nIn progress: Website setup and initial tutorial drafts\nParticipant feedback: [Not yet collected]\nAdjustments: [None yet]\n\n\n\n\nIdentify topics participants ask about that aren’t covered yet:\n\n\n\nDate\nTopic requested\nPriority\nStatus\n\n\n\n\n—\n—\n—\n—\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nTopic\nAttendees\nNotes\n\n\n\n\n—\n—\n—\n—\n\n\n\n\n\n\n\n[To be filled after initial sessions]\n\n\n\n\n\n[To be filled after initial sessions]\n\n\n\n\n\n\n\n\nBuddy pairs: [Set up as membership grows]\nPeer help observed: [Track informal collaboration]\nGitHub collaboration: [Track PRs, issues, discussions]\n\n\n\n\n\nQuestions asked in meetings: [Quality and frequency]\nTutorial completion: [Self-reported or observed]\nIndependent tool use: [Participants using tools on their own]\n\n\n\n\n\n\n\n\n[None yet]\n\nImpact: —\nActions taken: —\nTimeline: —\n\n\n\n\n\n\n[To be filled as workgroup progresses]\n\n\n\n\n\n\n\n\nDeploy website to GitHub Pages\nComplete first two tutorials (CLI basics, paths)\nHold first in-person session\nCollect baseline skill survey\n\n\n\n\n\nPublish all foundation tutorials\nBegin version control sessions\nEstablish onboarding process for new members\nGather first round of participant feedback\n\n\n\n\n\nCover AI tools topics (Claude Code, APIs, MCPs)\nDevelop advanced tutorials based on participant interests\nBuild out resource pages (cheatsheets, troubleshooting, glossary)"
-  },
-  {
-    "objectID": "specs/progress.html#current-period-overview",
-    "href": "specs/progress.html#current-period-overview",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "Current focus: Project setup and foundation content\nContent development: Early stage\nActive participants: TBD\n\n\n\n\n\n[Project scaffolding created — 2026-02-06]\n\n\n\n\n\nFinalize website structure and deploy to GitHub Pages\nDraft CLI basics tutorial\nDraft working-with-paths tutorial\nSchedule first in-person session"
-  },
-  {
-    "objectID": "specs/progress.html#participant-engagement",
-    "href": "specs/progress.html#participant-engagement",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "Active members: [To be tracked as workgroup begins]\nNew members this period: —\nMembers on hiatus: —\n\n\n\n\nTrack rolling membership here as participants join and leave:\n\n\n\nDate\nName\nStatus\nNotes\n\n\n\n\n—\n—\n—\n—\n\n\n\n\n\n\n\nCLI confidence: [Baseline survey TBD]\nGit usage: [Track as sessions progress]\nAI tool adoption: [Track as sessions progress]"
-  },
-  {
-    "objectID": "specs/progress.html#content-delivery",
-    "href": "specs/progress.html#content-delivery",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "CLI basics tutorial\nWorking with paths tutorial\nShell configuration tutorial\nGit fundamentals tutorial\nGitHub collaboration tutorial\nClaude Code intro tutorial\nAPIs and MCPs tutorial\n\n\n\n\n\nIn progress: Website setup and initial tutorial drafts\nParticipant feedback: [Not yet collected]\nAdjustments: [None yet]\n\n\n\n\nIdentify topics participants ask about that aren’t covered yet:\n\n\n\nDate\nTopic requested\nPriority\nStatus\n\n\n\n\n—\n—\n—\n—"
-  },
-  {
-    "objectID": "specs/progress.html#meeting-facilitation",
-    "href": "specs/progress.html#meeting-facilitation",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "Date\nTopic\nAttendees\nNotes\n\n\n\n\n—\n—\n—\n—\n\n\n\n\n\n\n\n[To be filled after initial sessions]\n\n\n\n\n\n[To be filled after initial sessions]"
-  },
-  {
-    "objectID": "specs/progress.html#community-health",
-    "href": "specs/progress.html#community-health",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "Buddy pairs: [Set up as membership grows]\nPeer help observed: [Track informal collaboration]\nGitHub collaboration: [Track PRs, issues, discussions]\n\n\n\n\n\nQuestions asked in meetings: [Quality and frequency]\nTutorial completion: [Self-reported or observed]\nIndependent tool use: [Participants using tools on their own]"
-  },
-  {
-    "objectID": "specs/progress.html#challenges-and-solutions",
-    "href": "specs/progress.html#challenges-and-solutions",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "[None yet]\n\nImpact: —\nActions taken: —\nTimeline: —\n\n\n\n\n\n\n[To be filled as workgroup progresses]"
-  },
-  {
-    "objectID": "specs/progress.html#next-steps",
-    "href": "specs/progress.html#next-steps",
-    "title": "Workgroup Progress",
-    "section": "",
-    "text": "Deploy website to GitHub Pages\nComplete first two tutorials (CLI basics, paths)\nHold first in-person session\nCollect baseline skill survey\n\n\n\n\n\nPublish all foundation tutorials\nBegin version control sessions\nEstablish onboarding process for new members\nGather first round of participant feedback\n\n\n\n\n\nCover AI tools topics (Claude Code, APIs, MCPs)\nDevelop advanced tutorials based on participant interests\nBuild out resource pages (cheatsheets, troubleshooting, glossary)"
-  },
-  {
-    "objectID": "specs/implementation.html",
-    "href": "specs/implementation.html",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Workgroup: WFU Agentic AI Workgroup Status: Active Last Updated: 2026-02-06\n\n\n\n\n\nPrimary framework: Social constructivism — participants learn by doing, collaborating, and building on each other’s knowledge\nInstructional model: Task-driven learning with worked examples\nKey principles: Progressive scaffolding, peer support, authentic tasks\nRationale: CLI skills are best learned through hands-on practice with real tasks, not lectures\n\n\n\n\n\nParticipant-centered: Content responds to what participants need, not a fixed syllabus\nLow barrier to entry: No prerequisites, no grades, no penalty for missing sessions\nModular content: Each tutorial stands alone; participants can skip ahead or circle back\nAsync-first: All content is available on the website; meetings supplement, not replace\n\n\n\n\n\n\n\nFoundation\n├── CLI basics (terminal, commands, file operations)\n├── Working with paths (absolute, relative, home)\n└── Shell configuration (dotfiles, PATH, aliases)\n\nVersion control\n├── Git fundamentals (init, add, commit, log, diff)\n└── GitHub collaboration (remotes, push/pull, PRs)\n\nAI tools\n├── Claude Code introduction (install, configure, use)\n└── APIs and MCPs (keys, servers, integration)\n\n\n\n\nFoundation: Step-by-step instructions with screenshots and expected output\nVersion control: Guided exercises with less hand-holding; participants make choices\nAI tools: Goal-oriented tasks; participants choose how to accomplish them\nSupport reduction: Early tutorials say “type this command”; later tutorials say “figure out how to do X”\n\n\n\n\nEach tutorial follows this structure:\n\nOverview — What you’ll learn, prerequisites, estimated time\nConcepts — Brief explanation of what and why (not how yet)\nWalkthrough — Step-by-step worked example\nPractice — Independent exercises with hints\nCheck your understanding — Self-assessment prompts\nNext steps — Links to related tutorials\n\n\n\n\n\n\n\n\n0–5 min: Check-in, questions from last time\n5–15 min: Brief demo of the day’s topic\n15–45 min: Guided practice (participants follow along, then try independently)\n45–55 min: Open exploration and Q&A\n55–60 min: Recap, preview next session, quick feedback\n\n\n\n\n\nLet participants struggle briefly before helping — productive struggle builds retention\nAsk “what did you try?” before giving the answer\nEncourage participants to help each other first\nKeep demos short; get people typing as fast as possible\nHave a backup plan if participants finish early (extension exercises) or get stuck (simpler version)\n\n\n\n\n\nPair experienced participants with newer ones\nProvide “fast track” notes for those who already know the basics\nOffer extension challenges for advanced participants\nKeep the main path accessible to the least experienced person in the room\n\n\n\n\n\n\n\n\nWelcome email/message with link to the workgroup website\nStart here: Direct them to the tutorial index, starting with CLI basics\nBuddy assignment: Pair with a current participant\nFirst meeting: Arrive 10 minutes early for a quick orientation\nCatch-up plan: Work through tutorials at own pace; no need to match the group\n\n\n\n\n\nGitHub account created\nTerminal app located and opened\nWorkgroup website bookmarked\nFirst tutorial started (CLI basics)\n\n\n\n\n\n\n\nThe website is the canonical source of workgroup content. Meetings are supplements.\n\nAll topics covered in meetings must have corresponding tutorials on the site\nSession notes posted within 48 hours of each meeting\nResources page kept current with links, cheatsheets, and troubleshooting\n\n\n\n\n\nGitHub Issues: For questions, bug reports, and content requests\nEmail: For logistics and scheduling\nIn-person meetings: For hands-on practice and peer interaction\n\n\n\n\n\n\n\n\nMain branch: Always deployable; content goes live via GitHub Pages\nFeature branches: For drafting new tutorials or major changes\nPull requests: Used when participants contribute content\nIssues: Track content requests, bugs, and feedback\n\n\n\n\n\nParticipants create their own repos during Git tutorials\nPractice PRs and code review on a shared sandbox repo (if interest warrants)\nReal collaboration: participants can contribute to the workgroup website\n\n\n\n\n\n\n\n\nTerminal.app / iTerm2: Primary interface for CLI work\nGit: Version control (command-line, not GUI)\nGitHub: Remote repos, collaboration, Pages deployment\nClaude Code: Agentic AI assistant in the terminal\nText editor: VS Code recommended; any editor acceptable\nQuarto: For authoring website content (participants may use this for their own work)\n\n\n\n\n\nTerminal verification (built into macOS)\nHomebrew (macOS package manager)\nGit (via Homebrew or Xcode CLI tools)\nGitHub account + SSH key setup\nClaude Code (via npm or direct install)\nVS Code (optional, recommended)\n\n\n\n\n\n\n\n\nEnd-of-session check-in: One sentence on what worked and what didn’t\nPeriodic survey: Every 4–6 sessions, a short written survey\nGitHub Issues: Open channel for suggestions and questions anytime\nInformal conversation: The facilitator talks to participants\n\n\n\n\n\nContent adjusted based on what participants find confusing\nSession pacing adjusted based on group progress\nNew topics added when requested\nTutorials revised when feedback identifies gaps\n\n\n\n\n\n\n\n\nTutorials tested by running all commands on a clean macOS system\nCode blocks verified for accuracy and copy-paste correctness\nLinks checked periodically for breakage\nParticipant feedback incorporated within one week\n\n\n\n\n\nDeploy after each content update via quarto publish gh-pages\nReview site navigation quarterly\nArchive old session notes (keep on site but deprioritize in navigation)\nKeep resource links current\n\n\n\n\n\n\n\n\nVaried skill levels: Addressed through modular content and peer pairing\nIrregular attendance: Addressed through async-first content design\nTool installation issues: Troubleshooting guide on the website; allocate session time for setup help\nParticipant frustration: Keep early content simple; celebrate small wins; normalize confusion\n\n\n\n\n\nWebsite content persists even if meetings pause\nTutorials are reusable for future cohorts\nContent is open-source and forkable\nNo dependency on a single facilitator for async content"
-  },
-  {
-    "objectID": "specs/implementation.html#pedagogical-framework",
-    "href": "specs/implementation.html#pedagogical-framework",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Primary framework: Social constructivism — participants learn by doing, collaborating, and building on each other’s knowledge\nInstructional model: Task-driven learning with worked examples\nKey principles: Progressive scaffolding, peer support, authentic tasks\nRationale: CLI skills are best learned through hands-on practice with real tasks, not lectures\n\n\n\n\n\nParticipant-centered: Content responds to what participants need, not a fixed syllabus\nLow barrier to entry: No prerequisites, no grades, no penalty for missing sessions\nModular content: Each tutorial stands alone; participants can skip ahead or circle back\nAsync-first: All content is available on the website; meetings supplement, not replace"
-  },
-  {
-    "objectID": "specs/implementation.html#content-structure",
-    "href": "specs/implementation.html#content-structure",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Foundation\n├── CLI basics (terminal, commands, file operations)\n├── Working with paths (absolute, relative, home)\n└── Shell configuration (dotfiles, PATH, aliases)\n\nVersion control\n├── Git fundamentals (init, add, commit, log, diff)\n└── GitHub collaboration (remotes, push/pull, PRs)\n\nAI tools\n├── Claude Code introduction (install, configure, use)\n└── APIs and MCPs (keys, servers, integration)\n\n\n\n\nFoundation: Step-by-step instructions with screenshots and expected output\nVersion control: Guided exercises with less hand-holding; participants make choices\nAI tools: Goal-oriented tasks; participants choose how to accomplish them\nSupport reduction: Early tutorials say “type this command”; later tutorials say “figure out how to do X”\n\n\n\n\nEach tutorial follows this structure:\n\nOverview — What you’ll learn, prerequisites, estimated time\nConcepts — Brief explanation of what and why (not how yet)\nWalkthrough — Step-by-step worked example\nPractice — Independent exercises with hints\nCheck your understanding — Self-assessment prompts\nNext steps — Links to related tutorials"
-  },
-  {
-    "objectID": "specs/implementation.html#meeting-facilitation",
-    "href": "specs/implementation.html#meeting-facilitation",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "0–5 min: Check-in, questions from last time\n5–15 min: Brief demo of the day’s topic\n15–45 min: Guided practice (participants follow along, then try independently)\n45–55 min: Open exploration and Q&A\n55–60 min: Recap, preview next session, quick feedback\n\n\n\n\n\nLet participants struggle briefly before helping — productive struggle builds retention\nAsk “what did you try?” before giving the answer\nEncourage participants to help each other first\nKeep demos short; get people typing as fast as possible\nHave a backup plan if participants finish early (extension exercises) or get stuck (simpler version)\n\n\n\n\n\nPair experienced participants with newer ones\nProvide “fast track” notes for those who already know the basics\nOffer extension challenges for advanced participants\nKeep the main path accessible to the least experienced person in the room"
-  },
-  {
-    "objectID": "specs/implementation.html#onboarding-process",
-    "href": "specs/implementation.html#onboarding-process",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Welcome email/message with link to the workgroup website\nStart here: Direct them to the tutorial index, starting with CLI basics\nBuddy assignment: Pair with a current participant\nFirst meeting: Arrive 10 minutes early for a quick orientation\nCatch-up plan: Work through tutorials at own pace; no need to match the group\n\n\n\n\n\nGitHub account created\nTerminal app located and opened\nWorkgroup website bookmarked\nFirst tutorial started (CLI basics)"
-  },
-  {
-    "objectID": "specs/implementation.html#async-learning-support",
-    "href": "specs/implementation.html#async-learning-support",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "The website is the canonical source of workgroup content. Meetings are supplements.\n\nAll topics covered in meetings must have corresponding tutorials on the site\nSession notes posted within 48 hours of each meeting\nResources page kept current with links, cheatsheets, and troubleshooting\n\n\n\n\n\nGitHub Issues: For questions, bug reports, and content requests\nEmail: For logistics and scheduling\nIn-person meetings: For hands-on practice and peer interaction"
-  },
-  {
-    "objectID": "specs/implementation.html#github-collaboration-workflow",
-    "href": "specs/implementation.html#github-collaboration-workflow",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Main branch: Always deployable; content goes live via GitHub Pages\nFeature branches: For drafting new tutorials or major changes\nPull requests: Used when participants contribute content\nIssues: Track content requests, bugs, and feedback\n\n\n\n\n\nParticipants create their own repos during Git tutorials\nPractice PRs and code review on a shared sandbox repo (if interest warrants)\nReal collaboration: participants can contribute to the workgroup website"
-  },
-  {
-    "objectID": "specs/implementation.html#technology-integration",
-    "href": "specs/implementation.html#technology-integration",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Terminal.app / iTerm2: Primary interface for CLI work\nGit: Version control (command-line, not GUI)\nGitHub: Remote repos, collaboration, Pages deployment\nClaude Code: Agentic AI assistant in the terminal\nText editor: VS Code recommended; any editor acceptable\nQuarto: For authoring website content (participants may use this for their own work)\n\n\n\n\n\nTerminal verification (built into macOS)\nHomebrew (macOS package manager)\nGit (via Homebrew or Xcode CLI tools)\nGitHub account + SSH key setup\nClaude Code (via npm or direct install)\nVS Code (optional, recommended)"
-  },
-  {
-    "objectID": "specs/implementation.html#feedback-and-iteration",
-    "href": "specs/implementation.html#feedback-and-iteration",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "End-of-session check-in: One sentence on what worked and what didn’t\nPeriodic survey: Every 4–6 sessions, a short written survey\nGitHub Issues: Open channel for suggestions and questions anytime\nInformal conversation: The facilitator talks to participants\n\n\n\n\n\nContent adjusted based on what participants find confusing\nSession pacing adjusted based on group progress\nNew topics added when requested\nTutorials revised when feedback identifies gaps"
-  },
-  {
-    "objectID": "specs/implementation.html#quality-assurance",
-    "href": "specs/implementation.html#quality-assurance",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Tutorials tested by running all commands on a clean macOS system\nCode blocks verified for accuracy and copy-paste correctness\nLinks checked periodically for breakage\nParticipant feedback incorporated within one week\n\n\n\n\n\nDeploy after each content update via quarto publish gh-pages\nReview site navigation quarterly\nArchive old session notes (keep on site but deprioritize in navigation)\nKeep resource links current"
-  },
-  {
-    "objectID": "specs/implementation.html#risk-management",
-    "href": "specs/implementation.html#risk-management",
-    "title": "Workgroup Implementation Details",
-    "section": "",
-    "text": "Varied skill levels: Addressed through modular content and peer pairing\nIrregular attendance: Addressed through async-first content design\nTool installation issues: Troubleshooting guide on the website; allocate session time for setup help\nParticipant frustration: Keep early content simple; celebrate small wins; normalize confusion\n\n\n\n\n\nWebsite content persists even if meetings pause\nTutorials are reusable for future cohorts\nContent is open-source and forkable\nNo dependency on a single facilitator for async content"
-  },
-  {
-    "objectID": "specs/planning.html",
-    "href": "specs/planning.html",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "Workgroup: WFU Agentic AI Workgroup Status: Planning Last Updated: 2026-02-06\n\n\n\n\n\nTitle: Agentic AI Tools in the CLI\nLevel: Faculty/staff professional development\nDiscipline: Cross-disciplinary (digital literacy, AI tools)\nPrerequisites: None — assumes zero CLI experience\n\n\n\n\n\nPrimary audience: WFU faculty and staff\nExpected size: 8–15 active participants (rolling membership)\nBackground: Varies widely; most have no terminal experience\nDiverse needs: Range of comfort with technology, varying schedules\n\n\n\n\n\nFrequency: Weekly meetings, ongoing (no fixed end date)\nFormat: In-person meetings + async web content\nMeeting duration: ~60 minutes\nTools provided: Workgroup website with tutorials, session notes, and resources\n\n\n\n\n\n\n\n\nParticipants can navigate the file system and execute basic commands in a terminal\nParticipants can use Git and GitHub for version control\nParticipants can configure their shell environment\nParticipants can use Claude Code for agentic coding workflows\nParticipants can access and configure AI APIs\nParticipants can set up and use MCP servers\nParticipants can author documents with Markdown and Quarto\n\n\n\n\n\nCLI literacy: Comfort working in a terminal environment\nVersion control: Tracking changes and collaborating via GitHub\nAI tool fluency: Using agentic AI assistants effectively\nReproducibility: Creating shareable, reproducible workflows\n\n\n\n\n\nThe workgroup follows a progressive sequence, but participants who join late can catch up via tutorials on the website.\n\n\n\nWhat is a terminal? Why use one?\nNavigating the file system (cd, ls, pwd)\nWorking with files and directories (mkdir, cp, mv, rm)\nReading and editing files from the command line\nUnderstanding paths (absolute vs. relative)\n\n\n\n\n\nShell configuration files (.bashrc, .bash_profile, .zshrc)\nEnvironment variables and $PATH\nAliases and shell functions\nPackage managers (Homebrew on macOS)\n\n\n\n\n\nGit fundamentals (init, add, commit, log, diff)\nBranching and merging\nGitHub: remote repos, push/pull, collaboration\nPull requests and code review\n\n\n\n\n\nInstalling and configuring Claude Code\nWorking with Claude Code in a project\nAPI keys and authentication\nMCP servers: what they are and how to use them\nBuilding custom workflows with AI tools\n\n\n\n\n\nNew participants who join after the workgroup has started:\n\nSelf-paced tutorials: The website provides written tutorials covering all foundation topics\nBuddy system: Pair new participants with someone who’s been attending\nOffice hours: Facilitator available for one-on-one help\nNo penalty for gaps: Content is modular; missing sessions doesn’t block progress\n\n\n\n\n\n\n\nPrimary approach: Hands-on, task-driven learning\nSession structure: Brief demo → guided practice → independent exploration\nScaffolding: Early sessions provide step-by-step instructions; later sessions give goals and let participants find the path\nPeer learning: Participants help each other; facilitator is not the only source of knowledge\n\n\n\n\n\nModular organization: Each tutorial is self-contained\nProgressive difficulty: Foundation → intermediate → advanced\nWorked examples: Every concept is illustrated with a concrete task\nReal tasks: Use participants’ actual work as practice material when possible\n\n\n\n\nThere are no grades. Instead:\n\nCheck-your-understanding prompts at the end of tutorials (try this, verify that)\nSession feedback: Quick verbal or written check-ins at end of meetings\nSelf-assessment questions: “Can you do X without looking at the tutorial?”\nPeer feedback: Participants review each other’s work in Git/GitHub exercises\n\n\n\n\n\n\n\n\nA Mac with Terminal.app (or iTerm2)\nA GitHub account\nA text editor (VS Code recommended but not required)\nClaude Code (installed during an early session)\n\n\n\n\n\nCLI basics tutorial\nPath navigation tutorial\nShell configuration tutorial\nGit fundamentals tutorial\nGitHub collaboration tutorial\nClaude Code introduction tutorial\nAPIs and MCPs tutorial\nCheatsheets for common commands\nTroubleshooting guide\nGlossary of terms\n\n\n\n\n\n\n\n\nAttendance: Consistent participation (recognizing rolling membership)\nTutorial completion: Participants working through async content\nPeer support: Participants helping each other in and outside meetings\nIndependent use: Participants using CLI tools in their own work\n\n\n\n\n\nCoverage: All planned tutorials published and up to date\nClarity: Content is accessible to beginners; feedback incorporated\nUsability: Website navigation is intuitive; resources are findable\n\n\n\n\n\nNew member onboarding: New participants can get started independently\nRetention: Participants continue attending over time\nSkill growth: Observable progression in participant capabilities"
-  },
-  {
-    "objectID": "specs/planning.html#workgroup-context",
-    "href": "specs/planning.html#workgroup-context",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "Title: Agentic AI Tools in the CLI\nLevel: Faculty/staff professional development\nDiscipline: Cross-disciplinary (digital literacy, AI tools)\nPrerequisites: None — assumes zero CLI experience\n\n\n\n\n\nPrimary audience: WFU faculty and staff\nExpected size: 8–15 active participants (rolling membership)\nBackground: Varies widely; most have no terminal experience\nDiverse needs: Range of comfort with technology, varying schedules\n\n\n\n\n\nFrequency: Weekly meetings, ongoing (no fixed end date)\nFormat: In-person meetings + async web content\nMeeting duration: ~60 minutes\nTools provided: Workgroup website with tutorials, session notes, and resources"
-  },
-  {
-    "objectID": "specs/planning.html#learning-goals",
-    "href": "specs/planning.html#learning-goals",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "Participants can navigate the file system and execute basic commands in a terminal\nParticipants can use Git and GitHub for version control\nParticipants can configure their shell environment\nParticipants can use Claude Code for agentic coding workflows\nParticipants can access and configure AI APIs\nParticipants can set up and use MCP servers\nParticipants can author documents with Markdown and Quarto\n\n\n\n\n\nCLI literacy: Comfort working in a terminal environment\nVersion control: Tracking changes and collaborating via GitHub\nAI tool fluency: Using agentic AI assistants effectively\nReproducibility: Creating shareable, reproducible workflows"
-  },
-  {
-    "objectID": "specs/planning.html#topic-progression-map",
-    "href": "specs/planning.html#topic-progression-map",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "The workgroup follows a progressive sequence, but participants who join late can catch up via tutorials on the website.\n\n\n\nWhat is a terminal? Why use one?\nNavigating the file system (cd, ls, pwd)\nWorking with files and directories (mkdir, cp, mv, rm)\nReading and editing files from the command line\nUnderstanding paths (absolute vs. relative)\n\n\n\n\n\nShell configuration files (.bashrc, .bash_profile, .zshrc)\nEnvironment variables and $PATH\nAliases and shell functions\nPackage managers (Homebrew on macOS)\n\n\n\n\n\nGit fundamentals (init, add, commit, log, diff)\nBranching and merging\nGitHub: remote repos, push/pull, collaboration\nPull requests and code review\n\n\n\n\n\nInstalling and configuring Claude Code\nWorking with Claude Code in a project\nAPI keys and authentication\nMCP servers: what they are and how to use them\nBuilding custom workflows with AI tools"
-  },
-  {
-    "objectID": "specs/planning.html#onboarding-strategy",
-    "href": "specs/planning.html#onboarding-strategy",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "New participants who join after the workgroup has started:\n\nSelf-paced tutorials: The website provides written tutorials covering all foundation topics\nBuddy system: Pair new participants with someone who’s been attending\nOffice hours: Facilitator available for one-on-one help\nNo penalty for gaps: Content is modular; missing sessions doesn’t block progress"
-  },
-  {
-    "objectID": "specs/planning.html#pedagogical-approach",
-    "href": "specs/planning.html#pedagogical-approach",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "Primary approach: Hands-on, task-driven learning\nSession structure: Brief demo → guided practice → independent exploration\nScaffolding: Early sessions provide step-by-step instructions; later sessions give goals and let participants find the path\nPeer learning: Participants help each other; facilitator is not the only source of knowledge\n\n\n\n\n\nModular organization: Each tutorial is self-contained\nProgressive difficulty: Foundation → intermediate → advanced\nWorked examples: Every concept is illustrated with a concrete task\nReal tasks: Use participants’ actual work as practice material when possible\n\n\n\n\nThere are no grades. Instead:\n\nCheck-your-understanding prompts at the end of tutorials (try this, verify that)\nSession feedback: Quick verbal or written check-ins at end of meetings\nSelf-assessment questions: “Can you do X without looking at the tutorial?”\nPeer feedback: Participants review each other’s work in Git/GitHub exercises"
-  },
-  {
-    "objectID": "specs/planning.html#resources-and-materials",
-    "href": "specs/planning.html#resources-and-materials",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "A Mac with Terminal.app (or iTerm2)\nA GitHub account\nA text editor (VS Code recommended but not required)\nClaude Code (installed during an early session)\n\n\n\n\n\nCLI basics tutorial\nPath navigation tutorial\nShell configuration tutorial\nGit fundamentals tutorial\nGitHub collaboration tutorial\nClaude Code introduction tutorial\nAPIs and MCPs tutorial\nCheatsheets for common commands\nTroubleshooting guide\nGlossary of terms"
-  },
-  {
-    "objectID": "specs/planning.html#success-metrics",
-    "href": "specs/planning.html#success-metrics",
-    "title": "Workgroup Planning",
-    "section": "",
-    "text": "Attendance: Consistent participation (recognizing rolling membership)\nTutorial completion: Participants working through async content\nPeer support: Participants helping each other in and outside meetings\nIndependent use: Participants using CLI tools in their own work\n\n\n\n\n\nCoverage: All planned tutorials published and up to date\nClarity: Content is accessible to beginners; feedback incorporated\nUsability: Website navigation is intuitive; resources are findable\n\n\n\n\n\nNew member onboarding: New participants can get started independently\nRetention: Participants continue attending over time\nSkill growth: Observable progression in participant capabilities"
-  },
-  {
-    "objectID": "resources/tools.html",
-    "href": "resources/tools.html",
-    "title": "Tools",
-    "section": "",
-    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool."
-  },
-  {
-    "objectID": "resources/tools.html#overview",
-    "href": "resources/tools.html#overview",
-    "title": "Tools",
-    "section": "",
-    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool."
   },
   {
     "objectID": "resources/glossary.html",
@@ -469,34 +280,6 @@
     "text": "Git is a version control system that tracks changes to your files over time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing snapshots, and reviewing history.\nPrerequisites: Shell configuration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
   },
   {
-    "objectID": "tutorials/06-claude-code-intro.html",
-    "href": "tutorials/06-claude-code-intro.html",
-    "title": "Claude Code introduction",
-    "section": "",
-    "text": "Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.\nPrerequisites: GitHub collaboration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/06-claude-code-intro.html#overview",
-    "href": "tutorials/06-claude-code-intro.html#overview",
-    "title": "Claude Code introduction",
-    "section": "",
-    "text": "Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.\nPrerequisites: GitHub collaboration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/03-shell-configuration.html",
-    "href": "tutorials/03-shell-configuration.html",
-    "title": "Shell configuration",
-    "section": "",
-    "text": "Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.\nPrerequisites: Working with paths Estimated time: 25 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/03-shell-configuration.html#overview",
-    "href": "tutorials/03-shell-configuration.html#overview",
-    "title": "Shell configuration",
-    "section": "",
-    "text": "Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.\nPrerequisites: Working with paths Estimated time: 25 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
     "objectID": "tutorials/01-cli-basics.html",
     "href": "tutorials/01-cli-basics.html",
     "title": "CLI basics",
@@ -509,5 +292,33 @@
     "title": "CLI basics",
     "section": "",
     "text": "This tutorial introduces the command-line interface (CLI). You’ll learn how to open a terminal on macOS, run basic commands, and create, move, and delete files and directories.\nPrerequisites: None Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+  },
+  {
+    "objectID": "tutorials/02-working-with-paths.html",
+    "href": "tutorials/02-working-with-paths.html",
+    "title": "Working with paths",
+    "section": "",
+    "text": "Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.\nPrerequisites: CLI basics Estimated time: 20 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+  },
+  {
+    "objectID": "tutorials/02-working-with-paths.html#overview",
+    "href": "tutorials/02-working-with-paths.html#overview",
+    "title": "Working with paths",
+    "section": "",
+    "text": "Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.\nPrerequisites: CLI basics Estimated time: 20 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+  },
+  {
+    "objectID": "tutorials/06-claude-code-intro.html",
+    "href": "tutorials/06-claude-code-intro.html",
+    "title": "Claude Code introduction",
+    "section": "",
+    "text": "Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.\nPrerequisites: GitHub collaboration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+  },
+  {
+    "objectID": "tutorials/06-claude-code-intro.html#overview",
+    "href": "tutorials/06-claude-code-intro.html#overview",
+    "title": "Claude Code introduction",
+    "section": "",
+    "text": "Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.\nPrerequisites: GitHub collaboration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
   }
 ]

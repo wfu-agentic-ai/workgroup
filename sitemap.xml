@@ -2,86 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/CLAUDE.html</loc>
-    <lastmod>2026-02-06T22:49:15.725Z</lastmod>
+    <lastmod>2026-02-07T01:40:06.034Z</lastmod>
   </url>
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/07-apis-and-mcps.html</loc>
-    <lastmod>2026-02-06T22:49:15.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/index.html</loc>
-    <lastmod>2026-02-06T22:49:15.728Z</lastmod>
+    <lastmod>2026-02-07T01:40:06.036Z</lastmod>
   </url>
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/05-github-collaboration.html</loc>
-    <lastmod>2026-02-06T22:49:15.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/02-working-with-paths.html</loc>
-    <lastmod>2026-02-06T22:49:15.727Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/index.html</loc>
-    <lastmod>2026-02-06T22:49:15.727Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/index.html</loc>
-    <lastmod>2026-02-06T22:49:15.726Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/troubleshooting.html</loc>
-    <lastmod>2026-02-06T22:49:15.727Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/index.html</loc>
-    <lastmod>2026-02-06T22:49:15.726Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/specs/progress.html</loc>
-    <lastmod>2026-02-06T16:39:32.746Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/specs/implementation.html</loc>
-    <lastmod>2026-02-06T16:40:11.213Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/specs/planning.html</loc>
-    <lastmod>2026-02-06T16:39:17.023Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/tools.html</loc>
-    <lastmod>2026-02-06T22:49:15.726Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/glossary.html</loc>
-    <lastmod>2026-02-06T22:49:15.726Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/cheatsheets.html</loc>
-    <lastmod>2026-02-06T22:49:15.726Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/about.html</loc>
-    <lastmod>2026-02-06T22:49:15.725Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/2026-02-06.html</loc>
-    <lastmod>2026-02-06T22:49:15.727Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/04-git-fundamentals.html</loc>
-    <lastmod>2026-02-06T22:49:15.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/06-claude-code-intro.html</loc>
-    <lastmod>2026-02-06T22:49:15.728Z</lastmod>
+    <lastmod>2026-02-07T01:40:06.036Z</lastmod>
   </url>
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/03-shell-configuration.html</loc>
-    <lastmod>2026-02-06T22:49:15.727Z</lastmod>
+    <lastmod>2026-02-07T01:40:06.036Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/index.html</loc>
+    <lastmod>2026-02-07T01:40:06.036Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/index.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/troubleshooting.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/tools.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/index.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/index.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/glossary.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/cheatsheets.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/about.html</loc>
+    <lastmod>2026-02-07T01:40:06.034Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/2026-02-06.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/04-git-fundamentals.html</loc>
+    <lastmod>2026-02-07T01:40:06.036Z</lastmod>
   </url>
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/01-cli-basics.html</loc>
-    <lastmod>2026-02-06T22:49:15.727Z</lastmod>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/02-working-with-paths.html</loc>
+    <lastmod>2026-02-07T01:40:06.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/06-claude-code-intro.html</loc>
+    <lastmod>2026-02-07T01:40:06.036Z</lastmod>
   </url>
 </urlset>
