@@ -129,7 +129,7 @@ man ls
 This will display a list of options and usage information for the `ls` command. There are also help pages for newer commands, in particular those that you may install as part of packages (see [Hombrew](#installing-packages) below). For those, you can typically access help information with the `--help` flag. For example:
 
 ```bash
-exa --help
+eza --help
 ```
 
 So, try running the `man` command for some of the commands you just learned, and try using the `--help` flag for any new commands you install with Homebrew.
@@ -148,7 +148,7 @@ In addition to the built-in commands, you can also install additional software p
 You may wonder why you might need or want to install additional packages when you can already run commands with the built-in tools. The built-in commands are the bread-and-butter of the CLI, there's no doubt. However, additional packages can provide tools that can enhance your terminal experience in various ways. I'll classify them into four broad categories:
 
 1. **Specialized tools and utilities** that are not included by default. Some of these add software that is commonly used in data science, such as Python, R, or Git. You can find editors like Neovim or Micro or IDEs such as Visual Studio Code (VS Code) or Positron.
-2. **Enhanced versions of existing commands** that modernize and improve upon the functionality of built-in commands. Examples include `exa` to replace `ls`, `fd` to replace `find`, `bat` to replace `cat`, and so on. These tools often provide additional features, better performance, and improved user experience compared to their built-in counterparts.
+2. **Enhanced versions of existing commands** that modernize and improve upon the functionality of built-in commands. Examples include `eza` to replace `ls`, `fd` to replace `find`, `bat` to replace `cat`, and so on. These tools often provide additional features, better performance, and improved user experience compared to their built-in counterparts.
 3. **Tools that integrate with other software** to provide additional functionality. For example, you might install a package like `lazygit` that allows you to easily manage your Git repositories from the command line or `ncdu` to analyze disk usage in a more interactive way.
 4. **Utilities that enhance the terminal experience** by providing "quality of life" features like improved navigation, better file management, or enhanced command history. Examples include `fzf` for fuzzy finding files and commands, `z` for quickly navigating to frequently used directories, and `thefuck` for correcting mistyped commands.
 
@@ -290,14 +290,14 @@ Homebrew has a vast repository of packages, and you can find many useful tools f
 
 ### Recommended packages
 
-Here are some recommended packages to get you started that can bring your terminal experience out of the 80s and into the 21st century:
+Here are some recommended packages (formuale) to get you started that can bring your terminal experience out of the 80s and into the 21st century:
 
 - `uv`: A modern, fast, and user-friendly Python package manager that simplifies the process of managing Python environments and dependencies.
 - `node`: A JavaScript runtime built on Chrome's V8 JavaScript engine that allows you to run JavaScript code outside of a web browser, making it ideal for server-side development and scripting.
 - `npm`: The default package manager for Node.js that allows you to install and manage JavaScript packages and dependencies for your projects.
 - `zoxide`: A shell extension to navigate your filesystem faster. It keeps track of the directories you visit and allows you to jump to them quickly by name using a fuzzy matching algorithm.
 - `thefuck`: A command-line tool that corrects your previous console command. If you mistype a command, you can simply type `fuck` and it will suggest the correct command based on your command history and the error message from the previous command.
-- `exa`: A modern replacement for the `ls` command that provides a more colorful and informative output, including file sizes, permissions, and Git status.
+- `eza`: A modern replacement for the `ls` command that provides a more colorful and informative output, including file sizes, permissions, and Git status.
 - `fd`: A simple, fast, and user-friendly alternative to the `find` command that allows you to search for files and directories with a more intuitive syntax and better performance.
 - `bat`: A cat clone with syntax highlighting and Git integration that provides a more visually appealing way to view file contents in the terminal.
 - `lazygit`: A simple terminal UI for Git commands that allows you to manage your Git repositories more efficiently without leaving the terminal.
@@ -311,6 +311,67 @@ You can install any of these packages using Homebrew with the command `brew inst
 brew install zoxide
 ```
 
+I also recommend adding the following casks to get you started with some useful applications:
+
+- `visual-studio-code`: A popular code editor that provides a powerful and customizable environment for coding, with support for a wide range of programming languages and extensions.
+- `iterm2`: A terminal emulator for macOS that provides a more feature-rich and customizable terminal experience, with features like split panes, hotkeys, and a powerful search function.
+
+You can install these applications using Homebrew with the command `brew install --cask <package_name>`. For example, to install Visual Studio Code, you would run:
+
+```bash
+brew install --cask visual-studio-code
+```
+
+Note, for some packages, you may need to follow additional setup instructions after installation. For example, after installing `zoxide`, you will need to add the following line to your shell's configuration file (`~/.bashrc` for Bash or `~/.zshrc` for Zsh) to enable it:
+
+```bash
+eval "$(zoxide init <shell>)"
+```
+Make sure to replace `<shell>` with your actual shell (e.g., `bash` or `zsh`).
+
+Another example is `eza`, which provides `ls`-like functionality. To use `eza` instead of `ls`, you can create an alias in your shell's configuration file:
+
+```bash
+alias ls='eza'
+```
+
+This will allow you to use the `ls` command as you normally would, but it will actually run `eza` under the hood, giving you the enhanced features of `eza` while still using the familiar `ls` command.
+
+Aliases, however, can be extended beyond just replacing existing commands. You can create aliases which specify special options for a command that you use frequently. For example, if you want to take advantage of `eza`'s icon support and colorized output every time you list files, you could create an alias like this:
+
+```bash
+alias ls='eza --icons=auto --color=auto'
+```
+
+You can now build on this alias by adding additional options or flags to that you want to use every time you run `ls`. Furthermore, now the `ls` alias can be used to add any additional options you want to use on a case-by-case basis. For example, if you want to list all files, including hidden files, you can run:
+
+```bash
+alias la='ls -a' # uses the `ls` alias and adds the `-a` flag to show hidden files
+alias ll='ls -l' # uses the `ls` alias and adds the `-l` flag to show detailed information about files
+alias lla='ls -la' # combines both flags to show hidden files with detailed information
+```
+
+Using aliases is extremely common in the CLI, and it is highly individualized. You can create aliases for any command and customize them to fit your workflow and preferences. As you start using the CLI more, you'll likely find yourself creating more and more aliases to streamline your commands and make your terminal experience more efficient and enjoyable.
+
+---
+
+Installing Homebrew and some of these packages may seem like a lot of work, and it is, but it is a one-time setup process with periodic maintenance (e.g., running `brew update && brew upgrade` every few weeks to keep your packages up to date).
+
+To make it easier, you can create a setup script that automates the installation of Homebrew and your preferred packages. This way, if you ever need to set up a new machine or reinstall your system, you can simply run the script to get everything set up quickly.
+
+I've made one available in the workgroup's GitHub repository that installs the recommended packages listed above, along with some additional ones that I find useful. You can run the following command to download and execute the setup script:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)"
+```
+
+
+
+
+
+## Conclusion
+
+With Homebrew installed, you can easily install a wide range of tools and utilities that can enhance your terminal experience and provide additional functionality. In the next tutorial, we'll explore some of these tools and how to use them effectively in your workflow.
 
 
 
