@@ -15,7 +15,7 @@ categories: ["Getting started", "CLI", "WSL", "Linux", "macOS", "Windows", "Bash
 
 This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS or Windows, run basic commands, and create, move, and delete files and directories. Furthermore, you'll learn how to install Homebrew, a popular package manager that allows you to easily install and manage software on your system. With Homebrew, you can install a wide range of tools and utilities that can enhance your terminal experience and provide additional functionality.
 
-![](images/terminal-logo.png){width=50%}
+![](images/terminal-logo.png)
 :::
 
 
@@ -36,7 +36,7 @@ Depending on your operating system, you might use different terminal application
 - **macOS/Linux:** Terminal (default), iTerm2, or other terminal emulators
 - **Windows:** Command Prompt (default), PowerShell, or Windows Terminal.
 
-Once you open a terminal, you'll see a prompt where you can type commands. The CLI uses a shell (like Bash, Zsh, or PowerShell) to interpret your commands and execute them. By default on macOS, the shell is Zsh, while on Windows, it's PowerShell or Command Prompt. Many Windows users also install WSL (Windows Subsystem for Linux) to access a Linux-like environment with Bash.
+Once you open a terminal, you'll see a prompt where you can type commands. The CLI uses a {{< glossary shell >}} (like Bash, Zsh, or PowerShell) to interpret your commands and execute them. By default on macOS, the shell is Zsh, while on Windows, it's Command Prompt. Many Windows users also install Windows Subsystem for Linux ({{< glossary WSL >}}) to access a Linux-like environment with Bash.
 
 ::: {.callout-tip}
 
@@ -126,11 +126,12 @@ In addition to the built-in commands, you can also install additional software p
 
 You may wonder why you might need or want to install additional packages when you can already run commands with the built-in tools. The built-in commands are the bread-and-butter of the CLI, there's no doubt. However, additional packages can provide tools that can enhance your terminal experience in various ways. I'll classify them into four broad categories:
 
-1. **Specialized tools and utilities** that are not included by default. Some of these add software that is commonly used in data science, such as Python, R, or Jupyter Notebook.
+1. **Specialized tools and utilities** that are not included by default. Some of these add software that is commonly used in data science, such as Python, R, or Git. You can find editors like Neovim or Micro or IDEs such as Visual Studio Code (VS Code) or Positron.
 2. **Enhanced versions of existing commands** that modernize and improve upon the functionality of built-in commands. Examples include `exa` to replace `ls`, `fd` to replace `find`, `bat` to replace `cat`, and so on. These tools often provide additional features, better performance, and improved user experience compared to their built-in counterparts.
 3. **Tools that integrate with other software** to provide additional functionality. For example, you might install a package like `lazygit` that allows you to easily manage your Git repositories from the command line or `ncdu` to analyze disk usage in a more interactive way.
 4. **Utilities that enhance the terminal experience** by providing "quality of life" features like improved navigation, better file management, or enhanced command history. Examples include `fzf` for fuzzy finding files and commands, `z` for quickly navigating to frequently used directories, and `thefuck` for correcting mistyped commands.
 
+---
 
 To install Homebrew (on macOS or Linux), your first need to ensure you have the necessary prerequisites installed.
 
@@ -176,12 +177,93 @@ This workgroup can vouch for the safety of Homebrew, as it is widely used and ma
 
 :::
 
-After the installation is complete, you may need to add Homebrew to your system's PATH environment variable.
+After the installation is complete, you may need to add Homebrew to your system's PATH environment variable. If you are given instructions to do so, you can follow the prompts provided by the Homebrew installer.
 
+::: {.callout-note}
+
+The {{< glossary PATH >}} variable, and many others, are defined in your shell's configuration files. Each shell (e.g. Bash or Zsh, for our purpose) has its own set of configuration files where you can set {{< glossary "environment variable" display="environment variables" >}}, {{< glossary alias display="aliases" >}}, and other settings.
+
+A shell's configuration files are typically located in your home directory. From within the terminal, you can move to your home directory with the command `cd ~` (where the tilde `~` is a shortcut for your home directory, e.g. `/Users/username/`, on macOS, or `/home/username` on Linux).
+
+Once you're in your home directory, you can list the files to see the configuration files with `ls -a` (the `-a` flag shows hidden files, which include configuration files that start with a dot).
+
+Users of the Bash shell will typically have a `~/.bashrc` file, while users of the Zsh shell will typically have a `~/.zshrc` file. In addition, there may be another file called `~/.bash_profile` or `~/.zprofile` that is used for login shells. For the purposes of this workgroup, you can typically ignore the login shell configuration files and focus on the `~/.bashrc` or `~/.zshrc` files.
+
+If you need to manually add Homebrew to your PATH, choose your shell and run the appropriate command below to add the necessary line to your shell's configuration file.
+
+For Bash (on Linux):
+
+```bash
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+```
+
+For Zsh (on macOS):
+
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+```
+
+After running the command, you will need to restart your terminal or run `source ~/.bashrc` (for Bash) or `source ~/.zshrc` (for Zsh) to apply the changes.
+
+:::
 
 ### Working with `brew`
 
 Once you have Homebrew installed, you can use the `brew` command to install, update, upgrade, and uninstall packages (`formulae`) and applications (`casks`) on your system.
 
+::: {.callout-note}
+**Formulae** are packages that are typically installed in the terminal and provide command-line tools and libraries. Examples include `python`, `git`, `node`, and so on.
 
+**Casks** are packages that are typically installed as applications with a graphical user interface (GUI). Examples include `visual-studio-code`, `google-chrome`, `slack`, and so on.
+:::
 
+Here are some common `brew` commands to get you started:
+
+Install a package (formula or cask)
+
+```bash
+brew install <package_name> # e.g., brew install r
+brew install --cask <package_name> # e.g., brew install --cask visual-studio-code
+```
+
+Update Homebrew and all installed packages
+
+```bash
+brew update # updates Homebrew itself and the list of available packages
+brew upgrade # upgrades all installed packages to their latest versions
+
+# Or you can combine them into one command:
+
+brew update && brew upgrade
+```
+
+Uninstall a package
+
+```bash
+brew uninstall <package_name> # e.g., brew uninstall r
+brew uninstall --cask <package_name> # e.g., brew uninstall --cask visual-studio-code
+```
+
+Search for a package
+
+```bash
+brew search <package_name> # e.g., brew search claude
+```
+
+Find details about a package
+
+```bash
+brew info <package_name> # e.g., brew info claude-code
+```
+
+List all installed packages
+
+```bash
+brew list # lists all installed formulae and casks
+```
+
+---
+
+Homebrew has a vast repository of packages, and you can find many useful tools for the CLI, but as you have seen, you can also use Homebrew to install applications with a GUI --which can be very convenient as you can get updates for those applications through Homebrew all without having to open the application itself.
+
+###

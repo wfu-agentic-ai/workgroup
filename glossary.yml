@@ -1,0 +1,14 @@
+WSL: |
+  The Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10 and Windows Server 2019. It allows users to run a Linux environment directly on Windows, without the need for a virtual machine or dual-boot setup.
+
+Shell: |
+  A shell is a command-line interface that allows users to interact with the operating system. It provides a way to execute commands, run scripts, and manage files and processes. Common shells include Bash, Zsh, and PowerShell.
+
+Alias: |
+  An alias is a shortcut or alternative name for a command or series of commands in a shell. It allows users to create custom commands or abbreviations for frequently used commands, making it easier and faster to execute them.
+
+"Environment Variable": |
+  An environment variable is a dynamic value that can affect the behavior of processes and applications on a computer. It is typically used to store configuration settings, such as paths to executables or libraries, and can be accessed by programs and scripts.
+
+PATH: |
+  The PATH is an environment variable that specifies a list of directories where the operating system looks for executable files when a command is entered in the shell. It allows users to run programs by name without needing to specify their full path in the command.

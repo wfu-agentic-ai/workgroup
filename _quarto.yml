@@ -44,3 +44,8 @@ format:
 
 execute:
   freeze: true
+
+glossary:
+  path: glossary.yml
+  popup: click
+  show: true
