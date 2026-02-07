@@ -11,21 +11,23 @@ categories: ["Getting started", "CLI", "WSL", "Linux", "macOS", "Windows", "Bash
 
 ## Overview
 
-::: {layout-ncol=2}
+::: {.columns}
+::: {.column width=70%}
 
 This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS or Windows, run basic commands, and create, move, and delete files and directories. Furthermore, you'll learn how to install Homebrew, a popular package manager that allows you to easily install and manage software on your system. With Homebrew, you can install a wide range of tools and utilities that can enhance your terminal experience and provide additional functionality.
 
+:::
+::: {.column width=30%}
+
 ![](images/terminal-logo.png)
+
+:::
 :::
 
 
 **Prerequisites:** None
 
 ---
-
-::: {.callout-note}
-Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
-:::
 
 ## What is the CLI?
 
@@ -97,21 +99,40 @@ Move the file to a new name "renamed_file.txt"
 mv my_file.txt renamed_file.txt
 ```
 
-### Getting help (inside the terminal)
-
-Most commands have built-in help that you can access by typing the command followed by `--help` or `-h`. For example:
+Delete a file
 
 ```bash
-ls --help
+rm renamed_file.txt
 ```
 
-This will display a list of options and usage information for the `ls` command. There are also manual `man` pages for core, built-in commands that provide more detailed documentation. You can access a manual page by typing `man` followed by the command name:
+Move up one directory level (parent directory)
+
+```bash
+cd ..
+```
+
+Delete a directory (and all its contents)
+
+```bash
+rm -r my_folder
+```
+
+
+### Getting help (inside the terminal)
+
+Most commands have built-in manual that you can access by typing `man` and then the command. For example:
 
 ```bash
 man ls
 ```
 
-Note that not all commands have manual pages, but most core commands do. If you encounter a command without a manual page, the `--help` option is usually your best bet for getting information on how to use it.
+This will display a list of options and usage information for the `ls` command. There are also help pages for newer commands, in particular those that you may install as part of packages (see [Hombrew](#installing-packages) below). For those, you can typically access help information with the `--help` flag. For example:
+
+```bash
+exa --help
+```
+
+So, try running the `man` command for some of the commands you just learned, and try using the `--help` flag for any new commands you install with Homebrew.
 
 ### Learning more
 
@@ -211,7 +232,8 @@ After running the command, you will need to restart your terminal or run `source
 
 Once you have Homebrew installed, you can use the `brew` command to install, update, upgrade, and uninstall packages (`formulae`) and applications (`casks`) on your system.
 
-::: {.callout-note}
+::: {.callout}
+
 **Formulae** are packages that are typically installed in the terminal and provide command-line tools and libraries. Examples include `python`, `git`, `node`, and so on.
 
 **Casks** are packages that are typically installed as applications with a graphical user interface (GUI). Examples include `visual-studio-code`, `google-chrome`, `slack`, and so on.
@@ -266,4 +288,32 @@ brew list # lists all installed formulae and casks
 
 Homebrew has a vast repository of packages, and you can find many useful tools for the CLI, but as you have seen, you can also use Homebrew to install applications with a GUI --which can be very convenient as you can get updates for those applications through Homebrew all without having to open the application itself.
 
-###
+### Recommended packages
+
+Here are some recommended packages to get you started that can bring your terminal experience out of the 80s and into the 21st century:
+
+- `uv`: A modern, fast, and user-friendly Python package manager that simplifies the process of managing Python environments and dependencies.
+- `node`: A JavaScript runtime built on Chrome's V8 JavaScript engine that allows you to run JavaScript code outside of a web browser, making it ideal for server-side development and scripting.
+- `npm`: The default package manager for Node.js that allows you to install and manage JavaScript packages and dependencies for your projects.
+- `zoxide`: A shell extension to navigate your filesystem faster. It keeps track of the directories you visit and allows you to jump to them quickly by name using a fuzzy matching algorithm.
+- `thefuck`: A command-line tool that corrects your previous console command. If you mistype a command, you can simply type `fuck` and it will suggest the correct command based on your command history and the error message from the previous command.
+- `exa`: A modern replacement for the `ls` command that provides a more colorful and informative output, including file sizes, permissions, and Git status.
+- `fd`: A simple, fast, and user-friendly alternative to the `find` command that allows you to search for files and directories with a more intuitive syntax and better performance.
+- `bat`: A cat clone with syntax highlighting and Git integration that provides a more visually appealing way to view file contents in the terminal.
+- `lazygit`: A simple terminal UI for Git commands that allows you to manage your Git repositories more efficiently without leaving the terminal.
+- `ncdu`: A disk usage analyzer with an ncurses interface that provides a visual representation of disk usage, making it easier to identify large files and directories that may be taking up space on your system.
+- `yazi`: A terminal-based filesystem viewer and navigator that provides a more interactive way to explore your filesystem, with features like file previews, sorting, and filtering.
+- `tldr`: A collection of simplified and community-maintained help pages with practical examples for commands. It does not display the full manual or help pages, but instead provides concise and easy-to-understand explanations for those tools in their user-contributed database.
+
+You can install any of these packages using Homebrew with the command `brew install <package_name>`. For example, to install `zoxide`, you would run:
+
+```bash
+brew install zoxide
+```
+
+
+
+
+
+
+
