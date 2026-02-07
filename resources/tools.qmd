@@ -10,3 +10,10 @@ A list of the tools we use, what they're for, and how to install them.
 ::: {.callout-note}
 Content in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.
 :::
+
+
+### Quarto extensions
+
+- [Honeypot](https://jmgirard.github.io/honeypot/): "This extension provides shortcodes to quickly add "honeypots" to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited."
+
+

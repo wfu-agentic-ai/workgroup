@@ -1,18 +1,19 @@
 ---
 title: "CLI fundamentals"
 description: |
-  Open a terminal, run your first commands, and work with files and directories.
+  Open a terminal, run your first commands, and work with files and directories. In addition, learn how to install required system prerequisites and how to install additional packages to your system, including Claude Code.
+author: Jerid Francom
 order: 1
 date: 2026-02-06
 date-modified: today
-categories: ["Getting started"]
+categories: ["Getting started", "CLI", "WSL", "Linux", "macOS", "Windows", "Bash", "Zsh", "Homebrew"]
 ---
 
 ## Overview
 
 ::: {layout-ncol=2}
 
-This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS/Linux or Windows, run basic commands, and create, move, and delete files and directories.
+This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS or Windows, run basic commands, and create, move, and delete files and directories. Furthermore, you'll learn how to install Homebrew, a popular package manager that allows you to easily install and manage software on your system. With Homebrew, you can install a wide range of tools and utilities that can enhance your terminal experience and provide additional functionality.
 
 ![](images/terminal-logo.png){width=50%}
 :::
@@ -25,3 +26,162 @@ This tutorial introduces the command-line interface (CLI). You'll learn how to o
 ::: {.callout-note}
 Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
 :::
+
+## What is the CLI?
+
+The command-line interface (CLI) is a text-based way to interact with your computer. Instead of clicking on icons and menus, you type commands to perform tasks. The CLI is powerful and efficient, allowing you to automate workflows, manage files, and run programs with precision.
+
+Depending on your operating system, you might use different terminal applications:
+
+- **macOS/Linux:** Terminal (default), iTerm2, or other terminal emulators
+- **Windows:** Command Prompt (default), PowerShell, or Windows Terminal.
+
+Once you open a terminal, you'll see a prompt where you can type commands. The CLI uses a shell (like Bash, Zsh, or PowerShell) to interpret your commands and execute them. By default on macOS, the shell is Zsh, while on Windows, it's PowerShell or Command Prompt. Many Windows users also install WSL (Windows Subsystem for Linux) to access a Linux-like environment with Bash.
+
+::: {.callout-tip}
+
+For most intents and purposes, Zsh and Bash are very similar, and the commands you'll learn in this tutorial will work in either shell. For the purposes of this workgroup, it is recommended for [Windows users to install/enable WSL and use Ubuntu Linux,](https://youtu.be/-Wg2r1lWrTc?si=UDyCV-ky3rng3VCl) as it provides a fully functional Linux system with Bash shell as a default. This will provide a more consistent experience with the tutorials and workgroup sessions.
+
+:::
+
+## Opening a terminal
+
+**macOS**
+
+1. Open Spotlight Search (Cmd + Space)
+2. Type "Terminal" and press Enter
+
+**Windows (with WSL Ubuntu)**
+
+1. Open the Start menu (Windows key)
+2. Type "Ubuntu" and press Enter
+
+## Running your first commands
+
+Once you have your terminal open, you can start typing commands. Here are a few basic commands to get you started:
+
+Print the current working directory
+
+```bash
+pwd
+```
+
+
+List files and directories in the current directory
+
+```bash
+ls
+```
+
+Create a new directory called "my_folder"
+
+```bash
+mkdir my_folder
+```
+
+Change into the new directory
+
+```bash
+cd my_folder
+```
+
+Create a new file called "my_file.txt"
+
+```bash
+touch my_file.txt
+```
+
+Move the file to a new name "renamed_file.txt"
+
+```bash
+mv my_file.txt renamed_file.txt
+```
+
+### Getting help (inside the terminal)
+
+Most commands have built-in help that you can access by typing the command followed by `--help` or `-h`. For example:
+
+```bash
+ls --help
+```
+
+This will display a list of options and usage information for the `ls` command. There are also manual `man` pages for core, built-in commands that provide more detailed documentation. You can access a manual page by typing `man` followed by the command name:
+
+```bash
+man ls
+```
+
+Note that not all commands have manual pages, but most core commands do. If you encounter a command without a manual page, the `--help` option is usually your best bet for getting information on how to use it.
+
+### Learning more
+
+There are many resources available that document core commands and their usage. Here are a few to get you started:
+
+- [Linux Command Line Basics](https://linuxcommand.org/lc3_learning_the_shell.php)
+- [W3Schools: Bash Tutorial](https://www.w3schools.com/bash/bash_intro.php)
+
+## Installing packages
+
+In addition to the built-in commands, you can also install additional software packages that provide new commands and functionality. On macOS, [Homebrew](https://brew.sh/) is a popular package manager that allows you to easily install and manage software. On Ubuntu Linux, traditional package managers like `apt` are built-in and provide access to a wide range of software. However, many users prefer to use Homebrew on Linux as well, as it provides a more consistent experience across platforms and often has more up-to-date versions of software.
+
+You may wonder why you might need or want to install additional packages when you can already run commands with the built-in tools. The built-in commands are the bread-and-butter of the CLI, there's no doubt. However, additional packages can provide tools that can enhance your terminal experience in various ways. I'll classify them into four broad categories:
+
+1. **Specialized tools and utilities** that are not included by default. Some of these add software that is commonly used in data science, such as Python, R, or Jupyter Notebook.
+2. **Enhanced versions of existing commands** that modernize and improve upon the functionality of built-in commands. Examples include `exa` to replace `ls`, `fd` to replace `find`, `bat` to replace `cat`, and so on. These tools often provide additional features, better performance, and improved user experience compared to their built-in counterparts.
+3. **Tools that integrate with other software** to provide additional functionality. For example, you might install a package like `lazygit` that allows you to easily manage your Git repositories from the command line or `ncdu` to analyze disk usage in a more interactive way.
+4. **Utilities that enhance the terminal experience** by providing "quality of life" features like improved navigation, better file management, or enhanced command history. Examples include `fzf` for fuzzy finding files and commands, `z` for quickly navigating to frequently used directories, and `thefuck` for correcting mistyped commands.
+
+
+To install Homebrew (on macOS or Linux), your first need to ensure you have the necessary prerequisites installed.
+
+For macOS users, you will need to run:
+
+```bash
+xcode-select --install
+```
+
+to install the Apple Xcode Command Line Tools before you can use Homebrew. This will provide the necessary compilers and libraries that Homebrew relies on to build and install packages.
+
+Windows users using WSL Ubuntu should run:
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+and then
+
+```bash
+sudo apt install build-essential -y
+```
+
+to install the necessary build tools before installing Homebrew on Linux. This will ensure that you have the compilers and libraries needed for Homebrew to function properly.
+
+In both cases, you will be prompted to enter your password during the installation process, as these commands require administrative privileges to install software on your system.
+
+---
+
+Once you have the prerequisites installed, you can run the following command in your terminal:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+This command downloads and executes a script from the Homebrew repository on GitHub. The script will guide you through the installation process, which may involve entering your password and confirming the installation.
+
+::: {.callout-warning}
+
+**Note:** *Always be cautious when running commands that download and execute scripts from the internet.* Make sure you trust the source and understand what the script does before running it.
+
+This workgroup can vouch for the safety of Homebrew, as it is widely used and maintained by a large community. However, it's always good practice to reach out to members of the workgroup if you have any questions or concerns about running commands or installing software.
+
+:::
+
+After the installation is complete, you may need to add Homebrew to your system's PATH environment variable.
+
+
+### Working with `brew`
+
+Once you have Homebrew installed, you can use the `brew` command to install, update, upgrade, and uninstall packages (`formulae`) and applications (`casks`) on your system.
+
+
+
