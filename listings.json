@@ -25,5 +25,11 @@
       "/resources/tools.html",
       "/resources/troubleshooting.html"
     ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/sessions/2026-02-06.html"
+    ]
   }
 ]
