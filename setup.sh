@@ -18,7 +18,7 @@
 #   5. Appends shell config block to ~/.bashrc or ~/.zshrc
 #      (idempotent — safe to run more than once)
 #
-# See: https://wfu-agentic-ai.github.io/workgroup/tutorials/cli-basics.html
+# See: https://wfu-agentic-ai.github.io/workgroup/tutorials/cli-fundamentals.html
 
 set -euo pipefail
 
@@ -124,7 +124,7 @@ if ! command -v brew &>/dev/null; then
   else
     echo ""
     echo "  You can install Homebrew manually by following the tutorial:"
-    echo "  https://wfu-agentic-ai.github.io/workgroup/tutorials/cli-basics.html#installing-packages"
+    echo "  https://wfu-agentic-ai.github.io/workgroup/tutorials/cli-fundamentals.html#installing-packages"
     echo ""
     exit 1
   fi

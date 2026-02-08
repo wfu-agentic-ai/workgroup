@@ -314,7 +314,7 @@ brew install zoxide
 For macOS users, I also recommend adding the following casks to get you started with some useful applications:
 
 - `visual-studio-code`: A popular code editor that provides a powerful and customizable environment for coding, with support for a wide range of programming languages and extensions.
-- `iterm2` or `ghostty`: Terminal emulators for macOS that provide a more feature-rich and customizable terminal experience, with features like split panes, hotkeys, and a powerful search function.
+- `iterm2`, `WezTerm`, or  `ghostty`: Terminal emulators for macOS that provide a more feature-rich and customizable terminal experience, with features like split panes, hotkeys, and a powerful search function.
 
 You can install these applications using Homebrew with the command `brew install --cask <package_name>`. For example, to install Visual Studio Code, you would run:
 
@@ -323,7 +323,39 @@ brew install --cask visual-studio-code
 ```
 
 ::: {.callout-tip}
-For WSL Linux users, you can install the Windows version of Visual Studio Code or Ghostty using traditional Windows installation methods (e.g., downloading the installer from the official website or using the Microsoft Store).
+For WSL Linux users, you can install the Windows version of [Visual Studio Code](https://code.visualstudio.com/download) or [WezTerm](https://wezterm.org/install/windows.html) using traditional Windows installation methods (e.g., downloading the installer from the official website or using the Microsoft Store).
+
+*Note: To have the most seemless experience both with Visual Studio Code and WezTerm, you will need to perform a couple of additional setup steps. For VS Code, you will need to install the "Remote - WSL" extension in Visual Studio Code, which allows you to open and edit files in your WSL environment directly from Visual Studio Code on Windows. For WezTerm, you will need to create and edit the WezTerm configuration file (typically located at `~/.wezterm.lua`) to set the default shell to your WSL shell.
+
+You can do this by following the following steps:
+
+1. From your WSL terminal, create the WezTerm configuration file if it doesn't already exist:
+
+```bash
+touch ~/.wezterm.lua
+```
+
+2. Open the configuration file in a text editor (e.g., `nano`, `vim`, or `code` if you have the Remote - WSL extension installed):
+
+```bash
+code ~/.wezterm.lua
+# or
+nano ~/.wezterm.lua
+```
+
+3. Add the following content to this file.
+
+```lua
+
+local wezterm = require 'wezterm'
+local config = {}
+config.default_domain = 'WSL:Ubuntu-18.04'
+config.font = wezterm.font 'JetBrains Mono'
+return config
+```
+
+4. Save the file and restart WezTerm. It should now open with your WSL shell as the default.
+
 :::
 
 
@@ -364,15 +396,15 @@ Installing Homebrew and some of these packages may seem like a lot of work, and 
 
 To make it easier, you can create a setup script that automates the installation of Homebrew and your preferred packages. This way, if you ever need to set up a new machine or reinstall your system, you can simply run the script to get everything set up quickly.
 
-I've made one available in the workgroup's GitHub repository that installs the recommended packages listed above, along with some additional ones that I find useful. You can run the following command to download and execute the setup script:
+I've made one available in the workgroup's GitHub repository that installs the recommended packages listed above, along with some additional ones that I find useful.
+
+You can run the following command to download and execute the setup script:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)"
 ```
 
-
-
-
+It will prompt you to confirm the installation of Homebrew and the packages, and it will handle the installation process for you.
 
 ## Conclusion
 

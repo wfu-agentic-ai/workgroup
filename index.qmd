@@ -28,7 +28,7 @@ This workgroup brings together Wake Forest University faculty and staff who want
 
 New to the workgroup? Start here:
 
-1. **[CLI basics](tutorials/cli-basics.qmd)** — Open a terminal and run your first commands
+1. **[CLI fundamentals](tutorials/cli-fundamentals.qmd)** — Open a terminal and run your first commands
 2. **[Working with paths](tutorials/working-with-paths.qmd)** — Navigate the file system with confidence
 3. **[Shell configuration](tutorials/shell-configuration.qmd)** — Customize your terminal environment
 
