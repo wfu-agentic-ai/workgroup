@@ -4,7 +4,7 @@
     "href": "CLAUDE.html",
     "title": "WFU Agentic AI Workgroup",
     "section": "",
-    "text": "Project instructions\n\n\n\nThis is a faculty/staff workgroup at Wake Forest University focused on agentic AI tools in the CLI. It is not a credit-bearing course — there are no grades, no formal assessment, and membership is rolling (participants join and leave at any time).\n\nAudience: WFU faculty and staff with little or no CLI experience\nFormat: Weekly in-person meetings + async web content\nFacilitator: Will Fleeson (Department of Psychology)\nDeliverable: A Quarto website deployed to GitHub Pages\n\n\n\n\nThe workgroup moves participants from zero CLI knowledge toward independent use of agentic AI tools:\n\nNavigate the file system and run commands in a terminal\nUse Git and GitHub for version control and collaboration\nConfigure shell environments and dotfiles\nInteract with Claude Code for agentic coding workflows\nAccess and configure APIs for AI services\nSet up and use MCP servers for tool integration\nAuthor reproducible documents with Markdown and Quarto\n\n\n\n\nWhen writing tutorials, session notes, or resource pages:\n\nAssume zero CLI knowledge. Define terms on first use. Explain what commands do before showing them.\nProgressive difficulty. Early content covers basic navigation and file operations. Later content introduces Git, Claude Code, APIs, and MCPs.\nWorked examples over abstractions. Show a concrete task, walk through the steps, then generalize. Avoid leading with theory.\nCopy-paste friendly. Code blocks should be runnable as-is. Include expected output where helpful.\nPlatform awareness. Most participants use macOS, but some use Windows. Tutorials should default to macOS examples and note Windows differences (e.g., PowerShell vs bash, path separators, installer commands) in callouts or inline when behavior diverges.\nNo jargon without context. If a term is unavoidable, define it inline or link to the glossary.\n\n\n\n\n\nShell: bash (default macOS shell via Terminal.app or iTerm2)\nVersion control: Git + GitHub\nAI tools: Claude Code (CLI), Anthropic API, MCP servers\nAuthoring: Markdown, Quarto (.qmd files)\nDeployment: GitHub Pages via quarto publish gh-pages\nEnvironment: Nix flake for reproducible development setup\n\n\n\n\nindex.qmd          — Landing page (welcome, meeting info, getting started)\nabout.qmd          — Purpose, learning goals, format, facilitator\nsessions/          — Session notes, one file per meeting (date-based)\n  index.qmd        — Session log, reverse chronological\ntutorials/         — Self-contained topic tutorials\n  index.qmd        — Tutorial catalog with difficulty indicators\n  01-cli-basics.qmd\n  02-working-with-paths.qmd\n  03-shell-configuration.qmd\n  04-git-fundamentals.qmd\n  05-github-collaboration.qmd\n  06-claude-code-intro.qmd\n  07-apis-and-mcps.qmd\nresources/         — Reference material\n  index.qmd        — Resource hub\n  cheatsheets.qmd\n  tools.qmd\n  troubleshooting.qmd\n  glossary.qmd\n\n\nCreate sessions/YYYY-MM-DD.qmd with front matter:\n---\ntitle: \"Session title\"\ndate: \"YYYY-MM-DD\"\ndescription: \"Brief summary of what was covered.\"\n---\nThe listing on sessions/index.qmd picks up new session files automatically.\n\n\n\nCreate tutorials/topic-name.qmd with front matter that includes categories (one of \"Getting started\", \"Version control\", or \"AI tools\"):\n---\ntitle: \"Tutorial title\"\ndescription: \"Brief description of the tutorial.\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Getting started\"]\n---\nThe listing on tutorials/index.qmd picks up new tutorial files automatically.\n\n\n\n\n\nTheme: flatly (Bootstrap-based, clean and readable)\nCode blocks: Use code-copy: true and code-tools: true for interactive code\nExternal links: Open in new window (link-external-newwindow: true)\nFront matter: Every .qmd file needs title at minimum; tutorials should also have description and date\nCallouts: Use Quarto callouts (.callout-note, .callout-tip, .callout-warning) for asides and important information\nImages: Store in an images/ subdirectory relative to the page that uses them\n\n\n\n\nFollow the conventions in the global ~/.claude/CLAUDE.md:\n\nR: tidyverse, native pipe (|&gt;), 2-space indent\nPython: data science stack, ruff, 4-space indent\nBash: POSIX-compliant, 2-space indent\nLine limit: 80 characters (except Markdown)\nNaming: snake_case (functions/variables)\nLists: Use - not * or +\nConventional commits: type(scope): message\n\n\n\n\nThe specs/ directory contains planning, progress, and implementation documents for the workgroup. These files are excluded from the rendered site (via .gitignore and not being listed in _quarto.yml). They are internal project management documents."
+    "text": "Project instructions\n\n\n\nThis is a faculty/staff workgroup at Wake Forest University focused on agentic AI tools in the CLI. It is not a credit-bearing course — there are no grades, no formal assessment, and membership is rolling (participants join and leave at any time).\n\nAudience: WFU faculty and staff with little or no CLI experience\nFormat: Weekly in-person meetings + async web content\nFacilitator: Will Fleeson (Department of Psychology)\nDeliverable: A Quarto website deployed to GitHub Pages\n\n\n\n\nThe workgroup moves participants from zero CLI knowledge toward independent use of agentic AI tools:\n\nNavigate the file system and run commands in a terminal\nUse Git and GitHub for version control and collaboration\nConfigure shell environments and dotfiles\nInteract with Claude Code for agentic coding workflows\nAccess and configure APIs for AI services\nSet up and use MCP servers for tool integration\nAuthor reproducible documents with Markdown and Quarto\n\n\n\n\nWhen writing tutorials, session notes, or resource pages:\n\nAssume zero CLI knowledge. Define terms on first use. Explain what commands do before showing them.\nProgressive difficulty. Early content covers basic navigation and file operations. Later content introduces Git, Claude Code, APIs, and MCPs.\nWorked examples over abstractions. Show a concrete task, walk through the steps, then generalize. Avoid leading with theory.\nCopy-paste friendly. Code blocks should be runnable as-is. Include expected output where helpful.\nPlatform awareness. Most participants use macOS, but some use Windows. Tutorials should default to macOS examples and note Windows differences (e.g., PowerShell vs bash, path separators, installer commands) in callouts or inline when behavior diverges.\nNo jargon without context. If a term is unavoidable, define it inline or link to the glossary.\n\n\n\n\n\nShell: bash (default macOS shell via Terminal.app or iTerm2)\nVersion control: Git + GitHub\nAI tools: Claude Code (CLI), Anthropic API, MCP servers\nAuthoring: Markdown, Quarto (.qmd files)\nDeployment: GitHub Pages via quarto publish gh-pages\nEnvironment: Nix flake for reproducible development setup\n\n\n\n\nindex.qmd          — Landing page (welcome, meeting info, getting started)\nabout.qmd          — Purpose, learning goals, format, facilitator\nsessions/          — Session notes, one file per meeting (date-based)\n  index.qmd        — Session log, reverse chronological\ntutorials/         — Self-contained topic tutorials\n  index.qmd        — Tutorial catalog with difficulty indicators\n  cli-fundamentals.qmd\n  working-with-the-filesystem.qmd\n  shell-configuration.qmd\n  git-fundamentals.qmd\n  github-collaboration.qmd\n  claude-code-intro.qmd\n  apis-and-mcps.qmd\nresources/         — Reference material\n  index.qmd        — Resource hub\n  cheatsheets.qmd\n  tools.qmd\n  troubleshooting.qmd\n  glossary.qmd\n\n\nCreate sessions/YYYY-MM-DD.qmd with front matter:\n---\ntitle: \"Session title\"\ndate: \"YYYY-MM-DD\"\ndescription: \"Brief summary of what was covered.\"\n---\nThe listing on sessions/index.qmd picks up new session files automatically.\n\n\n\nCreate tutorials/topic-name.qmd with front matter that includes categories (one of \"Getting started\", \"Version control\", or \"AI tools\"):\n---\ntitle: \"Tutorial title\"\ndescription: \"Brief description of the tutorial.\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Getting started\"]\n---\nThe listing on tutorials/index.qmd picks up new tutorial files automatically.\n\n\n\n\n\nTheme: flatly (Bootstrap-based, clean and readable)\nCode blocks: Use code-copy: true and code-tools: true for interactive code\nExternal links: Open in new window (link-external-newwindow: true)\nFront matter: Every .qmd file needs title at minimum; tutorials should also have description and date\nCallouts: Use Quarto callouts (.callout-note, .callout-tip, .callout-warning) for asides and important information\nImages: Store in an images/ subdirectory relative to the page that uses them\n\n\n\n\nFollow the conventions in the global ~/.claude/CLAUDE.md:\n\nR: tidyverse, native pipe (|&gt;), 2-space indent\nPython: data science stack, ruff, 4-space indent\nBash: POSIX-compliant, 2-space indent\nLine limit: 80 characters (except Markdown)\nNaming: snake_case (functions/variables)\nLists: Use - not * or +\nConventional commits: type(scope): message\n\n\n\n\nThe specs/ directory contains planning, progress, and implementation documents for the workgroup. These files are excluded from the rendered site (via .gitignore and not being listed in _quarto.yml). They are internal project management documents."
   },
   {
     "objectID": "CLAUDE.html#workgroup-overview",
@@ -39,7 +39,7 @@
     "href": "CLAUDE.html#site-structure",
     "title": "WFU Agentic AI Workgroup",
     "section": "",
-    "text": "index.qmd          — Landing page (welcome, meeting info, getting started)\nabout.qmd          — Purpose, learning goals, format, facilitator\nsessions/          — Session notes, one file per meeting (date-based)\n  index.qmd        — Session log, reverse chronological\ntutorials/         — Self-contained topic tutorials\n  index.qmd        — Tutorial catalog with difficulty indicators\n  01-cli-basics.qmd\n  02-working-with-paths.qmd\n  03-shell-configuration.qmd\n  04-git-fundamentals.qmd\n  05-github-collaboration.qmd\n  06-claude-code-intro.qmd\n  07-apis-and-mcps.qmd\nresources/         — Reference material\n  index.qmd        — Resource hub\n  cheatsheets.qmd\n  tools.qmd\n  troubleshooting.qmd\n  glossary.qmd\n\n\nCreate sessions/YYYY-MM-DD.qmd with front matter:\n---\ntitle: \"Session title\"\ndate: \"YYYY-MM-DD\"\ndescription: \"Brief summary of what was covered.\"\n---\nThe listing on sessions/index.qmd picks up new session files automatically.\n\n\n\nCreate tutorials/topic-name.qmd with front matter that includes categories (one of \"Getting started\", \"Version control\", or \"AI tools\"):\n---\ntitle: \"Tutorial title\"\ndescription: \"Brief description of the tutorial.\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Getting started\"]\n---\nThe listing on tutorials/index.qmd picks up new tutorial files automatically."
+    "text": "index.qmd          — Landing page (welcome, meeting info, getting started)\nabout.qmd          — Purpose, learning goals, format, facilitator\nsessions/          — Session notes, one file per meeting (date-based)\n  index.qmd        — Session log, reverse chronological\ntutorials/         — Self-contained topic tutorials\n  index.qmd        — Tutorial catalog with difficulty indicators\n  cli-fundamentals.qmd\n  working-with-the-filesystem.qmd\n  shell-configuration.qmd\n  git-fundamentals.qmd\n  github-collaboration.qmd\n  claude-code-intro.qmd\n  apis-and-mcps.qmd\nresources/         — Reference material\n  index.qmd        — Resource hub\n  cheatsheets.qmd\n  tools.qmd\n  troubleshooting.qmd\n  glossary.qmd\n\n\nCreate sessions/YYYY-MM-DD.qmd with front matter:\n---\ntitle: \"Session title\"\ndate: \"YYYY-MM-DD\"\ndescription: \"Brief summary of what was covered.\"\n---\nThe listing on sessions/index.qmd picks up new session files automatically.\n\n\n\nCreate tutorials/topic-name.qmd with front matter that includes categories (one of \"Getting started\", \"Version control\", or \"AI tools\"):\n---\ntitle: \"Tutorial title\"\ndescription: \"Brief description of the tutorial.\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Getting started\"]\n---\nThe listing on tutorials/index.qmd picks up new tutorial files automatically."
   },
   {
     "objectID": "CLAUDE.html#quarto-conventions",
@@ -63,95 +63,95 @@
     "text": "The specs/ directory contains planning, progress, and implementation documents for the workgroup. These files are excluded from the rendered site (via .gitignore and not being listed in _quarto.yml). They are internal project management documents."
   },
   {
-    "objectID": "tutorials/07-apis-and-mcps.html",
-    "href": "tutorials/07-apis-and-mcps.html",
-    "title": "APIs and MCPs",
-    "section": "",
-    "text": "APIs let you access AI models programmatically. MCP (Model Context Protocol) servers extend what AI assistants can do by connecting them to external tools and data sources. This tutorial covers API key management, basic API usage, and setting up MCP servers.\nPrerequisites: Claude Code introduction Estimated time: 35 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/07-apis-and-mcps.html#overview",
-    "href": "tutorials/07-apis-and-mcps.html#overview",
-    "title": "APIs and MCPs",
-    "section": "",
-    "text": "APIs let you access AI models programmatically. MCP (Model Context Protocol) servers extend what AI assistants can do by connecting them to external tools and data sources. This tutorial covers API key management, basic API usage, and setting up MCP servers.\nPrerequisites: Claude Code introduction Estimated time: 35 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/05-github-collaboration.html",
-    "href": "tutorials/05-github-collaboration.html",
-    "title": "GitHub collaboration",
-    "section": "",
-    "text": "GitHub hosts Git repositories online and provides tools for collaboration. This tutorial covers working with remote repositories, pushing and pulling changes, creating pull requests, and reviewing code.\nPrerequisites: Git fundamentals Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/05-github-collaboration.html#overview",
-    "href": "tutorials/05-github-collaboration.html#overview",
-    "title": "GitHub collaboration",
-    "section": "",
-    "text": "GitHub hosts Git repositories online and provides tools for collaboration. This tutorial covers working with remote repositories, pushing and pulling changes, creating pull requests, and reviewing code.\nPrerequisites: Git fundamentals Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
-  },
-  {
-    "objectID": "tutorials/03-shell-configuration.html",
-    "href": "tutorials/03-shell-configuration.html",
+    "objectID": "tutorials/shell-configuration.html",
+    "href": "tutorials/shell-configuration.html",
     "title": "Shell configuration",
     "section": "",
-    "text": "Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.\nPrerequisites: Working with paths Estimated time: 25 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.\nPrerequisites: Working with the filesystem"
   },
   {
-    "objectID": "tutorials/03-shell-configuration.html#overview",
-    "href": "tutorials/03-shell-configuration.html#overview",
+    "objectID": "tutorials/shell-configuration.html#overview",
+    "href": "tutorials/shell-configuration.html#overview",
     "title": "Shell configuration",
     "section": "",
-    "text": "Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.\nPrerequisites: Working with paths Estimated time: 25 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.\nPrerequisites: Working with the filesystem"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#what-are-dotfiles",
+    "href": "tutorials/shell-configuration.html#what-are-dotfiles",
+    "title": "Shell configuration",
+    "section": "What are dotfiles?",
+    "text": "What are dotfiles?\nIn the previous tutorial you learned that dotfiles are hidden files whose names start with a period. Many of the most important dotfiles are configuration files — plain text files that programs read at startup to learn your preferences.\nCommon dotfiles you will encounter:\n\n\n\nFile\nUsed by\n\n\n\n\n~/.zshrc\nZsh shell configuration\n\n\n~/.bashrc\nBash shell configuration\n\n\n~/.gitconfig\nGit settings (name, email, editor)\n\n\n~/.config/\nDirectory for application configs\n\n\n\nThese files live in your home directory. Because they start with a dot, ls hides them unless you use ls -a."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#shell-startup-files",
+    "href": "tutorials/shell-configuration.html#shell-startup-files",
+    "title": "Shell configuration",
+    "section": "Shell startup files",
+    "text": "Shell startup files\nWhen you open a terminal, your shell runs a startup file — a script that sets up your environment. Which file it reads depends on your shell:\n\n\n\nShell\nStartup file\n\n\n\n\nZsh (macOS default)\n~/.zshrc\n\n\nBash (Linux/WSL default)\n~/.bashrc\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou may also see files like ~/.zprofile or ~/.bash_profile. These run for login shells (the first shell started when you log in). For the purposes of this workgroup, focus on .zshrc or .bashrc — they handle interactive sessions, which is what you get when you open a terminal window.\n\n\n\nEditing your config file\nYou can edit your shell config with any text editor. nano is a simple terminal-based editor that is available on all systems:\nnano ~/.zshrc\nInside nano:\n\nType or paste text normally\nCtrl + O to save (then press Enter to confirm the filename)\nCtrl + X to exit\n\nIf you have Visual Studio Code installed, you can open the file in a graphical editor instead:\ncode ~/.zshrc\n\n\n\n\n\n\nTip\n\n\n\nBefore editing any config file, make a backup:\ncp ~/.zshrc ~/.zshrc.backup\nIf something goes wrong, you can restore it:\ncp ~/.zshrc.backup ~/.zshrc\n\n\n\n\nApplying changes with source\nAfter editing your config file, the changes do not take effect automatically — your current shell session already ran the old version at startup. You have two options:\n\nOpen a new terminal window (it will read the updated file)\nUse the source command to re-read the file in your current session:\n\nsource ~/.zshrc\nFor Bash users:\nsource ~/.bashrc"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#environment-variables",
+    "href": "tutorials/shell-configuration.html#environment-variables",
+    "title": "Shell configuration",
+    "section": "Environment variables",
+    "text": "Environment variables\nEnvironment variables are key-value pairs that programs read to learn about your system and preferences. You can see all current environment variables with:\nenv\nTo see the value of a specific variable, use echo with a $ prefix:\necho $HOME\n/Users/jane\n\nSetting a variable\nTo create or change an environment variable for the current session:\nMY_NAME=\"Jane\"\necho $MY_NAME\nJane\nThis variable only exists in your current shell. To make it available to programs you launch from this shell, use export:\nexport MY_NAME=\"Jane\"\nTo make a variable persist across sessions, add the export line to your shell config file (~/.zshrc or ~/.bashrc).\n\n\nThe PATH variable\nPATH is the most important environment variable. It tells the shell where to look for programs when you type a command.\necho $PATH\n/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin\nThe output is a list of directories separated by colons. When you type a command like brew, the shell searches these directories from left to right until it finds a program with that name. If the program is not in any of the PATH directories, you get a “command not found” error.\nThis is why the Homebrew installer asked you to add a line to your config file — it needed to put Homebrew’s directory (/opt/homebrew/bin on macOS, /home/linuxbrew/.linuxbrew/bin on Linux) into your PATH.\n\n\nAdding a directory to PATH\nTo add a directory to PATH, add a line like this to your config file:\nexport PATH=\"/some/new/directory:$PATH\"\nThe $PATH at the end preserves the existing directories. New directories go at the beginning so they are searched first.\nIf Homebrew is not working after installation, this is most likely the fix. Add the appropriate line for your system:\nFor Zsh on macOS:\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; ~/.zshrc\nFor Bash on Linux:\necho 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"' &gt;&gt; ~/.bashrc\nThen apply the change:\nsource ~/.zshrc   # or source ~/.bashrc\n\n\nOther useful variables\n\n\n\nVariable\nWhat it stores\n\n\n\n\nHOME\nYour home directory path\n\n\nEDITOR\nYour preferred text editor (e.g. nano, vim, code)\n\n\nSHELL\nThe path to your current shell program\n\n\nUSER\nYour username\n\n\n\nTo set a default editor, add this to your config file:\nexport EDITOR=\"nano\""
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#aliases",
+    "href": "tutorials/shell-configuration.html#aliases",
+    "title": "Shell configuration",
+    "section": "Aliases",
+    "text": "Aliases\nAn alias is a shortcut — a custom name for a command or series of commands. You define aliases in your shell config file so they are available every session.\n\nCreating an alias\nThe syntax is:\nalias shortcut='command'\nFor example, a shortcut to go up one directory:\nalias ..='cd ..'\nNow typing .. at the prompt runs cd ...\n\n\nTemporary vs persistent aliases\nIf you type an alias directly at the prompt, it lasts only until you close the terminal. To make it permanent, add the alias line to ~/.zshrc (or ~/.bashrc) and run source to activate it.\n\n\nAlias chaining\nAn alias can reference another alias. For example, suppose you create a base alias for eza (a modern replacement for ls) with colorized output:\nalias ls='eza --icons=auto --color=auto'\nYou can then build on it:\nalias la='ls -a'           # all files, including hidden\nalias ll='ls -l'           # long format with details\nalias lla='ls -la'         # both hidden and detailed\nSince la uses the ls alias, it inherits the --icons=auto --color=auto flags automatically.\n\n\nPractical alias examples\nNavigation:\nalias ..='cd ..'\nalias ...='cd ../..'\nalias c='clear'\nSafety (ask before overwriting or deleting):\nalias cp='cp -i'\nalias mv='mv -i'\nalias rm='rm -i'\nTool replacements (once installed via Homebrew):\nalias cat='bat'\nalias ls='eza --icons=auto --color=auto'\nUsing aliases is highly individualized. As you use the CLI more, you will develop your own collection of shortcuts tuned to your workflow."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#working-with-homebrew",
+    "href": "tutorials/shell-configuration.html#working-with-homebrew",
+    "title": "Shell configuration",
+    "section": "Working with Homebrew",
+    "text": "Working with Homebrew\nYou installed Homebrew in the CLI fundamentals tutorial. Now let’s learn how to use it effectively.\n\nFormulae vs casks\nHomebrew distinguishes two types of packages:\n\nFormulae — command-line tools and libraries installed in the terminal (e.g. python, git, eza)\nCasks — desktop applications with a graphical interface (e.g. visual-studio-code, iterm2)\n\n\n\nCommon brew commands\nInstall a formula:\nbrew install &lt;package_name&gt;\nInstall a cask (desktop app):\nbrew install --cask &lt;package_name&gt;\nUpdate Homebrew and upgrade all installed packages:\nbrew update && brew upgrade\n\n\n\n\n\n\nTip\n\n\n\nRun brew update && brew upgrade every few weeks to keep your tools current.\n\n\nSearch for a package:\nbrew search &lt;query&gt;\nView details about a package:\nbrew info &lt;package_name&gt;\nList everything you have installed:\nbrew list\nUninstall a package:\nbrew uninstall &lt;package_name&gt;"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#recommended-packages",
+    "href": "tutorials/shell-configuration.html#recommended-packages",
+    "title": "Shell configuration",
+    "section": "Recommended packages",
+    "text": "Recommended packages\nHere are packages organized by purpose. Install any of them with brew install &lt;name&gt;.\n\nDevelopment tools\n\n\n\nPackage\nDescription\n\n\n\n\nuv\nFast Python package and environment manager\n\n\nnode\nJavaScript runtime (needed for some tools)\n\n\nnpm\nJavaScript package manager (comes with Node)\n\n\n\n\n\nEnhanced commands\nThese replace built-in commands with modern alternatives that have better defaults, color output, and additional features.\n\n\n\nPackage\nReplaces\nWhat it adds\n\n\n\n\neza\nls\nIcons, color, Git status in file listings\n\n\nbat\ncat\nSyntax highlighting, line numbers, Git integration\n\n\nfd\nfind\nSimpler syntax, faster, respects .gitignore\n\n\n\n\n\nNavigation and search\n\n\n\n\n\n\n\nPackage\nDescription\n\n\n\n\nzoxide\nRemembers directories you visit; jump to them with z &lt;partial-name&gt;\n\n\nfzf\nFuzzy finder for files, command history, and more\n\n\n\n\n\nProductivity\n\n\n\nPackage\nDescription\n\n\n\n\nthefuck\nSuggests corrections for mistyped commands\n\n\ntldr\nSimplified help pages with practical examples\n\n\nncdu\nInteractive disk usage analyzer\n\n\nyazi\nTerminal file browser with previews\n\n\nlazygit\nTerminal UI for Git operations\n\n\n\n\n\nCask recommendations (macOS)\n\n\n\nPackage\nDescription\n\n\n\n\nvisual-studio-code\nPopular code editor with extension ecosystem\n\n\niterm2\nFeature-rich terminal emulator\n\n\nwezterm\nCross-platform, GPU-accelerated terminal\n\n\nghostty\nFast, native terminal emulator\n\n\n\nInstall a cask with:\nbrew install --cask visual-studio-code\n\n\n\n\n\n\nTipWindows / WSL users\n\n\n\nFor graphical applications on Windows, install the Windows version directly:\n\nVisual Studio Code — install the “Remote - WSL” extension to edit files inside your WSL environment from Windows\nWezTerm — set the default domain to WSL in its config file\n\nTerminal-based formulae (everything except casks) install normally inside WSL via Homebrew."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#configuring-installed-tools",
+    "href": "tutorials/shell-configuration.html#configuring-installed-tools",
+    "title": "Shell configuration",
+    "section": "Configuring installed tools",
+    "text": "Configuring installed tools\nSome packages need a line in your shell config to activate. Here are the common ones.\n\nzoxide\nAdd to your config file:\neval \"$(zoxide init zsh)\"    # for Zsh\neval \"$(zoxide init bash)\"   # for Bash\nAfter sourcing, you can use z to jump to directories you have visited before:\nz Documents    # jumps to ~/Documents (or whichever \"Documents\" you visit most)\n\n\nthefuck\nAdd to your config file:\neval \"$(thefuck --alias)\"\nNow, after a mistyped command, type fuck and it will suggest the correction.\n\n\neza aliases\nTo replace ls with eza everywhere, add these aliases:\nalias ls='eza --icons=auto --color=auto'\nalias la='ls --almost-all'\nalias ll='ls --long --time-style=relative --ignore-glob=.git'\nalias lla='la --long --time-style=relative --ignore-glob=.git'\n\n\nbat as a pager\nTo use bat for manual pages and as the default pager:\nexport MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"\nexport PAGER=\"bat\"\n\n\nWorked example\nHere is a complete block you could add to the end of your ~/.zshrc (or ~/.bashrc, replacing zsh with bash in the zoxide line):\n# Tool integrations\neval \"$(zoxide init zsh)\"\neval \"$(thefuck --alias)\"\n\n# Enhanced defaults\nalias ls='eza --icons=auto --color=auto'\nalias la='ls --almost-all'\nalias ll='ls --long --time-style=relative --ignore-glob=.git'\nalias cat='bat'\n\n# Navigation shortcuts\nalias ..='cd ..'\nalias ...='cd ../..'\nalias c='clear'\n\n# Safety\nalias cp='cp -i'\nalias mv='mv -i'\nalias rm='rm -i'\n\n# Pager\nexport MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"\nexport PAGER=\"bat\"\nAfter adding this block, apply it:\nsource ~/.zshrc\nThen test a few commands:\nls              # should show icons and color\nz ~             # should jump to home\ntldr ls         # should show a simplified help page"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#the-setup-script",
+    "href": "tutorials/shell-configuration.html#the-setup-script",
+    "title": "Shell configuration",
+    "section": "The setup script",
+    "text": "The setup script\nIf you prefer to automate the entire process described in this tutorial, the workgroup provides a setup script that installs all recommended packages, configures Git, and appends shell integrations to your config file.\nRun it directly:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)\"\nOr preview what it would do without making changes:\ncurl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh | bash -s -- --dry-run\n\n\n\n\n\n\nNote\n\n\n\nIf you followed this tutorial manually and installed everything yourself, you already have what the script provides. The script is most useful for setting up a new machine quickly or helping someone who wants to skip the step-by-step process."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#summary",
+    "href": "tutorials/shell-configuration.html#summary",
+    "title": "Shell configuration",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nConcept\nKey command / file\n\n\n\n\nShell config file\n~/.zshrc (Zsh) or ~/.bashrc (Bash)\n\n\nEdit config\nnano ~/.zshrc or code ~/.zshrc\n\n\nApply changes\nsource ~/.zshrc\n\n\nSet environment variable\nexport VARIABLE=value\n\n\nCreate alias\nalias shortcut='command'\n\n\nInstall package\nbrew install &lt;name&gt;\n\n\nUpdate packages\nbrew update && brew upgrade\n\n\nBackup config\ncp ~/.zshrc ~/.zshrc.backup\n\n\n\nNext tutorial: Git fundamentals"
   },
   {
     "objectID": "tutorials/index.html",
     "href": "tutorials/index.html",
     "title": "Tutorials",
     "section": "",
-    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI basics\n\n\n\nGetting started\n\n\n\nOpen a terminal, run your first commands, and work with files and directories.\n\n\n\n\n\n\n\n\n\n\nWorking with paths\n\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, the home directory, and how to navigate the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, and aliases.\n\n\n\n\n\n\n\n\n\n\nGit fundamentals\n\n\n\nVersion control\n\n\n\nTrack changes to your files with Git: init, add, commit, log, and diff.\n\n\n\n\n\n\n\n\n\n\nGitHub collaboration\n\n\n\nVersion control\n\n\n\nPush code to GitHub, collaborate with pull requests, and review changes.\n\n\n\n\n\n\n\n\n\n\nClaude Code introduction\n\n\n\nAI tools\n\n\n\nInstall Claude Code, configure it for your projects, and start an agentic coding workflow.\n\n\n\n\n\n\n\n\n\n\nAPIs and MCPs\n\n\n\nAI tools\n\n\n\nConfigure API keys for AI services and set up Model Context Protocol servers.\n\n\n\n\n\nNo matching items"
+    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI fundamentals\n\n9 min\n\n\nGetting started\n\nCLI\n\nmacOS\n\nWindows\n\nBash\n\nZsh\n\n\n\nOpen a terminal, learn the anatomy of a command, and work with files and directories using core Unix commands.\n\n\n\n\n\n\n\n\n\n\nWorking with the filesystem\n\n7 min\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, navigate with special symbols, use tab completion and wildcards, and build confidence moving around the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n10 min\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, aliases, and Homebrew packages. Learn how your shell reads configuration files and how to make changes that…\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "sessions/index.html",
     "href": "sessions/index.html",
     "title": "Sessions",
     "section": "",
-    "text": "Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.\n\n\n\n\n\nMeeting Notes\n\n\nNotes and materials from the AI Workgroup meeting held on February 6, 2026.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "resources/troubleshooting.html",
-    "href": "resources/troubleshooting.html",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
-  },
-  {
-    "objectID": "resources/troubleshooting.html#overview",
-    "href": "resources/troubleshooting.html#overview",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
-  },
-  {
-    "objectID": "resources/tools.html",
-    "href": "resources/tools.html",
-    "title": "Tools",
-    "section": "",
-    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool."
-  },
-  {
-    "objectID": "resources/tools.html#overview",
-    "href": "resources/tools.html#overview",
-    "title": "Tools",
-    "section": "",
-    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool."
-  },
-  {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
+    "text": "Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.\n\n\n\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -179,14 +179,49 @@
     "href": "index.html#getting-started",
     "title": "WFU Agentic AI Workgroup",
     "section": "Getting started",
-    "text": "Getting started\nNew to the workgroup? Start here:\n\nCLI basics — Open a terminal and run your first commands\nWorking with paths — Navigate the file system with confidence\nShell configuration — Customize your terminal environment\n\nThen move on to version control and AI tools when you’re ready."
+    "text": "Getting started\nNew to the workgroup? Start here:\n\nCLI fundamentals — Open a terminal and run your first commands\nWorking with the filesystem — Navigate the file system with confidence\nShell configuration — Customize your terminal environment\n\nThen move on to version control and AI tools when you’re ready."
   },
   {
     "objectID": "index.html#recent-sessions",
     "href": "index.html#recent-sessions",
     "title": "WFU Agentic AI Workgroup",
     "section": "Recent sessions",
-    "text": "Recent sessions\nSession notes will appear here as meetings take place. See the full session log.\n\n\n\n\n\nMeeting Notes\n\n\nNotes and materials from the AI Workgroup meeting held on February 6, 2026.\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Recent sessions\nSession notes will appear here as meetings take place. See the full session log.\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines. \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources/troubleshooting.html",
+    "href": "resources/troubleshooting.html",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/troubleshooting.html#overview",
+    "href": "resources/troubleshooting.html#overview",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources/tools.html",
+    "href": "resources/tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
+  },
+  {
+    "objectID": "resources/tools.html#overview",
+    "href": "resources/tools.html#overview",
+    "title": "Tools",
+    "section": "",
+    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
   },
   {
     "objectID": "resources/glossary.html",
@@ -242,7 +277,7 @@
     "href": "about.html#format",
     "title": "About",
     "section": "Format",
-    "text": "Format\n\nWeekly meetings — Brief demos followed by hands-on practice. Meetings are standalone; missing one doesn’t block your progress.\nAsync content — All topics are covered in written tutorials on this site. You can learn entirely at your own pace.\nRolling membership — Join anytime. New participants start with the CLI basics tutorial and work forward.\nProfessional development — Self-assessment prompts in tutorials help you gauge your own progress."
+    "text": "Format\n\nWeekly meetings — Brief demos followed by hands-on practice. Meetings are standalone; missing one doesn’t block your progress.\nAsync content — All topics are covered in written tutorials on this site. You can learn entirely at your own pace.\nRolling membership — Join anytime. New participants start with the CLI fundamentals tutorial and work forward.\nProfessional development — Self-assessment prompts in tutorials help you gauge your own progress."
   },
   {
     "objectID": "about.html#what-youll-need",
@@ -263,62 +298,174 @@
     "href": "sessions/2026-02-06.html",
     "title": "Meeting Notes",
     "section": "",
-    "text": "…"
+    "text": "Facilitator: Will Fleeson"
   },
   {
-    "objectID": "tutorials/04-git-fundamentals.html",
-    "href": "tutorials/04-git-fundamentals.html",
-    "title": "Git fundamentals",
-    "section": "",
-    "text": "Git is a version control system that tracks changes to your files over time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing snapshots, and reviewing history.\nPrerequisites: Shell configuration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "objectID": "sessions/2026-02-06.html#agenda",
+    "href": "sessions/2026-02-06.html#agenda",
+    "title": "Meeting Notes",
+    "section": "Agenda",
+    "text": "Agenda\n\nIntroductions – I will describe my goals and expected course for this group, and I ask each of you to state what you hope to learn, including a project you hope to accomplish.\nCollective Exploration – we simultaneously try to get Claude Code going on our computers and doing something.\nPlanning – compile our next steps and questions to resolve\nScheduling – decide on frequency and timing of meetings."
   },
   {
-    "objectID": "tutorials/04-git-fundamentals.html#overview",
-    "href": "tutorials/04-git-fundamentals.html#overview",
-    "title": "Git fundamentals",
-    "section": "",
-    "text": "Git is a version control system that tracks changes to your files over time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing snapshots, and reviewing history.\nPrerequisites: Shell configuration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "objectID": "sessions/2026-02-06.html#notes",
+    "href": "sessions/2026-02-06.html#notes",
+    "title": "Meeting Notes",
+    "section": "Notes",
+    "text": "Notes"
   },
   {
-    "objectID": "tutorials/01-cli-basics.html",
-    "href": "tutorials/01-cli-basics.html",
-    "title": "CLI basics",
-    "section": "",
-    "text": "This tutorial introduces the command-line interface (CLI). You’ll learn how to open a terminal on macOS, run basic commands, and create, move, and delete files and directories.\nPrerequisites: None Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "objectID": "sessions/2026-02-06.html#resources",
+    "href": "sessions/2026-02-06.html#resources",
+    "title": "Meeting Notes",
+    "section": "Resources",
+    "text": "Resources"
   },
   {
-    "objectID": "tutorials/01-cli-basics.html#overview",
-    "href": "tutorials/01-cli-basics.html#overview",
-    "title": "CLI basics",
+    "objectID": "tutorials/cli-fundamentals.html",
+    "href": "tutorials/cli-fundamentals.html",
+    "title": "CLI fundamentals",
     "section": "",
-    "text": "This tutorial introduces the command-line interface (CLI). You’ll learn how to open a terminal on macOS, run basic commands, and create, move, and delete files and directories.\nPrerequisites: None Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "This tutorial introduces the CLI. You will learn how to open a terminal, understand the structure of a command, and run a core set of commands for creating, viewing, copying, moving, and deleting files. By the end you will also install Homebrew, a package manager that you will use throughout the workgroup.\n\n\n\n\nPrerequisites: None"
   },
   {
-    "objectID": "tutorials/02-working-with-paths.html",
-    "href": "tutorials/02-working-with-paths.html",
-    "title": "Working with paths",
+    "objectID": "tutorials/cli-fundamentals.html#overview",
+    "href": "tutorials/cli-fundamentals.html#overview",
+    "title": "CLI fundamentals",
     "section": "",
-    "text": "Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.\nPrerequisites: CLI basics Estimated time: 20 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "This tutorial introduces the CLI. You will learn how to open a terminal, understand the structure of a command, and run a core set of commands for creating, viewing, copying, moving, and deleting files. By the end you will also install Homebrew, a package manager that you will use throughout the workgroup.\n\n\n\n\nPrerequisites: None"
   },
   {
-    "objectID": "tutorials/02-working-with-paths.html#overview",
-    "href": "tutorials/02-working-with-paths.html#overview",
-    "title": "Working with paths",
-    "section": "",
-    "text": "Paths tell the terminal where to find files. This tutorial covers the difference between absolute and relative paths, what the home directory is, and how to move around the file system confidently.\nPrerequisites: CLI basics Estimated time: 20 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "objectID": "tutorials/cli-fundamentals.html#what-is-the-cli",
+    "href": "tutorials/cli-fundamentals.html#what-is-the-cli",
+    "title": "CLI fundamentals",
+    "section": "What is the CLI?",
+    "text": "What is the CLI?\nThe command-line interface (CLI) is a text-based way to interact with your computer. Instead of clicking on icons and menus, you type commands to perform tasks. The CLI is powerful and efficient, allowing you to automate workflows, manage files, and run programs with precision.\nDepending on your operating system, you might use different terminal applications:\n\nmacOS/Linux: Terminal (default), iTerm2, or other terminal emulators\nWindows: Command Prompt (default), PowerShell, or Windows Terminal\n\nOnce you open a terminal, you will see a prompt where you can type commands. The CLI uses a shell (like Bash, Zsh, or PowerShell) to interpret your commands and execute them. By default on macOS, the shell is Zsh, while on Windows, it is Command Prompt. Many Windows users also install Windows Subsystem for Linux (WSL) to access a Linux-like environment with Bash.\n\n\n\n\n\n\nTip\n\n\n\nFor most intents and purposes, Zsh and Bash are very similar, and the commands you will learn in this tutorial work in either shell. For the purposes of this workgroup, it is recommended for Windows users to install/enable WSL and use Ubuntu Linux, as it provides a fully functional Linux system with Bash as the default shell. This will provide a more consistent experience with the tutorials and workgroup sessions."
   },
   {
-    "objectID": "tutorials/06-claude-code-intro.html",
-    "href": "tutorials/06-claude-code-intro.html",
-    "title": "Claude Code introduction",
-    "section": "",
-    "text": "Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.\nPrerequisites: GitHub collaboration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "objectID": "tutorials/cli-fundamentals.html#opening-a-terminal",
+    "href": "tutorials/cli-fundamentals.html#opening-a-terminal",
+    "title": "CLI fundamentals",
+    "section": "Opening a terminal",
+    "text": "Opening a terminal\nmacOS\n\nOpen Spotlight Search (Cmd + Space)\nType “Terminal” and press Enter\n\nWindows (with WSL Ubuntu)\n\nOpen the Start menu (Windows key)\nType “Ubuntu” and press Enter\n\nYou should see a window with a blinking cursor next to a prompt that looks something like this:\njane@macbook ~ %\nThe prompt shows your username, your computer’s name, and your current directory. The % (Zsh) or $ (Bash) at the end is the shell’s way of saying “I’m ready for a command.”"
   },
   {
-    "objectID": "tutorials/06-claude-code-intro.html#overview",
-    "href": "tutorials/06-claude-code-intro.html#overview",
-    "title": "Claude Code introduction",
+    "objectID": "tutorials/cli-fundamentals.html#anatomy-of-a-command",
+    "href": "tutorials/cli-fundamentals.html#anatomy-of-a-command",
+    "title": "CLI fundamentals",
+    "section": "Anatomy of a command",
+    "text": "Anatomy of a command\nBefore running commands, it helps to know what they look like. Every command follows the same general pattern:\ncommand [options] [arguments]\n\nCommand — the program to run (e.g. ls, mkdir, rm)\nOptions (also called flags) — modify the command’s behavior. Short flags start with a single dash and a letter (-l); long flags start with two dashes and a word (--long). You can usually combine short flags: -la is the same as -l -a.\nArguments (arguments) — the thing(s) the command acts on, usually a file name or directory path\n\nNot every command needs options or arguments. Some commands work fine on their own:\npwd\nOthers accept options that change the output:\nls -l\nAnd many take both options and arguments:\nls -la Documents\nHere ls is the command, -la combines two flags (-l for long format and -a for all files including hidden ones), and Documents is the argument telling ls which directory to list.\n\n\n\n\n\n\nTip\n\n\n\nWhen you see square brackets in documentation — like [options] — they mean that part is optional. You do not type the brackets themselves."
+  },
+  {
+    "objectID": "tutorials/cli-fundamentals.html#your-first-commands",
+    "href": "tutorials/cli-fundamentals.html#your-first-commands",
+    "title": "CLI fundamentals",
+    "section": "Your first commands",
+    "text": "Your first commands\n\nWhere am I? (pwd)\npwd stands for “print working directory.” It shows you the full path to the directory you are currently in.\npwd\n/Users/jane\nThis tells you that you are in the user jane’s home directory. You will always be somewhere in the filesystem, and pwd tells you exactly where.\n\n\nWhat is here? (ls)\nls lists the files and directories in your current location.\nls\nDesktop    Documents  Downloads  Pictures\nAdd the -l flag for more detail (permissions, size, date):\nls -l\nOr combine flags to see hidden files too:\nls -la\n\n\nCreating directories (mkdir)\nmkdir creates a new directory.\nmkdir my_folder\nVerify it was created:\nls\n\n\nMoving around (cd)\ncd changes your current directory.\ncd my_folder\nConfirm where you are now:\npwd\n/Users/jane/my_folder\nTo go back up one level to the parent directory:\ncd ..\n\n\n\n\n\n\nNote\n\n\n\nWe will cover paths, special symbols like .. and ~, and navigation in depth in the Working with the filesystem tutorial.\n\n\n\n\nCreating files (touch)\ntouch creates an empty file (or updates the timestamp of an existing file).\ntouch my_file.txt\nls\nmy_file.txt\n\n\nWriting to a file (echo with &gt;)\necho prints text to the terminal. Combined with &gt;, it writes that text into a file:\necho \"Hello from the CLI\" &gt; my_file.txt\nThe &gt; operator redirects the output of a command into a file. If the file already exists, &gt; overwrites it. To append instead, use &gt;&gt;:\necho \"A second line\" &gt;&gt; my_file.txt\n\n\nViewing file contents (cat and less)\ncat prints the entire contents of a file to the terminal:\ncat my_file.txt\nHello from the CLI\nA second line\nFor longer files, less is better — it opens the file in a scrollable viewer:\nless my_file.txt\nInside less, use the arrow keys or Page Up / Page Down to scroll. Press q to quit and return to the prompt.\n\n\n\n\n\n\nTip\n\n\n\ncat gets its name from “concatenate” — it can combine multiple files: cat file1.txt file2.txt. But its most common use is simply viewing a single file.\n\n\n\n\nCopying files (cp)\ncp copies a file (or directory) from one location to another:\ncp my_file.txt my_copy.txt\nls\nmy_copy.txt  my_file.txt\nNow both files exist. To copy an entire directory and its contents, add the -r (recursive) flag:\ncp -r my_folder my_folder_backup\n\n\nRenaming and moving files (mv)\nmv moves a file to a new location. If the destination is in the same directory, it effectively renames the file:\nmv my_copy.txt renamed_file.txt\nls\nmy_file.txt  renamed_file.txt\nYou can also use mv to move files between directories:\nmv renamed_file.txt my_folder/\n\n\nDeleting files and directories (rm)\nrm removes a file permanently:\nrm my_file.txt\nTo remove a directory and everything inside it, add the -r flag:\nrm -r my_folder\n\n\n\n\n\n\nWarning\n\n\n\nrm is permanent. There is no trash can, no undo. Double-check what you are deleting before pressing Enter. The -i flag makes rm ask for confirmation before each deletion: rm -i file.txt."
+  },
+  {
+    "objectID": "tutorials/cli-fundamentals.html#navigating-your-terminal",
+    "href": "tutorials/cli-fundamentals.html#navigating-your-terminal",
+    "title": "CLI fundamentals",
+    "section": "Navigating your terminal",
+    "text": "Navigating your terminal\nBeyond typing commands, a few keyboard skills will save you time and frustration.\n\nCommand history\nPress the up arrow key to cycle through commands you have already run. Press down arrow to move forward through history. This is the fastest way to re-run or edit a recent command.\nTo see your full command history:\nhistory\n\n\nClearing the screen\nWhen your terminal gets cluttered, clear it:\nclear\nOr press Ctrl + L for the same effect.\n\n\nTab completion\nStart typing a file name or command and press Tab — the shell will complete it for you. If there are multiple matches, press Tab twice to see all options.\nls Doc⟨Tab⟩\nThe shell completes it to Documents/. Tab completion works for commands, file names, and directory paths. It is one of the most useful habits to develop early.\n\n\n\n\n\n\nNote\n\n\n\nWe cover tab completion in more depth in the Working with the filesystem tutorial, including navigating deep directory paths with successive tab presses.\n\n\n\n\nCanceling a command\nIf a command is running and you want to stop it, press Ctrl + C. This sends an interrupt signal that stops most programs immediately.\nIf you have typed a partial command and want to abandon it without running it, Ctrl + C will also clear the current line and give you a fresh prompt."
+  },
+  {
+    "objectID": "tutorials/cli-fundamentals.html#getting-help",
+    "href": "tutorials/cli-fundamentals.html#getting-help",
+    "title": "CLI fundamentals",
+    "section": "Getting help",
+    "text": "Getting help\n\nManual pages (man)\nMost commands have a built-in manual that you can access with man:\nman ls\nThis opens a detailed reference for the ls command, including all its flags and options. Manual pages can be dense, but they are the authoritative source. Press q to exit.\n\n\nThe --help flag\nMany commands also accept a --help flag that prints a shorter usage summary:\nmkdir --help\n\n\n\n\n\n\nTip\n\n\n\nOnce you install additional packages via Homebrew, you can also install tldr — a community-maintained collection of simplified help pages with practical examples. We will set that up in the Shell configuration tutorial."
+  },
+  {
+    "objectID": "tutorials/cli-fundamentals.html#installing-homebrew",
+    "href": "tutorials/cli-fundamentals.html#installing-homebrew",
+    "title": "CLI fundamentals",
+    "section": "Installing Homebrew",
+    "text": "Installing Homebrew\nA package manager automates installing, updating, and removing software. Instead of downloading installers from the web and clicking through wizards, you run a single command and the package manager handles everything.\nHomebrew is the most widely used package manager on macOS, and it also works on Linux (including WSL). You will use it throughout the workgroup to install developer tools, enhanced terminal utilities, and applications.\n\nPrerequisites\nmacOS — install Apple’s command-line developer tools:\nxcode-select --install\nWindows (WSL Ubuntu) — install build tools:\nsudo apt update && sudo apt upgrade\nsudo apt install build-essential -y\nBoth commands require your password, since they install system-level software.\n\n\nInstall Homebrew\nRun the official installer:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n\n\n\n\n\n\nWarning\n\n\n\nAlways be cautious when running commands that download and execute scripts from the internet. Make sure you trust the source and understand what the script does. Homebrew is widely used and maintained by a large open-source community — the workgroup can vouch for its safety. If you have any questions about running a command, ask a workgroup member.\n\n\n\n\nVerify the installation\nAfter the installation finishes, confirm it worked:\nbrew --version\nYou should see something like Homebrew 4.x.x. If the brew command is not found, the installer may have printed instructions for adding Homebrew to your PATH — follow those prompts, then open a new terminal window and try again.\n\n\n\n\n\n\nNote\n\n\n\nWe will cover what PATH is and how to configure it in the Shell configuration tutorial. For now, just follow any instructions the Homebrew installer provides.\n\n\n\n\nInstall your first package\nTry installing tree, a command that visualizes directory structures:\nbrew install tree\ntree -L 1\n.\n├── Desktop\n├── Documents\n├── Downloads\n└── Pictures\nWe will use brew extensively in the Shell configuration tutorial to install and configure a full set of recommended tools."
+  },
+  {
+    "objectID": "tutorials/cli-fundamentals.html#learning-more",
+    "href": "tutorials/cli-fundamentals.html#learning-more",
+    "title": "CLI fundamentals",
+    "section": "Learning more",
+    "text": "Learning more\nThere are many resources available that document core commands and their usage:\n\nLinux Command Line Basics\nW3Schools: Bash Tutorial"
+  },
+  {
+    "objectID": "tutorials/cli-fundamentals.html#summary",
+    "href": "tutorials/cli-fundamentals.html#summary",
+    "title": "CLI fundamentals",
+    "section": "Summary",
+    "text": "Summary\nHere is a reference table of the commands covered in this tutorial:\n\n\n\n\n\n\n\n\nCommand\nWhat it does\nExample\n\n\n\n\npwd\nPrint current directory\npwd\n\n\nls\nList files and directories\nls -la\n\n\ncd\nChange directory\ncd Documents\n\n\nmkdir\nCreate a directory\nmkdir my_folder\n\n\ntouch\nCreate an empty file\ntouch notes.txt\n\n\necho\nPrint text (with &gt; to write to file)\necho \"hi\" &gt; file.txt\n\n\ncat\nDisplay file contents\ncat notes.txt\n\n\nless\nView file in scrollable reader\nless notes.txt\n\n\ncp\nCopy files or directories\ncp file.txt copy.txt\n\n\nmv\nMove or rename files\nmv old.txt new.txt\n\n\nrm\nDelete files or directories\nrm -r old_folder\n\n\nman\nOpen manual page\nman ls\n\n\nclear\nClear the terminal screen\nclear\n\n\nhistory\nShow command history\nhistory\n\n\nbrew\nInstall packages via Homebrew\nbrew install tree\n\n\n\nNext tutorial: Working with the filesystem"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html",
+    "href": "tutorials/working-with-the-filesystem.html",
+    "title": "Working with the filesystem",
     "section": "",
-    "text": "Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.\nPrerequisites: GitHub collaboration Estimated time: 30 minutes\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Check back soon or attend a workgroup session for a guided walkthrough."
+    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#overview",
+    "href": "tutorials/working-with-the-filesystem.html#overview",
+    "title": "Working with the filesystem",
+    "section": "",
+    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
+    "href": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
+    "title": "Working with the filesystem",
+    "section": "The filesystem as a tree",
+    "text": "The filesystem as a tree\nYour computer’s filesystem is organized like an upside-down tree. At the very top is the root directory, written as /. Every file and directory on the system lives somewhere under root.\nHere is a simplified view of what a macOS filesystem looks like:\n/\n├── Applications/\n├── System/\n├── Users/\n│   ├── jane/\n│   │   ├── Desktop/\n│   │   ├── Documents/\n│   │   │   └── report.txt\n│   │   ├── Downloads/\n│   │   └── Pictures/\n│   └── shared/\n└── tmp/\nDirectories contain other directories and files. The path from root down to any file describes exactly where it lives — like a mailing address.\n\n\n\n\n\n\nTip\n\n\n\nYou can visualize your own filesystem with the tree command. If you installed it in the previous tutorial (brew install tree), try:\ntree -L 2 ~\nThe -L 2 flag limits the display to two levels deep so you don’t get overwhelmed."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#absolute-vs-relative-paths",
+    "href": "tutorials/working-with-the-filesystem.html#absolute-vs-relative-paths",
+    "title": "Working with the filesystem",
+    "section": "Absolute vs relative paths",
+    "text": "Absolute vs relative paths\nThere are two ways to describe where a file is: absolute paths and relative paths.\n\nAbsolute paths\nAn absolute path starts from the root directory (/) and spells out the full location:\n/Users/jane/Documents/report.txt\nAn absolute path works no matter where you currently are in the filesystem. It always starts with /.\n\n\nRelative paths\nA relative path starts from your current working directory. If you are in /Users/jane, then:\nDocuments/report.txt\npoints to the same file as the absolute path above. Relative paths never start with /.\n\n\nWorked example\nSuppose you are in /Users/jane/Desktop. Here are two ways to reach the same file:\n# Absolute path — works from anywhere\ncat /Users/jane/Documents/report.txt\n\n# Relative path — works because we are in /Users/jane/Desktop\ncat ../Documents/report.txt\nThe .. in the relative path means “go up one directory” (from Desktop to jane), then descend into Documents."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#special-path-symbols",
+    "href": "tutorials/working-with-the-filesystem.html#special-path-symbols",
+    "title": "Working with the filesystem",
+    "section": "Special path symbols",
+    "text": "Special path symbols\nThe shell recognizes several shorthand symbols that make navigation faster.\n\n\n\nSymbol\nMeaning\nExample\n\n\n\n\n~\nHome directory\ncd ~\n\n\n.\nCurrent directory\nls .\n\n\n..\nParent directory (one level up)\ncd ..\n\n\n-\nPrevious directory (with cd)\ncd -\n\n\n\n\nHome directory (~)\nThe tilde ~ expands to your home directory. These two commands are equivalent:\ncd /Users/jane\ncd ~\nYou can also use ~ inside paths:\nls ~/Documents\nRunning cd with no arguments also takes you home:\ncd\n\n\nCurrent directory (.)\nA single dot refers to the directory you are in right now. You rarely need it for navigation, but it appears in paths like ./script.sh (meaning “run script.sh from the current directory”).\n\n\nParent directory (..)\nDouble dots mean “one level up.” You can chain them:\ncd ../..\nThis moves up two levels. After each cd, run pwd to confirm where you landed.\n\n\nPrevious directory (-)\ncd - jumps back to whatever directory you were in before the last cd. This is handy when you are bouncing between two locations:\ncd ~/Documents\ncd /tmp\ncd -\npwd\n/Users/jane/Documents"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#the-home-directory",
+    "href": "tutorials/working-with-the-filesystem.html#the-home-directory",
+    "title": "Working with the filesystem",
+    "section": "The home directory",
+    "text": "The home directory\nYour home directory (~) is where your personal files and settings live. On macOS it is typically /Users/yourname; on Linux, /home/yourname.\nCommon directories you will find inside ~:\n\n\n\nDirectory\nContains\n\n\n\n\nDesktop/\nFiles visible on your desktop\n\n\nDocuments/\nPersonal documents\n\n\nDownloads/\nFiles downloaded from the web\n\n\nPictures/\nImages and screenshots\n\n\n\n\nHidden files and dotfiles\nSome files in your home directory start with a dot — these are dotfiles. The regular ls command does not show them:\nls ~\nDesktop  Documents  Downloads  Pictures\nAdd the -a flag to reveal hidden files:\nls -a ~\n.            .bash_history  .zshrc     Desktop    Downloads\n..           .gitconfig     .config    Documents  Pictures\nFiles like .zshrc and .gitconfig store configuration for your shell and tools. Starting a name with a dot is a convention for “this file is configuration, not regular content” — it does not make the file secure or protected, just hidden from default listings.\n\n\n\n\n\n\nNote\n\n\n\nWe will edit dotfiles like .zshrc in the Shell configuration tutorial to customize your terminal."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#tab-completion",
+    "href": "tutorials/working-with-the-filesystem.html#tab-completion",
+    "title": "Working with the filesystem",
+    "section": "Tab completion",
+    "text": "Tab completion\nTab completion is one of the most useful features of the shell. Instead of typing a full file name or path, type just the first few characters and press Tab:\ncd Docu⟨Tab⟩\nThe shell completes it to cd Documents/.\n\nMultiple matches\nIf more than one file matches, pressing Tab once does nothing. Press Tab twice to see all the options:\ncd Do⟨Tab⟩⟨Tab⟩\nDocuments/  Downloads/\nType one more character to narrow it down, then Tab again:\ncd Doc⟨Tab⟩\n\n\nNavigating deep paths\nYou can Tab your way through long paths one segment at a time:\nls ~/Doc⟨Tab⟩/rep⟨Tab⟩\nbecomes:\nls ~/Documents/report.txt\nThis saves typing and prevents typos. Build the Tab habit early — experienced CLI users press Tab almost reflexively.\n\n\nCommands and programs\nTab completion also works for commands themselves. Type a few letters of a command and press Tab to see matching programs:\nbre⟨Tab⟩⟨Tab⟩\nbreak  brew"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#wildcards-and-globbing",
+    "href": "tutorials/working-with-the-filesystem.html#wildcards-and-globbing",
+    "title": "Working with the filesystem",
+    "section": "Wildcards and globbing",
+    "text": "Wildcards and globbing\nWildcards let you match multiple files at once using patterns instead of exact names. The shell expands these patterns — a process called globbing — before passing the results to the command.\n\nThe * wildcard\nAn asterisk matches any sequence of characters (including none):\nls *.txt\nnotes.txt  report.txt  todo.txt\nThis lists every file in the current directory that ends with .txt.\nYou can use * anywhere in a pattern:\nls report.*\nreport.txt  report.pdf\n\n\nThe ? wildcard\nA question mark matches exactly one character:\nls file?.txt\nfile1.txt  file2.txt  fileA.txt\nThis would not match file10.txt (two characters after “file”) or file.txt (zero characters).\n\n\nPractical examples\nCopy all Markdown files to a backup directory:\ncp *.md backup/\nList only three-letter file extensions:\nls *.???\n\n\n\n\n\n\nWarning\n\n\n\nBe especially careful combining wildcards with rm. The command rm *.txt deletes every .txt file in the current directory with no confirmation. Always run ls with the same pattern first to verify what will be matched:\nls *.txt          # preview what matches\nrm *.txt          # then delete if correct"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#practical-patterns",
+    "href": "tutorials/working-with-the-filesystem.html#practical-patterns",
+    "title": "Working with the filesystem",
+    "section": "Practical patterns",
+    "text": "Practical patterns\nHere are a few common filesystem tasks that combine what you have learned.\n\nCopying and moving between directories\nCopy a file from your current directory to another:\ncp report.txt ~/Documents/\nMove a file from Downloads to Documents:\nmv ~/Downloads/data.csv ~/Documents/\n\n\nCreating nested directories\nThe -p flag tells mkdir to create parent directories as needed:\nmkdir -p projects/website/images\nThis creates projects/, projects/website/, and projects/website/images/ all in one command — even if none of them exist yet.\n\n\nSpaces in file names\nFile names with spaces require quoting. Without quotes, the shell interprets each word as a separate argument:\n# This tries to list two items: \"my\" and \"file.txt\"\nls my file.txt\n\n# This lists the single file \"my file.txt\"\nls \"my file.txt\"\nYou can also escape the space with a backslash:\nls my\\ file.txt\n\n\n\n\n\n\nTip\n\n\n\nAvoiding spaces in file names makes life easier in the terminal. Use underscores (my_file.txt) or hyphens (my-file.txt) instead."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#summary",
+    "href": "tutorials/working-with-the-filesystem.html#summary",
+    "title": "Working with the filesystem",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nSymbol / concept\nMeaning\n\n\n\n\n/\nRoot directory (start of absolute paths)\n\n\n~\nHome directory\n\n\n.\nCurrent directory\n\n\n..\nParent directory\n\n\n- (with cd)\nPrevious directory\n\n\n*\nWildcard: matches any characters\n\n\n?\nWildcard: matches one character\n\n\nTab\nAuto-complete file names and commands\n\n\n\"quotes\"\nHandle spaces in file names\n\n\nmkdir -p\nCreate nested directories\n\n\n\nNext tutorial: Shell configuration"
   }
 ]
