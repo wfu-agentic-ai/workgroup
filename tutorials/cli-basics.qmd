@@ -311,16 +311,21 @@ You can install any of these packages using Homebrew with the command `brew inst
 brew install zoxide
 ```
 
-I also recommend adding the following casks to get you started with some useful applications:
+For macOS users, I also recommend adding the following casks to get you started with some useful applications:
 
 - `visual-studio-code`: A popular code editor that provides a powerful and customizable environment for coding, with support for a wide range of programming languages and extensions.
-- `iterm2`: A terminal emulator for macOS that provides a more feature-rich and customizable terminal experience, with features like split panes, hotkeys, and a powerful search function.
+- `iterm2` or `ghostty`: Terminal emulators for macOS that provide a more feature-rich and customizable terminal experience, with features like split panes, hotkeys, and a powerful search function.
 
 You can install these applications using Homebrew with the command `brew install --cask <package_name>`. For example, to install Visual Studio Code, you would run:
 
 ```bash
 brew install --cask visual-studio-code
 ```
+
+::: {.callout-tip}
+For WSL Linux users, you can install the Windows version of Visual Studio Code or Ghostty using traditional Windows installation methods (e.g., downloading the installer from the official website or using the Microsoft Store).
+:::
+
 
 Note, for some packages, you may need to follow additional setup instructions after installation. For example, after installing `zoxide`, you will need to add the following line to your shell's configuration file (`~/.bashrc` for Bash or `~/.zshrc` for Zsh) to enable it:
 
