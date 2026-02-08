@@ -1,19 +1,525 @@
 ---
 title: "Shell configuration"
-description: "Customize your terminal with dotfiles, environment variables, and aliases."
+description: |
+  Customize your terminal with dotfiles, environment variables, aliases, and Homebrew packages. Learn how your shell reads configuration files and how to make changes that persist.
 order: 3
-date: "2026-02-06"
+date: 2026-02-06
 date-modified: today
 categories: ["Getting started"]
 ---
 
 ## Overview
 
-Your shell reads configuration files (dotfiles) every time it starts. This tutorial explains how to customize your terminal by editing these files, setting environment variables, and creating aliases for common commands.
+Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.
 
-**Prerequisites:** [Working with paths](working-with-paths.qmd)
-**Estimated time:** 25 minutes
+**Prerequisites:** [Working with the filesystem](working-with-the-filesystem.qmd)
+
+---
+
+## What are dotfiles?
+
+In the previous tutorial you learned that {{< glossary dotfile display="dotfiles" >}} are hidden files whose names start with a period. Many of the most important dotfiles are *configuration files* — plain text files that programs read at startup to learn your preferences.
+
+Common dotfiles you will encounter:
+
+| File | Used by |
+|------|---------|
+| `~/.zshrc` | Zsh shell configuration |
+| `~/.bashrc` | Bash shell configuration |
+| `~/.gitconfig` | Git settings (name, email, editor) |
+| `~/.config/` | Directory for application configs |
+
+These files live in your home directory. Because they start with a dot, `ls` hides them unless you use `ls -a`.
+
+## Shell startup files
+
+When you open a terminal, your shell runs a {{< glossary "Startup File" display="startup file" >}} — a script that sets up your environment. Which file it reads depends on your shell:
+
+| Shell | Startup file |
+|-------|-------------|
+| Zsh (macOS default) | `~/.zshrc` |
+| Bash (Linux/WSL default) | `~/.bashrc` |
 
 ::: {.callout-note}
-Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
+
+You may also see files like `~/.zprofile` or `~/.bash_profile`. These run for *login shells* (the first shell started when you log in). For the purposes of this workgroup, focus on `.zshrc` or `.bashrc` — they handle interactive sessions, which is what you get when you open a terminal window.
+
 :::
+
+### Editing your config file
+
+You can edit your shell config with any text editor. `nano` is a simple terminal-based editor that is available on all systems:
+
+```bash
+nano ~/.zshrc
+```
+
+Inside `nano`:
+
+- Type or paste text normally
+- **Ctrl + O** to save (then press Enter to confirm the filename)
+- **Ctrl + X** to exit
+
+If you have Visual Studio Code installed, you can open the file in a graphical editor instead:
+
+```bash
+code ~/.zshrc
+```
+
+::: {.callout-tip}
+
+Before editing any config file, make a backup:
+
+```bash
+cp ~/.zshrc ~/.zshrc.backup
+```
+
+If something goes wrong, you can restore it:
+
+```bash
+cp ~/.zshrc.backup ~/.zshrc
+```
+
+:::
+
+### Applying changes with `source`
+
+After editing your config file, the changes do not take effect automatically — your current shell session already ran the old version at startup. You have two options:
+
+1. Open a new terminal window (it will read the updated file)
+2. Use the {{< glossary source >}} command to re-read the file in your current session:
+
+```bash
+source ~/.zshrc
+```
+
+For Bash users:
+
+```bash
+source ~/.bashrc
+```
+
+## Environment variables
+
+{{< glossary "Environment Variable" display="Environment variables" >}} are key-value pairs that programs read to learn about your system and preferences. You can see all current environment variables with:
+
+```bash
+env
+```
+
+To see the value of a specific variable, use `echo` with a `$` prefix:
+
+```bash
+echo $HOME
+```
+
+```
+/Users/jane
+```
+
+### Setting a variable
+
+To create or change an environment variable for the current session:
+
+```bash
+MY_NAME="Jane"
+echo $MY_NAME
+```
+
+```
+Jane
+```
+
+This variable only exists in your current shell. To make it available to programs you launch *from* this shell, use {{< glossary export >}}:
+
+```bash
+export MY_NAME="Jane"
+```
+
+To make a variable persist across sessions, add the `export` line to your shell config file (`~/.zshrc` or `~/.bashrc`).
+
+### The PATH variable
+
+{{< glossary PATH >}} is the most important environment variable. It tells the shell where to look for programs when you type a command.
+
+```bash
+echo $PATH
+```
+
+```
+/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+```
+
+The output is a list of directories separated by colons. When you type a command like `brew`, the shell searches these directories from left to right until it finds a program with that name. If the program is not in any of the PATH directories, you get a "command not found" error.
+
+This is why the Homebrew installer asked you to add a line to your config file — it needed to put Homebrew's directory (`/opt/homebrew/bin` on macOS, `/home/linuxbrew/.linuxbrew/bin` on Linux) into your PATH.
+
+### Adding a directory to PATH
+
+To add a directory to PATH, add a line like this to your config file:
+
+```bash
+export PATH="/some/new/directory:$PATH"
+```
+
+The `$PATH` at the end preserves the existing directories. New directories go at the beginning so they are searched first.
+
+If Homebrew is not working after installation, this is most likely the fix. Add the appropriate line for your system:
+
+For Zsh on macOS:
+
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+```
+
+For Bash on Linux:
+
+```bash
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+```
+
+Then apply the change:
+
+```bash
+source ~/.zshrc   # or source ~/.bashrc
+```
+
+### Other useful variables
+
+| Variable | What it stores |
+|----------|---------------|
+| `HOME` | Your home directory path |
+| `EDITOR` | Your preferred text editor (e.g. `nano`, `vim`, `code`) |
+| `SHELL` | The path to your current shell program |
+| `USER` | Your username |
+
+To set a default editor, add this to your config file:
+
+```bash
+export EDITOR="nano"
+```
+
+## Aliases
+
+An {{< glossary alias >}} is a shortcut — a custom name for a command or series of commands. You define aliases in your shell config file so they are available every session.
+
+### Creating an alias
+
+The syntax is:
+
+```bash
+alias shortcut='command'
+```
+
+For example, a shortcut to go up one directory:
+
+```bash
+alias ..='cd ..'
+```
+
+Now typing `..` at the prompt runs `cd ..`.
+
+### Temporary vs persistent aliases
+
+If you type an alias directly at the prompt, it lasts only until you close the terminal. To make it permanent, add the `alias` line to `~/.zshrc` (or `~/.bashrc`) and run `source` to activate it.
+
+### Alias chaining
+
+An alias can reference another alias. For example, suppose you create a base alias for `eza` (a modern replacement for `ls`) with colorized output:
+
+```bash
+alias ls='eza --icons=auto --color=auto'
+```
+
+You can then build on it:
+
+```bash
+alias la='ls -a'           # all files, including hidden
+alias ll='ls -l'           # long format with details
+alias lla='ls -la'         # both hidden and detailed
+```
+
+Since `la` uses the `ls` alias, it inherits the `--icons=auto --color=auto` flags automatically.
+
+### Practical alias examples
+
+**Navigation:**
+
+```bash
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+```
+
+**Safety (ask before overwriting or deleting):**
+
+```bash
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+```
+
+**Tool replacements (once installed via Homebrew):**
+
+```bash
+alias cat='bat'
+alias ls='eza --icons=auto --color=auto'
+```
+
+Using aliases is highly individualized. As you use the CLI more, you will develop your own collection of shortcuts tuned to your workflow.
+
+## Working with Homebrew
+
+You installed {{< glossary Homebrew >}} in the [CLI fundamentals](cli-fundamentals.qmd) tutorial. Now let's learn how to use it effectively.
+
+### Formulae vs casks
+
+Homebrew distinguishes two types of packages:
+
+- **Formulae** — command-line tools and libraries installed in the terminal (e.g. `python`, `git`, `eza`)
+- **Casks** — desktop applications with a graphical interface (e.g. `visual-studio-code`, `iterm2`)
+
+### Common `brew` commands
+
+Install a formula:
+
+```bash
+brew install <package_name>
+```
+
+Install a cask (desktop app):
+
+```bash
+brew install --cask <package_name>
+```
+
+Update Homebrew and upgrade all installed packages:
+
+```bash
+brew update && brew upgrade
+```
+
+::: {.callout-tip}
+
+Run `brew update && brew upgrade` every few weeks to keep your tools current.
+
+:::
+
+Search for a package:
+
+```bash
+brew search <query>
+```
+
+View details about a package:
+
+```bash
+brew info <package_name>
+```
+
+List everything you have installed:
+
+```bash
+brew list
+```
+
+Uninstall a package:
+
+```bash
+brew uninstall <package_name>
+```
+
+## Recommended packages
+
+Here are packages organized by purpose. Install any of them with `brew install <name>`.
+
+### Development tools
+
+| Package | Description |
+|---------|-------------|
+| `uv` | Fast Python package and environment manager |
+| `node` | JavaScript runtime (needed for some tools) |
+| `npm` | JavaScript package manager (comes with Node) |
+
+### Enhanced commands
+
+These replace built-in commands with modern alternatives that have better defaults, color output, and additional features.
+
+| Package | Replaces | What it adds |
+|---------|----------|-------------|
+| `eza` | `ls` | Icons, color, Git status in file listings |
+| `bat` | `cat` | Syntax highlighting, line numbers, Git integration |
+| `fd` | `find` | Simpler syntax, faster, respects `.gitignore` |
+
+### Navigation and search
+
+| Package | Description |
+|---------|-------------|
+| `zoxide` | Remembers directories you visit; jump to them with `z <partial-name>` |
+| `fzf` | Fuzzy finder for files, command history, and more |
+
+### Productivity
+
+| Package | Description |
+|---------|-------------|
+| `thefuck` | Suggests corrections for mistyped commands |
+| `tldr` | Simplified help pages with practical examples |
+| `ncdu` | Interactive disk usage analyzer |
+| `yazi` | Terminal file browser with previews |
+| `lazygit` | Terminal UI for Git operations |
+
+### Cask recommendations (macOS)
+
+| Package | Description |
+|---------|-------------|
+| `visual-studio-code` | Popular code editor with extension ecosystem |
+| `iterm2` | Feature-rich terminal emulator |
+| `wezterm` | Cross-platform, GPU-accelerated terminal |
+| `ghostty` | Fast, native terminal emulator |
+
+Install a cask with:
+
+```bash
+brew install --cask visual-studio-code
+```
+
+::: {.callout-tip title="Windows / WSL users"}
+
+For graphical applications on Windows, install the Windows version directly:
+
+- [Visual Studio Code](https://code.visualstudio.com/download) — install the "Remote - WSL" extension to edit files inside your WSL environment from Windows
+- [WezTerm](https://wezterm.org/install/windows.html) — set the default domain to WSL in its config file
+
+Terminal-based formulae (everything except casks) install normally inside WSL via Homebrew.
+
+:::
+
+## Configuring installed tools
+
+Some packages need a line in your shell config to activate. Here are the common ones.
+
+### zoxide
+
+Add to your config file:
+
+```bash
+eval "$(zoxide init zsh)"    # for Zsh
+eval "$(zoxide init bash)"   # for Bash
+```
+
+After sourcing, you can use `z` to jump to directories you have visited before:
+
+```bash
+z Documents    # jumps to ~/Documents (or whichever "Documents" you visit most)
+```
+
+### thefuck
+
+Add to your config file:
+
+```bash
+eval "$(thefuck --alias)"
+```
+
+Now, after a mistyped command, type `fuck` and it will suggest the correction.
+
+### eza aliases
+
+To replace `ls` with `eza` everywhere, add these aliases:
+
+```bash
+alias ls='eza --icons=auto --color=auto'
+alias la='ls --almost-all'
+alias ll='ls --long --time-style=relative --ignore-glob=.git'
+alias lla='la --long --time-style=relative --ignore-glob=.git'
+```
+
+### bat as a pager
+
+To use `bat` for manual pages and as the default pager:
+
+```bash
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PAGER="bat"
+```
+
+### Worked example
+
+Here is a complete block you could add to the end of your `~/.zshrc` (or `~/.bashrc`, replacing `zsh` with `bash` in the zoxide line):
+
+```bash
+# Tool integrations
+eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
+
+# Enhanced defaults
+alias ls='eza --icons=auto --color=auto'
+alias la='ls --almost-all'
+alias ll='ls --long --time-style=relative --ignore-glob=.git'
+alias cat='bat'
+
+# Navigation shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+
+# Safety
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# Pager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PAGER="bat"
+```
+
+After adding this block, apply it:
+
+```bash
+source ~/.zshrc
+```
+
+Then test a few commands:
+
+```bash
+ls              # should show icons and color
+z ~             # should jump to home
+tldr ls         # should show a simplified help page
+```
+
+## The setup script
+
+If you prefer to automate the entire process described in this tutorial, the workgroup provides a setup script that installs all recommended packages, configures Git, and appends shell integrations to your config file.
+
+Run it directly:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)"
+```
+
+Or preview what it would do without making changes:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh | bash -s -- --dry-run
+```
+
+::: {.callout-note}
+
+If you followed this tutorial manually and installed everything yourself, you already have what the script provides. The script is most useful for setting up a new machine quickly or helping someone who wants to skip the step-by-step process.
+
+:::
+
+## Summary
+
+| Concept | Key command / file |
+|---------|-------------------|
+| Shell config file | `~/.zshrc` (Zsh) or `~/.bashrc` (Bash) |
+| Edit config | `nano ~/.zshrc` or `code ~/.zshrc` |
+| Apply changes | `source ~/.zshrc` |
+| Set environment variable | `export VARIABLE=value` |
+| Create alias | `alias shortcut='command'` |
+| Install package | `brew install <name>` |
+| Update packages | `brew update && brew upgrade` |
+| Backup config | `cp ~/.zshrc ~/.zshrc.backup` |
+
+**Next tutorial:** [Git fundamentals](git-fundamentals.qmd)

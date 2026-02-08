@@ -1,12 +1,12 @@
 ---
 title: "CLI fundamentals"
 description: |
-  Open a terminal, run your first commands, and work with files and directories. In addition, learn how to install required system prerequisites and how to install additional packages to your system, including Claude Code.
+  Open a terminal, learn the anatomy of a command, and work with files and directories using core Unix commands.
 author: Jerid Francom
 order: 1
 date: 2026-02-06
 date-modified: today
-categories: ["Getting started", "CLI", "WSL", "Linux", "macOS", "Windows", "Bash", "Zsh", "Homebrew"]
+categories: ["Getting started", "CLI", "macOS", "Windows", "Bash", "Zsh"]
 ---
 
 ## Overview
@@ -14,7 +14,7 @@ categories: ["Getting started", "CLI", "WSL", "Linux", "macOS", "Windows", "Bash
 ::: {.columns}
 ::: {.column width=70%}
 
-This tutorial introduces the command-line interface (CLI). You'll learn how to open a terminal on macOS or Windows, run basic commands, and create, move, and delete files and directories. Furthermore, you'll learn how to install Homebrew, a popular package manager that allows you to easily install and manage software on your system. With Homebrew, you can install a wide range of tools and utilities that can enhance your terminal experience and provide additional functionality.
+This tutorial introduces the {{< glossary CLI >}}. You will learn how to open a {{< glossary terminal >}}, understand the structure of a {{< glossary command >}}, and run a core set of commands for creating, viewing, copying, moving, and deleting files. By the end you will also install {{< glossary Homebrew >}}, a {{< glossary "Package Manager" display="package manager" >}} that you will use throughout the workgroup.
 
 :::
 ::: {.column width=30%}
@@ -23,7 +23,6 @@ This tutorial introduces the command-line interface (CLI). You'll learn how to o
 
 :::
 :::
-
 
 **Prerequisites:** None
 
@@ -36,13 +35,13 @@ The command-line interface (CLI) is a text-based way to interact with your compu
 Depending on your operating system, you might use different terminal applications:
 
 - **macOS/Linux:** Terminal (default), iTerm2, or other terminal emulators
-- **Windows:** Command Prompt (default), PowerShell, or Windows Terminal.
+- **Windows:** Command Prompt (default), PowerShell, or Windows Terminal
 
-Once you open a terminal, you'll see a prompt where you can type commands. The CLI uses a {{< glossary shell >}} (like Bash, Zsh, or PowerShell) to interpret your commands and execute them. By default on macOS, the shell is Zsh, while on Windows, it's Command Prompt. Many Windows users also install Windows Subsystem for Linux ({{< glossary WSL >}}) to access a Linux-like environment with Bash.
+Once you open a terminal, you will see a prompt where you can type commands. The CLI uses a {{< glossary shell >}} (like {{< glossary Bash >}}, {{< glossary Zsh >}}, or PowerShell) to interpret your commands and execute them. By default on macOS, the shell is Zsh, while on Windows, it is Command Prompt. Many Windows users also install Windows Subsystem for Linux ({{< glossary WSL >}}) to access a Linux-like environment with Bash.
 
 ::: {.callout-tip}
 
-For most intents and purposes, Zsh and Bash are very similar, and the commands you'll learn in this tutorial will work in either shell. For the purposes of this workgroup, it is recommended for [Windows users to install/enable WSL and use Ubuntu Linux,](https://youtu.be/-Wg2r1lWrTc?si=UDyCV-ky3rng3VCl) as it provides a fully functional Linux system with Bash shell as a default. This will provide a more consistent experience with the tutorials and workgroup sessions.
+For most intents and purposes, Zsh and Bash are very similar, and the commands you will learn in this tutorial work in either shell. For the purposes of this workgroup, it is recommended for [Windows users to install/enable WSL and use Ubuntu Linux](https://youtu.be/-Wg2r1lWrTc?si=UDyCV-ky3rng3VCl), as it provides a fully functional Linux system with Bash as the default shell. This will provide a more consistent experience with the tutorials and workgroup sessions.
 
 :::
 
@@ -58,360 +57,431 @@ For most intents and purposes, Zsh and Bash are very similar, and the commands y
 1. Open the Start menu (Windows key)
 2. Type "Ubuntu" and press Enter
 
-## Running your first commands
+You should see a window with a blinking cursor next to a prompt that looks something like this:
 
-Once you have your terminal open, you can start typing commands. Here are a few basic commands to get you started:
+```
+jane@macbook ~ %
+```
 
-Print the current working directory
+The prompt shows your username, your computer's name, and your current directory. The `%` (Zsh) or `$` (Bash) at the end is the shell's way of saying "I'm ready for a command."
+
+## Anatomy of a command
+
+Before running commands, it helps to know what they look like. Every command follows the same general pattern:
+
+```
+command [options] [arguments]
+```
+
+- **Command** — the program to run (e.g. `ls`, `mkdir`, `rm`)
+- **Options** (also called {{< glossary flag display="flags" >}}) — modify the command's behavior. Short flags start with a single dash and a letter (`-l`); long flags start with two dashes and a word (`--long`). You can usually combine short flags: `-la` is the same as `-l -a`.
+- **Arguments** ({{< glossary argument display="arguments" >}}) — the thing(s) the command acts on, usually a file name or directory path
+
+Not every command needs options or arguments. Some commands work fine on their own:
 
 ```bash
 pwd
 ```
 
+Others accept options that change the output:
 
-List files and directories in the current directory
+```bash
+ls -l
+```
+
+And many take both options and arguments:
+
+```bash
+ls -la Documents
+```
+
+Here `ls` is the command, `-la` combines two flags (`-l` for long format and `-a` for all files including hidden ones), and `Documents` is the argument telling `ls` which directory to list.
+
+::: {.callout-tip}
+
+When you see square brackets in documentation — like `[options]` — they mean that part is optional. You do not type the brackets themselves.
+
+:::
+
+## Your first commands
+
+### Where am I? (`pwd`)
+
+`pwd` stands for "print working directory." It shows you the full path to the directory you are currently in.
+
+```bash
+pwd
+```
+
+```
+/Users/jane
+```
+
+This tells you that you are in the user `jane`'s home directory. You will always be somewhere in the filesystem, and `pwd` tells you exactly where.
+
+### What is here? (`ls`)
+
+`ls` lists the files and directories in your current location.
 
 ```bash
 ls
 ```
 
-Create a new directory called "my_folder"
+```
+Desktop    Documents  Downloads  Pictures
+```
+
+Add the `-l` flag for more detail (permissions, size, date):
+
+```bash
+ls -l
+```
+
+Or combine flags to see hidden files too:
+
+```bash
+ls -la
+```
+
+### Creating directories (`mkdir`)
+
+`mkdir` creates a new directory.
 
 ```bash
 mkdir my_folder
 ```
 
-Change into the new directory
+Verify it was created:
+
+```bash
+ls
+```
+
+### Moving around (`cd`)
+
+`cd` changes your current directory.
 
 ```bash
 cd my_folder
 ```
 
-Create a new file called "my_file.txt"
+Confirm where you are now:
 
 ```bash
-touch my_file.txt
+pwd
 ```
 
-Move the file to a new name "renamed_file.txt"
-
-```bash
-mv my_file.txt renamed_file.txt
+```
+/Users/jane/my_folder
 ```
 
-Delete a file
-
-```bash
-rm renamed_file.txt
-```
-
-Move up one directory level (parent directory)
+To go back up one level to the parent directory:
 
 ```bash
 cd ..
 ```
 
-Delete a directory (and all its contents)
+::: {.callout-note}
+
+We will cover paths, special symbols like `..` and `~`, and navigation in depth in the [Working with the filesystem](working-with-the-filesystem.qmd) tutorial.
+
+:::
+
+### Creating files (`touch`)
+
+`touch` creates an empty file (or updates the timestamp of an existing file).
+
+```bash
+touch my_file.txt
+```
+
+```bash
+ls
+```
+
+```
+my_file.txt
+```
+
+### Writing to a file (`echo` with `>`)
+
+`echo` prints text to the terminal. Combined with `>`, it writes that text into a file:
+
+```bash
+echo "Hello from the CLI" > my_file.txt
+```
+
+The `>` operator redirects the output of a command into a file. If the file already exists, `>` overwrites it. To append instead, use `>>`:
+
+```bash
+echo "A second line" >> my_file.txt
+```
+
+### Viewing file contents (`cat` and `less`)
+
+`cat` prints the entire contents of a file to the terminal:
+
+```bash
+cat my_file.txt
+```
+
+```
+Hello from the CLI
+A second line
+```
+
+For longer files, `less` is better — it opens the file in a scrollable viewer:
+
+```bash
+less my_file.txt
+```
+
+Inside `less`, use the arrow keys or Page Up / Page Down to scroll. Press `q` to quit and return to the prompt.
+
+::: {.callout-tip}
+
+`cat` gets its name from "concatenate" — it can combine multiple files: `cat file1.txt file2.txt`. But its most common use is simply viewing a single file.
+
+:::
+
+### Copying files (`cp`)
+
+`cp` copies a file (or directory) from one location to another:
+
+```bash
+cp my_file.txt my_copy.txt
+```
+
+```bash
+ls
+```
+
+```
+my_copy.txt  my_file.txt
+```
+
+Now both files exist. To copy an entire directory and its contents, add the `-r` (recursive) flag:
+
+```bash
+cp -r my_folder my_folder_backup
+```
+
+### Renaming and moving files (`mv`)
+
+`mv` moves a file to a new location. If the destination is in the same directory, it effectively renames the file:
+
+```bash
+mv my_copy.txt renamed_file.txt
+```
+
+```bash
+ls
+```
+
+```
+my_file.txt  renamed_file.txt
+```
+
+You can also use `mv` to move files between directories:
+
+```bash
+mv renamed_file.txt my_folder/
+```
+
+### Deleting files and directories (`rm`)
+
+`rm` removes a file permanently:
+
+```bash
+rm my_file.txt
+```
+
+To remove a directory and everything inside it, add the `-r` flag:
 
 ```bash
 rm -r my_folder
 ```
 
+::: {.callout-warning}
 
-### Getting help (inside the terminal)
+`rm` is permanent. There is no trash can, no undo. Double-check what you are deleting before pressing Enter. The `-i` flag makes `rm` ask for confirmation before each deletion: `rm -i file.txt`.
 
-Most commands have built-in manual that you can access by typing `man` and then the command. For example:
+:::
+
+## Navigating your terminal
+
+Beyond typing commands, a few keyboard skills will save you time and frustration.
+
+### Command history
+
+Press the **up arrow** key to cycle through commands you have already run. Press **down arrow** to move forward through history. This is the fastest way to re-run or edit a recent command.
+
+To see your full command history:
+
+```bash
+history
+```
+
+### Clearing the screen
+
+When your terminal gets cluttered, clear it:
+
+```bash
+clear
+```
+
+Or press **Ctrl + L** for the same effect.
+
+### Tab completion
+
+Start typing a file name or command and press **Tab** — the shell will complete it for you. If there are multiple matches, press **Tab** twice to see all options.
+
+```bash
+ls Doc⟨Tab⟩
+```
+
+The shell completes it to `Documents/`. Tab completion works for commands, file names, and directory paths. It is one of the most useful habits to develop early.
+
+::: {.callout-note}
+
+We cover tab completion in more depth in the [Working with the filesystem](working-with-the-filesystem.qmd) tutorial, including navigating deep directory paths with successive tab presses.
+
+:::
+
+### Canceling a command
+
+If a command is running and you want to stop it, press **Ctrl + C**. This sends an interrupt signal that stops most programs immediately.
+
+If you have typed a partial command and want to abandon it without running it, **Ctrl + C** will also clear the current line and give you a fresh prompt.
+
+## Getting help
+
+### Manual pages (`man`)
+
+Most commands have a built-in manual that you can access with `man`:
 
 ```bash
 man ls
 ```
 
-This will display a list of options and usage information for the `ls` command. There are also help pages for newer commands, in particular those that you may install as part of packages (see [Hombrew](#installing-packages) below). For those, you can typically access help information with the `--help` flag. For example:
+This opens a detailed reference for the `ls` command, including all its flags and options. Manual pages can be dense, but they are the authoritative source. Press `q` to exit.
+
+### The `--help` flag
+
+Many commands also accept a `--help` flag that prints a shorter usage summary:
 
 ```bash
-eza --help
+mkdir --help
 ```
 
-So, try running the `man` command for some of the commands you just learned, and try using the `--help` flag for any new commands you install with Homebrew.
+::: {.callout-tip}
 
-### Learning more
+Once you install additional packages via Homebrew, you can also install `tldr` — a community-maintained collection of simplified help pages with practical examples. We will set that up in the [Shell configuration](shell-configuration.qmd) tutorial.
 
-There are many resources available that document core commands and their usage. Here are a few to get you started:
+:::
 
-- [Linux Command Line Basics](https://linuxcommand.org/lc3_learning_the_shell.php)
-- [W3Schools: Bash Tutorial](https://www.w3schools.com/bash/bash_intro.php)
+## Installing Homebrew
 
-## Installing packages
+A {{< glossary "Package Manager" display="package manager" >}} automates installing, updating, and removing software. Instead of downloading installers from the web and clicking through wizards, you run a single command and the package manager handles everything.
 
-In addition to the built-in commands, you can also install additional software packages that provide new commands and functionality. On macOS, [Homebrew](https://brew.sh/) is a popular package manager that allows you to easily install and manage software. On Ubuntu Linux, traditional package managers like `apt` are built-in and provide access to a wide range of software. However, many users prefer to use Homebrew on Linux as well, as it provides a more consistent experience across platforms and often has more up-to-date versions of software.
+{{< glossary Homebrew >}} is the most widely used package manager on macOS, and it also works on Linux (including WSL). You will use it throughout the workgroup to install developer tools, enhanced terminal utilities, and applications.
 
-You may wonder why you might need or want to install additional packages when you can already run commands with the built-in tools. The built-in commands are the bread-and-butter of the CLI, there's no doubt. However, additional packages can provide tools that can enhance your terminal experience in various ways. I'll classify them into four broad categories:
+### Prerequisites
 
-1. **Specialized tools and utilities** that are not included by default. Some of these add software that is commonly used in data science, such as Python, R, or Git. You can find editors like Neovim or Micro or IDEs such as Visual Studio Code (VS Code) or Positron.
-2. **Enhanced versions of existing commands** that modernize and improve upon the functionality of built-in commands. Examples include `eza` to replace `ls`, `fd` to replace `find`, `bat` to replace `cat`, and so on. These tools often provide additional features, better performance, and improved user experience compared to their built-in counterparts.
-3. **Tools that integrate with other software** to provide additional functionality. For example, you might install a package like `lazygit` that allows you to easily manage your Git repositories from the command line or `ncdu` to analyze disk usage in a more interactive way.
-4. **Utilities that enhance the terminal experience** by providing "quality of life" features like improved navigation, better file management, or enhanced command history. Examples include `fzf` for fuzzy finding files and commands, `z` for quickly navigating to frequently used directories, and `thefuck` for correcting mistyped commands.
-
----
-
-To install Homebrew (on macOS or Linux), your first need to ensure you have the necessary prerequisites installed.
-
-For macOS users, you will need to run:
+**macOS** — install Apple's command-line developer tools:
 
 ```bash
 xcode-select --install
 ```
 
-to install the Apple Xcode Command Line Tools before you can use Homebrew. This will provide the necessary compilers and libraries that Homebrew relies on to build and install packages.
-
-Windows users using WSL Ubuntu should run:
+**Windows (WSL Ubuntu)** — install build tools:
 
 ```bash
 sudo apt update && sudo apt upgrade
-```
-
-and then
-
-```bash
 sudo apt install build-essential -y
 ```
 
-to install the necessary build tools before installing Homebrew on Linux. This will ensure that you have the compilers and libraries needed for Homebrew to function properly.
+Both commands require your password, since they install system-level software.
 
-In both cases, you will be prompted to enter your password during the installation process, as these commands require administrative privileges to install software on your system.
+### Install Homebrew
 
----
-
-Once you have the prerequisites installed, you can run the following command in your terminal:
+Run the official installer:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-This command downloads and executes a script from the Homebrew repository on GitHub. The script will guide you through the installation process, which may involve entering your password and confirming the installation.
-
 ::: {.callout-warning}
 
-**Note:** *Always be cautious when running commands that download and execute scripts from the internet.* Make sure you trust the source and understand what the script does before running it.
-
-This workgroup can vouch for the safety of Homebrew, as it is widely used and maintained by a large community. However, it's always good practice to reach out to members of the workgroup if you have any questions or concerns about running commands or installing software.
+Always be cautious when running commands that download and execute scripts from the internet. Make sure you trust the source and understand what the script does. Homebrew is widely used and maintained by a large open-source community — the workgroup can vouch for its safety. If you have any questions about running a command, ask a workgroup member.
 
 :::
 
-After the installation is complete, you may need to add Homebrew to your system's PATH environment variable. If you are given instructions to do so, you can follow the prompts provided by the Homebrew installer.
+### Verify the installation
+
+After the installation finishes, confirm it worked:
+
+```bash
+brew --version
+```
+
+You should see something like `Homebrew 4.x.x`. If the `brew` command is not found, the installer may have printed instructions for adding Homebrew to your PATH — follow those prompts, then open a new terminal window and try again.
 
 ::: {.callout-note}
 
-The {{< glossary PATH >}} variable, and many others, are defined in your shell's configuration files. Each shell (e.g. Bash or Zsh, for our purpose) has its own set of configuration files where you can set {{< glossary "environment variable" display="environment variables" >}}, {{< glossary alias display="aliases" >}}, and other settings.
-
-A shell's configuration files are typically located in your home directory. From within the terminal, you can move to your home directory with the command `cd ~` (where the tilde `~` is a shortcut for your home directory, e.g. `/Users/username/`, on macOS, or `/home/username` on Linux).
-
-Once you're in your home directory, you can list the files to see the configuration files with `ls -a` (the `-a` flag shows hidden files, which include configuration files that start with a dot).
-
-Users of the Bash shell will typically have a `~/.bashrc` file, while users of the Zsh shell will typically have a `~/.zshrc` file. In addition, there may be another file called `~/.bash_profile` or `~/.zprofile` that is used for login shells. For the purposes of this workgroup, you can typically ignore the login shell configuration files and focus on the `~/.bashrc` or `~/.zshrc` files.
-
-If you need to manually add Homebrew to your PATH, choose your shell and run the appropriate command below to add the necessary line to your shell's configuration file.
-
-For Bash (on Linux):
-
-```bash
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
-```
-
-For Zsh (on macOS):
-
-```bash
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-```
-
-After running the command, you will need to restart your terminal or run `source ~/.bashrc` (for Bash) or `source ~/.zshrc` (for Zsh) to apply the changes.
+We will cover what {{< glossary PATH >}} is and how to configure it in the [Shell configuration](shell-configuration.qmd) tutorial. For now, just follow any instructions the Homebrew installer provides.
 
 :::
 
-### Working with `brew`
+### Install your first package
 
-Once you have Homebrew installed, you can use the `brew` command to install, update, upgrade, and uninstall packages (`formulae`) and applications (`casks`) on your system.
-
-::: {.callout}
-
-**Formulae** are packages that are typically installed in the terminal and provide command-line tools and libraries. Examples include `python`, `git`, `node`, and so on.
-
-**Casks** are packages that are typically installed as applications with a graphical user interface (GUI). Examples include `visual-studio-code`, `google-chrome`, `slack`, and so on.
-:::
-
-Here are some common `brew` commands to get you started:
-
-Install a package (formula or cask)
+Try installing `tree`, a command that visualizes directory structures:
 
 ```bash
-brew install <package_name> # e.g., brew install r
-brew install --cask <package_name> # e.g., brew install --cask visual-studio-code
+brew install tree
 ```
-
-Update Homebrew and all installed packages
 
 ```bash
-brew update # updates Homebrew itself and the list of available packages
-brew upgrade # upgrades all installed packages to their latest versions
-
-# Or you can combine them into one command:
-
-brew update && brew upgrade
+tree -L 1
 ```
 
-Uninstall a package
-
-```bash
-brew uninstall <package_name> # e.g., brew uninstall r
-brew uninstall --cask <package_name> # e.g., brew uninstall --cask visual-studio-code
+```
+.
+├── Desktop
+├── Documents
+├── Downloads
+└── Pictures
 ```
 
-Search for a package
+We will use `brew` extensively in the [Shell configuration](shell-configuration.qmd) tutorial to install and configure a full set of recommended tools.
 
-```bash
-brew search <package_name> # e.g., brew search claude
-```
+## Learning more
 
-Find details about a package
+There are many resources available that document core commands and their usage:
 
-```bash
-brew info <package_name> # e.g., brew info claude-code
-```
+- [Linux Command Line Basics](https://linuxcommand.org/lc3_learning_the_shell.php)
+- [W3Schools: Bash Tutorial](https://www.w3schools.com/bash/bash_intro.php)
 
-List all installed packages
+## Summary
 
-```bash
-brew list # lists all installed formulae and casks
-```
+Here is a reference table of the commands covered in this tutorial:
 
----
+| Command | What it does | Example |
+|---------|-------------|---------|
+| `pwd` | Print current directory | `pwd` |
+| `ls` | List files and directories | `ls -la` |
+| `cd` | Change directory | `cd Documents` |
+| `mkdir` | Create a directory | `mkdir my_folder` |
+| `touch` | Create an empty file | `touch notes.txt` |
+| `echo` | Print text (with `>` to write to file) | `echo "hi" > file.txt` |
+| `cat` | Display file contents | `cat notes.txt` |
+| `less` | View file in scrollable reader | `less notes.txt` |
+| `cp` | Copy files or directories | `cp file.txt copy.txt` |
+| `mv` | Move or rename files | `mv old.txt new.txt` |
+| `rm` | Delete files or directories | `rm -r old_folder` |
+| `man` | Open manual page | `man ls` |
+| `clear` | Clear the terminal screen | `clear` |
+| `history` | Show command history | `history` |
+| `brew` | Install packages via Homebrew | `brew install tree` |
 
-Homebrew has a vast repository of packages, and you can find many useful tools for the CLI, but as you have seen, you can also use Homebrew to install applications with a GUI --which can be very convenient as you can get updates for those applications through Homebrew all without having to open the application itself.
-
-### Recommended packages
-
-Here are some recommended packages (formuale) to get you started that can bring your terminal experience out of the 80s and into the 21st century:
-
-- `uv`: A modern, fast, and user-friendly Python package manager that simplifies the process of managing Python environments and dependencies.
-- `node`: A JavaScript runtime built on Chrome's V8 JavaScript engine that allows you to run JavaScript code outside of a web browser, making it ideal for server-side development and scripting.
-- `npm`: The default package manager for Node.js that allows you to install and manage JavaScript packages and dependencies for your projects.
-- `zoxide`: A shell extension to navigate your filesystem faster. It keeps track of the directories you visit and allows you to jump to them quickly by name using a fuzzy matching algorithm.
-- `thefuck`: A command-line tool that corrects your previous console command. If you mistype a command, you can simply type `fuck` and it will suggest the correct command based on your command history and the error message from the previous command.
-- `eza`: A modern replacement for the `ls` command that provides a more colorful and informative output, including file sizes, permissions, and Git status.
-- `fd`: A simple, fast, and user-friendly alternative to the `find` command that allows you to search for files and directories with a more intuitive syntax and better performance.
-- `bat`: A cat clone with syntax highlighting and Git integration that provides a more visually appealing way to view file contents in the terminal.
-- `lazygit`: A simple terminal UI for Git commands that allows you to manage your Git repositories more efficiently without leaving the terminal.
-- `ncdu`: A disk usage analyzer with an ncurses interface that provides a visual representation of disk usage, making it easier to identify large files and directories that may be taking up space on your system.
-- `yazi`: A terminal-based filesystem viewer and navigator that provides a more interactive way to explore your filesystem, with features like file previews, sorting, and filtering.
-- `tldr`: A collection of simplified and community-maintained help pages with practical examples for commands. It does not display the full manual or help pages, but instead provides concise and easy-to-understand explanations for those tools in their user-contributed database.
-
-You can install any of these packages using Homebrew with the command `brew install <package_name>`. For example, to install `zoxide`, you would run:
-
-```bash
-brew install zoxide
-```
-
-For macOS users, I also recommend adding the following casks to get you started with some useful applications:
-
-- `visual-studio-code`: A popular code editor that provides a powerful and customizable environment for coding, with support for a wide range of programming languages and extensions.
-- `iterm2`, `WezTerm`, or  `ghostty`: Terminal emulators for macOS that provide a more feature-rich and customizable terminal experience, with features like split panes, hotkeys, and a powerful search function.
-
-You can install these applications using Homebrew with the command `brew install --cask <package_name>`. For example, to install Visual Studio Code, you would run:
-
-```bash
-brew install --cask visual-studio-code
-```
-
-::: {.callout-tip}
-For WSL Linux users, you can install the Windows version of [Visual Studio Code](https://code.visualstudio.com/download) or [WezTerm](https://wezterm.org/install/windows.html) using traditional Windows installation methods (e.g., downloading the installer from the official website or using the Microsoft Store).
-
-*Note: To have the most seemless experience both with Visual Studio Code and WezTerm, you will need to perform a couple of additional setup steps. For VS Code, you will need to install the "Remote - WSL" extension in Visual Studio Code, which allows you to open and edit files in your WSL environment directly from Visual Studio Code on Windows. For WezTerm, you will need to create and edit the WezTerm configuration file (typically located at `~/.wezterm.lua`) to set the default shell to your WSL shell.
-
-You can do this by following the following steps:
-
-1. From your WSL terminal, create the WezTerm configuration file if it doesn't already exist:
-
-```bash
-touch ~/.wezterm.lua
-```
-
-2. Open the configuration file in a text editor (e.g., `nano`, `vim`, or `code` if you have the Remote - WSL extension installed):
-
-```bash
-code ~/.wezterm.lua
-# or
-nano ~/.wezterm.lua
-```
-
-3. Add the following content to this file.
-
-```lua
-
-local wezterm = require 'wezterm'
-local config = {}
-config.default_domain = 'WSL:Ubuntu-18.04'
-config.font = wezterm.font 'JetBrains Mono'
-return config
-```
-
-4. Save the file and restart WezTerm. It should now open with your WSL shell as the default.
-
-:::
-
-
-Note, for some packages, you may need to follow additional setup instructions after installation. For example, after installing `zoxide`, you will need to add the following line to your shell's configuration file (`~/.bashrc` for Bash or `~/.zshrc` for Zsh) to enable it:
-
-```bash
-eval "$(zoxide init <shell>)"
-```
-Make sure to replace `<shell>` with your actual shell (e.g., `bash` or `zsh`).
-
-Another example is `eza`, which provides `ls`-like functionality. To use `eza` instead of `ls`, you can create an alias in your shell's configuration file:
-
-```bash
-alias ls='eza'
-```
-
-This will allow you to use the `ls` command as you normally would, but it will actually run `eza` under the hood, giving you the enhanced features of `eza` while still using the familiar `ls` command.
-
-Aliases, however, can be extended beyond just replacing existing commands. You can create aliases which specify special options for a command that you use frequently. For example, if you want to take advantage of `eza`'s icon support and colorized output every time you list files, you could create an alias like this:
-
-```bash
-alias ls='eza --icons=auto --color=auto'
-```
-
-You can now build on this alias by adding additional options or flags to that you want to use every time you run `ls`. Furthermore, now the `ls` alias can be used to add any additional options you want to use on a case-by-case basis. For example, if you want to list all files, including hidden files, you can run:
-
-```bash
-alias la='ls -a' # uses the `ls` alias and adds the `-a` flag to show hidden files
-alias ll='ls -l' # uses the `ls` alias and adds the `-l` flag to show detailed information about files
-alias lla='ls -la' # combines both flags to show hidden files with detailed information
-```
-
-Using aliases is extremely common in the CLI, and it is highly individualized. You can create aliases for any command and customize them to fit your workflow and preferences. As you start using the CLI more, you'll likely find yourself creating more and more aliases to streamline your commands and make your terminal experience more efficient and enjoyable.
-
----
-
-Installing Homebrew and some of these packages may seem like a lot of work, and it is, but it is a one-time setup process with periodic maintenance (e.g., running `brew update && brew upgrade` every few weeks to keep your packages up to date).
-
-To make it easier, you can create a setup script that automates the installation of Homebrew and your preferred packages. This way, if you ever need to set up a new machine or reinstall your system, you can simply run the script to get everything set up quickly.
-
-I've made one available in the workgroup's GitHub repository that installs the recommended packages listed above, along with some additional ones that I find useful.
-
-You can run the following command to download and execute the setup script:
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)"
-```
-
-It will prompt you to confirm the installation of Homebrew and the packages, and it will handle the installation process for you.
-
-## Conclusion
-
-With Homebrew installed, you can easily install a wide range of tools and utilities that can enhance your terminal experience and provide additional functionality. In the next tutorial, we'll explore some of these tools and how to use them effectively in your workflow.
-
-
-
-
-
-
+**Next tutorial:** [Working with the filesystem](working-with-the-filesystem.qmd)

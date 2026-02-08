@@ -53,7 +53,7 @@ sessions/          — Session notes, one file per meeting (date-based)
 tutorials/         — Self-contained topic tutorials
   index.qmd        — Tutorial catalog with difficulty indicators
   cli-fundamentals.qmd
-  working-with-paths.qmd
+  working-with-the-filesystem.qmd
   shell-configuration.qmd
   git-fundamentals.qmd
   github-collaboration.qmd

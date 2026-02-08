@@ -1,24 +1,112 @@
 ---
 title: "Claude Code introduction"
 description: |
-  Install Claude Code, configure it for your projects, and start an agentic coding workflow.
+  Install Claude Code, configure it for your projects, and learn how to work with an agentic AI assistant in the terminal.
 order: 6
 date: 2026-02-06
 date-modified: today
 categories: ["AI tools"]
+draft: true
 ---
 
 ## Overview
 
-Claude Code is an agentic AI assistant that runs in your terminal. This tutorial walks through installation, configuration, and basic usage — including how to give Claude Code context about your project and work with it effectively.
+Claude Code is an agentic AI assistant that runs in your terminal. Unlike chat interfaces, it can read files, write code, run commands, and interact with your project directly. This tutorial walks through installation, first use, and strategies for working effectively with an AI coding partner.
 
 **Prerequisites:** [GitHub collaboration](github-collaboration.qmd)
-**Estimated time:** 30 minutes
 
 ::: {.callout-note}
 Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
 :::
 
+---
+
+## What is Claude Code?
+
+Agentic AI in the terminal — what "agentic" means (autonomously taking actions, not just answering questions). How Claude Code differs from web-based chat: direct access to your filesystem, Git, and development tools.
+
+## Installation
+
+### Install via npm
+
 ```bash
-curl -fsSL https://claude.ai/install.sh | bash
+npm install -g @anthropic-ai/claude-code
 ```
+
+### Verify installation
+
+```bash
+claude --version
+```
+
+### Authentication
+
+Signing in with your Anthropic account. API key setup.
+
+## First session
+
+### Starting Claude Code
+
+```bash
+claude
+```
+
+### The interface
+
+The prompt, how to type requests, reading responses. Exiting a session.
+
+### Basic prompts
+
+Asking Claude Code to explain a file, generate a function, summarize a directory.
+
+## Giving context
+
+### CLAUDE.md files
+
+What `CLAUDE.md` is: a project-specific instruction file that Claude Code reads automatically. Where to place it (project root). What to include: project description, coding conventions, technology stack, constraints.
+
+### Scoped instructions
+
+Global (`~/.claude/CLAUDE.md`) vs project-level (`./CLAUDE.md`) vs directory-level instructions.
+
+## Working effectively
+
+### Be specific
+
+Vague prompts produce vague results. Compare "fix the bug" vs "the login function in `auth.py` returns `None` when the password is correct — find and fix the issue."
+
+### Review changes
+
+Claude Code proposes changes and asks for approval. Always read what it plans to do before accepting. Use `git diff` afterward to verify.
+
+### Permissions
+
+Claude Code asks before taking actions like editing files or running commands. Understanding the permission model.
+
+## Common workflows
+
+### Generating boilerplate
+
+Scaffolding a new project, creating config files, writing starter templates.
+
+### Debugging
+
+Sharing error messages, pointing Claude Code to the relevant file, iterating toward a fix.
+
+### Documentation
+
+Generating READMEs, docstrings, and comments from existing code.
+
+### Git operations
+
+Using Claude Code to draft commit messages, create branches, open PRs.
+
+## Tips and guardrails
+
+Best practices: start small, iterate, use version control as a safety net. What Claude Code does well and where it needs guidance. Keeping a human in the loop.
+
+## Summary
+
+Table of key concepts: installation command, starting a session, CLAUDE.md, permission model. Link to next tutorial.
+
+**Next tutorial:** [APIs and MCPs](apis-and-mcps.qmd)

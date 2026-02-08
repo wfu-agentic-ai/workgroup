@@ -1,19 +1,112 @@
 ---
 title: "Git fundamentals"
-description: "Track changes to your files with Git: init, add, commit, log, and diff."
+description: |
+  Track changes to your files with Git: initialize a repository, stage changes, commit snapshots, and review your project's history.
 order: 4
-date: "2026-02-06"
+date: 2026-02-06
 date-modified: today
 categories: ["Version control"]
+draft: true
 ---
 
 ## Overview
 
-Git is a version control system that tracks changes to your files over time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing snapshots, and reviewing history.
+Git is a version control system that records changes to your files over time. Instead of saving multiple copies of a file (`report_v1.txt`, `report_v2_final.txt`, `report_v2_final_FINAL.txt`), Git lets you save snapshots — called *commits* — that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.
 
 **Prerequisites:** [Shell configuration](shell-configuration.qmd)
-**Estimated time:** 30 minutes
 
 ::: {.callout-note}
 Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
 :::
+
+---
+
+## What is version control?
+
+Why tracking changes matters. The problem with manual versioning (renaming files). How Git solves this: a timeline of snapshots with descriptions.
+
+## Configuring Git
+
+First-time setup with `git config --global`. Setting your name, email, and default branch name. Verifying with `git config --list`.
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global init.defaultBranch main
+```
+
+::: {.callout-tip}
+If you ran the workgroup setup script, Git is already configured. Check with `git config --list`.
+:::
+
+## Creating a repository
+
+What `git init` does. Creating a practice project. The hidden `.git/` directory.
+
+```bash
+mkdir my-project && cd my-project
+git init
+```
+
+## The staging area
+
+The three-zone model: working directory, staging area (index), and repository. Why Git uses a staging step (selective commits). Diagram of the flow.
+
+## The core workflow
+
+### Checking status (`git status`)
+
+What the status output tells you: untracked, modified, staged.
+
+### Adding files to staging (`git add`)
+
+Staging specific files vs staging everything. Why `git add .` needs care.
+
+### Committing a snapshot (`git commit`)
+
+Writing a good commit message. The `-m` flag.
+
+```bash
+git add file.txt
+git commit -m "Add initial draft of file"
+```
+
+### Viewing history (`git log`)
+
+Reading the log. Useful flags: `--oneline`, `--graph`.
+
+### Comparing changes (`git diff`)
+
+Seeing what changed before committing. Staged vs unstaged diffs.
+
+## Undoing mistakes
+
+### Unstaging a file (`git restore --staged`)
+
+Removing a file from the staging area without losing changes.
+
+### Discarding changes (`git restore`)
+
+Reverting a file to its last committed state.
+
+### Reverting a commit (`git revert`)
+
+Creating a new commit that undoes a previous one (safe for shared history).
+
+::: {.callout-warning}
+`git restore` discards uncommitted changes permanently. Make sure you want to lose those edits before running it.
+:::
+
+## Ignoring files (`.gitignore`)
+
+What `.gitignore` does. Common patterns: OS files (`.DS_Store`), editor files, build artifacts. Creating a `.gitignore` file.
+
+## Practice exercise
+
+A guided exercise: create a small project, make several commits, view the log, and undo a change.
+
+## Summary
+
+Table of core Git commands: `init`, `status`, `add`, `commit`, `log`, `diff`, `restore`, `revert`. Link to next tutorial.
+
+**Next tutorial:** [GitHub collaboration](github-collaboration.qmd)

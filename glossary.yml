@@ -1,3 +1,62 @@
+# ── General CLI concepts (Tutorial 1) ───────────────────────────
+
+CLI: |
+  The command-line interface (CLI) is a text-based way to interact with your computer. Instead of clicking icons and menus, you type commands at a prompt to perform tasks like creating files, installing software, or running programs.
+
+Terminal: |
+  A terminal (or terminal emulator) is the application that provides a window for typing commands. On macOS the default is Terminal.app; on Windows you can use Windows Terminal or a WSL Ubuntu window. The terminal runs a shell inside it.
+
+Command: |
+  A command is an instruction you type at the terminal prompt. It tells the shell to perform an action, such as listing files (`ls`), creating a directory (`mkdir`), or displaying help (`man`). A command may be followed by options (flags) and arguments.
+
+Flag: |
+  A flag (also called an option or switch) modifies how a command behaves. Short flags start with a single dash and one letter (`-l`), while long flags start with two dashes and a word (`--long`). Multiple short flags can often be combined (`-la`).
+
+Argument: |
+  An argument is the input a command acts on — usually a file name, directory path, or text string. For example, in `mkdir my_folder`, the argument `my_folder` tells `mkdir` which directory to create.
+
+"Package Manager": |
+  A package manager is a tool that automates installing, updating, and removing software. Instead of downloading installers from the web, you run a single command (e.g. `brew install git`) and the package manager handles dependencies and versioning for you.
+
+Homebrew: |
+  Homebrew is the most popular package manager for macOS (and Linux). It installs command-line tools ("formulae") and desktop applications ("casks") into managed directories so they stay organized and easy to update.
+
+# ── Filesystem concepts (Tutorial 2) ────────────────────────────
+
+"Absolute Path": |
+  An absolute path specifies a file or directory's location starting from the root of the filesystem. On macOS and Linux it always begins with `/`, for example `/Users/jane/Documents/report.txt`. An absolute path works the same regardless of your current directory.
+
+"Relative Path": |
+  A relative path specifies a location starting from your current working directory. For example, if you are in `/Users/jane`, the relative path `Documents/report.txt` points to `/Users/jane/Documents/report.txt`. Relative paths never start with `/`.
+
+"Root Directory": |
+  The root directory (`/`) is the top-level directory that contains every other file and directory on the system. All absolute paths start from root. On macOS, the root directory contains directories like `/Users`, `/Applications`, and `/System`.
+
+"Home Directory": |
+  Your home directory is your personal folder where your files, settings, and configuration live. On macOS it is `/Users/yourname`; on Linux it is `/home/yourname`. The tilde character (`~`) is a shortcut that expands to your home directory in the shell.
+
+Wildcard: |
+  A wildcard is a special character that matches file names by pattern instead of by exact name. The asterisk (`*`) matches any sequence of characters, and the question mark (`?`) matches exactly one character. For example, `*.txt` matches all files ending in `.txt`.
+
+Glob: |
+  Globbing is the shell's process of expanding wildcard patterns into matching file names. When you type `ls *.md`, the shell finds every file ending in `.md` in the current directory and passes those names to `ls`. The term comes from "global command."
+
+Dotfile: |
+  A dotfile is any file or directory whose name starts with a period (`.`), such as `.bashrc` or `.gitconfig`. Dotfiles are hidden by default — `ls` won't show them unless you add the `-a` flag. They are commonly used to store configuration settings.
+
+# ── Shell configuration concepts (Tutorial 3) ───────────────────
+
+"Startup File": |
+  A startup file (also called a config file or rc file) is a script your shell runs automatically each time it starts. For Zsh this is `~/.zshrc`; for Bash it is `~/.bashrc`. You add aliases, environment variables, and tool integrations to these files to customize your shell.
+
+Source: |
+  The `source` command (also written as `.` in POSIX shells) executes a file in your current shell session. Running `source ~/.zshrc` re-reads your shell configuration so that changes take effect immediately, without opening a new terminal window.
+
+Export: |
+  The `export` command makes an environment variable available to child processes (programs launched from your shell). Without `export`, a variable exists only in the current shell session. For example, `export EDITOR=nano` ensures that programs looking for the EDITOR variable will find it.
+
+# ── Existing terms ──────────────────────────────────────────────
+
 WSL: |
   The Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10 and Windows Server 2019. It allows users to run a Linux environment directly on Windows, without the need for a virtual machine or dual-boot setup.
 

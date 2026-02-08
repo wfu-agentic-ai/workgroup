@@ -1,19 +1,142 @@
 ---
 title: "GitHub collaboration"
-description: "Push code to GitHub, collaborate with pull requests, and review changes."
+description: |
+  Push code to GitHub, collaborate with pull requests, work with branches, and contribute to shared repositories.
 order: 5
-date: "2026-02-06"
+date: 2026-02-06
 date-modified: today
 categories: ["Version control"]
+draft: true
 ---
 
 ## Overview
 
-GitHub hosts Git repositories online and provides tools for collaboration. This tutorial covers working with remote repositories, pushing and pulling changes, creating pull requests, and reviewing code.
+GitHub hosts Git repositories online and provides tools for collaboration. This tutorial covers connecting your local repository to GitHub, pushing and pulling changes, working with branches, and opening pull requests.
 
 **Prerequisites:** [Git fundamentals](git-fundamentals.qmd)
-**Estimated time:** 30 minutes
 
 ::: {.callout-note}
 Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
 :::
+
+---
+
+## What is GitHub?
+
+Git vs GitHub — local version control vs a cloud platform. What GitHub adds: remote hosting, collaboration tools, issue tracking, pull requests.
+
+## Creating a GitHub account
+
+Signing up at github.com. Choosing a username. Setting up a profile.
+
+## Authentication
+
+### The `gh` CLI
+
+Installing the GitHub CLI (`brew install gh`). Authenticating with `gh auth login`. Why this is easier than managing SSH keys or personal access tokens manually.
+
+### Verifying your connection
+
+```bash
+gh auth status
+```
+
+## Connecting a local repo to GitHub
+
+### Creating a remote repository
+
+Using `gh repo create` or the GitHub web interface. Public vs private repos.
+
+### Adding a remote
+
+What a "remote" is. The `origin` convention.
+
+```bash
+git remote add origin https://github.com/username/repo.git
+```
+
+### Pushing for the first time
+
+```bash
+git push -u origin main
+```
+
+What `-u` does (sets upstream tracking).
+
+## Cloning an existing repository
+
+Downloading a repository from GitHub to your computer.
+
+```bash
+gh repo clone username/repo
+```
+
+When to clone vs when to create from scratch.
+
+## The push/pull workflow
+
+### Pushing changes
+
+Commit locally, then push to GitHub.
+
+```bash
+git push
+```
+
+### Pulling changes
+
+Downloading changes others have pushed.
+
+```bash
+git pull
+```
+
+### Handling conflicts
+
+What happens when two people change the same line. Basic conflict resolution.
+
+## Branching basics
+
+### Creating a branch
+
+```bash
+git switch -c feature-name
+```
+
+Why branches matter: parallel work without affecting `main`.
+
+### Switching branches
+
+```bash
+git switch main
+git switch feature-name
+```
+
+### Merging a branch
+
+```bash
+git switch main
+git merge feature-name
+```
+
+## Pull requests
+
+What a pull request (PR) is. Creating a PR with the `gh` CLI. Reviewing changes. Merging a PR. Why PRs are the standard way to contribute to shared projects.
+
+```bash
+gh pr create --title "Add feature" --body "Description of changes"
+```
+
+## Forking
+
+What forking is. When to fork vs when to branch. The fork-and-PR workflow for contributing to projects you don't own. Brief overview — this is an advanced topic.
+
+## Practice exercise
+
+Fork the workgroup repository, make a small change, push it, and open a pull request.
+
+## Summary
+
+Table of key commands: `remote add`, `push`, `pull`, `switch`, `merge`, `gh repo clone`, `gh pr create`. Link to next tutorial.
+
+**Next tutorial:** [Claude Code introduction](claude-code-intro.qmd)

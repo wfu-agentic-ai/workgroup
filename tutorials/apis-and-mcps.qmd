@@ -1,19 +1,108 @@
 ---
 title: "APIs and MCPs"
-description: "Configure API keys for AI services and set up Model Context Protocol servers."
+description: |
+  Understand how APIs work, manage API keys securely, and extend Claude Code's capabilities with Model Context Protocol (MCP) servers.
 order: 7
-date: "2026-02-06"
+date: 2026-02-06
 date-modified: today
 categories: ["AI tools"]
+draft: true
 ---
 
 ## Overview
 
-APIs let you access AI models programmatically. MCP (Model Context Protocol) servers extend what AI assistants can do by connecting them to external tools and data sources. This tutorial covers API key management, basic API usage, and setting up MCP servers.
+APIs let you access AI models and other services programmatically. MCP (Model Context Protocol) servers extend what AI assistants like Claude Code can do by connecting them to external tools and data sources. This tutorial covers the fundamentals of APIs, how to manage keys securely, and how to set up MCP servers.
 
 **Prerequisites:** [Claude Code introduction](claude-code-intro.qmd)
-**Estimated time:** 35 minutes
 
 ::: {.callout-note}
 Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
 :::
+
+---
+
+## What is an API?
+
+The request/response model. An analogy: APIs as a waiter between you and a kitchen. REST basics: endpoints, HTTP methods, JSON responses. Why APIs matter for AI tools.
+
+## API keys
+
+### What is an API key?
+
+A unique string that identifies you to a service. Like a password, but for programs.
+
+### Getting an API key
+
+Creating an Anthropic account. Generating a key from the dashboard. Usage limits and billing.
+
+### Storing keys securely
+
+Why you should never put keys in code or commit them to Git. Environment variables as the standard approach.
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+```
+
+Adding the export to your shell config (but *not* to version-controlled files). Using `.env` files and `.gitignore`.
+
+::: {.callout-warning}
+If you accidentally commit an API key, revoke it immediately and generate a new one. Leaked keys can be used by anyone.
+:::
+
+## Using the Anthropic API
+
+### A simple request with `curl`
+
+Sending a prompt to the Claude API from the command line.
+
+```bash
+curl https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -H "content-type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{"model":"claude-sonnet-4-5-20250929","max_tokens":256,"messages":[{"role":"user","content":"Hello"}]}'
+```
+
+### Reading the JSON response
+
+What the response object looks like. Extracting the text content.
+
+## What is MCP?
+
+Model Context Protocol — a standard for connecting AI assistants to external tools. What MCP servers provide: database access, file search, web browsing, specialized APIs. How Claude Code discovers and uses MCP tools.
+
+## Setting up an MCP server
+
+### Installation
+
+Installing an MCP server package (example: filesystem server, web search).
+
+### Configuration
+
+Where MCP config lives. The `~/.claude/` settings directory. Specifying which servers to use.
+
+### Verification
+
+Testing that Claude Code can see and use the MCP tools.
+
+## Available MCP servers
+
+A curated list of useful MCP servers for academic workflows. File system tools, web search, document readers, database connectors.
+
+## Security and ethics
+
+### Rate limits
+
+Understanding usage caps. Monitoring your consumption.
+
+### Data privacy
+
+What data gets sent to the API. Institutional data policies. Sensitive data considerations.
+
+### Institutional policy
+
+WFU guidelines for AI tool usage. Responsible use in academic contexts.
+
+## Summary
+
+Table of key concepts: API, API key, curl, MCP, MCP server configuration. Links to further resources.
