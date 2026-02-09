@@ -63,6 +63,83 @@
     "text": "The specs/ directory contains planning, progress, and implementation documents for the workgroup. These files are excluded from the rendered site (via .gitignore and not being listed in _quarto.yml). They are internal project management documents."
   },
   {
+    "objectID": "tutorials/working-with-the-filesystem.html",
+    "href": "tutorials/working-with-the-filesystem.html",
+    "title": "Working with the filesystem",
+    "section": "",
+    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#overview",
+    "href": "tutorials/working-with-the-filesystem.html#overview",
+    "title": "Working with the filesystem",
+    "section": "",
+    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
+    "href": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
+    "title": "Working with the filesystem",
+    "section": "The filesystem as a tree",
+    "text": "The filesystem as a tree\nYour computer’s filesystem is organized like an upside-down tree. At the very top is the root directory, written as /. Every file and directory on the system lives somewhere under root.\nHere is a simplified view of what a macOS filesystem looks like:\n/\n├── Applications/\n├── System/\n├── Users/\n│   ├── jane/\n│   │   ├── Desktop/\n│   │   ├── Documents/\n│   │   │   └── report.txt\n│   │   ├── Downloads/\n│   │   └── Pictures/\n│   └── shared/\n└── tmp/\nDirectories contain other directories and files. The path from root down to any file describes exactly where it lives — like a mailing address.\n\n\n\n\n\n\nTip\n\n\n\nYou can visualize your own filesystem with the tree command. If you installed it in the previous tutorial (brew install tree), try:\ntree -L 2 ~\nThe -L 2 flag limits the display to two levels deep so you don’t get overwhelmed."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#absolute-vs-relative-paths",
+    "href": "tutorials/working-with-the-filesystem.html#absolute-vs-relative-paths",
+    "title": "Working with the filesystem",
+    "section": "Absolute vs relative paths",
+    "text": "Absolute vs relative paths\nThere are two ways to describe where a file is: absolute paths and relative paths.\n\nAbsolute paths\nAn absolute path starts from the root directory (/) and spells out the full location:\n/Users/jane/Documents/report.txt\nAn absolute path works no matter where you currently are in the filesystem. It always starts with /.\n\n\nRelative paths\nA relative path starts from your current working directory. If you are in /Users/jane, then:\nDocuments/report.txt\npoints to the same file as the absolute path above. Relative paths never start with /.\n\n\nWorked example\nSuppose you are in /Users/jane/Desktop. Here are two ways to reach the same file:\n# Absolute path — works from anywhere\ncat /Users/jane/Documents/report.txt\n\n# Relative path — works because we are in /Users/jane/Desktop\ncat ../Documents/report.txt\nThe .. in the relative path means “go up one directory” (from Desktop to jane), then descend into Documents."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#special-path-symbols",
+    "href": "tutorials/working-with-the-filesystem.html#special-path-symbols",
+    "title": "Working with the filesystem",
+    "section": "Special path symbols",
+    "text": "Special path symbols\nThe shell recognizes several shorthand symbols that make navigation faster.\n\n\n\nSymbol\nMeaning\nExample\n\n\n\n\n~\nHome directory\ncd ~\n\n\n.\nCurrent directory\nls .\n\n\n..\nParent directory (one level up)\ncd ..\n\n\n-\nPrevious directory (with cd)\ncd -\n\n\n\n\nHome directory (~)\nThe tilde ~ expands to your home directory. These two commands are equivalent:\ncd /Users/jane\ncd ~\nYou can also use ~ inside paths:\nls ~/Documents\nRunning cd with no arguments also takes you home:\ncd\n\n\nCurrent directory (.)\nA single dot refers to the directory you are in right now. You rarely need it for navigation, but it appears in paths like ./script.sh (meaning “run script.sh from the current directory”).\n\n\nParent directory (..)\nDouble dots mean “one level up.” You can chain them:\ncd ../..\nThis moves up two levels. After each cd, run pwd to confirm where you landed.\n\n\nPrevious directory (-)\ncd - jumps back to whatever directory you were in before the last cd. This is handy when you are bouncing between two locations:\ncd ~/Documents\ncd /tmp\ncd -\npwd\n/Users/jane/Documents"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#the-home-directory",
+    "href": "tutorials/working-with-the-filesystem.html#the-home-directory",
+    "title": "Working with the filesystem",
+    "section": "The home directory",
+    "text": "The home directory\nYour home directory (~) is where your personal files and settings live. On macOS it is typically /Users/yourname; on Linux, /home/yourname.\nCommon directories you will find inside ~:\n\n\n\nDirectory\nContains\n\n\n\n\nDesktop/\nFiles visible on your desktop\n\n\nDocuments/\nPersonal documents\n\n\nDownloads/\nFiles downloaded from the web\n\n\nPictures/\nImages and screenshots\n\n\n\n\nHidden files and dotfiles\nSome files in your home directory start with a dot — these are dotfiles. The regular ls command does not show them:\nls ~\nDesktop  Documents  Downloads  Pictures\nAdd the -a flag to reveal hidden files:\nls -a ~\n.            .bash_history  .zshrc     Desktop    Downloads\n..           .gitconfig     .config    Documents  Pictures\nFiles like .zshrc and .gitconfig store configuration for your shell and tools. Starting a name with a dot is a convention for “this file is configuration, not regular content” — it does not make the file secure or protected, just hidden from default listings.\n\n\n\n\n\n\nNote\n\n\n\nWe will edit dotfiles like .zshrc in the Shell configuration tutorial to customize your terminal."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#tab-completion",
+    "href": "tutorials/working-with-the-filesystem.html#tab-completion",
+    "title": "Working with the filesystem",
+    "section": "Tab completion",
+    "text": "Tab completion\nTab completion is one of the most useful features of the shell. Instead of typing a full file name or path, type just the first few characters and press Tab:\ncd Docu⟨Tab⟩\nThe shell completes it to cd Documents/.\n\nMultiple matches\nIf more than one file matches, pressing Tab once does nothing. Press Tab twice to see all the options:\ncd Do⟨Tab⟩⟨Tab⟩\nDocuments/  Downloads/\nType one more character to narrow it down, then Tab again:\ncd Doc⟨Tab⟩\n\n\nNavigating deep paths\nYou can Tab your way through long paths one segment at a time:\nls ~/Doc⟨Tab⟩/rep⟨Tab⟩\nbecomes:\nls ~/Documents/report.txt\nThis saves typing and prevents typos. Build the Tab habit early — experienced CLI users press Tab almost reflexively.\n\n\nCommands and programs\nTab completion also works for commands themselves. Type a few letters of a command and press Tab to see matching programs:\nbre⟨Tab⟩⟨Tab⟩\nbreak  brew"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#wildcards-and-globbing",
+    "href": "tutorials/working-with-the-filesystem.html#wildcards-and-globbing",
+    "title": "Working with the filesystem",
+    "section": "Wildcards and globbing",
+    "text": "Wildcards and globbing\nWildcards let you match multiple files at once using patterns instead of exact names. The shell expands these patterns — a process called globbing — before passing the results to the command.\n\nThe * wildcard\nAn asterisk matches any sequence of characters (including none):\nls *.txt\nnotes.txt  report.txt  todo.txt\nThis lists every file in the current directory that ends with .txt.\nYou can use * anywhere in a pattern:\nls report.*\nreport.txt  report.pdf\n\n\nThe ? wildcard\nA question mark matches exactly one character:\nls file?.txt\nfile1.txt  file2.txt  fileA.txt\nThis would not match file10.txt (two characters after “file”) or file.txt (zero characters).\n\n\nPractical examples\nCopy all Markdown files to a backup directory:\ncp *.md backup/\nList only three-letter file extensions:\nls *.???\n\n\n\n\n\n\nWarning\n\n\n\nBe especially careful combining wildcards with rm. The command rm *.txt deletes every .txt file in the current directory with no confirmation. Always run ls with the same pattern first to verify what will be matched:\nls *.txt          # preview what matches\nrm *.txt          # then delete if correct"
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#practical-patterns",
+    "href": "tutorials/working-with-the-filesystem.html#practical-patterns",
+    "title": "Working with the filesystem",
+    "section": "Practical patterns",
+    "text": "Practical patterns\nHere are a few common filesystem tasks that combine what you have learned.\n\nCopying and moving between directories\nCopy a file from your current directory to another:\ncp report.txt ~/Documents/\nMove a file from Downloads to Documents:\nmv ~/Downloads/data.csv ~/Documents/\n\n\nCreating nested directories\nThe -p flag tells mkdir to create parent directories as needed:\nmkdir -p projects/website/images\nThis creates projects/, projects/website/, and projects/website/images/ all in one command — even if none of them exist yet.\n\n\nSpaces in file names\nFile names with spaces require quoting. Without quotes, the shell interprets each word as a separate argument:\n# This tries to list two items: \"my\" and \"file.txt\"\nls my file.txt\n\n# This lists the single file \"my file.txt\"\nls \"my file.txt\"\nYou can also escape the space with a backslash:\nls my\\ file.txt\n\n\n\n\n\n\nTip\n\n\n\nAvoiding spaces in file names makes life easier in the terminal. Use underscores (my_file.txt) or hyphens (my-file.txt) instead."
+  },
+  {
+    "objectID": "tutorials/working-with-the-filesystem.html#summary",
+    "href": "tutorials/working-with-the-filesystem.html#summary",
+    "title": "Working with the filesystem",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nSymbol / concept\nMeaning\n\n\n\n\n/\nRoot directory (start of absolute paths)\n\n\n~\nHome directory\n\n\n.\nCurrent directory\n\n\n..\nParent directory\n\n\n- (with cd)\nPrevious directory\n\n\n*\nWildcard: matches any characters\n\n\n?\nWildcard: matches one character\n\n\nTab\nAuto-complete file names and commands\n\n\n\"quotes\"\nHandle spaces in file names\n\n\nmkdir -p\nCreate nested directories\n\n\n\nNext tutorial: Shell configuration"
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI fundamentals\n\n9 min\n\n\nGetting started\n\nCLI\n\nmacOS\n\nWindows\n\nBash\n\nZsh\n\n\n\nOpen a terminal, learn the anatomy of a command, and work with files and directories using core Unix commands.\n\n\n\n\n\n\n\n\n\n\nWorking with the filesystem\n\n7 min\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, navigate with special symbols, use tab completion and wildcards, and build confidence moving around the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n10 min\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, aliases, and Homebrew packages. Learn how your shell reads configuration files and how to make changes that…\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "tutorials/shell-configuration.html",
     "href": "tutorials/shell-configuration.html",
     "title": "Shell configuration",
@@ -140,18 +217,46 @@
     "text": "Summary\n\n\n\nConcept\nKey command / file\n\n\n\n\nShell config file\n~/.zshrc (Zsh) or ~/.bashrc (Bash)\n\n\nEdit config\nnano ~/.zshrc or code ~/.zshrc\n\n\nApply changes\nsource ~/.zshrc\n\n\nSet environment variable\nexport VARIABLE=value\n\n\nCreate alias\nalias shortcut='command'\n\n\nInstall package\nbrew install &lt;name&gt;\n\n\nUpdate packages\nbrew update && brew upgrade\n\n\nBackup config\ncp ~/.zshrc ~/.zshrc.backup\n\n\n\nNext tutorial: Git fundamentals"
   },
   {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI fundamentals\n\n9 min\n\n\nGetting started\n\nCLI\n\nmacOS\n\nWindows\n\nBash\n\nZsh\n\n\n\nOpen a terminal, learn the anatomy of a command, and work with files and directories using core Unix commands.\n\n\n\n\n\n\n\n\n\n\nWorking with the filesystem\n\n7 min\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, navigate with special symbols, use tab completion and wildcards, and build confidence moving around the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n10 min\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, aliases, and Homebrew packages. Learn how your shell reads configuration files and how to make changes that…\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "sessions/index.html",
     "href": "sessions/index.html",
     "title": "Sessions",
     "section": "",
-    "text": "Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.\n\n\n\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Session agendas will be posted here in advance of each meeting, and notes and materials will be added afterwards. See the main page for an overview of the workgroup and how to get started.\n\n\n    \n      \n      \n    \n\n\n\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources/troubleshooting.html",
+    "href": "resources/troubleshooting.html",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/troubleshooting.html#overview",
+    "href": "resources/troubleshooting.html#overview",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/tools.html",
+    "href": "resources/tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
+  },
+  {
+    "objectID": "resources/tools.html#overview",
+    "href": "resources/tools.html#overview",
+    "title": "Tools",
+    "section": "",
+    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -172,7 +277,7 @@
     "href": "index.html#meeting-info",
     "title": "WFU Agentic AI Workgroup",
     "section": "Meeting info",
-    "text": "Meeting info\n\nWhen: Fridays 10:00-11:30am (tentatively)\nWhere: In person (location TBA)/ or via Zoom (link in calendar invite)\nWho: Any WFU faculty or staff member — join anytime"
+    "text": "Meeting info\n\nWhen: Fridays 10:30-11:30am (tentatively)\nWhere: In person (location TBA)/ or via Zoom (link in calendar invite)\nWho: Any WFU faculty or staff member — join anytime"
   },
   {
     "objectID": "index.html#getting-started",
@@ -187,41 +292,6 @@
     "title": "WFU Agentic AI Workgroup",
     "section": "Recent sessions",
     "text": "Recent sessions\nSession notes will appear here as meetings take place. See the full session log.\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines. \n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "resources/troubleshooting.html",
-    "href": "resources/troubleshooting.html",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
-  },
-  {
-    "objectID": "resources/troubleshooting.html#overview",
-    "href": "resources/troubleshooting.html#overview",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
-  },
-  {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "resources/tools.html",
-    "href": "resources/tools.html",
-    "title": "Tools",
-    "section": "",
-    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
-  },
-  {
-    "objectID": "resources/tools.html#overview",
-    "href": "resources/tools.html#overview",
-    "title": "Tools",
-    "section": "",
-    "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
   },
   {
     "objectID": "resources/glossary.html",
@@ -397,75 +467,5 @@
     "title": "CLI fundamentals",
     "section": "Summary",
     "text": "Summary\nHere is a reference table of the commands covered in this tutorial:\n\n\n\n\n\n\n\n\nCommand\nWhat it does\nExample\n\n\n\n\npwd\nPrint current directory\npwd\n\n\nls\nList files and directories\nls -la\n\n\ncd\nChange directory\ncd Documents\n\n\nmkdir\nCreate a directory\nmkdir my_folder\n\n\ntouch\nCreate an empty file\ntouch notes.txt\n\n\necho\nPrint text (with &gt; to write to file)\necho \"hi\" &gt; file.txt\n\n\ncat\nDisplay file contents\ncat notes.txt\n\n\nless\nView file in scrollable reader\nless notes.txt\n\n\ncp\nCopy files or directories\ncp file.txt copy.txt\n\n\nmv\nMove or rename files\nmv old.txt new.txt\n\n\nrm\nDelete files or directories\nrm -r old_folder\n\n\nman\nOpen manual page\nman ls\n\n\nclear\nClear the terminal screen\nclear\n\n\nhistory\nShow command history\nhistory\n\n\nbrew\nInstall packages via Homebrew\nbrew install tree\n\n\n\nNext tutorial: Working with the filesystem"
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html",
-    "href": "tutorials/working-with-the-filesystem.html",
-    "title": "Working with the filesystem",
-    "section": "",
-    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#overview",
-    "href": "tutorials/working-with-the-filesystem.html#overview",
-    "title": "Working with the filesystem",
-    "section": "",
-    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
-    "href": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
-    "title": "Working with the filesystem",
-    "section": "The filesystem as a tree",
-    "text": "The filesystem as a tree\nYour computer’s filesystem is organized like an upside-down tree. At the very top is the root directory, written as /. Every file and directory on the system lives somewhere under root.\nHere is a simplified view of what a macOS filesystem looks like:\n/\n├── Applications/\n├── System/\n├── Users/\n│   ├── jane/\n│   │   ├── Desktop/\n│   │   ├── Documents/\n│   │   │   └── report.txt\n│   │   ├── Downloads/\n│   │   └── Pictures/\n│   └── shared/\n└── tmp/\nDirectories contain other directories and files. The path from root down to any file describes exactly where it lives — like a mailing address.\n\n\n\n\n\n\nTip\n\n\n\nYou can visualize your own filesystem with the tree command. If you installed it in the previous tutorial (brew install tree), try:\ntree -L 2 ~\nThe -L 2 flag limits the display to two levels deep so you don’t get overwhelmed."
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#absolute-vs-relative-paths",
-    "href": "tutorials/working-with-the-filesystem.html#absolute-vs-relative-paths",
-    "title": "Working with the filesystem",
-    "section": "Absolute vs relative paths",
-    "text": "Absolute vs relative paths\nThere are two ways to describe where a file is: absolute paths and relative paths.\n\nAbsolute paths\nAn absolute path starts from the root directory (/) and spells out the full location:\n/Users/jane/Documents/report.txt\nAn absolute path works no matter where you currently are in the filesystem. It always starts with /.\n\n\nRelative paths\nA relative path starts from your current working directory. If you are in /Users/jane, then:\nDocuments/report.txt\npoints to the same file as the absolute path above. Relative paths never start with /.\n\n\nWorked example\nSuppose you are in /Users/jane/Desktop. Here are two ways to reach the same file:\n# Absolute path — works from anywhere\ncat /Users/jane/Documents/report.txt\n\n# Relative path — works because we are in /Users/jane/Desktop\ncat ../Documents/report.txt\nThe .. in the relative path means “go up one directory” (from Desktop to jane), then descend into Documents."
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#special-path-symbols",
-    "href": "tutorials/working-with-the-filesystem.html#special-path-symbols",
-    "title": "Working with the filesystem",
-    "section": "Special path symbols",
-    "text": "Special path symbols\nThe shell recognizes several shorthand symbols that make navigation faster.\n\n\n\nSymbol\nMeaning\nExample\n\n\n\n\n~\nHome directory\ncd ~\n\n\n.\nCurrent directory\nls .\n\n\n..\nParent directory (one level up)\ncd ..\n\n\n-\nPrevious directory (with cd)\ncd -\n\n\n\n\nHome directory (~)\nThe tilde ~ expands to your home directory. These two commands are equivalent:\ncd /Users/jane\ncd ~\nYou can also use ~ inside paths:\nls ~/Documents\nRunning cd with no arguments also takes you home:\ncd\n\n\nCurrent directory (.)\nA single dot refers to the directory you are in right now. You rarely need it for navigation, but it appears in paths like ./script.sh (meaning “run script.sh from the current directory”).\n\n\nParent directory (..)\nDouble dots mean “one level up.” You can chain them:\ncd ../..\nThis moves up two levels. After each cd, run pwd to confirm where you landed.\n\n\nPrevious directory (-)\ncd - jumps back to whatever directory you were in before the last cd. This is handy when you are bouncing between two locations:\ncd ~/Documents\ncd /tmp\ncd -\npwd\n/Users/jane/Documents"
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#the-home-directory",
-    "href": "tutorials/working-with-the-filesystem.html#the-home-directory",
-    "title": "Working with the filesystem",
-    "section": "The home directory",
-    "text": "The home directory\nYour home directory (~) is where your personal files and settings live. On macOS it is typically /Users/yourname; on Linux, /home/yourname.\nCommon directories you will find inside ~:\n\n\n\nDirectory\nContains\n\n\n\n\nDesktop/\nFiles visible on your desktop\n\n\nDocuments/\nPersonal documents\n\n\nDownloads/\nFiles downloaded from the web\n\n\nPictures/\nImages and screenshots\n\n\n\n\nHidden files and dotfiles\nSome files in your home directory start with a dot — these are dotfiles. The regular ls command does not show them:\nls ~\nDesktop  Documents  Downloads  Pictures\nAdd the -a flag to reveal hidden files:\nls -a ~\n.            .bash_history  .zshrc     Desktop    Downloads\n..           .gitconfig     .config    Documents  Pictures\nFiles like .zshrc and .gitconfig store configuration for your shell and tools. Starting a name with a dot is a convention for “this file is configuration, not regular content” — it does not make the file secure or protected, just hidden from default listings.\n\n\n\n\n\n\nNote\n\n\n\nWe will edit dotfiles like .zshrc in the Shell configuration tutorial to customize your terminal."
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#tab-completion",
-    "href": "tutorials/working-with-the-filesystem.html#tab-completion",
-    "title": "Working with the filesystem",
-    "section": "Tab completion",
-    "text": "Tab completion\nTab completion is one of the most useful features of the shell. Instead of typing a full file name or path, type just the first few characters and press Tab:\ncd Docu⟨Tab⟩\nThe shell completes it to cd Documents/.\n\nMultiple matches\nIf more than one file matches, pressing Tab once does nothing. Press Tab twice to see all the options:\ncd Do⟨Tab⟩⟨Tab⟩\nDocuments/  Downloads/\nType one more character to narrow it down, then Tab again:\ncd Doc⟨Tab⟩\n\n\nNavigating deep paths\nYou can Tab your way through long paths one segment at a time:\nls ~/Doc⟨Tab⟩/rep⟨Tab⟩\nbecomes:\nls ~/Documents/report.txt\nThis saves typing and prevents typos. Build the Tab habit early — experienced CLI users press Tab almost reflexively.\n\n\nCommands and programs\nTab completion also works for commands themselves. Type a few letters of a command and press Tab to see matching programs:\nbre⟨Tab⟩⟨Tab⟩\nbreak  brew"
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#wildcards-and-globbing",
-    "href": "tutorials/working-with-the-filesystem.html#wildcards-and-globbing",
-    "title": "Working with the filesystem",
-    "section": "Wildcards and globbing",
-    "text": "Wildcards and globbing\nWildcards let you match multiple files at once using patterns instead of exact names. The shell expands these patterns — a process called globbing — before passing the results to the command.\n\nThe * wildcard\nAn asterisk matches any sequence of characters (including none):\nls *.txt\nnotes.txt  report.txt  todo.txt\nThis lists every file in the current directory that ends with .txt.\nYou can use * anywhere in a pattern:\nls report.*\nreport.txt  report.pdf\n\n\nThe ? wildcard\nA question mark matches exactly one character:\nls file?.txt\nfile1.txt  file2.txt  fileA.txt\nThis would not match file10.txt (two characters after “file”) or file.txt (zero characters).\n\n\nPractical examples\nCopy all Markdown files to a backup directory:\ncp *.md backup/\nList only three-letter file extensions:\nls *.???\n\n\n\n\n\n\nWarning\n\n\n\nBe especially careful combining wildcards with rm. The command rm *.txt deletes every .txt file in the current directory with no confirmation. Always run ls with the same pattern first to verify what will be matched:\nls *.txt          # preview what matches\nrm *.txt          # then delete if correct"
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#practical-patterns",
-    "href": "tutorials/working-with-the-filesystem.html#practical-patterns",
-    "title": "Working with the filesystem",
-    "section": "Practical patterns",
-    "text": "Practical patterns\nHere are a few common filesystem tasks that combine what you have learned.\n\nCopying and moving between directories\nCopy a file from your current directory to another:\ncp report.txt ~/Documents/\nMove a file from Downloads to Documents:\nmv ~/Downloads/data.csv ~/Documents/\n\n\nCreating nested directories\nThe -p flag tells mkdir to create parent directories as needed:\nmkdir -p projects/website/images\nThis creates projects/, projects/website/, and projects/website/images/ all in one command — even if none of them exist yet.\n\n\nSpaces in file names\nFile names with spaces require quoting. Without quotes, the shell interprets each word as a separate argument:\n# This tries to list two items: \"my\" and \"file.txt\"\nls my file.txt\n\n# This lists the single file \"my file.txt\"\nls \"my file.txt\"\nYou can also escape the space with a backslash:\nls my\\ file.txt\n\n\n\n\n\n\nTip\n\n\n\nAvoiding spaces in file names makes life easier in the terminal. Use underscores (my_file.txt) or hyphens (my-file.txt) instead."
-  },
-  {
-    "objectID": "tutorials/working-with-the-filesystem.html#summary",
-    "href": "tutorials/working-with-the-filesystem.html#summary",
-    "title": "Working with the filesystem",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nSymbol / concept\nMeaning\n\n\n\n\n/\nRoot directory (start of absolute paths)\n\n\n~\nHome directory\n\n\n.\nCurrent directory\n\n\n..\nParent directory\n\n\n- (with cd)\nPrevious directory\n\n\n*\nWildcard: matches any characters\n\n\n?\nWildcard: matches one character\n\n\nTab\nAuto-complete file names and commands\n\n\n\"quotes\"\nHandle spaces in file names\n\n\nmkdir -p\nCreate nested directories\n\n\n\nNext tutorial: Shell configuration"
   }
 ]

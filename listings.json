@@ -14,18 +14,18 @@
     ]
   },
   {
-    "listing": "/index.html",
-    "items": [
-      "/sessions/2026-02-06.html"
-    ]
-  },
-  {
     "listing": "/resources/index.html",
     "items": [
       "/resources/cheatsheets.html",
       "/resources/glossary.html",
       "/resources/tools.html",
       "/resources/troubleshooting.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/sessions/2026-02-06.html"
     ]
   }
 ]
