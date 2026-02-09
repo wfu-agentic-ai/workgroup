@@ -1,6 +1,6 @@
 ---
 title: "Sessions"
-subtitle: "Meeting notes and materials"
+subtitle: "Meeting agenda, notes, and materials"
 listing:
   id: sessions-listing
   contents:
@@ -9,14 +9,14 @@ listing:
   type: default
   sort: "date desc"
   sort-ui: false
-  filter-ui: false
-  categories: false
+  filter-ui: true
+  categories: true
   fields: [date, title, description]
 page-layout: article
 toc: true
 ---
 
-Session notes are posted here after each weekly meeting, most recent first. Each entry includes a summary of what was covered, links to relevant tutorials, and any follow-up items.
+Session agendas will be posted here in advance of each meeting, and notes and materials will be added afterwards. See the [main page](index.qmd) for an overview of the workgroup and how to get started.
 
 ::: {#sessions-listing}
 :::

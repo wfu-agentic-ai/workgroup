@@ -4,7 +4,7 @@ project:
 
 website:
   announcement:
-    content: "This website is a work in progress. Please check back for updates."
+    content: "This website is a work in progress."
     icon: info-circle
     position: below-navbar
     type: primary

@@ -4,6 +4,7 @@ description: |
   Introductions, discussion of goals and expectations, and working to get Claude Code set up on participants' machines.
 date: 2026-02-06
 date-modified: today
+categories: [Introduction, Planning, Claude Code]
 ---
 
 Facilitator: Will Fleeson
