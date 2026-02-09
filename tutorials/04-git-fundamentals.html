@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Track changes to your files with Git: init, add, commit, log, and diff.">
 
-<title>Sessions – Agentic AI: Workgroup</title>
+<title>Git fundamentals – Agentic AI: Workgroup</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -73,69 +72,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-sessions-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-sessions-listing'] = new List('listing-sessions-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Sessions – Agentic AI: Workgroup">
-<meta property="og:description" content="Meeting agenda, notes, and materials">
+<meta property="og:title" content="Git fundamentals – Agentic AI: Workgroup">
+<meta property="og:description" content="Track changes to your files with Git: init, add, commit, log, and diff.">
 <meta property="og:site_name" content="Agentic AI: Workgroup">
 </head>
 
@@ -323,7 +264,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../sessions/index.html" aria-current="page"> 
+    <a class="nav-link" href="../sessions/index.html"> 
 <span class="menu-text">Sessions</span></a>
   </li>  
   <li class="nav-item">
@@ -355,23 +296,42 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q2xhdWRlJTIwQ29kZQ==">Claude Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SW50cm9kdWN0aW9u">Introduction <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxhbm5pbmc=">Planning <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/wfu-agentic-ai/workgroup/edit/main/tutorials/04-git-fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wfu-agentic-ai/workgroup/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sessions</h1>
-<p class="subtitle lead">Meeting agenda, notes, and materials</p>
-</div>
+<h1 class="title">Git fundamentals</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Version control</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Track changes to your files with Git: init, add, commit, log, and diff.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Friday, February 6, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -381,38 +341,13 @@ window.Quarto = {
 </header>
 
 
-<p>Session agendas will be posted here in advance of each meeting, and notes and materials will be added afterwards. See the <a href="../sessions/index.html">main page</a> for an overview of the workgroup and how to get started.</p>
-<div id="listing-sessions-listing" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="SW50cm9kdWN0aW9uJTJDUGxhbm5pbmclMkNDbGF1ZGUlMjBDb2Rl" data-listing-date-sort="1770336000000" data-listing-file-modified-sort="1770658595920" data-listing-date-modified-sort="1770595200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../sessions/2026-02-06.html" class="no-external">Meeting Notes</a>
-</h3>
-<div class="delink listing-description"><a href="../sessions/2026-02-06.html" class="no-external">
-<p>Introductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../sessions/2026-02-06.html" class="no-external">
-<div class="listing-date">
-Friday, February 6, 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Git is a version control system that tracks changes to your files over time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing snapshots, and reviewing history.</p>
+<p><strong>Prerequisites:</strong> <a href="03-shell-configuration.qmd">Shell configuration</a></p>
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -838,4 +773,4 @@ Friday, February 6, 2026
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/wfu-agentic-ai/workgroup/edit/main/sessions/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wfu-agentic-ai/workgroup/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/wfu-agentic-ai/workgroup/edit/main/tutorials/04-git-fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/wfu-agentic-ai/workgroup/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

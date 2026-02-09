@@ -1,14 +1,6 @@
 [
   {
-    "listing": "/tutorials/index.html",
-    "items": [
-      "/tutorials/cli-fundamentals.html",
-      "/tutorials/working-with-the-filesystem.html",
-      "/tutorials/shell-configuration.html"
-    ]
-  },
-  {
-    "listing": "/sessions/index.html",
+    "listing": "/index.html",
     "items": [
       "/sessions/2026-02-06.html"
     ]
@@ -23,9 +15,18 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/sessions/index.html",
     "items": [
       "/sessions/2026-02-06.html"
+    ]
+  },
+  {
+    "listing": "/tutorials/index.html",
+    "items": [
+      "/tutorials/cli-fundamentals.html",
+      "/tutorials/working-with-the-filesystem.html",
+      "/tutorials/shell-configuration.html",
+      "/tutorials/04-git-fundamentals.html"
     ]
   }
 ]
