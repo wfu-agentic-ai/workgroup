@@ -2,62 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/CLAUDE.html</loc>
-    <lastmod>2026-02-09T17:36:35.910Z</lastmod>
+    <lastmod>2026-02-10T12:31:44.385Z</lastmod>
   </url>
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/working-with-the-filesystem.html</loc>
-    <lastmod>2026-02-09T17:36:35.923Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/cli-fundamentals.html</loc>
-    <lastmod>2026-02-09T17:36:35.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/2026-02-06.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/about.html</loc>
-    <lastmod>2026-02-09T17:36:35.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/cheatsheets.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/glossary.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/index.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/index.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/tools.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/troubleshooting.html</loc>
-    <lastmod>2026-02-09T17:36:35.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/index.html</loc>
-    <lastmod>2026-02-09T17:36:35.921Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/shell-configuration.html</loc>
-    <lastmod>2026-02-09T17:36:35.922Z</lastmod>
+    <lastmod>2026-02-10T12:31:44.395Z</lastmod>
   </url>
   <url>
     <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/index.html</loc>
-    <lastmod>2026-02-09T17:36:35.922Z</lastmod>
+    <lastmod>2026-02-10T12:31:44.395Z</lastmod>
   </url>
   <url>
-    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/04-git-fundamentals.html</loc>
-    <lastmod>2026-02-09T17:36:35.921Z</lastmod>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/shell-configuration.html</loc>
+    <lastmod>2026-02-10T12:31:44.395Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/index.html</loc>
+    <lastmod>2026-02-10T12:31:44.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/troubleshooting.html</loc>
+    <lastmod>2026-02-10T12:31:44.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/tools.html</loc>
+    <lastmod>2026-02-10T12:31:44.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/index.html</loc>
+    <lastmod>2026-02-10T12:31:44.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/index.html</loc>
+    <lastmod>2026-02-10T12:31:44.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/glossary.html</loc>
+    <lastmod>2026-02-10T12:31:44.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/resources/cheatsheets.html</loc>
+    <lastmod>2026-02-10T12:31:44.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/about.html</loc>
+    <lastmod>2026-02-10T12:31:44.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/sessions/2026-02-06.html</loc>
+    <lastmod>2026-02-10T12:31:44.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wfu-agentic-ai.github.io/workgroup/tutorials/cli-fundamentals.html</loc>
+    <lastmod>2026-02-10T12:31:44.394Z</lastmod>
   </url>
 </urlset>
