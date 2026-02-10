@@ -46,6 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-299c1c6f5776530fbd5421ec6e2609cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-949b7471cd24c46e98776bf0f9c0613e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-299c1c6f5776530fbd5421ec6e2609cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glossary/glossary.js"></script>
+<link href="../site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -331,20 +333,34 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Content in progress. Glossary entries will be added alongside tutorial content.</p>
-</div>
-</div>
+<p>A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials. Click any underlined term in a tutorial for a quick popup definition, or browse the full list below.</p>
+<table class="glossary_table">
+<tbody><tr><th> Term </th><th> Definition </th></tr>
+<tr><td>Absolute Path</td><td>An absolute path specifies a file or directory’s location starting from the root of the filesystem. On macOS and Linux it always begins with /, for example /Users/jane/Documents/report.txt. An absolute path works the same regardless of your current directory.</td></tr>
+<tr><td>Alias</td><td>An alias is a shortcut or alternative name for a command or series of commands in a shell. It allows users to create custom commands or abbreviations for frequently used commands, making it easier and faster to execute them.</td></tr>
+<tr><td>Argument</td><td>An argument is the input a command acts on — usually a file name, directory path, or text string. For example, in mkdir my_folder, the argument my_folder tells mkdir which directory to create.</td></tr>
+<tr><td>Bash</td><td>Bash (Bourne Again SHell) is a popular Unix shell and command language. It is the default shell on many Linux distributions and macOS. Bash provides a powerful scripting language and a wide range of built-in commands for managing files, processes, and system resources.</td></tr>
+<tr><td>CLI</td><td>The command-line interface (CLI) is a text-based way to interact with your computer. Instead of clicking icons and menus, you type commands at a prompt to perform tasks like creating files, installing software, or running programs.</td></tr>
+<tr><td>Command</td><td>A command is an instruction you type at the terminal prompt. It tells the shell to perform an action, such as listing files (ls), creating a directory (mkdir), or displaying help (man). A command may be followed by options (flags) and arguments.</td></tr>
+<tr><td>Dotfile</td><td>A dotfile is any file or directory whose name starts with a period (.), such as .bashrc or .gitconfig. Dotfiles are hidden by default — ls won’t show them unless you add the -a flag. They are commonly used to store configuration settings.</td></tr>
+<tr><td>Environment Variable</td><td>An environment variable is a dynamic value that can affect the behavior of processes and applications on a computer. It is typically used to store configuration settings, such as paths to executables or libraries, and can be accessed by programs and scripts.</td></tr>
+<tr><td>Export</td><td>The export command makes an environment variable available to child processes (programs launched from your shell). Without export, a variable exists only in the current shell session. For example, export EDITOR=nano ensures that programs looking for the EDITOR variable will find it.</td></tr>
+<tr><td>Flag</td><td>A flag (also called an option or switch) modifies how a command behaves. Short flags start with a single dash and one letter (-l), while long flags start with two dashes and a word (--long). Multiple short flags can often be combined (-la).</td></tr>
+<tr><td>Glob</td><td>Globbing is the shell’s process of expanding wildcard patterns into matching file names. When you type ls *.md, the shell finds every file ending in .md in the current directory and passes those names to ls. The term comes from “global command.”</td></tr>
+<tr><td>Home Directory</td><td>Your home directory is your personal folder where your files, settings, and configuration live. On macOS it is /Users/yourname; on Linux it is /home/yourname. The tilde character (~) is a shortcut that expands to your home directory in the shell.</td></tr>
+<tr><td>Homebrew</td><td>Homebrew is the most popular package manager for macOS (and Linux). It installs command-line tools (“formulae”) and desktop applications (“casks”) into managed directories so they stay organized and easy to update.</td></tr>
+<tr><td>Package Manager</td><td>A package manager is a tool that automates installing, updating, and removing software. Instead of downloading installers from the web, you run a single command (e.g.&nbsp;brew install git) and the package manager handles dependencies and versioning for you.</td></tr>
+<tr><td>PATH</td><td>The PATH is an environment variable that specifies a list of directories where the operating system looks for executable files when a command is entered in the shell. It allows users to run programs by name without needing to specify their full path in the command.</td></tr>
+<tr><td>Relative Path</td><td>A relative path specifies a location starting from your current working directory. For example, if you are in /Users/jane, the relative path Documents/report.txt points to /Users/jane/Documents/report.txt. Relative paths never start with /.</td></tr>
+<tr><td>Root Directory</td><td>The root directory (/) is the top-level directory that contains every other file and directory on the system. All absolute paths start from root. On macOS, the root directory contains directories like /Users, /Applications, and /System.</td></tr>
+<tr><td>Shell</td><td>A shell is a command-line interface that allows users to interact with the operating system. It provides a way to execute commands, run scripts, and manage files and processes. Common shells include Bash, Zsh, and PowerShell.</td></tr>
+<tr><td>Source</td><td>The source command (also written as . in POSIX shells) executes a file in your current shell session. Running source ~/.zshrc re-reads your shell configuration so that changes take effect immediately, without opening a new terminal window.</td></tr>
+<tr><td>Startup File</td><td>A startup file (also called a config file or rc file) is a script your shell runs automatically each time it starts. For Zsh this is ~/.zshrc; for Bash it is ~/.bashrc. You add aliases, environment variables, and tool integrations to these files to customize your shell.</td></tr>
+<tr><td>Terminal</td><td>A terminal (or terminal emulator) is the application that provides a window for typing commands. On macOS the default is Terminal.app; on Windows you can use Windows Terminal or a WSL Ubuntu window. The terminal runs a shell inside it.</td></tr>
+<tr><td>Wildcard</td><td>A wildcard is a special character that matches file names by pattern instead of by exact name. The asterisk (*) matches any sequence of characters, and the question mark (?) matches exactly one character. For example, *.txt matches all files ending in .txt.</td></tr>
+<tr><td>WSL</td><td>The Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables natively on Windows 10 and Windows Server 2019. It allows users to run a Linux environment directly on Windows, without the need for a virtual machine or dual-boot setup.</td></tr>
+<tr><td>Zsh</td><td>Zsh (Z Shell) is an extended version of the Bourne Shell (sh) with many additional features and improvements. It is known for its powerful scripting capabilities, advanced tab completion, and customizable prompts. Zsh is often used as an alternative to Bash for interactive use and scripting.</td></tr>
+</tbody></table>
 
 
 </section>
