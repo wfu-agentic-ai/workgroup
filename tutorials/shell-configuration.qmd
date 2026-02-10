@@ -5,14 +5,28 @@ description: |
 order: 3
 date: 2026-02-06
 date-modified: today
-categories: ["Getting started"]
+categories: ["Getting started", "Shell", "Configuration", "Dotfiles", "Homebrew", "Aliases", "Environment variables"]
+image: images/bash-logo.png
+draft: false
 ---
 
 ## Overview
 
+::: {.columns}
+::: {.column width=70%}
+
 Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.
 
+:::
+::: {.column width=30%}
+
+![](images/bash-logo.png)
+
+:::
+:::
+
 **Prerequisites:** [Working with the filesystem](working-with-the-filesystem.qmd)
+
 
 ---
 

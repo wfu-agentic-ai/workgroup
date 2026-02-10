@@ -5,12 +5,26 @@ description: |
 order: 2
 date: 2026-02-06
 date-modified: today
-categories: ["Getting started"]
+categories: ["Getting started", "Filesystem", "Navigation", "Paths", "Globbing"]
+image: images/unix-logo.png
+draft: false
 ---
 
 ## Overview
 
+::: {.columns}
+::: {.column width="70%"}
+
 Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem's tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.
+
+:::
+::: {.column width="30%"}
+
+![](images/unix-logo.png)
+
+:::
+:::
+
 
 **Prerequisites:** [CLI fundamentals](cli-fundamentals.qmd)
 

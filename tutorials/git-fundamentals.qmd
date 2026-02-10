@@ -6,18 +6,29 @@ order: 4
 date: 2026-02-06
 date-modified: today
 categories: ["Version control"]
+image: images/git-logo.png
 draft: true
 ---
 
 ## Overview
 
+::: {.columns}
+::: {.column width=70%}
+
 Git is a version control system that records changes to your files over time. Instead of saving multiple copies of a file (`report_v1.txt`, `report_v2_final.txt`, `report_v2_final_FINAL.txt`), Git lets you save snapshots — called *commits* — that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.
 
-**Prerequisites:** [Shell configuration](shell-configuration.qmd)
+In regard to Claude Code, adding a Git repository to your project allows you to track changes to your project at checkpoints. This will allow you to easily revert to a previous state if something goes wrong, or to compare different versions of your project as you iterate.
 
-::: {.callout-note}
-Content in progress. Check back soon or attend a workgroup session for a guided walkthrough.
 :::
+::: {.column width=30%}
+
+![](images/git-logo.png)
+
+:::
+:::
+
+
+**Prerequisites:** [Shell configuration](shell-configuration.qmd)
 
 ---
 
