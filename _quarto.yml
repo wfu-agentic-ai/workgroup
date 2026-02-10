@@ -39,6 +39,8 @@ format:
     css: styles.css
     toc: true
     code-copy: true
+    mermaid:
+      theme: neutral
     link-external-newwindow: true
 
 execute:

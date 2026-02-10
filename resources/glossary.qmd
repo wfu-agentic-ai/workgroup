@@ -5,8 +5,9 @@ description: "Definitions of terms used in tutorials and sessions."
 
 ## Overview
 
-A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials.
+A running glossary of CLI, Git, and AI terminology.
+Terms are added as they appear in tutorials.
+Click any underlined term in a tutorial for a quick popup definition,
+or browse the full list below.
 
-::: {.callout-note}
-Content in progress. Glossary entries will be added alongside tutorial content.
-:::
+{{< glossary table=all >}}

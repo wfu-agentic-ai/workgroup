@@ -166,13 +166,38 @@ return {
 
   -- create glossary table
   if kwExists(kwargs, "table") then
-    local sortedTable = sortByKeys(globalGlossaryTable)
+
+    -- table=all: load every term from glossary.yml directly
+    if pandoc.utils.stringify(kwargs.table) == "all" then
+      local options = mergeOptions(kwargs, meta)
+      local metafile = io.open(options.path, 'r')
+      if metafile then
+        local content = "---\n" .. metafile:read("*a") .. "\n---\n"
+        metafile:close()
+        local glossary = pandoc.read(content, "markdown").meta
+        for key, value in pairs(glossary) do
+          globalGlossaryTable[key] = pandoc.utils.stringify(value)
+        end
+      else
+        io.stderr:write("glossary: cannot open " .. options.path .. "\n")
+      end
+    end
+
+    -- Build a sorted key list so iteration order is alphabetical
+    local sortedKeys = {}
+    for key, _ in pairs(globalGlossaryTable) do
+      table.insert(sortedKeys, key)
+    end
+    table.sort(sortedKeys, function(a, b)
+      return string.lower(a) < string.lower(b)
+    end)
 
     if is_html then
       local gt = "<table class='glossary_table'>\n"
       gt = gt .. "<tr><th> Term </th><th> Definition </th></tr>\n"
 
-      for key, value in pairs(sortedTable) do
+      for _, key in ipairs(sortedKeys) do
+          local value = globalGlossaryTable[key]
           gt = gt .. "<tr><td>" .. key
           gt = gt .. "</td><td>" .. value .. "</td></tr>\n"
       end
@@ -182,10 +207,10 @@ return {
     end
 
     local entries = {}
-    for key, value in pairs(sortedTable) do
+    for _, key in ipairs(sortedKeys) do
+      local value = globalGlossaryTable[key]
       local termInlines = parseInlines(key)
       local definitionBlocks = parseBlocks(value)
-      -- DefinitionList expects a list of definition block lists.
       local definitions = { definitionBlocks }
       table.insert(entries, { termInlines, definitions })
     end

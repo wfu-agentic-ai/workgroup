@@ -7,7 +7,7 @@ date: 2026-02-06
 date-modified: today
 categories: ["Version control"]
 image: images/git-logo.png
-draft: true
+draft: false
 ---
 
 ## Overview
@@ -19,7 +19,7 @@ draft: true
 
 Adding a Git repository to your project allows you to track changes to your project at checkpoints. This will allow you to easily revert to a previous state if something goes wrong, or to compare different versions of your project as you iterate. [Claude Code also has built-in support for checkpointing your project](https://code.claude.com/docs/en/checkpointing), however, it is not a substitute for Git.
 
-**Note:** Git and GitHub are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others. This tutorial focuses on Git itself; we'll cover GitHub in a future tutorial.
+**Note:** Git and [GitHub](https://github.com/) are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others (among others [Codeberg](https://codeberg.org/), [GitLab](https://about.gitlab.com/), etc). This tutorial focuses on Git itself; we'll cover web repositorys and collaboration in a future tutorial.
 
 :::
 ::: {.column width=30%}
@@ -36,7 +36,15 @@ Adding a Git repository to your project allows you to track changes to your proj
 
 ## What is version control?
 
-Why tracking changes matters. The problem with manual versioning (renaming files). How Git solves this: a timeline of snapshots with descriptions.
+<!-- Why tracking changes matters. The problem with manual versioning (renaming files). How Git solves this: a timeline of snapshots with descriptions. -->
+
+As alluded to in the overview, there is an inherent problem when working with projects in which files and directories are changing over time; how do you keep track of those changes? One common approach is to save multiple versions of a file with different names. However, these, as you know, leads to all sorts of confusion, for yourself and even more so for collaborators.
+
+Furthermore, when working with a tool, such as Claude Code, that allows you to iterate on a project by making changes to files and directories across your project, it can be difficult to keep track of those changes --even if you wanted to-- without a version control system.
+
+A version control system, like Git, allows you to address both issues: 1) it provides a structured way to track changes to your files over time (without renaming them), and 2) it allows you to easily revert to a previous state of your project (or parts of it) if something goes wrong, or to compare different versions of your project as you iterate.
+
+There's some overhead to learning Git, but the benefits are well worth it. Once you get the hang of it, you'll wonder how you ever managed without it.
 
 ## Installing Git
 
@@ -54,7 +62,11 @@ If you ran the workgroup setup script, Git is already configured. Check with `gi
 
 ## Configuring Git
 
-First-time setup with `git config --global`. Setting your name, email, and default branch name. Verifying with `git config --list`.
+<!-- First-time setup with `git config --global`. Setting your name, email, and default branch name. Verifying with `git config --list`. -->
+
+Before you start using Git, you need to configure it with your name and email, at least. This information is used to identify the author of your commits. While we are at it, we can also set the default branch name to `main`, which is the modern convention (do not worry about branches for now, this is a more advanced topic).
+
+From the terminal, run the following commands, replacing the name and email with your own:
 
 ```bash
 git config --global user.name "Your Name"
@@ -62,21 +74,101 @@ git config --global user.email "you@example.com"
 git config --global init.defaultBranch main
 ```
 
+Good news, you only need to do this once for a given machine! Git will save this information in a configuration file on your computer, so you won't have to set it again for future projects. You can verify that your configuration is set up correctly with:
+
+```bash
+git config global --list
+```
+
+Verify that your name, email, and default branch name are listed in the output.
 
 ## Creating a repository
 
-What `git init` does. Creating a practice project. The hidden `.git/` directory.
+<!-- What `git init` does. Creating a practice project. The hidden `.git/` directory. -->
+
+Now we are ready to create Git repositories for our projects. A Git repository is a special directory that contains all the information about the history of your project, including the commits, branches, and configuration. You can create a Git repository in any directory by running `git init` in that directory.
 
 ```bash
-mkdir my-project && cd my-project
+cd path/to/your/project
 git init
 ```
 
+This command creates a hidden directory called `.git/` in your project directory. This is where Git stores all the information about your repository, including the commits, branches, and project-specific configuration. You can see this directory with `ls -a`, but you should not modify anything inside it directly.
+
+Once you have initialized a Git repository, Git will start tracking changes to your files. However, it won't automatically log those changes as commits. That's our next step: staging and committing changes.
+
 ## The staging area
 
-The three-zone model: working directory, staging area (index), and repository. Why Git uses a staging step (selective commits). Diagram of the flow.
+<!-- The three-zone model: working directory, staging area (index), and repository. Why Git uses a staging step (selective commits). Diagram of the flow. -->
+
+Git uses a three-zone model to manage changes to your files:
+
+1. **Working directory**: This is where you make changes to your files. It's the actual files and directories you see in your project.
+2. **Staging area (index)**: This is an intermediate area where you can stage changes that you want to include in your next commit. You can think of it as a "to-do list" for your next commit.
+3. **Repository**: This is where Git stores the history of your commits. When you commit changes, Git takes a snapshot of the staged changes and saves it in the repository.
+
+
+Here is the flow:
+
+```{mermaid}
+%%| label: fig-staging-areas
+%%| fig-cap: "The three zones of Git: working directory, staging area, and repository."
+flowchart LR
+    subgraph wd["Working Directory"]
+        A["Files you<br>edit and save"]
+    end
+    subgraph sa["Staging Area"]
+        B["Changes selected<br>for your next commit"]
+    end
+    subgraph repo["Repository"]
+        C["Permanent history<br>of snapshots"]
+    end
+    A -- "git add" --> B -- "git commit" --> C
+```
+
 
 ## The core workflow
+
+In @fig-staging-areas, we see the overview of the core Git workflow: you make changes to your files in the working directory, then you stage the changes you want to include in your next commit, and finally, you commit those staged changes to the repository. Let's go through each step in more detail.
+
+To do so we will use the following example:
+
+
+Here is what this looks like with actual files:
+
+```{mermaid}
+%%| label: fig-staging-areas-example
+%%| fig-cap: "Example of the three zones of Git with actual files."
+
+flowchart LR
+    subgraph wd["Working Directory"]
+        direction TB
+        w1["notes.txt<br><i>modified</i>"]
+        w2["report.qmd<br><i>modified</i>"]
+        w3["scratch.txt<br><i>modified</i>"]
+        w4["data.csv<br><i>untracked</i>"]
+        w5["results.csv<br><i>unmodified</i>"]
+    end
+    style w5 stroke-dasharray: 5 5
+    subgraph sa["Staging Area"]
+        direction TB
+        s1["notes.txt<br><i>staged</i>"]
+        s2["report.qmd<br><i>staged</i>"]
+        s3["scratch.txt<br><i>not staged</i>"]
+        s4["data.csv<br><i>staged</i>"]
+    end
+    subgraph repo["Repository"]
+        C["Commit:<br><i>'Update notes and report'</i>"]
+    end
+    w1 -- "git add" --> s1
+    w2 -- "git add" --> s2
+    w3 --> s3
+    w4 -- "git add" --> s4
+    s1 --> repo
+    s2 -- "git commit" --> repo
+    s4 --> repo
+```
+
 
 ### Checking status (`git status`)
 
