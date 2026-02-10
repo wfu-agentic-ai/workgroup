@@ -114,7 +114,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Working with the filesystem – Agentic AI: Workgroup">
 <meta property="og:description" content="Understand absolute and relative paths, navigate with special symbols, use tab completion and wildcards, and build confidence moving around the file system.">
+<meta property="og:image" content="https://wfu-agentic-ai.github.io/workgroup/tutorials/images/unix-logo.png">
 <meta property="og:site_name" content="Agentic AI: Workgroup">
+<meta property="og:image:height" content="453">
+<meta property="og:image:width" content="688">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -324,9 +327,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <div id="quarto-announcement" data-announcement-id="90b06a29a32d128edf7be8298aed9208" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This website is a work in progress.</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -387,6 +387,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Working with the filesystem</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Getting started</div>
+    <div class="quarto-category">Filesystem</div>
+    <div class="quarto-category">Navigation</div>
+    <div class="quarto-category">Paths</div>
+    <div class="quarto-category">Globbing</div>
   </div>
   </div>
 
@@ -423,13 +427,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
 <p>Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.</p>
+</div><div class="column" style="width:30%;">
+<p><img src="images/unix-logo.png" class="img-fluid"></p>
+</div>
+</div>
 <p><strong>Prerequisites:</strong> <a href="../tutorials/cli-fundamentals.html">CLI fundamentals</a></p>
 <hr>
 </section>
 <section id="the-filesystem-as-a-tree" class="level2">
 <h2 class="anchored" data-anchor-id="the-filesystem-as-a-tree">The filesystem as a tree</h2>
-<p>Your computer’s filesystem is organized like an upside-down tree. At the very top is the <button class="glossary" id="glossary-root-directory-3799" data-bs-toggle="popover" data-bs-content="" data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="root directory">root directory</button>, written as <code>/</code>. Every file and directory on the system lives somewhere under root.</p>
+<p>Your computer’s filesystem is organized like an upside-down tree. At the very top is the <button class="glossary" id="glossary-root-directory-7195" data-bs-toggle="popover" data-bs-content="The root directory (/) is the top-level directory that contains every other file and directory on the system. All absolute paths start from root. On macOS, the root directory contains directories like /Users, /Applications, and /System." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="root directory">root directory</button>, written as <code>/</code>. Every file and directory on the system lives somewhere under root.</p>
 <p>Here is a simplified view of what a macOS filesystem looks like:</p>
 <pre><code>/
 ├── Applications/
@@ -465,13 +475,13 @@ Tip
 <p>There are two ways to describe where a file is: absolute paths and relative paths.</p>
 <section id="absolute-paths" class="level3">
 <h3 class="anchored" data-anchor-id="absolute-paths">Absolute paths</h3>
-<p>An <button class="glossary" id="glossary-absolute-path-9491" data-bs-toggle="popover" data-bs-content="An absolute path specifies a file or directory’s location starting from the root of the filesystem. On macOS and Linux it always begins with /, for example /Users/jane/Documents/report.txt. An absolute path works the same regardless of your current directory." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="absolute path">absolute path</button> starts from the root directory (<code>/</code>) and spells out the full location:</p>
+<p>An <button class="glossary" id="glossary-absolute-path-2220" data-bs-toggle="popover" data-bs-content="An absolute path specifies a file or directory’s location starting from the root of the filesystem. On macOS and Linux it always begins with /, for example /Users/jane/Documents/report.txt. An absolute path works the same regardless of your current directory." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="absolute path">absolute path</button> starts from the root directory (<code>/</code>) and spells out the full location:</p>
 <pre><code>/Users/jane/Documents/report.txt</code></pre>
 <p>An absolute path works no matter where you currently are in the filesystem. It always starts with <code>/</code>.</p>
 </section>
 <section id="relative-paths" class="level3">
 <h3 class="anchored" data-anchor-id="relative-paths">Relative paths</h3>
-<p>A <button class="glossary" id="glossary-relative-path-9530" data-bs-toggle="popover" data-bs-content="A relative path specifies a location starting from your current working directory. For example, if you are in /Users/jane, the relative path Documents/report.txt points to /Users/jane/Documents/report.txt. Relative paths never start with /." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="relative path">relative path</button> starts from your current working directory. If you are in <code>/Users/jane</code>, then:</p>
+<p>A <button class="glossary" id="glossary-relative-path-5107" data-bs-toggle="popover" data-bs-content="A relative path specifies a location starting from your current working directory. For example, if you are in /Users/jane, the relative path Documents/report.txt points to /Users/jane/Documents/report.txt. Relative paths never start with /." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="relative path">relative path</button> starts from your current working directory. If you are in <code>/Users/jane</code>, then:</p>
 <pre><code>Documents/report.txt</code></pre>
 <p>points to the same file as the absolute path above. Relative paths never start with <code>/</code>.</p>
 </section>
@@ -522,7 +532,7 @@ Tip
 </table>
 <section id="home-directory" class="level3">
 <h3 class="anchored" data-anchor-id="home-directory">Home directory (<code>~</code>)</h3>
-<p>The tilde <code>~</code> expands to your <button class="glossary" id="glossary-home-directory-5226" data-bs-toggle="popover" data-bs-content="Your home directory is your personal folder where your files, settings, and configuration live. On macOS it is /Users/yourname; on Linux it is /home/yourname. The tilde character (~) is a shortcut that expands to your home directory in the shell." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="home directory">home directory</button>. These two commands are equivalent:</p>
+<p>The tilde <code>~</code> expands to your <button class="glossary" id="glossary-home-directory-6786" data-bs-toggle="popover" data-bs-content="Your home directory is your personal folder where your files, settings, and configuration live. On macOS it is /Users/yourname; on Linux it is /home/yourname. The tilde character (~) is a shortcut that expands to your home directory in the shell." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="home directory">home directory</button>. These two commands are equivalent:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /Users/jane</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can also use <code>~</code> inside paths:</p>
@@ -582,7 +592,7 @@ Tip
 </table>
 <section id="hidden-files-and-dotfiles" class="level3">
 <h3 class="anchored" data-anchor-id="hidden-files-and-dotfiles">Hidden files and dotfiles</h3>
-<p>Some files in your home directory start with a dot — these are <button class="glossary" id="glossary-dotfile-7540" data-bs-toggle="popover" data-bs-content="A dotfile is any file or directory whose name starts with a period (.), such as .bashrc or .gitconfig. Dotfiles are hidden by default — ls won’t show them unless you add the -a flag. They are commonly used to store configuration settings." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="dotfile">dotfiles</button>. The regular <code>ls</code> command does not show them:</p>
+<p>Some files in your home directory start with a dot — these are <button class="glossary" id="glossary-dotfile-7742" data-bs-toggle="popover" data-bs-content="A dotfile is any file or directory whose name starts with a period (.), such as .bashrc or .gitconfig. Dotfiles are hidden by default — ls won’t show them unless you add the -a flag. They are commonly used to store configuration settings." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="dotfile">dotfiles</button>. The regular <code>ls</code> command does not show them:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>Desktop  Documents  Downloads  Pictures</code></pre>
 <p>Add the <code>-a</code> flag to reveal hidden files:</p>
@@ -635,7 +645,7 @@ Note
 </section>
 <section id="wildcards-and-globbing" class="level2">
 <h2 class="anchored" data-anchor-id="wildcards-and-globbing">Wildcards and globbing</h2>
-<p><button class="glossary" id="glossary-wildcard-6975" data-bs-toggle="popover" data-bs-content="" data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="wildcard">Wildcards</button> let you match multiple files at once using patterns instead of exact names. The shell expands these patterns — a process called <button class="glossary" id="glossary-glob-1783" data-bs-toggle="popover" data-bs-content="Globbing is the shell’s process of expanding wildcard patterns into matching file names. When you type ls *.md, the shell finds every file ending in .md in the current directory and passes those names to ls. The term comes from “global command.”" data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="glob">globbing</button> — before passing the results to the command.</p>
+<p><button class="glossary" id="glossary-wildcard-8523" data-bs-toggle="popover" data-bs-content="A wildcard is a special character that matches file names by pattern instead of by exact name. The asterisk (*) matches any sequence of characters, and the question mark (?) matches exactly one character. For example, *.txt matches all files ending in .txt." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="wildcard">Wildcards</button> let you match multiple files at once using patterns instead of exact names. The shell expands these patterns — a process called <button class="glossary" id="glossary-glob-5568" data-bs-toggle="popover" data-bs-content="Globbing is the shell’s process of expanding wildcard patterns into matching file names. When you type ls *.md, the shell finds every file ending in .md in the current directory and passes those names to ls. The term comes from “global command.”" data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="glob">globbing</button> — before passing the results to the command.</p>
 <section id="the-wildcard" class="level3">
 <h3 class="anchored" data-anchor-id="the-wildcard">The <code>*</code> wildcard</h3>
 <p>An asterisk matches any sequence of characters (including none):</p>

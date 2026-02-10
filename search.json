@@ -1,80 +1,17 @@
 [
   {
-    "objectID": "CLAUDE.html",
-    "href": "CLAUDE.html",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "Project instructions\n\n\n\nThis is a faculty/staff workgroup at Wake Forest University focused on agentic AI tools in the CLI. It is not a credit-bearing course — there are no grades, no formal assessment, and membership is rolling (participants join and leave at any time).\n\nAudience: WFU faculty and staff with little or no CLI experience\nFormat: Weekly in-person meetings + async web content\nFacilitator: Will Fleeson (Department of Psychology)\nDeliverable: A Quarto website deployed to GitHub Pages\n\n\n\n\nThe workgroup moves participants from zero CLI knowledge toward independent use of agentic AI tools:\n\nNavigate the file system and run commands in a terminal\nUse Git and GitHub for version control and collaboration\nConfigure shell environments and dotfiles\nInteract with Claude Code for agentic coding workflows\nAccess and configure APIs for AI services\nSet up and use MCP servers for tool integration\nAuthor reproducible documents with Markdown and Quarto\n\n\n\n\nWhen writing tutorials, session notes, or resource pages:\n\nAssume zero CLI knowledge. Define terms on first use. Explain what commands do before showing them.\nProgressive difficulty. Early content covers basic navigation and file operations. Later content introduces Git, Claude Code, APIs, and MCPs.\nWorked examples over abstractions. Show a concrete task, walk through the steps, then generalize. Avoid leading with theory.\nCopy-paste friendly. Code blocks should be runnable as-is. Include expected output where helpful.\nPlatform awareness. Most participants use macOS, but some use Windows. Tutorials should default to macOS examples and note Windows differences (e.g., PowerShell vs bash, path separators, installer commands) in callouts or inline when behavior diverges.\nNo jargon without context. If a term is unavoidable, define it inline or link to the glossary.\n\n\n\n\n\nShell: bash (default macOS shell via Terminal.app or iTerm2)\nVersion control: Git + GitHub\nAI tools: Claude Code (CLI), Anthropic API, MCP servers\nAuthoring: Markdown, Quarto (.qmd files)\nDeployment: GitHub Pages via quarto publish gh-pages\nEnvironment: Nix flake for reproducible development setup\n\n\n\n\nindex.qmd          — Landing page (welcome, meeting info, getting started)\nabout.qmd          — Purpose, learning goals, format, facilitator\nsessions/          — Session notes, one file per meeting (date-based)\n  index.qmd        — Session log, reverse chronological\ntutorials/         — Self-contained topic tutorials\n  index.qmd        — Tutorial catalog with difficulty indicators\n  cli-fundamentals.qmd\n  working-with-the-filesystem.qmd\n  shell-configuration.qmd\n  git-fundamentals.qmd\n  github-collaboration.qmd\n  claude-code-intro.qmd\n  apis-and-mcps.qmd\nresources/         — Reference material\n  index.qmd        — Resource hub\n  cheatsheets.qmd\n  tools.qmd\n  troubleshooting.qmd\n  glossary.qmd\n\n\nCreate sessions/YYYY-MM-DD.qmd with front matter:\n---\ntitle: \"Session title\"\ndate: \"YYYY-MM-DD\"\ndescription: \"Brief summary of what was covered.\"\n---\nThe listing on sessions/index.qmd picks up new session files automatically.\n\n\n\nCreate tutorials/topic-name.qmd with front matter that includes categories (one of \"Getting started\", \"Version control\", or \"AI tools\"):\n---\ntitle: \"Tutorial title\"\ndescription: \"Brief description of the tutorial.\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Getting started\"]\n---\nThe listing on tutorials/index.qmd picks up new tutorial files automatically.\n\n\n\n\n\nTheme: flatly (Bootstrap-based, clean and readable)\nCode blocks: Use code-copy: true and code-tools: true for interactive code\nExternal links: Open in new window (link-external-newwindow: true)\nFront matter: Every .qmd file needs title at minimum; tutorials should also have description and date\nCallouts: Use Quarto callouts (.callout-note, .callout-tip, .callout-warning) for asides and important information\nImages: Store in an images/ subdirectory relative to the page that uses them\n\n\n\n\nFollow the conventions in the global ~/.claude/CLAUDE.md:\n\nR: tidyverse, native pipe (|&gt;), 2-space indent\nPython: data science stack, ruff, 4-space indent\nBash: POSIX-compliant, 2-space indent\nLine limit: 80 characters (except Markdown)\nNaming: snake_case (functions/variables)\nLists: Use - not * or +\nConventional commits: type(scope): message\n\n\n\n\nThe specs/ directory contains planning, progress, and implementation documents for the workgroup. These files are excluded from the rendered site (via .gitignore and not being listed in _quarto.yml). They are internal project management documents."
-  },
-  {
-    "objectID": "CLAUDE.html#workgroup-overview",
-    "href": "CLAUDE.html#workgroup-overview",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "This is a faculty/staff workgroup at Wake Forest University focused on agentic AI tools in the CLI. It is not a credit-bearing course — there are no grades, no formal assessment, and membership is rolling (participants join and leave at any time).\n\nAudience: WFU faculty and staff with little or no CLI experience\nFormat: Weekly in-person meetings + async web content\nFacilitator: Will Fleeson (Department of Psychology)\nDeliverable: A Quarto website deployed to GitHub Pages"
-  },
-  {
-    "objectID": "CLAUDE.html#learning-goals",
-    "href": "CLAUDE.html#learning-goals",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "The workgroup moves participants from zero CLI knowledge toward independent use of agentic AI tools:\n\nNavigate the file system and run commands in a terminal\nUse Git and GitHub for version control and collaboration\nConfigure shell environments and dotfiles\nInteract with Claude Code for agentic coding workflows\nAccess and configure APIs for AI services\nSet up and use MCP servers for tool integration\nAuthor reproducible documents with Markdown and Quarto"
-  },
-  {
-    "objectID": "CLAUDE.html#content-guidelines",
-    "href": "CLAUDE.html#content-guidelines",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "When writing tutorials, session notes, or resource pages:\n\nAssume zero CLI knowledge. Define terms on first use. Explain what commands do before showing them.\nProgressive difficulty. Early content covers basic navigation and file operations. Later content introduces Git, Claude Code, APIs, and MCPs.\nWorked examples over abstractions. Show a concrete task, walk through the steps, then generalize. Avoid leading with theory.\nCopy-paste friendly. Code blocks should be runnable as-is. Include expected output where helpful.\nPlatform awareness. Most participants use macOS, but some use Windows. Tutorials should default to macOS examples and note Windows differences (e.g., PowerShell vs bash, path separators, installer commands) in callouts or inline when behavior diverges.\nNo jargon without context. If a term is unavoidable, define it inline or link to the glossary."
-  },
-  {
-    "objectID": "CLAUDE.html#technology-stack",
-    "href": "CLAUDE.html#technology-stack",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "Shell: bash (default macOS shell via Terminal.app or iTerm2)\nVersion control: Git + GitHub\nAI tools: Claude Code (CLI), Anthropic API, MCP servers\nAuthoring: Markdown, Quarto (.qmd files)\nDeployment: GitHub Pages via quarto publish gh-pages\nEnvironment: Nix flake for reproducible development setup"
-  },
-  {
-    "objectID": "CLAUDE.html#site-structure",
-    "href": "CLAUDE.html#site-structure",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "index.qmd          — Landing page (welcome, meeting info, getting started)\nabout.qmd          — Purpose, learning goals, format, facilitator\nsessions/          — Session notes, one file per meeting (date-based)\n  index.qmd        — Session log, reverse chronological\ntutorials/         — Self-contained topic tutorials\n  index.qmd        — Tutorial catalog with difficulty indicators\n  cli-fundamentals.qmd\n  working-with-the-filesystem.qmd\n  shell-configuration.qmd\n  git-fundamentals.qmd\n  github-collaboration.qmd\n  claude-code-intro.qmd\n  apis-and-mcps.qmd\nresources/         — Reference material\n  index.qmd        — Resource hub\n  cheatsheets.qmd\n  tools.qmd\n  troubleshooting.qmd\n  glossary.qmd\n\n\nCreate sessions/YYYY-MM-DD.qmd with front matter:\n---\ntitle: \"Session title\"\ndate: \"YYYY-MM-DD\"\ndescription: \"Brief summary of what was covered.\"\n---\nThe listing on sessions/index.qmd picks up new session files automatically.\n\n\n\nCreate tutorials/topic-name.qmd with front matter that includes categories (one of \"Getting started\", \"Version control\", or \"AI tools\"):\n---\ntitle: \"Tutorial title\"\ndescription: \"Brief description of the tutorial.\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Getting started\"]\n---\nThe listing on tutorials/index.qmd picks up new tutorial files automatically."
-  },
-  {
-    "objectID": "CLAUDE.html#quarto-conventions",
-    "href": "CLAUDE.html#quarto-conventions",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "Theme: flatly (Bootstrap-based, clean and readable)\nCode blocks: Use code-copy: true and code-tools: true for interactive code\nExternal links: Open in new window (link-external-newwindow: true)\nFront matter: Every .qmd file needs title at minimum; tutorials should also have description and date\nCallouts: Use Quarto callouts (.callout-note, .callout-tip, .callout-warning) for asides and important information\nImages: Store in an images/ subdirectory relative to the page that uses them"
-  },
-  {
-    "objectID": "CLAUDE.html#coding-standards",
-    "href": "CLAUDE.html#coding-standards",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "Follow the conventions in the global ~/.claude/CLAUDE.md:\n\nR: tidyverse, native pipe (|&gt;), 2-space indent\nPython: data science stack, ruff, 4-space indent\nBash: POSIX-compliant, 2-space indent\nLine limit: 80 characters (except Markdown)\nNaming: snake_case (functions/variables)\nLists: Use - not * or +\nConventional commits: type(scope): message"
-  },
-  {
-    "objectID": "CLAUDE.html#specs-directory",
-    "href": "CLAUDE.html#specs-directory",
-    "title": "WFU Agentic AI Workgroup",
-    "section": "",
-    "text": "The specs/ directory contains planning, progress, and implementation documents for the workgroup. These files are excluded from the rendered site (via .gitignore and not being listed in _quarto.yml). They are internal project management documents."
-  },
-  {
     "objectID": "tutorials/working-with-the-filesystem.html",
     "href": "tutorials/working-with-the-filesystem.html",
     "title": "Working with the filesystem",
     "section": "",
-    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
+    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\n\n\n\n\nPrerequisites: CLI fundamentals"
   },
   {
     "objectID": "tutorials/working-with-the-filesystem.html#overview",
     "href": "tutorials/working-with-the-filesystem.html#overview",
     "title": "Working with the filesystem",
     "section": "",
-    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\nPrerequisites: CLI fundamentals"
+    "text": "Every file on your computer lives inside a hierarchy of directories. To work in the terminal, you need to know how to describe where files are (paths) and how to move between directories efficiently. This tutorial covers the filesystem’s tree structure, the difference between absolute and relative paths, special shorthand symbols, tab completion, and wildcards.\n\n\n\n\nPrerequisites: CLI fundamentals"
   },
   {
     "objectID": "tutorials/working-with-the-filesystem.html#the-filesystem-as-a-tree",
@@ -137,105 +74,49 @@
     "href": "tutorials/index.html",
     "title": "Tutorials",
     "section": "",
-    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\nCLI fundamentals\n\n9 min\n\n\nGetting started\n\nCLI\n\nmacOS\n\nWindows\n\nBash\n\nZsh\n\n\n\nOpen a terminal, learn the anatomy of a command, and work with files and directories using core Unix commands.\n\n\n\n\n\n\n\n\n\n\nWorking with the filesystem\n\n7 min\n\n\nGetting started\n\n\n\nUnderstand absolute and relative paths, navigate with special symbols, use tab completion and wildcards, and build confidence moving around the file system.\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n10 min\n\n\nGetting started\n\n\n\nCustomize your terminal with dotfiles, environment variables, aliases, and Homebrew packages. Learn how your shell reads configuration files and how to make changes that…\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html",
-    "href": "tutorials/shell-configuration.html",
-    "title": "Shell configuration",
-    "section": "",
-    "text": "Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.\nPrerequisites: Working with the filesystem"
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#overview",
-    "href": "tutorials/shell-configuration.html#overview",
-    "title": "Shell configuration",
-    "section": "",
-    "text": "Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.\nPrerequisites: Working with the filesystem"
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#what-are-dotfiles",
-    "href": "tutorials/shell-configuration.html#what-are-dotfiles",
-    "title": "Shell configuration",
-    "section": "What are dotfiles?",
-    "text": "What are dotfiles?\nIn the previous tutorial you learned that dotfiles are hidden files whose names start with a period. Many of the most important dotfiles are configuration files — plain text files that programs read at startup to learn your preferences.\nCommon dotfiles you will encounter:\n\n\n\nFile\nUsed by\n\n\n\n\n~/.zshrc\nZsh shell configuration\n\n\n~/.bashrc\nBash shell configuration\n\n\n~/.gitconfig\nGit settings (name, email, editor)\n\n\n~/.config/\nDirectory for application configs\n\n\n\nThese files live in your home directory. Because they start with a dot, ls hides them unless you use ls -a."
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#shell-startup-files",
-    "href": "tutorials/shell-configuration.html#shell-startup-files",
-    "title": "Shell configuration",
-    "section": "Shell startup files",
-    "text": "Shell startup files\nWhen you open a terminal, your shell runs a startup file — a script that sets up your environment. Which file it reads depends on your shell:\n\n\n\nShell\nStartup file\n\n\n\n\nZsh (macOS default)\n~/.zshrc\n\n\nBash (Linux/WSL default)\n~/.bashrc\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou may also see files like ~/.zprofile or ~/.bash_profile. These run for login shells (the first shell started when you log in). For the purposes of this workgroup, focus on .zshrc or .bashrc — they handle interactive sessions, which is what you get when you open a terminal window.\n\n\n\nEditing your config file\nYou can edit your shell config with any text editor. nano is a simple terminal-based editor that is available on all systems:\nnano ~/.zshrc\nInside nano:\n\nType or paste text normally\nCtrl + O to save (then press Enter to confirm the filename)\nCtrl + X to exit\n\nIf you have Visual Studio Code installed, you can open the file in a graphical editor instead:\ncode ~/.zshrc\n\n\n\n\n\n\nTip\n\n\n\nBefore editing any config file, make a backup:\ncp ~/.zshrc ~/.zshrc.backup\nIf something goes wrong, you can restore it:\ncp ~/.zshrc.backup ~/.zshrc\n\n\n\n\nApplying changes with source\nAfter editing your config file, the changes do not take effect automatically — your current shell session already ran the old version at startup. You have two options:\n\nOpen a new terminal window (it will read the updated file)\nUse the source command to re-read the file in your current session:\n\nsource ~/.zshrc\nFor Bash users:\nsource ~/.bashrc"
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#environment-variables",
-    "href": "tutorials/shell-configuration.html#environment-variables",
-    "title": "Shell configuration",
-    "section": "Environment variables",
-    "text": "Environment variables\nEnvironment variables are key-value pairs that programs read to learn about your system and preferences. You can see all current environment variables with:\nenv\nTo see the value of a specific variable, use echo with a $ prefix:\necho $HOME\n/Users/jane\n\nSetting a variable\nTo create or change an environment variable for the current session:\nMY_NAME=\"Jane\"\necho $MY_NAME\nJane\nThis variable only exists in your current shell. To make it available to programs you launch from this shell, use export:\nexport MY_NAME=\"Jane\"\nTo make a variable persist across sessions, add the export line to your shell config file (~/.zshrc or ~/.bashrc).\n\n\nThe PATH variable\nPATH is the most important environment variable. It tells the shell where to look for programs when you type a command.\necho $PATH\n/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin\nThe output is a list of directories separated by colons. When you type a command like brew, the shell searches these directories from left to right until it finds a program with that name. If the program is not in any of the PATH directories, you get a “command not found” error.\nThis is why the Homebrew installer asked you to add a line to your config file — it needed to put Homebrew’s directory (/opt/homebrew/bin on macOS, /home/linuxbrew/.linuxbrew/bin on Linux) into your PATH.\n\n\nAdding a directory to PATH\nTo add a directory to PATH, add a line like this to your config file:\nexport PATH=\"/some/new/directory:$PATH\"\nThe $PATH at the end preserves the existing directories. New directories go at the beginning so they are searched first.\nIf Homebrew is not working after installation, this is most likely the fix. Add the appropriate line for your system:\nFor Zsh on macOS:\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; ~/.zshrc\nFor Bash on Linux:\necho 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"' &gt;&gt; ~/.bashrc\nThen apply the change:\nsource ~/.zshrc   # or source ~/.bashrc\n\n\nOther useful variables\n\n\n\nVariable\nWhat it stores\n\n\n\n\nHOME\nYour home directory path\n\n\nEDITOR\nYour preferred text editor (e.g. nano, vim, code)\n\n\nSHELL\nThe path to your current shell program\n\n\nUSER\nYour username\n\n\n\nTo set a default editor, add this to your config file:\nexport EDITOR=\"nano\""
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#aliases",
-    "href": "tutorials/shell-configuration.html#aliases",
-    "title": "Shell configuration",
-    "section": "Aliases",
-    "text": "Aliases\nAn alias is a shortcut — a custom name for a command or series of commands. You define aliases in your shell config file so they are available every session.\n\nCreating an alias\nThe syntax is:\nalias shortcut='command'\nFor example, a shortcut to go up one directory:\nalias ..='cd ..'\nNow typing .. at the prompt runs cd ...\n\n\nTemporary vs persistent aliases\nIf you type an alias directly at the prompt, it lasts only until you close the terminal. To make it permanent, add the alias line to ~/.zshrc (or ~/.bashrc) and run source to activate it.\n\n\nAlias chaining\nAn alias can reference another alias. For example, suppose you create a base alias for eza (a modern replacement for ls) with colorized output:\nalias ls='eza --icons=auto --color=auto'\nYou can then build on it:\nalias la='ls -a'           # all files, including hidden\nalias ll='ls -l'           # long format with details\nalias lla='ls -la'         # both hidden and detailed\nSince la uses the ls alias, it inherits the --icons=auto --color=auto flags automatically.\n\n\nPractical alias examples\nNavigation:\nalias ..='cd ..'\nalias ...='cd ../..'\nalias c='clear'\nSafety (ask before overwriting or deleting):\nalias cp='cp -i'\nalias mv='mv -i'\nalias rm='rm -i'\nTool replacements (once installed via Homebrew):\nalias cat='bat'\nalias ls='eza --icons=auto --color=auto'\nUsing aliases is highly individualized. As you use the CLI more, you will develop your own collection of shortcuts tuned to your workflow."
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#working-with-homebrew",
-    "href": "tutorials/shell-configuration.html#working-with-homebrew",
-    "title": "Shell configuration",
-    "section": "Working with Homebrew",
-    "text": "Working with Homebrew\nYou installed Homebrew in the CLI fundamentals tutorial. Now let’s learn how to use it effectively.\n\nFormulae vs casks\nHomebrew distinguishes two types of packages:\n\nFormulae — command-line tools and libraries installed in the terminal (e.g. python, git, eza)\nCasks — desktop applications with a graphical interface (e.g. visual-studio-code, iterm2)\n\n\n\nCommon brew commands\nInstall a formula:\nbrew install &lt;package_name&gt;\nInstall a cask (desktop app):\nbrew install --cask &lt;package_name&gt;\nUpdate Homebrew and upgrade all installed packages:\nbrew update && brew upgrade\n\n\n\n\n\n\nTip\n\n\n\nRun brew update && brew upgrade every few weeks to keep your tools current.\n\n\nSearch for a package:\nbrew search &lt;query&gt;\nView details about a package:\nbrew info &lt;package_name&gt;\nList everything you have installed:\nbrew list\nUninstall a package:\nbrew uninstall &lt;package_name&gt;"
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#recommended-packages",
-    "href": "tutorials/shell-configuration.html#recommended-packages",
-    "title": "Shell configuration",
-    "section": "Recommended packages",
-    "text": "Recommended packages\nHere are packages organized by purpose. Install any of them with brew install &lt;name&gt;.\n\nDevelopment tools\n\n\n\nPackage\nDescription\n\n\n\n\nuv\nFast Python package and environment manager\n\n\nnode\nJavaScript runtime (needed for some tools)\n\n\nnpm\nJavaScript package manager (comes with Node)\n\n\n\n\n\nEnhanced commands\nThese replace built-in commands with modern alternatives that have better defaults, color output, and additional features.\n\n\n\nPackage\nReplaces\nWhat it adds\n\n\n\n\neza\nls\nIcons, color, Git status in file listings\n\n\nbat\ncat\nSyntax highlighting, line numbers, Git integration\n\n\nfd\nfind\nSimpler syntax, faster, respects .gitignore\n\n\n\n\n\nNavigation and search\n\n\n\n\n\n\n\nPackage\nDescription\n\n\n\n\nzoxide\nRemembers directories you visit; jump to them with z &lt;partial-name&gt;\n\n\nfzf\nFuzzy finder for files, command history, and more\n\n\n\n\n\nProductivity\n\n\n\nPackage\nDescription\n\n\n\n\nthefuck\nSuggests corrections for mistyped commands\n\n\ntldr\nSimplified help pages with practical examples\n\n\nncdu\nInteractive disk usage analyzer\n\n\nyazi\nTerminal file browser with previews\n\n\nlazygit\nTerminal UI for Git operations\n\n\n\n\n\nCask recommendations (macOS)\n\n\n\nPackage\nDescription\n\n\n\n\nvisual-studio-code\nPopular code editor with extension ecosystem\n\n\niterm2\nFeature-rich terminal emulator\n\n\nwezterm\nCross-platform, GPU-accelerated terminal\n\n\nghostty\nFast, native terminal emulator\n\n\n\nInstall a cask with:\nbrew install --cask visual-studio-code\n\n\n\n\n\n\nTipWindows / WSL users\n\n\n\nFor graphical applications on Windows, install the Windows version directly:\n\nVisual Studio Code — install the “Remote - WSL” extension to edit files inside your WSL environment from Windows\nWezTerm — set the default domain to WSL in its config file\n\nTerminal-based formulae (everything except casks) install normally inside WSL via Homebrew."
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#configuring-installed-tools",
-    "href": "tutorials/shell-configuration.html#configuring-installed-tools",
-    "title": "Shell configuration",
-    "section": "Configuring installed tools",
-    "text": "Configuring installed tools\nSome packages need a line in your shell config to activate. Here are the common ones.\n\nzoxide\nAdd to your config file:\neval \"$(zoxide init zsh)\"    # for Zsh\neval \"$(zoxide init bash)\"   # for Bash\nAfter sourcing, you can use z to jump to directories you have visited before:\nz Documents    # jumps to ~/Documents (or whichever \"Documents\" you visit most)\n\n\nthefuck\nAdd to your config file:\neval \"$(thefuck --alias)\"\nNow, after a mistyped command, type fuck and it will suggest the correction.\n\n\neza aliases\nTo replace ls with eza everywhere, add these aliases:\nalias ls='eza --icons=auto --color=auto'\nalias la='ls --almost-all'\nalias ll='ls --long --time-style=relative --ignore-glob=.git'\nalias lla='la --long --time-style=relative --ignore-glob=.git'\n\n\nbat as a pager\nTo use bat for manual pages and as the default pager:\nexport MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"\nexport PAGER=\"bat\"\n\n\nWorked example\nHere is a complete block you could add to the end of your ~/.zshrc (or ~/.bashrc, replacing zsh with bash in the zoxide line):\n# Tool integrations\neval \"$(zoxide init zsh)\"\neval \"$(thefuck --alias)\"\n\n# Enhanced defaults\nalias ls='eza --icons=auto --color=auto'\nalias la='ls --almost-all'\nalias ll='ls --long --time-style=relative --ignore-glob=.git'\nalias cat='bat'\n\n# Navigation shortcuts\nalias ..='cd ..'\nalias ...='cd ../..'\nalias c='clear'\n\n# Safety\nalias cp='cp -i'\nalias mv='mv -i'\nalias rm='rm -i'\n\n# Pager\nexport MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"\nexport PAGER=\"bat\"\nAfter adding this block, apply it:\nsource ~/.zshrc\nThen test a few commands:\nls              # should show icons and color\nz ~             # should jump to home\ntldr ls         # should show a simplified help page"
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#the-setup-script",
-    "href": "tutorials/shell-configuration.html#the-setup-script",
-    "title": "Shell configuration",
-    "section": "The setup script",
-    "text": "The setup script\nIf you prefer to automate the entire process described in this tutorial, the workgroup provides a setup script that installs all recommended packages, configures Git, and appends shell integrations to your config file.\nRun it directly:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)\"\nOr preview what it would do without making changes:\ncurl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh | bash -s -- --dry-run\n\n\n\n\n\n\nNote\n\n\n\nIf you followed this tutorial manually and installed everything yourself, you already have what the script provides. The script is most useful for setting up a new machine quickly or helping someone who wants to skip the step-by-step process."
-  },
-  {
-    "objectID": "tutorials/shell-configuration.html#summary",
-    "href": "tutorials/shell-configuration.html#summary",
-    "title": "Shell configuration",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nConcept\nKey command / file\n\n\n\n\nShell config file\n~/.zshrc (Zsh) or ~/.bashrc (Bash)\n\n\nEdit config\nnano ~/.zshrc or code ~/.zshrc\n\n\nApply changes\nsource ~/.zshrc\n\n\nSet environment variable\nexport VARIABLE=value\n\n\nCreate alias\nalias shortcut='command'\n\n\nInstall package\nbrew install &lt;name&gt;\n\n\nUpdate packages\nbrew update && brew upgrade\n\n\nBackup config\ncp ~/.zshrc ~/.zshrc.backup\n\n\n\nNext tutorial: Git fundamentals"
+    "text": "Work through these tutorials in order, or jump to whichever topic you need.\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCLI fundamentals\n\n9 min\n\n\nGetting started\n\nCLI\n\nmacOS\n\nWindows\n\nBash\n\nZsh\n\n\n\nOpen a terminal, learn the anatomy of a command, and work with files and directories using core Unix commands.\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with the filesystem\n\n7 min\n\n\nGetting started\n\nFilesystem\n\nNavigation\n\nPaths\n\nGlobbing\n\n\n\nUnderstand absolute and relative paths, navigate with special symbols, use tab completion and wildcards, and build confidence moving around the file system.\n\n\n\n\n\n\n\n\n\n\n\n\nShell configuration\n\n10 min\n\n\nGetting started\n\nShell\n\nConfiguration\n\nDotfiles\n\nHomebrew\n\nAliases\n\nEnvironment variables\n\n\n\nCustomize your terminal with dotfiles, environment variables, aliases, and Homebrew packages. Learn how your shell reads configuration files and how to make changes that…\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "sessions/index.html",
     "href": "sessions/index.html",
     "title": "Sessions",
     "section": "",
-    "text": "Session agendas will be posted here in advance of each meeting, and notes and materials will be added afterwards. See the main page for an overview of the workgroup and how to get started.\n\n\n    \n      \n      \n    \n\n\n\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Session agendas will be posted here in advance of each meeting, and notes and materials will be added afterwards. See the main page for an overview of the workgroup and how to get started.\n\n\n    \n      \n      \n    \n\n\n\n\n\nMeeting Notes\n\n\n…\n\n\n\n\n\nFriday, February 13, 2026\n\n\n\n\n\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines.\n\n\n\n\n\nFriday, February 6, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "resources/troubleshooting.html",
-    "href": "resources/troubleshooting.html",
-    "title": "Troubleshooting",
+    "objectID": "sessions/2026-02-06.html",
+    "href": "sessions/2026-02-06.html",
+    "title": "Meeting Notes",
     "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+    "text": "Facilitator: Will Fleeson"
   },
   {
-    "objectID": "resources/troubleshooting.html#overview",
-    "href": "resources/troubleshooting.html#overview",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+    "objectID": "sessions/2026-02-06.html#agenda",
+    "href": "sessions/2026-02-06.html#agenda",
+    "title": "Meeting Notes",
+    "section": "Agenda",
+    "text": "Agenda\n\nIntroductions:\nI will describe my goals and expected course for this group, and I ask each of you to state what you hope to learn, including a project you hope to accomplish.\nCollective Exploration:\nWe simultaneously try to get Claude Code going on our computers and doing something.\nPlanning:\nCompile our next steps and questions to resolve\nScheduling:\nDecide on frequency and timing of meetings."
+  },
+  {
+    "objectID": "sessions/2026-02-06.html#quick-recap",
+    "href": "sessions/2026-02-06.html#quick-recap",
+    "title": "Meeting Notes",
+    "section": "Quick recap",
+    "text": "Quick recap\nThe group met to learn and explore Claude Code, with members sharing their backgrounds and goals for using the tool. Jerid provided detailed insights into Claude Code’s capabilities and usage, while members discussed technical setup challenges and privacy concerns. The group decided to hold future meetings both in-person and via Zoom, with a preference for in-person sessions when possible. They agreed to create a GitHub organization and Google group to facilitate collaboration and sharing of resources. The conversation ended with plans to establish a shared website for documentation and resources, with members excited about the potential of Claude Code for their various applications."
+  },
+  {
+    "objectID": "sessions/2026-02-06.html#next-steps",
+    "href": "sessions/2026-02-06.html#next-steps",
+    "title": "Meeting Notes",
+    "section": "Next steps",
+    "text": "Next steps\n\nJerid: Spin up a GitHub organization (and optionally a Quarto website) for the group to share resources, articles, and collaborative projects; collaborate with Mason on GitHub organization setup.\nMason: Assist Jerid with setting up the GitHub organization and help with GitHub-related processes for the group.\nWill: Set up a recurring calendar invite for the group’s regular meeting time.\nWill: Set up a Google Group for the group to facilitate communication and organization.\nJo: Consult with Will about setting up the Google Group and help with organizational aspects.\nJerid and Mason (and optionally group): Decide on and communicate the chosen name for the GitHub organization and Google Group to Will and the group.\nGitHub organization: ‘WFU Agentic AI’ (as Claude Code is only one of many agentic AI tools in this space).\nWill: Share the summary of this meeting (including to-dos) with all interested parties.\n[/] Jerid: Scaffold the initial GitHub/Quarto site and provide access/collaborator rights to group members.\n[?] Will: Contact all interested parties about the next meeting and share updates.\n[/] All members: Continue installing and configuring Claude Code on their machines as needed, and attempt the /init command in a test folder for next meeting.\n[/] All members: Consider preferences for in-person vs. Zoom meetings and provide feedback to Will.\nWill: Consider scheduling two meeting times per week to accommodate more participants, based on feedback."
+  },
+  {
+    "objectID": "sessions/2026-02-06.html#summary",
+    "href": "sessions/2026-02-06.html#summary",
+    "title": "Meeting Notes",
+    "section": "Summary",
+    "text": "Summary\n\nExploring Claude Code Together\nThe group met to discuss their goals and familiarity with Claude and Claude Code. Will, Shannon, Hasan, David, Raina, Jo, and Andre shared their backgrounds and reasons for joining the group. Will explained his excitement about learning Claude Code and his goal to create formatted exams. The group discussed their diverse interests in using Claude Code for tasks like data analysis, file organization, and creating formatted documents. They agreed to explore Claude Code together, with Will leading a collective exploration session.\n\n\nClaude Code Setup and Integration\nThe group discussed setting up Claude Code, with Shannon providing guidance to Raina on installing necessary command line tools. Will clarified that using Claude Code would consume the user’s existing Claude subscription unless they use a paid token key. Jerid joined the meeting and shared his background in linguistics and cognitive science, explaining his interest in Claude Code due to its compatibility with his terminal-based workflow. He described his experience with earlier tools like ADER and highlighted Claude Code’s evolution to become more user-friendly, while warning against other autonomous AI tools like Moltbot and Open Claw.\n\n\nClaude Code Integration and Automation\nJerid discussed the new features of Claude Code, emphasizing its ability to provide feedback, control interactions, and suggest continuations for chats. He explained how APIs, like those for Canvas and Workday, can be used to automate tasks and integrate with systems, though there are permission restrictions. Raina expressed interest in using Claude Code to streamline the creation and upload of Canvas LMS packages, as she finds the current process tedious. Jerid also touched on the use of Git for version control, allowing users to track and revert changes in projects over time.\n\n\nClaude Code Installation Process Overview\nThe group discussed the installation process of Claude Code, focusing on the technical requirements and challenges faced by different operating systems. Jerid explained the educational plan benefits for educators, which include private GitHub access and AI model usage. Will shared his experience with the installation process, mentioning the need for additional tools like Git and Node.js, and noted the time required to complete the setup. The team also discussed the potential for creating a guide or website to document the process for future reference.\n\n\nClaude Code Installation Setup Guide\nThe team discussed the installation process for Claude Code, emphasizing the importance of having a terminal window open and ensuring that node.js and collab.code are installed. Will guided the group through the necessary steps, including restarting the terminal to test the installation. Mason, who was catching up, introduced himself as a quantitative psychologist teaching a Data Science course and mentioned his expertise in large language models. The session aimed to help everyone get started with the setup, with some members already familiar with the process and others catching up.\n\n\nClaude Installation and Setup Guide\nThe team discussed the installation and setup of Claude, with Will guiding others through the process. Shannon and Will confirmed they had successfully installed the version number, while Jo faced some errors due to missing software and needed to install Git and Node.js. Jo planned to resolve the issues later, and Will shared that he had overcome similar installation challenges by restarting the terminal, installing necessary software, and adding it to the system path. The team also discussed using the terminal to run Claude within specific folders, with Will suggesting this method for ease of use.\n\n\nTerminal Navigation and Commands\nWill and Jerid discussed navigating file paths and directories using terminal commands on different operating systems. They explained how to copy folder paths on Mac and Windows (from the Finder or Explorer), use the cd command to change directories, and run Claude in terminal. Will shared his excitement about using the Claude Code /init command (see Anthropic Docs for more), which led to an unexpected and impressive outcome that he wanted to share with others.\n\n\nClaude Integration and Data Security\nThe group discussed integrating Claude with a Data Science repository and the challenges of using Git with Google Drive syncing. Jerid advised Raina to experiment with Claude in a sandbox environment rather than syncing it with Google Drive initially, due to potential sync issues. Raina raised concerns about data security with LLMs, and Jerid mentioned that Claude Code the tool operates locally on users’ computers, however all LLM traffic is routed through Anthropic servers. Shannon had to leave for class but planned to experiment further and coordinate the next meeting’s schedule.\n\n\nClaude Code Privacy and Security\nThe group discussed the privacy and security implications of using Claude Code, with Jerid explaining that data is not stored locally and emphasizing the importance of understanding terminal interactions and directory management. Will and David mentioned their enterprise agreements with Microsoft Copilot for data security, while Raina and others shared approaches like anonymizing data before inputting it into LLMs. The conversation ended with a discussion about future meeting formats, with Will asking whether in-person or Zoom meetings would be more productive, leaving the decision open for group preference.\n\n\nIn-Person and Virtual Meeting Plans\nThe group discussed meeting logistics and decided to hold the next session in person, with a mix of in-person and virtual meetings going forward. They agreed to schedule two weekly sessions to accommodate everyone’s availability, with Will creating a calendar invite for the next meeting on Friday. Jerid suggested using a research methods room with a projector for future in-person meetings. Jo offered to help Will set up a Google group for better organization, and the group agreed to use this method for communication.\n\n\nCloud Code Collaboration Platform Launch\nThe group discussed creating a collaborative platform for learning about Cloud Code, with Jerid offering to set up a GitHub organization and website using Quarto to host articles and programming tips. They agreed to combine both GitHub and Google Group approaches, with Will handling the calendar and Google group coordination. The team debated potential names for the GitHub organization, with suggestions including “WFU Claude” and “WFU Agentic AI,” though they decided to let Claude generate a suggestion. Will committed to sharing the meeting summary and to-dos with interested participants within 24 hours."
   },
   {
     "objectID": "resources/tools.html",
@@ -252,11 +133,18 @@
     "text": "A list of the tools we use, what they’re for, and how to install them.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Tool listings with installation instructions will be added as the workgroup covers each tool.\n\n\n\n\n\nHoneypot: “This extension provides shortcodes to quickly add”honeypots” to HTML assignments created using Quarto. Specifically, it will add extra text instructions to the document that are invisible to humans but will be copied to the clipboard and followed by large language models (LLMs). This approach can be used to attempt to detect the use of LLMs (by copying the assignment text and pasting it into an LLM prompt) when such usage has been prohibited.”"
   },
   {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
+    "objectID": "resources/glossary.html",
+    "href": "resources/glossary.html",
+    "title": "Glossary",
     "section": "",
-    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
+    "text": "A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Glossary entries will be added alongside tutorial content."
+  },
+  {
+    "objectID": "resources/glossary.html#overview",
+    "href": "resources/glossary.html#overview",
+    "title": "Glossary",
+    "section": "",
+    "text": "A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Glossary entries will be added alongside tutorial content."
   },
   {
     "objectID": "index.html",
@@ -291,35 +179,7 @@
     "href": "index.html#recent-sessions",
     "title": "WFU Agentic AI Workgroup",
     "section": "Recent sessions",
-    "text": "Recent sessions\nSession notes will appear here as meetings take place. See the full session log.\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines. \n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "resources/glossary.html",
-    "href": "resources/glossary.html",
-    "title": "Glossary",
-    "section": "",
-    "text": "A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Glossary entries will be added alongside tutorial content."
-  },
-  {
-    "objectID": "resources/glossary.html#overview",
-    "href": "resources/glossary.html#overview",
-    "title": "Glossary",
-    "section": "",
-    "text": "A running glossary of CLI, Git, and AI terminology. Terms are added as they appear in tutorials.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Glossary entries will be added alongside tutorial content."
-  },
-  {
-    "objectID": "resources/cheatsheets.html",
-    "href": "resources/cheatsheets.html",
-    "title": "Cheatsheets",
-    "section": "",
-    "text": "Printable and bookmarkable command summaries for the tools we use in the workgroup.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Cheatsheets for bash, Git, and Claude Code will be added as tutorials are published."
-  },
-  {
-    "objectID": "resources/cheatsheets.html#overview",
-    "href": "resources/cheatsheets.html#overview",
-    "title": "Cheatsheets",
-    "section": "",
-    "text": "Printable and bookmarkable command summaries for the tools we use in the workgroup.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Cheatsheets for bash, Git, and Claude Code will be added as tutorials are published."
+    "text": "Recent sessions\nSession notes will appear here as meetings take place. See the full session log.\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nFeb 13, 2026\n\n\nMeeting Notes\n\n\n… \n\n\n\n\n\n\nFeb 6, 2026\n\n\nMeeting Notes\n\n\nIntroductions, discussion of goals and expectations, and working to get Claude Code set up on participants’ machines. \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -364,39 +224,53 @@
     "text": "Facilitator\nDr. Will Fleeson – Psychology, Wake Forest University\nQuestions? Visit the Discussion board on GitHub or reach out directly fleesonw@wfu.edu."
   },
   {
-    "objectID": "sessions/2026-02-06.html",
-    "href": "sessions/2026-02-06.html",
+    "objectID": "resources/cheatsheets.html",
+    "href": "resources/cheatsheets.html",
+    "title": "Cheatsheets",
+    "section": "",
+    "text": "Printable and bookmarkable command summaries for the tools we use in the workgroup.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Cheatsheets for bash, Git, and Claude Code will be added as tutorials are published."
+  },
+  {
+    "objectID": "resources/cheatsheets.html#overview",
+    "href": "resources/cheatsheets.html#overview",
+    "title": "Cheatsheets",
+    "section": "",
+    "text": "Printable and bookmarkable command summaries for the tools we use in the workgroup.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Cheatsheets for bash, Git, and Claude Code will be added as tutorials are published."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Quick-reference materials to support your learning. Bookmark this page.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCheatsheets\n\n\nQuick-reference command summaries.\n\n\n\n\n\n\nGlossary\n\n\nDefinitions of terms used in tutorials and sessions.\n\n\n\n\n\n\nTools\n\n\nSoftware and services used in the workgroup.\n\n\n\n\n\n\nTroubleshooting\n\n\nCommon problems and how to fix them.\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources/troubleshooting.html",
+    "href": "resources/troubleshooting.html",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "resources/troubleshooting.html#overview",
+    "href": "resources/troubleshooting.html#overview",
+    "title": "Troubleshooting",
+    "section": "",
+    "text": "Solutions to issues that come up frequently when working with the terminal, Git, and AI tools.\n\n\n\n\n\n\nNote\n\n\n\nContent in progress. Troubleshooting entries will be added as participants encounter common issues."
+  },
+  {
+    "objectID": "sessions/2026-02-13.html",
+    "href": "sessions/2026-02-13.html",
     "title": "Meeting Notes",
     "section": "",
-    "text": "Facilitator: Will Fleeson"
+    "text": "Facilitator: Will Fleeson\nLocation: Greene Hall 419"
   },
   {
-    "objectID": "sessions/2026-02-06.html#agenda",
-    "href": "sessions/2026-02-06.html#agenda",
+    "objectID": "sessions/2026-02-13.html#agenda",
+    "href": "sessions/2026-02-13.html#agenda",
     "title": "Meeting Notes",
     "section": "Agenda",
-    "text": "Agenda\n\nIntroductions:\nI will describe my goals and expected course for this group, and I ask each of you to state what you hope to learn, including a project you hope to accomplish.\nCollective Exploration:\nWe simultaneously try to get Claude Code going on our computers and doing something.\nPlanning:\nCompile our next steps and questions to resolve\nScheduling:\nDecide on frequency and timing of meetings."
-  },
-  {
-    "objectID": "sessions/2026-02-06.html#quick-recap",
-    "href": "sessions/2026-02-06.html#quick-recap",
-    "title": "Meeting Notes",
-    "section": "Quick recap",
-    "text": "Quick recap\nThe group met to learn and explore Claude Code, with members sharing their backgrounds and goals for using the tool. Jerid provided detailed insights into Claude Code’s capabilities and usage, while members discussed technical setup challenges and privacy concerns. The group decided to hold future meetings both in-person and via Zoom, with a preference for in-person sessions when possible. They agreed to create a GitHub organization and Google group to facilitate collaboration and sharing of resources. The conversation ended with plans to establish a shared website for documentation and resources, with members excited about the potential of Claude Code for their various applications."
-  },
-  {
-    "objectID": "sessions/2026-02-06.html#next-steps",
-    "href": "sessions/2026-02-06.html#next-steps",
-    "title": "Meeting Notes",
-    "section": "Next steps",
-    "text": "Next steps\n\nJerid: Spin up a GitHub organization (and optionally a Quarto website) for the group to share resources, articles, and collaborative projects; collaborate with Mason on GitHub organization setup.\nMason: Assist Jerid with setting up the GitHub organization and help with GitHub-related processes for the group.\nWill: Set up a recurring calendar invite for the group’s regular meeting time.\nWill: Set up a Google Group for the group to facilitate communication and organization.\nJo: Consult with Will about setting up the Google Group and help with organizational aspects.\nJerid and Mason (and optionally group): Decide on and communicate the chosen name for the GitHub organization and Google Group to Will and the group.\nWill: Share the summary of this meeting (including to-dos) with all interested parties.\nJerid: Scaffold the initial GitHub/Quarto site and provide access/collaborator rights to group members.\nWill: Contact all interested parties about the next meeting and share updates.\nAll members: Continue installing and configuring Claude Code on their machines as needed, and attempt the /init command in a test folder for next meeting.\nAll members: Consider preferences for in-person vs. Zoom meetings and provide feedback to Will.\nWill: Consider scheduling two meeting times per week to accommodate more participants, based on feedback."
-  },
-  {
-    "objectID": "sessions/2026-02-06.html#summary",
-    "href": "sessions/2026-02-06.html#summary",
-    "title": "Meeting Notes",
-    "section": "Summary",
-    "text": "Summary\n\nExploring Claude Code Together\nThe group met to discuss their goals and familiarity with Claude and Claude Code. Will, Shannon, Hasan, David, Raina, Jo, and Andre shared their backgrounds and reasons for joining the group. Will explained his excitement about learning Claude Code and his goal to create formatted exams. The group discussed their diverse interests in using Claude Code for tasks like data analysis, file organization, and creating formatted documents. They agreed to explore Claude Code together, with Will leading a collective exploration session.\n\n\nClaude Code Setup and Integration\nThe group discussed setting up Claude Code, with Shannon providing guidance to Raina on installing necessary command line tools. Will clarified that using Claude Code would consume the user’s existing Claude subscription unless they use a paid token key. Jerid joined the meeting and shared his background in linguistics and cognitive science, explaining his interest in Claude Code due to its compatibility with his terminal-based workflow. He described his experience with earlier tools like ADER and highlighted Claude Code’s evolution to become more user-friendly, while warning against other autonomous AI tools like Moltbot and Open Claw.\n\n\nClaude Code Integration and Automation\nJerid discussed the new features of Claude Code, emphasizing its ability to provide feedback, control interactions, and suggest continuations for chats. He explained how APIs, like those for Canvas and Workday, can be used to automate tasks and integrate with systems, though there are permission restrictions. Raina expressed interest in using Claude Code to streamline the creation and upload of Canvas LMS packages, as she finds the current process tedious. Jerid also touched on the use of Git for version control, allowing users to track and revert changes in projects over time.\n\n\nClaude Code Installation Process Overview\nThe group discussed the installation process of Claude Code, focusing on the technical requirements and challenges faced by different operating systems. Jerid explained the educational plan benefits for educators, which include private GitHub access and AI model usage. Will shared his experience with the installation process, mentioning the need for additional tools like Git and Node.js, and noted the time required to complete the setup. The team also discussed the potential for creating a guide or website to document the process for future reference.\n\n\nClaude Code Installation Setup Guide\nThe team discussed the installation process for Claude Code, emphasizing the importance of having a terminal window open and ensuring that node.js and collab.code are installed. Will guided the group through the necessary steps, including restarting the terminal to test the installation. Mason, who was catching up, introduced himself as a quantitative psychologist teaching a Data Science course and mentioned his expertise in large language models. The session aimed to help everyone get started with the setup, with some members already familiar with the process and others catching up.\n\n\nClaude Installation and Setup Guide\nThe team discussed the installation and setup of Claude, with Will guiding others through the process. Shannon and Will confirmed they had successfully installed the version number, while Jo faced some errors due to missing software and needed to install Git and Node.js. Jo planned to resolve the issues later, and Will shared that he had overcome similar installation challenges by restarting the terminal, installing necessary software, and adding it to the system path. The team also discussed using the terminal to run Claude within specific folders, with Will suggesting this method for ease of use.\n\n\nTerminal Navigation and Commands\nWill and Jerid discussed navigating file paths and directories using terminal commands on different operating systems. They explained how to copy folder paths on Mac and Windows, use the CD command to change directories, and run Claude in terminal. Will shared his excitement about using the “run/init” command, which led to an unexpected and impressive outcome that he wanted to share with others.\n\n\nClaude Integration and Data Security\nThe group discussed integrating Claude with a Data Science repository and the challenges of using Git with Google Drive syncing. Jerid advised Raina to experiment with Claude in a sandbox environment rather than syncing it with Google Drive initially, due to potential sync issues. Raina raised concerns about data security with LLMs, and Jerid mentioned that Claude Code operates locally on users’ computers, with no data being sent to servers unless explicitly toggled. Shannon had to leave for class but planned to experiment further and coordinate the next meeting’s schedule.\n\n\nClaude Code Privacy and Security\nThe group discussed the privacy and security implications of using Claude Code, with Jerid explaining that data is not stored locally and emphasizing the importance of understanding terminal interactions and directory management. Will and David mentioned their enterprise agreements with Copilot for data security, while Raina and others shared approaches like anonymizing data before inputting it into LLMs. The conversation ended with a discussion about future meeting formats, with Will asking whether in-person or Zoom meetings would be more productive, leaving the decision open for group preference.\n\n\nIn-Person and Virtual Meeting Plans\nThe group discussed meeting logistics and decided to hold the next session in person, with a mix of in-person and virtual meetings going forward. They agreed to schedule two weekly sessions to accommodate everyone’s availability, with Will creating a calendar invite for the next meeting on Friday. Jerid suggested using a research methods room with a projector for future in-person meetings. Jo offered to help Will set up a Google group for better organization, and the group agreed to use this method for communication.\n\n\nCloud Code Collaboration Platform Launch\nThe group discussed creating a collaborative platform for learning about Cloud Code, with Jerid offering to set up a GitHub organization and website using Quarto to host articles and programming tips. They agreed to combine both GitHub and Google Group approaches, with Will handling the calendar and Google group coordination. The team debated potential names for the GitHub organization, with suggestions including “WFU Claude” and “WFU Agentic AI,” though they decided to let Claude generate a suggestion. Will committed to sharing the meeting summary and to-dos with interested participants within 24 hours."
+    "text": "Agenda\nTBD"
   },
   {
     "objectID": "tutorials/cli-fundamentals.html",
@@ -474,5 +348,82 @@
     "title": "CLI fundamentals",
     "section": "Summary",
     "text": "Summary\nHere is a reference table of the commands covered in this tutorial:\n\n\n\n\n\n\n\n\nCommand\nWhat it does\nExample\n\n\n\n\npwd\nPrint current directory\npwd\n\n\nls\nList files and directories\nls -la\n\n\ncd\nChange directory\ncd Documents\n\n\nmkdir\nCreate a directory\nmkdir my_folder\n\n\ntouch\nCreate an empty file\ntouch notes.txt\n\n\necho\nPrint text (with &gt; to write to file)\necho \"hi\" &gt; file.txt\n\n\ncat\nDisplay file contents\ncat notes.txt\n\n\nless\nView file in scrollable reader\nless notes.txt\n\n\ncp\nCopy files or directories\ncp file.txt copy.txt\n\n\nmv\nMove or rename files\nmv old.txt new.txt\n\n\nrm\nDelete files or directories\nrm -r old_folder\n\n\nman\nOpen manual page\nman ls\n\n\nclear\nClear the terminal screen\nclear\n\n\nhistory\nShow command history\nhistory\n\n\nbrew\nInstall packages via Homebrew\nbrew install tree\n\n\n\nNext tutorial: Working with the filesystem"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html",
+    "href": "tutorials/shell-configuration.html",
+    "title": "Shell configuration",
+    "section": "",
+    "text": "Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.\n\n\n\n\nPrerequisites: Working with the filesystem"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#overview",
+    "href": "tutorials/shell-configuration.html#overview",
+    "title": "Shell configuration",
+    "section": "",
+    "text": "Every time you open a terminal, your shell reads a set of configuration files before showing you a prompt. These files control how the shell behaves — what shortcuts are available, which programs it can find, and how the prompt looks. This tutorial explains how to edit those files, set environment variables, create aliases, and install a full set of recommended tools with Homebrew.\n\n\n\n\nPrerequisites: Working with the filesystem"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#what-are-dotfiles",
+    "href": "tutorials/shell-configuration.html#what-are-dotfiles",
+    "title": "Shell configuration",
+    "section": "What are dotfiles?",
+    "text": "What are dotfiles?\nIn the previous tutorial you learned that dotfiles are hidden files whose names start with a period. Many of the most important dotfiles are configuration files — plain text files that programs read at startup to learn your preferences.\nCommon dotfiles you will encounter:\n\n\n\nFile\nUsed by\n\n\n\n\n~/.zshrc\nZsh shell configuration\n\n\n~/.bashrc\nBash shell configuration\n\n\n~/.gitconfig\nGit settings (name, email, editor)\n\n\n~/.config/\nDirectory for application configs\n\n\n\nThese files live in your home directory. Because they start with a dot, ls hides them unless you use ls -a."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#shell-startup-files",
+    "href": "tutorials/shell-configuration.html#shell-startup-files",
+    "title": "Shell configuration",
+    "section": "Shell startup files",
+    "text": "Shell startup files\nWhen you open a terminal, your shell runs a startup file — a script that sets up your environment. Which file it reads depends on your shell:\n\n\n\nShell\nStartup file\n\n\n\n\nZsh (macOS default)\n~/.zshrc\n\n\nBash (Linux/WSL default)\n~/.bashrc\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou may also see files like ~/.zprofile or ~/.bash_profile. These run for login shells (the first shell started when you log in). For the purposes of this workgroup, focus on .zshrc or .bashrc — they handle interactive sessions, which is what you get when you open a terminal window.\n\n\n\nEditing your config file\nYou can edit your shell config with any text editor. nano is a simple terminal-based editor that is available on all systems:\nnano ~/.zshrc\nInside nano:\n\nType or paste text normally\nCtrl + O to save (then press Enter to confirm the filename)\nCtrl + X to exit\n\nIf you have Visual Studio Code installed, you can open the file in a graphical editor instead:\ncode ~/.zshrc\n\n\n\n\n\n\nTip\n\n\n\nBefore editing any config file, make a backup:\ncp ~/.zshrc ~/.zshrc.backup\nIf something goes wrong, you can restore it:\ncp ~/.zshrc.backup ~/.zshrc\n\n\n\n\nApplying changes with source\nAfter editing your config file, the changes do not take effect automatically — your current shell session already ran the old version at startup. You have two options:\n\nOpen a new terminal window (it will read the updated file)\nUse the source command to re-read the file in your current session:\n\nsource ~/.zshrc\nFor Bash users:\nsource ~/.bashrc"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#environment-variables",
+    "href": "tutorials/shell-configuration.html#environment-variables",
+    "title": "Shell configuration",
+    "section": "Environment variables",
+    "text": "Environment variables\nEnvironment variables are key-value pairs that programs read to learn about your system and preferences. You can see all current environment variables with:\nenv\nTo see the value of a specific variable, use echo with a $ prefix:\necho $HOME\n/Users/jane\n\nSetting a variable\nTo create or change an environment variable for the current session:\nMY_NAME=\"Jane\"\necho $MY_NAME\nJane\nThis variable only exists in your current shell. To make it available to programs you launch from this shell, use export:\nexport MY_NAME=\"Jane\"\nTo make a variable persist across sessions, add the export line to your shell config file (~/.zshrc or ~/.bashrc).\n\n\nThe PATH variable\nPATH is the most important environment variable. It tells the shell where to look for programs when you type a command.\necho $PATH\n/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin\nThe output is a list of directories separated by colons. When you type a command like brew, the shell searches these directories from left to right until it finds a program with that name. If the program is not in any of the PATH directories, you get a “command not found” error.\nThis is why the Homebrew installer asked you to add a line to your config file — it needed to put Homebrew’s directory (/opt/homebrew/bin on macOS, /home/linuxbrew/.linuxbrew/bin on Linux) into your PATH.\n\n\nAdding a directory to PATH\nTo add a directory to PATH, add a line like this to your config file:\nexport PATH=\"/some/new/directory:$PATH\"\nThe $PATH at the end preserves the existing directories. New directories go at the beginning so they are searched first.\nIf Homebrew is not working after installation, this is most likely the fix. Add the appropriate line for your system:\nFor Zsh on macOS:\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' &gt;&gt; ~/.zshrc\nFor Bash on Linux:\necho 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"' &gt;&gt; ~/.bashrc\nThen apply the change:\nsource ~/.zshrc   # or source ~/.bashrc\n\n\nOther useful variables\n\n\n\nVariable\nWhat it stores\n\n\n\n\nHOME\nYour home directory path\n\n\nEDITOR\nYour preferred text editor (e.g. nano, vim, code)\n\n\nSHELL\nThe path to your current shell program\n\n\nUSER\nYour username\n\n\n\nTo set a default editor, add this to your config file:\nexport EDITOR=\"nano\""
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#aliases",
+    "href": "tutorials/shell-configuration.html#aliases",
+    "title": "Shell configuration",
+    "section": "Aliases",
+    "text": "Aliases\nAn alias is a shortcut — a custom name for a command or series of commands. You define aliases in your shell config file so they are available every session.\n\nCreating an alias\nThe syntax is:\nalias shortcut='command'\nFor example, a shortcut to go up one directory:\nalias ..='cd ..'\nNow typing .. at the prompt runs cd ...\n\n\nTemporary vs persistent aliases\nIf you type an alias directly at the prompt, it lasts only until you close the terminal. To make it permanent, add the alias line to ~/.zshrc (or ~/.bashrc) and run source to activate it.\n\n\nAlias chaining\nAn alias can reference another alias. For example, suppose you create a base alias for eza (a modern replacement for ls) with colorized output:\nalias ls='eza --icons=auto --color=auto'\nYou can then build on it:\nalias la='ls -a'           # all files, including hidden\nalias ll='ls -l'           # long format with details\nalias lla='ls -la'         # both hidden and detailed\nSince la uses the ls alias, it inherits the --icons=auto --color=auto flags automatically.\n\n\nPractical alias examples\nNavigation:\nalias ..='cd ..'\nalias ...='cd ../..'\nalias c='clear'\nSafety (ask before overwriting or deleting):\nalias cp='cp -i'\nalias mv='mv -i'\nalias rm='rm -i'\nTool replacements (once installed via Homebrew):\nalias cat='bat'\nalias ls='eza --icons=auto --color=auto'\nUsing aliases is highly individualized. As you use the CLI more, you will develop your own collection of shortcuts tuned to your workflow."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#working-with-homebrew",
+    "href": "tutorials/shell-configuration.html#working-with-homebrew",
+    "title": "Shell configuration",
+    "section": "Working with Homebrew",
+    "text": "Working with Homebrew\nYou installed Homebrew in the CLI fundamentals tutorial. Now let’s learn how to use it effectively.\n\nFormulae vs casks\nHomebrew distinguishes two types of packages:\n\nFormulae — command-line tools and libraries installed in the terminal (e.g. python, git, eza)\nCasks — desktop applications with a graphical interface (e.g. visual-studio-code, iterm2)\n\n\n\nCommon brew commands\nInstall a formula:\nbrew install &lt;package_name&gt;\nInstall a cask (desktop app):\nbrew install --cask &lt;package_name&gt;\nUpdate Homebrew and upgrade all installed packages:\nbrew update && brew upgrade\n\n\n\n\n\n\nTip\n\n\n\nRun brew update && brew upgrade every few weeks to keep your tools current.\n\n\nSearch for a package:\nbrew search &lt;query&gt;\nView details about a package:\nbrew info &lt;package_name&gt;\nList everything you have installed:\nbrew list\nUninstall a package:\nbrew uninstall &lt;package_name&gt;"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#recommended-packages",
+    "href": "tutorials/shell-configuration.html#recommended-packages",
+    "title": "Shell configuration",
+    "section": "Recommended packages",
+    "text": "Recommended packages\nHere are packages organized by purpose. Install any of them with brew install &lt;name&gt;.\n\nDevelopment tools\n\n\n\nPackage\nDescription\n\n\n\n\nuv\nFast Python package and environment manager\n\n\nnode\nJavaScript runtime (needed for some tools)\n\n\nnpm\nJavaScript package manager (comes with Node)\n\n\n\n\n\nEnhanced commands\nThese replace built-in commands with modern alternatives that have better defaults, color output, and additional features.\n\n\n\nPackage\nReplaces\nWhat it adds\n\n\n\n\neza\nls\nIcons, color, Git status in file listings\n\n\nbat\ncat\nSyntax highlighting, line numbers, Git integration\n\n\nfd\nfind\nSimpler syntax, faster, respects .gitignore\n\n\n\n\n\nNavigation and search\n\n\n\n\n\n\n\nPackage\nDescription\n\n\n\n\nzoxide\nRemembers directories you visit; jump to them with z &lt;partial-name&gt;\n\n\nfzf\nFuzzy finder for files, command history, and more\n\n\n\n\n\nProductivity\n\n\n\nPackage\nDescription\n\n\n\n\nthefuck\nSuggests corrections for mistyped commands\n\n\ntldr\nSimplified help pages with practical examples\n\n\nncdu\nInteractive disk usage analyzer\n\n\nyazi\nTerminal file browser with previews\n\n\nlazygit\nTerminal UI for Git operations\n\n\n\n\n\nCask recommendations (macOS)\n\n\n\nPackage\nDescription\n\n\n\n\nvisual-studio-code\nPopular code editor with extension ecosystem\n\n\niterm2\nFeature-rich terminal emulator\n\n\nwezterm\nCross-platform, GPU-accelerated terminal\n\n\nghostty\nFast, native terminal emulator\n\n\n\nInstall a cask with:\nbrew install --cask visual-studio-code\n\n\n\n\n\n\nTipWindows / WSL users\n\n\n\nFor graphical applications on Windows, install the Windows version directly:\n\nVisual Studio Code — install the “Remote - WSL” extension to edit files inside your WSL environment from Windows\nWezTerm — set the default domain to WSL in its config file\n\nTerminal-based formulae (everything except casks) install normally inside WSL via Homebrew."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#configuring-installed-tools",
+    "href": "tutorials/shell-configuration.html#configuring-installed-tools",
+    "title": "Shell configuration",
+    "section": "Configuring installed tools",
+    "text": "Configuring installed tools\nSome packages need a line in your shell config to activate. Here are the common ones.\n\nzoxide\nAdd to your config file:\neval \"$(zoxide init zsh)\"    # for Zsh\neval \"$(zoxide init bash)\"   # for Bash\nAfter sourcing, you can use z to jump to directories you have visited before:\nz Documents    # jumps to ~/Documents (or whichever \"Documents\" you visit most)\n\n\nthefuck\nAdd to your config file:\neval \"$(thefuck --alias)\"\nNow, after a mistyped command, type fuck and it will suggest the correction.\n\n\neza aliases\nTo replace ls with eza everywhere, add these aliases:\nalias ls='eza --icons=auto --color=auto'\nalias la='ls --almost-all'\nalias ll='ls --long --time-style=relative --ignore-glob=.git'\nalias lla='la --long --time-style=relative --ignore-glob=.git'\n\n\nbat as a pager\nTo use bat for manual pages and as the default pager:\nexport MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"\nexport PAGER=\"bat\"\n\n\nWorked example\nHere is a complete block you could add to the end of your ~/.zshrc (or ~/.bashrc, replacing zsh with bash in the zoxide line):\n# Tool integrations\neval \"$(zoxide init zsh)\"\neval \"$(thefuck --alias)\"\n\n# Enhanced defaults\nalias ls='eza --icons=auto --color=auto'\nalias la='ls --almost-all'\nalias ll='ls --long --time-style=relative --ignore-glob=.git'\nalias cat='bat'\n\n# Navigation shortcuts\nalias ..='cd ..'\nalias ...='cd ../..'\nalias c='clear'\n\n# Safety\nalias cp='cp -i'\nalias mv='mv -i'\nalias rm='rm -i'\n\n# Pager\nexport MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"\nexport PAGER=\"bat\"\nAfter adding this block, apply it:\nsource ~/.zshrc\nThen test a few commands:\nls              # should show icons and color\nz ~             # should jump to home\ntldr ls         # should show a simplified help page"
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#the-setup-script",
+    "href": "tutorials/shell-configuration.html#the-setup-script",
+    "title": "Shell configuration",
+    "section": "The setup script",
+    "text": "The setup script\nIf you prefer to automate the entire process described in this tutorial, the workgroup provides a setup script that installs all recommended packages, configures Git, and appends shell integrations to your config file.\nRun it directly:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh)\"\nOr preview what it would do without making changes:\ncurl -fsSL https://raw.githubusercontent.com/wfu-agentic-ai/workgroup/main/setup.sh | bash -s -- --dry-run\n\n\n\n\n\n\nNote\n\n\n\nIf you followed this tutorial manually and installed everything yourself, you already have what the script provides. The script is most useful for setting up a new machine quickly or helping someone who wants to skip the step-by-step process."
+  },
+  {
+    "objectID": "tutorials/shell-configuration.html#summary",
+    "href": "tutorials/shell-configuration.html#summary",
+    "title": "Shell configuration",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nConcept\nKey command / file\n\n\n\n\nShell config file\n~/.zshrc (Zsh) or ~/.bashrc (Bash)\n\n\nEdit config\nnano ~/.zshrc or code ~/.zshrc\n\n\nApply changes\nsource ~/.zshrc\n\n\nSet environment variable\nexport VARIABLE=value\n\n\nCreate alias\nalias shortcut='command'\n\n\nInstall package\nbrew install &lt;name&gt;\n\n\nUpdate packages\nbrew update && brew upgrade\n\n\nBackup config\ncp ~/.zshrc ~/.zshrc.backup\n\n\n\nNext tutorial: Git fundamentals"
   }
 ]

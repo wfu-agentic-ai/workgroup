@@ -287,9 +287,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <div id="quarto-announcement" data-announcement-id="90b06a29a32d128edf7be8298aed9208" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This website is a work in progress.</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -386,18 +383,19 @@ Decide on frequency and timing of meetings.</li>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
 <ul>
-<li>Jerid: Spin up a GitHub organization (and optionally a Quarto website) for the group to share resources, articles, and collaborative projects; collaborate with Mason on GitHub organization setup.</li>
-<li>Mason: Assist Jerid with setting up the GitHub organization and help with GitHub-related processes for the group.</li>
-<li>Will: Set up a recurring calendar invite for the group’s regular meeting time.</li>
-<li>Will: Set up a Google Group for the group to facilitate communication and organization.</li>
-<li>Jo: Consult with Will about setting up the Google Group and help with organizational aspects.</li>
-<li>Jerid and Mason (and optionally group): Decide on and communicate the chosen name for the GitHub organization and Google Group to Will and the group.</li>
-<li>Will: Share the summary of this meeting (including to-dos) with all interested parties.</li>
-<li>Jerid: Scaffold the initial GitHub/Quarto site and provide access/collaborator rights to group members.</li>
-<li>Will: Contact all interested parties about the next meeting and share updates.</li>
-<li>All members: Continue installing and configuring Claude Code on their machines as needed, and attempt the /init command in a test folder for next meeting.</li>
-<li>All members: Consider preferences for in-person vs.&nbsp;Zoom meetings and provide feedback to Will.</li>
-<li>Will: Consider scheduling two meeting times per week to accommodate more participants, based on feedback.</li>
+<li><label><input type="checkbox" checked="">Jerid: Spin up a <a href="https://github.com/wfu-agentic-ai">GitHub organization</a> (and optionally a <a href="https://wfu-agentic-ai.github.io/workgroup/">Quarto website</a>) for the group to share resources, articles, and collaborative projects; collaborate with Mason on GitHub organization setup.</label></li>
+<li><label><input type="checkbox" checked="">Mason: Assist Jerid with setting up the GitHub organization and help with GitHub-related processes for the group.</label></li>
+<li><label><input type="checkbox" checked="">Will: Set up a recurring calendar invite for the group’s regular meeting time.</label></li>
+<li><label><input type="checkbox">Will: Set up a Google Group for the group to facilitate communication and organization.</label></li>
+<li><label><input type="checkbox">Jo: Consult with Will about setting up the Google Group and help with organizational aspects.</label></li>
+<li><label><input type="checkbox" checked="">Jerid and Mason (and optionally group): Decide on and communicate the chosen name for the GitHub organization and Google Group to Will and the group.<br>
+GitHub organization: ‘WFU Agentic AI’ (as Claude Code is only one of many agentic AI tools in this space).</label></li>
+<li><label><input type="checkbox" checked="">Will: Share the summary of this meeting (including to-dos) with all interested parties.</label></li>
+<li>[/] Jerid: Scaffold the initial GitHub/Quarto site and provide access/collaborator rights to group members.</li>
+<li>[?] Will: Contact all interested parties about the next meeting and share updates.</li>
+<li>[/] All members: Continue installing and configuring Claude Code on their machines as needed, and attempt the /init command in a test folder for next meeting.</li>
+<li>[/] All members: Consider preferences for in-person vs.&nbsp;Zoom meetings and provide feedback to Will.</li>
+<li><label><input type="checkbox" checked="">Will: Consider scheduling two meeting times per week to accommodate more participants, based on feedback.</label></li>
 </ul>
 </section>
 <section id="summary" class="level2">
@@ -416,7 +414,7 @@ Decide on frequency and timing of meetings.</li>
 </section>
 <section id="claude-code-installation-process-overview" class="level3">
 <h3 class="anchored" data-anchor-id="claude-code-installation-process-overview">Claude Code Installation Process Overview</h3>
-<p>The group discussed the installation process of Claude Code, focusing on the technical requirements and challenges faced by different operating systems. Jerid explained the educational plan benefits for educators, which include private GitHub access and AI model usage. Will shared his experience with the installation process, mentioning the need for additional tools like Git and Node.js, and noted the time required to complete the setup. The team also discussed the potential for creating a guide or website to document the process for future reference.</p>
+<p>The group discussed the installation process of Claude Code, focusing on the technical requirements and challenges faced by different operating systems. Jerid explained the <a href="https://github.com/education">educational plan benefits for educators</a>, which include private GitHub access and AI model usage. Will shared his experience with the installation process, mentioning the need for additional tools like Git and Node.js, and noted the time required to complete the setup. The team also discussed the potential for creating a guide or website to document the process for future reference.</p>
 </section>
 <section id="claude-code-installation-setup-guide" class="level3">
 <h3 class="anchored" data-anchor-id="claude-code-installation-setup-guide">Claude Code Installation Setup Guide</h3>
@@ -428,15 +426,15 @@ Decide on frequency and timing of meetings.</li>
 </section>
 <section id="terminal-navigation-and-commands" class="level3">
 <h3 class="anchored" data-anchor-id="terminal-navigation-and-commands">Terminal Navigation and Commands</h3>
-<p>Will and Jerid discussed navigating file paths and directories using terminal commands on different operating systems. They explained how to copy folder paths on Mac and Windows, use the CD command to change directories, and run Claude in terminal. Will shared his excitement about using the “run/init” command, which led to an unexpected and impressive outcome that he wanted to share with others.</p>
+<p>Will and Jerid discussed <a href="../tutorials/working-with-the-filesystem.html">navigating file paths and directories using terminal commands on different operating systems</a>. They explained how to copy folder paths on Mac and Windows (from the Finder or Explorer), use the <code>cd</code> command to change directories, and run Claude in terminal. Will shared his excitement about using the Claude Code <code>/init</code> command (see <a href="https://code.claude.com/docs/en/interactive-mode#built-in-commands">Anthropic Docs for more</a>), which led to an unexpected and impressive outcome that he wanted to share with others.</p>
 </section>
 <section id="claude-integration-and-data-security" class="level3">
 <h3 class="anchored" data-anchor-id="claude-integration-and-data-security">Claude Integration and Data Security</h3>
-<p>The group discussed integrating Claude with a Data Science repository and the challenges of using Git with Google Drive syncing. Jerid advised Raina to experiment with Claude in a sandbox environment rather than syncing it with Google Drive initially, due to potential sync issues. Raina raised concerns about data security with LLMs, and Jerid mentioned that Claude Code operates locally on users’ computers, with no data being sent to servers unless explicitly toggled. Shannon had to leave for class but planned to experiment further and coordinate the next meeting’s schedule.</p>
+<p>The group discussed integrating Claude with a Data Science repository and the challenges of using Git with Google Drive syncing. Jerid advised Raina to experiment with Claude in a sandbox environment rather than syncing it with Google Drive initially, due to potential sync issues. Raina raised concerns about data security with LLMs, and Jerid mentioned that Claude Code the tool operates locally on users’ computers, however all LLM traffic is routed through Anthropic servers. Shannon had to leave for class but planned to experiment further and coordinate the next meeting’s schedule.</p>
 </section>
 <section id="claude-code-privacy-and-security" class="level3">
 <h3 class="anchored" data-anchor-id="claude-code-privacy-and-security">Claude Code Privacy and Security</h3>
-<p>The group discussed the privacy and security implications of using Claude Code, with Jerid explaining that data is not stored locally and emphasizing the importance of understanding terminal interactions and directory management. Will and David mentioned their enterprise agreements with Copilot for data security, while Raina and others shared approaches like anonymizing data before inputting it into LLMs. The conversation ended with a discussion about future meeting formats, with Will asking whether in-person or Zoom meetings would be more productive, leaving the decision open for group preference.</p>
+<p>The group discussed the privacy and security implications of using Claude Code, with Jerid explaining that data is not stored locally and emphasizing the importance of understanding terminal interactions and directory management. Will and David mentioned their enterprise agreements with Microsoft Copilot for data security, while Raina and others shared approaches like anonymizing data before inputting it into LLMs. The conversation ended with a discussion about future meeting formats, with Will asking whether in-person or Zoom meetings would be more productive, leaving the decision open for group preference.</p>
 </section>
 <section id="in-person-and-virtual-meeting-plans" class="level3">
 <h3 class="anchored" data-anchor-id="in-person-and-virtual-meeting-plans">In-Person and Virtual Meeting Plans</h3>

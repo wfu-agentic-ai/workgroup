@@ -10,6 +10,14 @@
   {
     "listing": "/sessions/index.html",
     "items": [
+      "/sessions/2026-02-13.html",
+      "/sessions/2026-02-06.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/sessions/2026-02-13.html",
       "/sessions/2026-02-06.html"
     ]
   },
@@ -20,12 +28,6 @@
       "/resources/glossary.html",
       "/resources/tools.html",
       "/resources/troubleshooting.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/sessions/2026-02-06.html"
     ]
   }
 ]
