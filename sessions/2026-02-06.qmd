@@ -7,14 +7,18 @@ date-modified: today
 categories: [Introduction, Planning, Claude Code]
 ---
 
-Facilitator: Will Fleeson
+**Facilitator**: Will Fleeson
 
 ## Agenda
 
-1. Introductions -- I will describe my goals and expected course for this group, and I ask each of you to state what you hope to learn, including a project you hope to accomplish.
-2. Collective Exploration -- we simultaneously try to get Claude Code going on our computers and doing something.
-3. Planning -- compile our next steps and questions to resolve
-4. Scheduling -- decide on frequency and timing of meetings.
+1. Introductions: \
+   I will describe my goals and expected course for this group, and I ask each of you to state what you hope to learn, including a project you hope to accomplish.
+2. Collective Exploration: \
+   We simultaneously try to get Claude Code going on our computers and doing something.
+3. Planning: \
+   Compile our next steps and questions to resolve
+4. Scheduling: \
+   Decide on frequency and timing of meetings.
 
 ## Quick recap
 
@@ -172,6 +176,5 @@ Agentic AI," though they decided to let Claude generate a suggestion. Will
 committed to sharing the meeting summary and to-dos with interested
 participants within 24 hours.
 
-## Resources
 
 
