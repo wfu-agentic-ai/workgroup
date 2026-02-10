@@ -40,18 +40,28 @@ When writing tutorials, session notes, or resource pages:
 - **Version control:** Git + GitHub
 - **AI tools:** Claude Code (CLI), Anthropic API, MCP servers
 - **Authoring:** Markdown, Quarto (`.qmd` files)
-- **Deployment:** GitHub Pages via `quarto publish gh-pages`
+- **Deployment:** GitHub Actions (`.github/workflows/deploy.yml` renders via Nix + deploys to GitHub Pages on push to `main`)
 - **Environment:** Nix flake for reproducible development setup
 
 ## Site structure
 
 ```
-index.qmd          — Landing page (welcome, meeting info, getting started)
-about.qmd          — Purpose, learning goals, format, facilitator
-sessions/          — Session notes, one file per meeting (date-based)
-  index.qmd        — Session log, reverse chronological
-tutorials/         — Self-contained topic tutorials
-  index.qmd        — Tutorial catalog with difficulty indicators
+_quarto.yml            — Site configuration (navbar, theme, extensions)
+_variables.yaml        — Reusable template variables (facilitator name, etc.)
+glossary.yml           — Term definitions for the {{< glossary >}} shortcode
+index.qmd              — Landing page (welcome, meeting info, getting started)
+about.qmd              — Purpose, learning goals, format, facilitator
+assets/                — Custom SCSS theme overrides
+  theme-light.scss
+  theme-dark.scss
+_extensions/           — Quarto extensions (glossary, fontawesome)
+sessions/              — Session notes, one file per meeting (date-based)
+  index.qmd            — Session log, reverse chronological
+  _metadata.yml        — Shared front matter defaults for sessions
+tutorials/             — Self-contained topic tutorials
+  index.qmd            — Tutorial catalog with difficulty indicators
+  _metadata.yml        — Shared front matter defaults for tutorials
+  images/              — Tutorial images (logos, screenshots)
   cli-fundamentals.qmd
   working-with-the-filesystem.qmd
   shell-configuration.qmd
@@ -59,23 +69,27 @@ tutorials/         — Self-contained topic tutorials
   github-collaboration.qmd
   claude-code-intro.qmd
   apis-and-mcps.qmd
-resources/         — Reference material
-  index.qmd        — Resource hub
+resources/             — Reference material
+  index.qmd            — Resource hub
+  _metadata.yml        — Shared front matter defaults for resources
   cheatsheets.qmd
   tools.qmd
   troubleshooting.qmd
   glossary.qmd
+specs/                 — Internal planning and progress docs (not rendered)
 ```
 
 ### Adding a new session
 
 Create `sessions/YYYY-MM-DD.qmd` with front matter:
 
-```yaml
+```
 ---
 title: "Session title"
 date: "YYYY-MM-DD"
+date-modified: today        # Quarto auto-fills the current date on render
 description: "Brief summary of what was covered."
+categories: [Topic1, Topic2] # Used for listing filters on sessions/index.qmd
 ---
 ```
 
@@ -83,14 +97,18 @@ The listing on `sessions/index.qmd` picks up new session files automatically.
 
 ### Adding a new tutorial
 
-Create `tutorials/topic-name.qmd` with front matter that includes `categories` (one of `"Getting started"`, `"Version control"`, or `"AI tools"`):
+Create `tutorials/topic-name.qmd` with front matter that includes `categories`, one of `"Getting started"`, `"Version control"`, or `"AI tools"`), and then subcategories as needed (e.g., `"GitHub"`, `"Claude Code"`, `"APIs"`, and so on). Also include `description` and `date` for the listing page.
 
-```yaml
+```
 ---
 title: "Tutorial title"
 description: "Brief description of the tutorial."
 date: "YYYY-MM-DD"
-categories: ["Getting started"]
+date-modified: today          # Quarto auto-fills the current date on render
+categories: ["Getting started", "CLI"]  # Primary: "Getting started", "Version control", or "AI tools"; then subcategories
+order: 1                      # Controls sort order within the tutorial listing
+draft: true                   # Set to false when ready to publish
+image: images/example.png     # Thumbnail for the listing card (optional)
 ---
 ```
 
@@ -98,12 +116,45 @@ The listing on `tutorials/index.qmd` picks up new tutorial files automatically.
 
 ## Quarto conventions
 
-- **Theme:** flatly (Bootstrap-based, clean and readable)
-- **Code blocks:** Use `code-copy: true` and `code-tools: true` for interactive code
+- **Theme:** simplex with custom light/dark SCSS overrides in `assets/` (`theme-light.scss`, `theme-dark.scss`)
+- **Code blocks:** Use `code-copy: true` for copyable code blocks
 - **External links:** Open in new window (`link-external-newwindow: true`)
 - **Front matter:** Every `.qmd` file needs `title` at minimum; tutorials should also have `description` and `date`
 - **Callouts:** Use Quarto callouts (`.callout-note`, `.callout-tip`, `.callout-warning`) for asides and important information
 - **Images:** Store in an `images/` subdirectory relative to the page that uses them
+
+## Glossary
+
+Term definitions live in `glossary.yml` at the project root. The `maehr/glossary` Quarto extension renders inline popups via the shortcode:
+
+```
+{{< glossary CLI >}}
+```
+
+To display custom link text (e.g., plurals or alternate phrasing), use:
+
+```
+{{< glossary CLI display="command-line interfaces" >}}
+```
+
+To add a new term, append an entry to `glossary.yml`:
+
+```
+"Term Name": |
+  Definition text. Keep it concise — one to three sentences aimed at beginners.
+```
+
+Terms are organized by tutorial section with comment headers (e.g., `# Filesystem concepts`).
+
+## Template variables
+
+Reusable values are defined in `_variables.yaml` and referenced with the `var` shortcode:
+
+```
+{{< var group.facilitator >}}
+```
+
+Current variables include `group.facilitator`, `group.facilitator_email`, and `group.facilitator_dept`.
 
 ## Coding standards
 

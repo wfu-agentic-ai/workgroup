@@ -15,9 +15,11 @@ draft: true
 ::: {.columns}
 ::: {.column width=70%}
 
-Git is a version control system that records changes to your files over time. Instead of saving multiple copies of a file (`report_v1.txt`, `report_v2_final.txt`, `report_v2_final_FINAL.txt`), Git lets you save snapshots — called *commits* — that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.
+[Git](https://git-scm.com/) is a version control system that records changes to your files over time. Instead of saving multiple copies of a file (`report_v1.txt`, `report_v2_final.txt`, `report_v2_final_FINAL.txt`), Git lets you save snapshots, called *commits*, that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.
 
-In regard to Claude Code, adding a Git repository to your project allows you to track changes to your project at checkpoints. This will allow you to easily revert to a previous state if something goes wrong, or to compare different versions of your project as you iterate.
+Adding a Git repository to your project allows you to track changes to your project at checkpoints. This will allow you to easily revert to a previous state if something goes wrong, or to compare different versions of your project as you iterate. [Claude Code also has built-in support for checkpointing your project](https://code.claude.com/docs/en/checkpointing), however, it is not a substitute for Git.
+
+**Note:** Git and GitHub are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others. This tutorial focuses on Git itself; we'll cover GitHub in a future tutorial.
 
 :::
 ::: {.column width=30%}
@@ -36,6 +38,20 @@ In regard to Claude Code, adding a Git repository to your project allows you to 
 
 Why tracking changes matters. The problem with manual versioning (renaming files). How Git solves this: a timeline of snapshots with descriptions.
 
+## Installing Git
+
+Many modern operating systems come with Git pre-installed. Check with `git --version`. However, these versions can be outdated. To get the latest version, use Homebrew[^1]:
+
+[^1]: If you don't have Homebrew installed, see the [CLI fundamentals](cli-fundamentals.qmd#installing-homebrew) for instructions.
+
+```bash
+brew install git
+```
+
+::: {.callout-tip}
+If you ran the workgroup setup script, Git is already configured. Check with `git config --list`.
+:::
+
 ## Configuring Git
 
 First-time setup with `git config --global`. Setting your name, email, and default branch name. Verifying with `git config --list`.
@@ -46,9 +62,6 @@ git config --global user.email "you@example.com"
 git config --global init.defaultBranch main
 ```
 
-::: {.callout-tip}
-If you ran the workgroup setup script, Git is already configured. Check with `git config --list`.
-:::
 
 ## Creating a repository
 

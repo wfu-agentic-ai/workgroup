@@ -1,13 +1,12 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - '*.qmd'
+    - '*.md'
+    - '!CLAUDE.md'
 
 website:
-  announcement:
-    content: "This website is a work in progress."
-    icon: info-circle
-    position: below-navbar
-    type: primary
   open-graph: true
   title: "Agentic AI: Workgroup"
   site-url: https://wfu-agentic-ai.github.io/workgroup/
