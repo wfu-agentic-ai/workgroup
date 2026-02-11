@@ -61,7 +61,7 @@ For most intents and purposes, Zsh and Bash are very similar, and the commands y
 
 You should see a window with a blinking cursor next to a prompt that looks something like this:
 
-```
+```{.output}
 jane@macbook ~ %
 ```
 
@@ -115,7 +115,7 @@ When you see square brackets in documentation — like `[options]` — they mean
 pwd
 ```
 
-```
+```{.output}
 /Users/jane
 ```
 
@@ -129,7 +129,7 @@ This tells you that you are in the user `jane`'s home directory. You will always
 ls
 ```
 
-```
+```{.output}
 Desktop    Documents  Downloads  Pictures
 ```
 
@@ -173,7 +173,7 @@ Confirm where you are now:
 pwd
 ```
 
-```
+```{.output}
 /Users/jane/my_folder
 ```
 
@@ -201,7 +201,7 @@ touch my_file.txt
 ls
 ```
 
-```
+```{.output}
 my_file.txt
 ```
 
@@ -227,7 +227,7 @@ echo "A second line" >> my_file.txt
 cat my_file.txt
 ```
 
-```
+```{.output}
 Hello from the CLI
 A second line
 ```
@@ -258,7 +258,7 @@ cp my_file.txt my_copy.txt
 ls
 ```
 
-```
+```{.output}
 my_copy.txt  my_file.txt
 ```
 
@@ -280,7 +280,7 @@ mv my_copy.txt renamed_file.txt
 ls
 ```
 
-```
+```{.output}
 my_file.txt  renamed_file.txt
 ```
 
@@ -447,7 +447,7 @@ brew install tree
 tree -L 1
 ```
 
-```
+```{.output}
 .
 ├── Desktop
 ├── Documents

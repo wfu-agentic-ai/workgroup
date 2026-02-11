@@ -127,7 +127,7 @@ To see the value of a specific variable, use `echo` with a `$` prefix:
 echo $HOME
 ```
 
-```
+```{.output}
 /Users/jane
 ```
 
@@ -140,7 +140,7 @@ MY_NAME="Jane"
 echo $MY_NAME
 ```
 
-```
+```{.output}
 Jane
 ```
 
@@ -160,7 +160,7 @@ To make a variable persist across sessions, add the `export` line to your shell 
 echo $PATH
 ```
 
-```
+```{.output}
 /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 ```
 

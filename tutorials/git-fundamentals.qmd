@@ -177,7 +177,7 @@ Let's say you just initialized a new repository and created a file called `notes
 git status
 ```
 
-```text
+```{.output}
 On branch main
 
 No commits yet
@@ -191,7 +191,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 Git sees `notes.txt` but isn't tracking it yet — it's *untracked*. Once you stage the file with `git add notes.txt` and run `git status` again:
 
-```text
+```{.output}
 On branch main
 
 No commits yet
@@ -203,7 +203,7 @@ Changes to be committed:
 
 Now `notes.txt` appears under "Changes to be committed" — it's *staged*. After you commit, `git status` reports a clean working tree:
 
-```text
+```{.output}
 On branch main
 nothing to commit, working tree clean
 ```
@@ -247,7 +247,7 @@ Use the `-m` flag to write your commit message inline:
 git commit -m "Add project notes and initial report"
 ```
 
-```text
+```{.output}
 [main 4f3a1b2] Add project notes and initial report
  2 files changed, 24 insertions(+)
  create mode 100644 notes.txt
@@ -279,7 +279,7 @@ The `git log` command shows the history of commits in your repository, starting 
 git log
 ```
 
-```text
+```{.output}
 commit 4f3a1b2e8d9c0f1a2b3c4d5e6f7a8b9c0d1e2f3a
 Author: Your Name <you@example.com>
 Date:   Thu Feb 6 10:30:00 2026 -0500
@@ -299,7 +299,7 @@ Each entry shows the full commit hash, the author, the date, and the message. Fo
 git log --oneline
 ```
 
-```text
+```{.output}
 4f3a1b2 Add project notes and initial report
 1a2b3c4 Initialize project with README
 ```
@@ -309,6 +309,7 @@ This is often all you need when scanning your project's history. You can also ad
 ```bash
 git log --oneline --graph
 ```
+
 
 ### Comparing changes (`git diff`)
 
@@ -357,7 +358,7 @@ git restore --staged scratch.txt
 
 Verify with `git status`:
 
-```text
+```{.output}
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -395,7 +396,7 @@ git revert HEAD
 
 `HEAD` is a shorthand for "the latest commit." Git will create a new commit whose changes are the exact opposite of the reverted commit. Your log will look something like:
 
-```text
+```{.output}
 a3b4c5d Revert "Add broken config file"
 9f8e7d6 Add broken config file
 4f3a1b2 Add project notes and initial report
@@ -415,7 +416,8 @@ nano .gitignore
 
 A typical `.gitignore` might look like:
 
-```text
+```{.output}
+# .gitignore file --------
 # Operating system files
 .DS_Store
 Thumbs.db
@@ -463,7 +465,7 @@ cd git-practice
 git init
 ```
 
-```text
+```{.output}
 Initialized empty Git repository in /Users/you/git-practice/.git/
 ```
 
@@ -480,7 +482,7 @@ echo "# Quarterly Report" > report.qmd
 git status
 ```
 
-```text
+```{.output}
 On branch main
 
 No commits yet
@@ -502,7 +504,7 @@ git add notes.txt report.qmd
 git commit -m "Add initial notes and report"
 ```
 
-```text
+```{.output}
 [main (root-commit) 1a2b3c4] Add initial notes and report
  2 files changed, 2 insertions(+)
  create mode 100644 notes.txt
@@ -522,7 +524,7 @@ echo "- Discussed project timeline" >> notes.txt
 git status
 ```
 
-```text
+```{.output}
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -551,7 +553,7 @@ git commit -m "Add meeting discussion notes and data file"
 git log --oneline
 ```
 
-```text
+```{.output}
 7e8f9a0 Add meeting discussion notes and data file
 1a2b3c4 Add initial notes and report
 ```
@@ -587,7 +589,7 @@ git restore report.qmd
 git status
 ```
 
-```text
+```{.output}
 On branch main
 nothing to commit, working tree clean
 ```
@@ -596,7 +598,7 @@ nothing to commit, working tree clean
 git log --oneline
 ```
 
-```text
+```{.output}
 7e8f9a0 Add meeting discussion notes and data file
 1a2b3c4 Add initial notes and report
 ```
