@@ -82,6 +82,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-299c1c6f5776530fbd5421ec6e2609cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-949b7471cd24c46e98776bf0f9c0613e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-299c1c6f5776530fbd5421ec6e2609cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glossary/glossary.js"></script>
+<link href="../site_libs/quarto-contrib/glossary/glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -411,24 +413,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Content in progress.</p>
-</div>
-</div>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p><a href="https://git-scm.com/">Git</a> is a version control system that records changes to your files over time. Instead of saving multiple copies of a file (<code>report_v1.txt</code>, <code>report_v2_final.txt</code>, <code>report_v2_final_FINAL.txt</code>), Git lets you save snapshots, called <em>commits</em>, that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.</p>
+<p><a href="https://git-scm.com/">Git</a> is a <button class="glossary" id="glossary-version-control-1727" data-bs-toggle="popover" data-bs-content="A system for tracking changes to files over time. Instead of renaming files to keep old versions, a version control system like Git records each set of changes as a snapshot you can revisit, compare, or restore." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="version control">version control</button> system that records changes to your files over time. Instead of saving multiple copies of a file (<code>report_v1.txt</code>, <code>report_v2_final.txt</code>, <code>report_v2_final_FINAL.txt</code>), Git lets you save snapshots, called <button class="glossary" id="glossary-commit-2637" data-bs-toggle="popover" data-bs-content="A saved snapshot of the changes you staged. Each commit records what changed, who made the change, when it happened, and a short message describing why. Commits form a timeline you can browse with git log." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="commit">*commits*</button>, that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.</p>
 <p>Adding a Git repository to your project allows you to track changes to your project at checkpoints. This will allow you to easily revert to a previous state if something goes wrong, or to compare different versions of your project as you iterate. <a href="https://code.claude.com/docs/en/checkpointing">Claude Code also has built-in support for checkpointing your project</a>, however, it is not a substitute for Git.</p>
-<p><strong>Note:</strong> Git and <a href="https://github.com/">GitHub</a> are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others (among others <a href="https://codeberg.org/">Codeberg</a>, <a href="https://about.gitlab.com/">GitLab</a>, etc). This tutorial focuses on Git itself; we’ll cover web repositorys and collaboration in a future tutorial.</p>
+<p><strong>Note:</strong> Git and <a href="https://github.com/">GitHub</a> are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others (among others <a href="https://codeberg.org/">Codeberg</a>, <a href="https://about.gitlab.com/">GitLab</a>, etc). This tutorial focuses on Git itself; we’ll cover web repositories and collaboration in a future tutorial.</p>
 </div><div class="column" style="width:30%;">
 <p><img src="images/git-logo.png" class="img-fluid"></p>
 </div>
@@ -471,13 +460,13 @@ Tip
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@example.com"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Good news, you only need to do this once for a given machine! Git will save this information in a configuration file on your computer, so you won’t have to set it again for future projects. You can verify that your configuration is set up correctly with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config global <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Verify that your name, email, and default branch name are listed in the output.</p>
 </section>
 <section id="creating-a-repository" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-repository">Creating a repository</h2>
 <!-- What `git init` does. Creating a practice project. The hidden `.git/` directory. -->
-<p>Now we are ready to create Git repositories for our projects. A Git repository is a special directory that contains all the information about the history of your project, including the commits, branches, and configuration. You can create a Git repository in any directory by running <code>git init</code> in that directory.</p>
+<p>Now we are ready to create Git repositories for our projects. A Git <button class="glossary" id="glossary-repository-4009" data-bs-toggle="popover" data-bs-content="A project directory that Git is tracking. It contains your files plus a hidden .git/ folder where Git stores the full history of changes, configuration, and metadata." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="repository">repository</button> is a special directory that contains all the information about the history of your project, including the commits, branches, and configuration. You can create a Git repository in any directory by running <code>git init</code> in that directory.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> path/to/your/project</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This command creates a hidden directory called <code>.git/</code> in your project directory. This is where Git stores all the information about your repository, including the commits, branches, and project-specific configuration. You can see this directory with <code>ls -a</code>, but you should not modify anything inside it directly.</p>
@@ -488,9 +477,9 @@ Tip
 <!-- The three-zone model: working directory, staging area (index), and repository. Why Git uses a staging step (selective commits). Diagram of the flow. -->
 <p>Git uses a three-zone model to manage changes to your files:</p>
 <ol type="1">
-<li><strong>Working directory</strong>: This is where you make changes to your files. It’s the actual files and directories you see in your project.</li>
-<li><strong>Staging area (index)</strong>: This is an intermediate area where you can stage changes that you want to include in your next commit. You can think of it as a “to-do list” for your next commit.</li>
-<li><strong>Repository</strong>: This is where Git stores the history of your commits. When you commit changes, Git takes a snapshot of the staged changes and saves it in the repository.</li>
+<li><strong><button class="glossary" id="glossary-working-directory-5788" data-bs-toggle="popover" data-bs-content="The project files as they currently exist on disk — the versions you can see, open, and edit. In Git’s three-zone model, the working directory is where you make changes before staging them." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="working directory">Working directory</button></strong>: This is where you make changes to your files. It’s the actual files and directories you see in your project.</li>
+<li><strong><button class="glossary" id="glossary-staging-area-9908" data-bs-toggle="popover" data-bs-content="An intermediate zone where you prepare changes before committing them. Running git add moves changes from the working directory into the staging area, letting you choose exactly which changes go into your next commit." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="staging area">Staging area</button> (index)</strong>: This is an intermediate area where you can stage changes that you want to include in your next commit. You can think of it as a “to-do list” for your next commit.</li>
+<li><strong><button class="glossary" id="glossary-repository-5004" data-bs-toggle="popover" data-bs-content="A project directory that Git is tracking. It contains your files plus a hidden .git/ folder where Git stores the full history of changes, configuration, and metadata." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="repository">Repository</button></strong>: This is where Git stores the history of your commits. When you commit changes, Git takes a snapshot of the staged changes and saves it in the repository.</li>
 </ol>
 <p>Here is the flow:</p>
 <div class="cell" data-layout-align="default">
@@ -525,7 +514,6 @@ Figure&nbsp;1: The three zones of Git: working directory, staging area, and repo
 <h2 class="anchored" data-anchor-id="the-core-workflow">The core workflow</h2>
 <p>In <a href="#fig-staging-areas" class="quarto-xref">Figure&nbsp;1</a>, we see the overview of the core Git workflow: you make changes to your files in the working directory, then you stage the changes you want to include in your next commit, and finally, you commit those staged changes to the repository. Let’s go through each step in more detail.</p>
 <p>To do so we will use the following example:</p>
-<p>Here is what this looks like with actual files:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-staging-areas-example" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -571,40 +559,53 @@ Figure&nbsp;2: Example of the three zones of Git with actual files.
 </div>
 <section id="checking-status-git-status" class="level3">
 <h3 class="anchored" data-anchor-id="checking-status-git-status">Checking status (<code>git status</code>)</h3>
-<p>What the status output tells you: untracked, modified, staged.</p>
+<p>The <code>git status</code> command shows you the current state of your <button class="glossary" id="glossary-working-directory-7989" data-bs-toggle="popover" data-bs-content="The project files as they currently exist on disk — the versions you can see, open, and edit. In Git’s three-zone model, the working directory is where you make changes before staging them." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="working directory">working directory</button> and <button class="glossary" id="glossary-staging-area-3591" data-bs-toggle="popover" data-bs-content="An intermediate zone where you prepare changes before committing them. Running git add moves changes from the working directory into the staging area, letting you choose exactly which changes go into your next commit." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="staging area">staging area</button>. It tells you which files have been modified, which changes are staged and ready to commit, and which files Git doesn’t know about yet. You can run it at any point without changing anything — it’s purely informational.</p>
+<p>Let’s say you just initialized a new repository and created a file called <code>notes.txt</code>. Running <code>git status</code> gives you:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        notes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<p>Git sees <code>notes.txt</code> but isn’t tracking it yet — it’s <em>untracked</em>. Once you stage the file with <code>git add notes.txt</code> and run <code>git status</code> again:</p>
+<pre class="output"><code>On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+        new file:   notes.txt</code></pre>
+<p>Now <code>notes.txt</code> appears under “Changes to be committed” — it’s <em>staged</em>. After you commit, <code>git status</code> reports a clean working tree:</p>
+<pre class="output"><code>On branch main
+nothing to commit, working tree clean</code></pre>
+<p>This means every tracked file matches the latest <button class="glossary" id="glossary-commit-8751" data-bs-toggle="popover" data-bs-content="A saved snapshot of the changes you staged. Each commit records what changed, who made the change, when it happened, and a short message describing why. Commits form a timeline you can browse with git log." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="commit">commit</button>. No changes are pending.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Run <code>git status</code> early and often. It’s the safest way to understand what Git sees before you stage or commit anything.</p>
+</div>
+</div>
 </section>
 <section id="adding-files-to-staging-git-add" class="level3">
 <h3 class="anchored" data-anchor-id="adding-files-to-staging-git-add">Adding files to staging (<code>git add</code>)</h3>
-<p>Staging specific files vs staging everything. Why <code>git add .</code> needs care.</p>
-</section>
-<section id="committing-a-snapshot-git-commit" class="level3">
-<h3 class="anchored" data-anchor-id="committing-a-snapshot-git-commit">Committing a snapshot (<code>git commit</code>)</h3>
-<p>Writing a good commit message. The <code>-m</code> flag.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add file.txt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add initial draft of file"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="viewing-history-git-log" class="level3">
-<h3 class="anchored" data-anchor-id="viewing-history-git-log">Viewing history (<code>git log</code>)</h3>
-<p>Reading the log. Useful flags: <code>--oneline</code>, <code>--graph</code>.</p>
-</section>
-<section id="comparing-changes-git-diff" class="level3">
-<h3 class="anchored" data-anchor-id="comparing-changes-git-diff">Comparing changes (<code>git diff</code>)</h3>
-<p>Seeing what changed before committing. Staged vs unstaged diffs.</p>
-</section>
-</section>
-<section id="undoing-mistakes" class="level2">
-<h2 class="anchored" data-anchor-id="undoing-mistakes">Undoing mistakes</h2>
-<section id="unstaging-a-file-git-restore---staged" class="level3">
-<h3 class="anchored" data-anchor-id="unstaging-a-file-git-restore---staged">Unstaging a file (<code>git restore --staged</code>)</h3>
-<p>Removing a file from the staging area without losing changes.</p>
-</section>
-<section id="discarding-changes-git-restore" class="level3">
-<h3 class="anchored" data-anchor-id="discarding-changes-git-restore">Discarding changes (<code>git restore</code>)</h3>
-<p>Reverting a file to its last committed state.</p>
-</section>
-<section id="reverting-a-commit-git-revert" class="level3">
-<h3 class="anchored" data-anchor-id="reverting-a-commit-git-revert">Reverting a commit (<code>git revert</code>)</h3>
-<p>Creating a new commit that undoes a previous one (safe for shared history).</p>
+<p>The <code>git add</code> command moves changes from the <button class="glossary" id="glossary-working-directory-2447" data-bs-toggle="popover" data-bs-content="The project files as they currently exist on disk — the versions you can see, open, and edit. In Git’s three-zone model, the working directory is where you make changes before staging them." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="working directory">working directory</button> into the <button class="glossary" id="glossary-staging-area-9542" data-bs-toggle="popover" data-bs-content="An intermediate zone where you prepare changes before committing them. Running git add moves changes from the working directory into the staging area, letting you choose exactly which changes go into your next commit." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="staging area">staging area</button>. You can stage individual files by name:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add notes.txt</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add report.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or stage multiple files in one command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add notes.txt report.qmd data.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Referring back to <a href="#fig-staging-areas-example" class="quarto-xref">Figure&nbsp;2</a>, notice that <code>scratch.txt</code> is <em>not</em> staged even though it was modified. This is the power of the staging area — you choose exactly which changes go into each commit. Maybe <code>scratch.txt</code> contains temporary work you don’t want to record yet.</p>
+<p>You may see tutorials that use <code>git add .</code> (with a dot) to stage everything in the current directory at once. This works, but it can bite you.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -615,22 +616,332 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>git restore</code> discards uncommitted changes permanently. Make sure you want to lose those edits before running it.</p>
+<p><code>git add .</code> stages <em>every</em> change in the current directory, including files you may not intend to commit — temporary files, data files, API keys, or editor backups. Prefer staging files by name so you know exactly what goes into each commit.</p>
 </div>
 </div>
+</section>
+<section id="committing-a-snapshot-git-commit" class="level3">
+<h3 class="anchored" data-anchor-id="committing-a-snapshot-git-commit">Committing a snapshot (<code>git commit</code>)</h3>
+<p>Once your changes are staged, <code>git commit</code> saves a snapshot of those changes as a <button class="glossary" id="glossary-commit-8690" data-bs-toggle="popover" data-bs-content="A saved snapshot of the changes you staged. Each commit records what changed, who made the change, when it happened, and a short message describing why. Commits form a timeline you can browse with git log." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="commit">commit</button> in the <button class="glossary" id="glossary-repository-1260" data-bs-toggle="popover" data-bs-content="A project directory that Git is tracking. It contains your files plus a hidden .git/ folder where Git stores the full history of changes, configuration, and metadata." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="repository">repository</button>. Each commit gets a unique identifier (a long hash like <code>a1b2c3d</code>), records who made the change and when, and stores the message you provide.</p>
+<p>Use the <code>-m</code> flag to write your commit message inline:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project notes and initial report"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>[main 4f3a1b2] Add project notes and initial report
+ 2 files changed, 24 insertions(+)
+ create mode 100644 notes.txt
+ create mode 100644 report.qmd</code></pre>
+<p>The output confirms the branch (<code>main</code>), an abbreviated commit hash (<code>4f3a1b2</code>), and a summary of what changed. If you omit the <code>-m</code> flag, Git opens a text editor for you to write the message.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Writing good commit messages">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Writing good commit messages
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A good commit message is short (under ~50 characters for the subject line), uses the imperative mood (“Add report” not “Added report”), and describes <em>why</em> the change matters rather than just <em>what</em> changed. Think of it as a label for a snapshot: if you browse your history later, the messages should tell a clear story.</p>
+<p>Bad: <code>updated stuff</code> Good: <code>Add draft methodology section to report</code></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Stuck in a text editor?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Stuck in a text editor?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If Git opens an unfamiliar editor (often Vim), you’ll see a screen that doesn’t respond to typing as you’d expect. To escape Vim: press <code>Esc</code>, then type <code>:q!</code> and press <code>Enter</code>. To avoid this in the future, always use the <code>-m</code> flag, or set a friendlier default editor:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"nano"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section id="viewing-history-git-log" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-history-git-log">Viewing history (<code>git log</code>)</h3>
+<p>The <code>git log</code> command shows the history of commits in your repository, starting with the most recent:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>commit 4f3a1b2e8d9c0f1a2b3c4d5e6f7a8b9c0d1e2f3a
+Author: Your Name &lt;you@example.com&gt;
+Date:   Thu Feb 6 10:30:00 2026 -0500
+
+    Add project notes and initial report
+
+commit 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b
+Author: Your Name &lt;you@example.com&gt;
+Date:   Thu Feb 6 10:15:00 2026 -0500
+
+    Initialize project with README</code></pre>
+<p>Each entry shows the full commit hash, the author, the date, and the message. For a more compact view, use the <code>--oneline</code> flag:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>4f3a1b2 Add project notes and initial report
+1a2b3c4 Initialize project with README</code></pre>
+<p>This is often all you need when scanning your project’s history. You can also add <code>--graph</code> to visualize branch structure — not useful yet with a single branch, but handy once you start working with branches:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span> <span class="at">--graph</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="comparing-changes-git-diff" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-changes-git-diff">Comparing changes (<code>git diff</code>)</h3>
+<p>Before you stage or commit, it’s often useful to see exactly what changed. The <code>git diff</code> command compares versions of your files.</p>
+<p><strong>Unstaged changes</strong> (working directory vs.&nbsp;staging area):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This shows changes you’ve made but haven’t staged yet. For example, say you edit <code>notes.txt</code> and add a new line. Running <code>git diff</code> produces output like:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">diff --git a/notes.txt b/notes.txt</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>index 3b18e51..f3c1a2d 100644</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="dt">--- a/notes.txt</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="dt">+++ b/notes.txt</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="dt">@@ -1,2 +1,3 @@</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a> Meeting notes from Feb 6</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a> - Discussed project timeline</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="va">+- Assigned tasks to team members</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Lines starting with <code>+</code> were added; lines starting with <code>-</code> were removed. The <code>@@</code> line tells you which part of the file changed.</p>
+<p><strong>Staged changes</strong> (staging area vs.&nbsp;last commit):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="at">--staged</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This shows the changes that are already staged and will go into your next commit. After you run <code>git add notes.txt</code>, running <code>git diff</code> produces no output (there are no <em>unstaged</em> changes left), but <code>git diff --staged</code> shows the same diff as before.</p>
+</section>
+</section>
+<section id="undoing-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="undoing-mistakes">Undoing mistakes</h2>
+<p>One of Git’s biggest benefits is that mistakes are rarely permanent. This section covers three levels of “undo,” from lightest to heaviest.</p>
+<section id="unstaging-a-file-git-restore---staged" class="level3">
+<h3 class="anchored" data-anchor-id="unstaging-a-file-git-restore---staged">Unstaging a file (<code>git restore --staged</code>)</h3>
+<p>If you staged a file by accident (say you ran <code>git add scratch.txt</code> and didn’t mean to), you can remove it from the staging area without losing the changes in your working directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> scratch.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verify with <code>git status</code>:</p>
+<pre class="output"><code>On branch main
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   scratch.txt
+
+no changes added to commit (use "git add" to track)</code></pre>
+<p>The file is back to <em>modified but unstaged</em>. Your edits are still in the file — Git just removed it from the “to be committed” list.</p>
+</section>
+<section id="discarding-changes-git-restore" class="level3">
+<h3 class="anchored" data-anchor-id="discarding-changes-git-restore">Discarding changes (<code>git restore</code>)</h3>
+<p>If you made edits to a file and want to throw them away entirely — reverting the file to its state at the last commit — use <code>git restore</code> without the <code>--staged</code> flag:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore report.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After running this, <code>git status</code> will no longer show <code>report.qmd</code> as modified. The file on disk has been reverted to match the most recent commit.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>git restore</code> discards uncommitted changes permanently. There is no way to get those edits back. Make sure you truly want to lose them before running this command.</p>
+</div>
+</div>
+</section>
+<section id="reverting-a-commit-git-revert" class="level3">
+<h3 class="anchored" data-anchor-id="reverting-a-commit-git-revert">Reverting a commit (<code>git revert</code>)</h3>
+<p>What if the mistake is already committed? You could rewrite history, but that gets complicated and can cause problems if others are working with the same repository. The safer approach is <code>git revert</code>, which creates a <em>new</em> commit that undoes the changes from a previous one.</p>
+<p>For example, say your most recent commit introduced a mistake. You can undo it with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> revert HEAD</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>HEAD</code> is a shorthand for “the latest commit.” Git will create a new commit whose changes are the exact opposite of the reverted commit. Your log will look something like:</p>
+<pre class="output"><code>a3b4c5d Revert "Add broken config file"
+9f8e7d6 Add broken config file
+4f3a1b2 Add project notes and initial report</code></pre>
+<p>The original commit (<code>9f8e7d6</code>) stays in history, and the revert commit (<code>a3b4c5d</code>) cleanly undoes its effects. This is the safe approach — the history tells the full story of what happened and how it was fixed.</p>
 </section>
 </section>
 <section id="ignoring-files-.gitignore" class="level2">
 <h2 class="anchored" data-anchor-id="ignoring-files-.gitignore">Ignoring files (<code>.gitignore</code>)</h2>
-<p>What <code>.gitignore</code> does. Common patterns: OS files (<code>.DS_Store</code>), editor files, build artifacts. Creating a <code>.gitignore</code> file.</p>
+<p>Not every file in your project belongs in the <button class="glossary" id="glossary-repository-1037" data-bs-toggle="popover" data-bs-content="A project directory that Git is tracking. It contains your files plus a hidden .git/ folder where Git stores the full history of changes, configuration, and metadata." data-bs-trigger="click" data-bs-placement="top" tabindex="0" data-glossary-term="repository">repository</button>. Operating system files (<code>.DS_Store</code> on macOS), editor temp files, build outputs, large data files, and especially files containing secrets (API keys, passwords) should stay out of your commit history.</p>
+<p>Git uses a file called <code>.gitignore</code> in the root of your project to define patterns for files and directories it should ignore entirely. Create the file and add one pattern per line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> .gitignore</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A typical <code>.gitignore</code> might look like:</p>
+<pre class="output"><code># .gitignore file --------
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor temporary files
+*.swp
+*~
+.vscode/
+
+# Build artifacts
+_site/
+_freeze/
+*.html
+
+# Data files (too large for version control)
+data/*.csv
+
+# Secrets — never commit these
+.env
+credentials.json</code></pre>
+<p>Lines starting with <code>#</code> are comments. The <code>*</code> wildcard matches any sequence of characters, so <code>*.swp</code> ignores all files ending in <code>.swp</code>. A trailing <code>/</code> means “this directory and everything inside it.”</p>
+<p>Once you save <code>.gitignore</code>, Git stops showing matched files in <code>git status</code> output. You should add and commit the <code>.gitignore</code> file itself — it’s part of your project configuration and others working with the repository need it too.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add .gitignore with common patterns"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add a <code>.gitignore</code> early in your project, ideally before your first commit. It’s much easier to keep unwanted files out of the repository from the start than to remove them later.</p>
+</div>
+</div>
 </section>
 <section id="practice-exercise" class="level2">
 <h2 class="anchored" data-anchor-id="practice-exercise">Practice exercise</h2>
-<p>A guided exercise: create a small project, make several commits, view the log, and undo a change.</p>
+<p>This exercise walks through the full workflow covered in this tutorial. You’ll create a small project, make commits, inspect history, and undo a change. Each step shows the command and what to expect.</p>
+<p><strong>1. Create a project directory and initialize Git:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> git-practice</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> git-practice</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>Initialized empty Git repository in /Users/you/git-practice/.git/</code></pre>
+<p><strong>2. Create two files with some content:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Meeting notes from Feb 6"</span> <span class="op">&gt;</span> notes.txt</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"# Quarterly Report"</span> <span class="op">&gt;</span> report.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>3. Check the status:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        notes.txt
+        report.qmd
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<p>Both files are untracked — Git sees them but isn’t recording their changes yet.</p>
+<p><strong>4. Stage and commit both files:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add notes.txt report.qmd</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add initial notes and report"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>[main (root-commit) 1a2b3c4] Add initial notes and report
+ 2 files changed, 2 insertions(+)
+ create mode 100644 notes.txt
+ create mode 100644 report.qmd</code></pre>
+<p><strong>5. Create a new file and modify an existing one:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"id,value"</span> <span class="op">&gt;</span> data.csv</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"- Discussed project timeline"</span> <span class="op">&gt;&gt;</span> notes.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>6. Check the status again:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>On branch main
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   notes.txt
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        data.csv
+
+no changes added to commit (use "git add" to track)</code></pre>
+<p>Git shows <code>notes.txt</code> as modified and <code>data.csv</code> as untracked.</p>
+<p><strong>7. Stage both files selectively and commit:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add notes.txt data.csv</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add meeting discussion notes and data file"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>8. View the log:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>7e8f9a0 Add meeting discussion notes and data file
+1a2b3c4 Add initial notes and report</code></pre>
+<p>Two commits, listed newest first — the timeline of your project so far.</p>
+<p><strong>9. Make an unwanted edit, then undo it:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"MISTAKE - delete this line"</span> <span class="op">&gt;&gt;</span> report.qmd</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">diff --git a/report.qmd b/report.qmd</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>index 3b18e51..a4c2d8e 100644</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="dt">--- a/report.qmd</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="dt">+++ b/report.qmd</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="dt">@@ -1 +1,2 @@</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a> # Quarterly Report</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="va">+MISTAKE - delete this line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can see the unwanted addition. Discard it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore report.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>10. Verify everything is clean:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>On branch main
+nothing to commit, working tree clean</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="output"><code>7e8f9a0 Add meeting discussion notes and data file
+1a2b3c4 Add initial notes and report</code></pre>
+<p>Your history is intact, and the unwanted edit is gone. You’ve used the full Git workflow: init, status, add, commit, log, diff, and restore.</p>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Table of core Git commands: <code>init</code>, <code>status</code>, <code>add</code>, <code>commit</code>, <code>log</code>, <code>diff</code>, <code>restore</code>, <code>revert</code>. Link to next tutorial.</p>
+<p>Here’s a reference table of the core Git commands covered in this tutorial:</p>
+<table class="table-striped table-hover caption-top table">
+<caption>Core Git commands</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>What it does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>git init</code></td>
+<td>Create a new repository in the current directory</td>
+<td><code>git init</code></td>
+</tr>
+<tr class="even">
+<td><code>git status</code></td>
+<td>Show the state of your working directory and staging area</td>
+<td><code>git status</code></td>
+</tr>
+<tr class="odd">
+<td><code>git add</code></td>
+<td>Stage changes for the next commit</td>
+<td><code>git add notes.txt</code></td>
+</tr>
+<tr class="even">
+<td><code>git commit</code></td>
+<td>Save a snapshot of staged changes</td>
+<td><code>git commit -m "Add notes"</code></td>
+</tr>
+<tr class="odd">
+<td><code>git log</code></td>
+<td>View commit history</td>
+<td><code>git log --oneline</code></td>
+</tr>
+<tr class="even">
+<td><code>git diff</code></td>
+<td>Show unstaged changes</td>
+<td><code>git diff</code></td>
+</tr>
+<tr class="odd">
+<td><code>git diff --staged</code></td>
+<td>Show staged changes</td>
+<td><code>git diff --staged</code></td>
+</tr>
+<tr class="even">
+<td><code>git restore --staged</code></td>
+<td>Remove a file from the staging area</td>
+<td><code>git restore --staged file.txt</code></td>
+</tr>
+<tr class="odd">
+<td><code>git restore</code></td>
+<td>Discard uncommitted changes to a file</td>
+<td><code>git restore file.txt</code></td>
+</tr>
+<tr class="even">
+<td><code>git revert</code></td>
+<td>Create a new commit that undoes a previous commit</td>
+<td><code>git revert HEAD</code></td>
+</tr>
+</tbody>
+</table>
+<p>All of these commands operate on your local machine. In the next tutorial, we’ll connect your local repository to GitHub and learn how to share your work and collaborate with others.</p>
 <p><strong>Next tutorial:</strong> GitHub collaboration</p>
 
 
