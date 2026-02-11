@@ -77,3 +77,20 @@ Bash: |
 
 Zsh: |
   Zsh (Z Shell) is an extended version of the Bourne Shell (sh) with many additional features and improvements. It is known for its powerful scripting capabilities, advanced tab completion, and customizable prompts. Zsh is often used as an alternative to Bash for interactive use and scripting.
+
+# ── Version control concepts (Tutorial 4) ────────────────────────
+
+"Version Control": |
+  A system for tracking changes to files over time. Instead of renaming files to keep old versions, a version control system like Git records each set of changes as a snapshot you can revisit, compare, or restore.
+
+Repository: |
+  A project directory that Git is tracking. It contains your files plus a hidden `.git/` folder where Git stores the full history of changes, configuration, and metadata.
+
+"Working Directory": |
+  The project files as they currently exist on disk — the versions you can see, open, and edit. In Git's three-zone model, the working directory is where you make changes before staging them.
+
+"Staging Area": |
+  An intermediate zone where you prepare changes before committing them. Running `git add` moves changes from the working directory into the staging area, letting you choose exactly which changes go into your next commit.
+
+Commit: |
+  A saved snapshot of the changes you staged. Each commit records what changed, who made the change, when it happened, and a short message describing why. Commits form a timeline you can browse with `git log`.

@@ -12,18 +12,14 @@ draft: false
 
 ## Overview
 
-::: {.callout-note}
-Content in progress.
-:::
-
 ::: {.columns}
 ::: {.column width=70%}
 
-[Git](https://git-scm.com/) is a version control system that records changes to your files over time. Instead of saving multiple copies of a file (`report_v1.txt`, `report_v2_final.txt`, `report_v2_final_FINAL.txt`), Git lets you save snapshots, called *commits*, that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.
+[Git](https://git-scm.com/) is a {{< glossary "Version Control" display="version control" >}} system that records changes to your files over time. Instead of saving multiple copies of a file (`report_v1.txt`, `report_v2_final.txt`, `report_v2_final_FINAL.txt`), Git lets you save snapshots, called {{< glossary Commit display="*commits*" >}}, that you can revisit, compare, or restore at any time. This tutorial covers the core Git workflow: initializing a repository, staging changes, committing, and reviewing history.
 
 Adding a Git repository to your project allows you to track changes to your project at checkpoints. This will allow you to easily revert to a previous state if something goes wrong, or to compare different versions of your project as you iterate. [Claude Code also has built-in support for checkpointing your project](https://code.claude.com/docs/en/checkpointing), however, it is not a substitute for Git.
 
-**Note:** Git and [GitHub](https://github.com/) are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others (among others [Codeberg](https://codeberg.org/), [GitLab](https://about.gitlab.com/), etc). This tutorial focuses on Git itself; we'll cover web repositorys and collaboration in a future tutorial.
+**Note:** Git and [GitHub](https://github.com/) are not the same thing. Git is the version control system that runs on your computer, while GitHub is a web-based platform for hosting Git repositories and collaborating with others (among others [Codeberg](https://codeberg.org/), [GitLab](https://about.gitlab.com/), etc). This tutorial focuses on Git itself; we'll cover web repositories and collaboration in a future tutorial.
 
 :::
 ::: {.column width=30%}
@@ -81,7 +77,7 @@ git config --global init.defaultBranch main
 Good news, you only need to do this once for a given machine! Git will save this information in a configuration file on your computer, so you won't have to set it again for future projects. You can verify that your configuration is set up correctly with:
 
 ```bash
-git config global --list
+git config --global --list
 ```
 
 Verify that your name, email, and default branch name are listed in the output.
@@ -90,7 +86,7 @@ Verify that your name, email, and default branch name are listed in the output.
 
 <!-- What `git init` does. Creating a practice project. The hidden `.git/` directory. -->
 
-Now we are ready to create Git repositories for our projects. A Git repository is a special directory that contains all the information about the history of your project, including the commits, branches, and configuration. You can create a Git repository in any directory by running `git init` in that directory.
+Now we are ready to create Git repositories for our projects. A Git {{< glossary Repository display="repository" >}} is a special directory that contains all the information about the history of your project, including the commits, branches, and configuration. You can create a Git repository in any directory by running `git init` in that directory.
 
 ```bash
 cd path/to/your/project
@@ -107,9 +103,9 @@ Once you have initialized a Git repository, Git will start tracking changes to y
 
 Git uses a three-zone model to manage changes to your files:
 
-1. **Working directory**: This is where you make changes to your files. It's the actual files and directories you see in your project.
-2. **Staging area (index)**: This is an intermediate area where you can stage changes that you want to include in your next commit. You can think of it as a "to-do list" for your next commit.
-3. **Repository**: This is where Git stores the history of your commits. When you commit changes, Git takes a snapshot of the staged changes and saves it in the repository.
+1. **{{< glossary "Working Directory" display="Working directory" >}}**: This is where you make changes to your files. It's the actual files and directories you see in your project.
+2. **{{< glossary "Staging Area" display="Staging area" >}} (index)**: This is an intermediate area where you can stage changes that you want to include in your next commit. You can think of it as a "to-do list" for your next commit.
+3. **{{< glossary Repository >}}**: This is where Git stores the history of your commits. When you commit changes, Git takes a snapshot of the staged changes and saves it in the repository.
 
 
 Here is the flow:
@@ -136,9 +132,6 @@ flowchart LR
 In @fig-staging-areas, we see the overview of the core Git workflow: you make changes to your files in the working directory, then you stage the changes you want to include in your next commit, and finally, you commit those staged changes to the repository. Let's go through each step in more detail.
 
 To do so we will use the following example:
-
-
-Here is what this looks like with actual files:
 
 ```{mermaid}
 %%| label: fig-staging-areas-example
@@ -176,57 +169,459 @@ flowchart LR
 
 ### Checking status (`git status`)
 
-What the status output tells you: untracked, modified, staged.
+The `git status` command shows you the current state of your {{< glossary "Working Directory" display="working directory" >}} and {{< glossary "Staging Area" display="staging area" >}}. It tells you which files have been modified, which changes are staged and ready to commit, and which files Git doesn't know about yet. You can run it at any point without changing anything — it's purely informational.
+
+Let's say you just initialized a new repository and created a file called `notes.txt`. Running `git status` gives you:
+
+```bash
+git status
+```
+
+```text
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        notes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Git sees `notes.txt` but isn't tracking it yet — it's *untracked*. Once you stage the file with `git add notes.txt` and run `git status` again:
+
+```text
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   notes.txt
+```
+
+Now `notes.txt` appears under "Changes to be committed" — it's *staged*. After you commit, `git status` reports a clean working tree:
+
+```text
+On branch main
+nothing to commit, working tree clean
+```
+
+This means every tracked file matches the latest {{< glossary Commit display="commit" >}}. No changes are pending.
+
+::: {.callout-tip}
+Run `git status` early and often. It's the safest way to understand what Git sees before you stage or commit anything.
+:::
 
 ### Adding files to staging (`git add`)
 
-Staging specific files vs staging everything. Why `git add .` needs care.
+The `git add` command moves changes from the {{< glossary "Working Directory" display="working directory" >}} into the {{< glossary "Staging Area" display="staging area" >}}. You can stage individual files by name:
+
+```bash
+git add notes.txt
+git add report.qmd
+```
+
+Or stage multiple files in one command:
+
+```bash
+git add notes.txt report.qmd data.csv
+```
+
+Referring back to @fig-staging-areas-example, notice that `scratch.txt` is *not* staged even though it was modified. This is the power of the staging area — you choose exactly which changes go into each commit. Maybe `scratch.txt` contains temporary work you don't want to record yet.
+
+You may see tutorials that use `git add .` (with a dot) to stage everything in the current directory at once. This works, but it can bite you.
+
+::: {.callout-warning}
+`git add .` stages *every* change in the current directory, including files you may not intend to commit — temporary files, data files, API keys, or editor backups. Prefer staging files by name so you know exactly what goes into each commit.
+:::
 
 ### Committing a snapshot (`git commit`)
 
-Writing a good commit message. The `-m` flag.
+Once your changes are staged, `git commit` saves a snapshot of those changes as a {{< glossary Commit display="commit" >}} in the {{< glossary Repository display="repository" >}}. Each commit gets a unique identifier (a long hash like `a1b2c3d`), records who made the change and when, and stores the message you provide.
+
+Use the `-m` flag to write your commit message inline:
 
 ```bash
-git add file.txt
-git commit -m "Add initial draft of file"
+git commit -m "Add project notes and initial report"
 ```
+
+```text
+[main 4f3a1b2] Add project notes and initial report
+ 2 files changed, 24 insertions(+)
+ create mode 100644 notes.txt
+ create mode 100644 report.qmd
+```
+
+The output confirms the branch (`main`), an abbreviated commit hash (`4f3a1b2`), and a summary of what changed. If you omit the `-m` flag, Git opens a text editor for you to write the message.
+
+::: {.callout-tip title="Writing good commit messages"}
+A good commit message is short (under ~50 characters for the subject line), uses the imperative mood ("Add report" not "Added report"), and describes *why* the change matters rather than just *what* changed. Think of it as a label for a snapshot: if you browse your history later, the messages should tell a clear story.
+
+Bad: `updated stuff`
+Good: `Add draft methodology section to report`
+:::
+
+::: {.callout-note title="Stuck in a text editor?"}
+If Git opens an unfamiliar editor (often Vim), you'll see a screen that doesn't respond to typing as you'd expect. To escape Vim: press `Esc`, then type `:q!` and press `Enter`. To avoid this in the future, always use the `-m` flag, or set a friendlier default editor:
+
+```bash
+git config --global core.editor "nano"
+```
+:::
 
 ### Viewing history (`git log`)
 
-Reading the log. Useful flags: `--oneline`, `--graph`.
+The `git log` command shows the history of commits in your repository, starting with the most recent:
+
+```bash
+git log
+```
+
+```text
+commit 4f3a1b2e8d9c0f1a2b3c4d5e6f7a8b9c0d1e2f3a
+Author: Your Name <you@example.com>
+Date:   Thu Feb 6 10:30:00 2026 -0500
+
+    Add project notes and initial report
+
+commit 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b
+Author: Your Name <you@example.com>
+Date:   Thu Feb 6 10:15:00 2026 -0500
+
+    Initialize project with README
+```
+
+Each entry shows the full commit hash, the author, the date, and the message. For a more compact view, use the `--oneline` flag:
+
+```bash
+git log --oneline
+```
+
+```text
+4f3a1b2 Add project notes and initial report
+1a2b3c4 Initialize project with README
+```
+
+This is often all you need when scanning your project's history. You can also add `--graph` to visualize branch structure — not useful yet with a single branch, but handy once you start working with branches:
+
+```bash
+git log --oneline --graph
+```
 
 ### Comparing changes (`git diff`)
 
-Seeing what changed before committing. Staged vs unstaged diffs.
+Before you stage or commit, it's often useful to see exactly what changed. The `git diff` command compares versions of your files.
+
+**Unstaged changes** (working directory vs. staging area):
+
+```bash
+git diff
+```
+
+This shows changes you've made but haven't staged yet. For example, say you edit `notes.txt` and add a new line. Running `git diff` produces output like:
+
+```diff
+diff --git a/notes.txt b/notes.txt
+index 3b18e51..f3c1a2d 100644
+--- a/notes.txt
++++ b/notes.txt
+@@ -1,2 +1,3 @@
+ Meeting notes from Feb 6
+ - Discussed project timeline
++- Assigned tasks to team members
+```
+
+Lines starting with `+` were added; lines starting with `-` were removed. The `@@` line tells you which part of the file changed.
+
+**Staged changes** (staging area vs. last commit):
+
+```bash
+git diff --staged
+```
+
+This shows the changes that are already staged and will go into your next commit. After you run `git add notes.txt`, running `git diff` produces no output (there are no *unstaged* changes left), but `git diff --staged` shows the same diff as before.
 
 ## Undoing mistakes
 
+One of Git's biggest benefits is that mistakes are rarely permanent. This section covers three levels of "undo," from lightest to heaviest.
+
 ### Unstaging a file (`git restore --staged`)
 
-Removing a file from the staging area without losing changes.
+If you staged a file by accident (say you ran `git add scratch.txt` and didn't mean to), you can remove it from the staging area without losing the changes in your working directory:
+
+```bash
+git restore --staged scratch.txt
+```
+
+Verify with `git status`:
+
+```text
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   scratch.txt
+
+no changes added to commit (use "git add" to track)
+```
+
+The file is back to *modified but unstaged*. Your edits are still in the file — Git just removed it from the "to be committed" list.
 
 ### Discarding changes (`git restore`)
 
-Reverting a file to its last committed state.
+If you made edits to a file and want to throw them away entirely — reverting the file to its state at the last commit — use `git restore` without the `--staged` flag:
+
+```bash
+git restore report.qmd
+```
+
+After running this, `git status` will no longer show `report.qmd` as modified. The file on disk has been reverted to match the most recent commit.
+
+::: {.callout-warning}
+`git restore` discards uncommitted changes permanently. There is no way to get those edits back. Make sure you truly want to lose them before running this command.
+:::
 
 ### Reverting a commit (`git revert`)
 
-Creating a new commit that undoes a previous one (safe for shared history).
+What if the mistake is already committed? You could rewrite history, but that gets complicated and can cause problems if others are working with the same repository. The safer approach is `git revert`, which creates a *new* commit that undoes the changes from a previous one.
 
-::: {.callout-warning}
-`git restore` discards uncommitted changes permanently. Make sure you want to lose those edits before running it.
-:::
+For example, say your most recent commit introduced a mistake. You can undo it with:
+
+```bash
+git revert HEAD
+```
+
+`HEAD` is a shorthand for "the latest commit." Git will create a new commit whose changes are the exact opposite of the reverted commit. Your log will look something like:
+
+```text
+a3b4c5d Revert "Add broken config file"
+9f8e7d6 Add broken config file
+4f3a1b2 Add project notes and initial report
+```
+
+The original commit (`9f8e7d6`) stays in history, and the revert commit (`a3b4c5d`) cleanly undoes its effects. This is the safe approach — the history tells the full story of what happened and how it was fixed.
 
 ## Ignoring files (`.gitignore`)
 
-What `.gitignore` does. Common patterns: OS files (`.DS_Store`), editor files, build artifacts. Creating a `.gitignore` file.
+Not every file in your project belongs in the {{< glossary Repository display="repository" >}}. Operating system files (`.DS_Store` on macOS), editor temp files, build outputs, large data files, and especially files containing secrets (API keys, passwords) should stay out of your commit history.
+
+Git uses a file called `.gitignore` in the root of your project to define patterns for files and directories it should ignore entirely. Create the file and add one pattern per line:
+
+```bash
+nano .gitignore
+```
+
+A typical `.gitignore` might look like:
+
+```text
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor temporary files
+*.swp
+*~
+.vscode/
+
+# Build artifacts
+_site/
+_freeze/
+*.html
+
+# Data files (too large for version control)
+data/*.csv
+
+# Secrets — never commit these
+.env
+credentials.json
+```
+
+Lines starting with `#` are comments. The `*` wildcard matches any sequence of characters, so `*.swp` ignores all files ending in `.swp`. A trailing `/` means "this directory and everything inside it."
+
+Once you save `.gitignore`, Git stops showing matched files in `git status` output. You should add and commit the `.gitignore` file itself — it's part of your project configuration and others working with the repository need it too.
+
+```bash
+git add .gitignore
+git commit -m "Add .gitignore with common patterns"
+```
+
+::: {.callout-tip}
+Add a `.gitignore` early in your project, ideally before your first commit. It's much easier to keep unwanted files out of the repository from the start than to remove them later.
+:::
 
 ## Practice exercise
 
-A guided exercise: create a small project, make several commits, view the log, and undo a change.
+This exercise walks through the full workflow covered in this tutorial. You'll create a small project, make commits, inspect history, and undo a change. Each step shows the command and what to expect.
+
+**1. Create a project directory and initialize Git:**
+
+```bash
+mkdir git-practice
+cd git-practice
+git init
+```
+
+```text
+Initialized empty Git repository in /Users/you/git-practice/.git/
+```
+
+**2. Create two files with some content:**
+
+```bash
+echo "Meeting notes from Feb 6" > notes.txt
+echo "# Quarterly Report" > report.qmd
+```
+
+**3. Check the status:**
+
+```bash
+git status
+```
+
+```text
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        notes.txt
+        report.qmd
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Both files are untracked — Git sees them but isn't recording their changes yet.
+
+**4. Stage and commit both files:**
+
+```bash
+git add notes.txt report.qmd
+git commit -m "Add initial notes and report"
+```
+
+```text
+[main (root-commit) 1a2b3c4] Add initial notes and report
+ 2 files changed, 2 insertions(+)
+ create mode 100644 notes.txt
+ create mode 100644 report.qmd
+```
+
+**5. Create a new file and modify an existing one:**
+
+```bash
+echo "id,value" > data.csv
+echo "- Discussed project timeline" >> notes.txt
+```
+
+**6. Check the status again:**
+
+```bash
+git status
+```
+
+```text
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   notes.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.csv
+
+no changes added to commit (use "git add" to track)
+```
+
+Git shows `notes.txt` as modified and `data.csv` as untracked.
+
+**7. Stage both files selectively and commit:**
+
+```bash
+git add notes.txt data.csv
+git commit -m "Add meeting discussion notes and data file"
+```
+
+**8. View the log:**
+
+```bash
+git log --oneline
+```
+
+```text
+7e8f9a0 Add meeting discussion notes and data file
+1a2b3c4 Add initial notes and report
+```
+
+Two commits, listed newest first — the timeline of your project so far.
+
+**9. Make an unwanted edit, then undo it:**
+
+```bash
+echo "MISTAKE - delete this line" >> report.qmd
+git diff
+```
+
+```diff
+diff --git a/report.qmd b/report.qmd
+index 3b18e51..a4c2d8e 100644
+--- a/report.qmd
++++ b/report.qmd
+@@ -1 +1,2 @@
+ # Quarterly Report
++MISTAKE - delete this line
+```
+
+You can see the unwanted addition. Discard it:
+
+```bash
+git restore report.qmd
+```
+
+**10. Verify everything is clean:**
+
+```bash
+git status
+```
+
+```text
+On branch main
+nothing to commit, working tree clean
+```
+
+```bash
+git log --oneline
+```
+
+```text
+7e8f9a0 Add meeting discussion notes and data file
+1a2b3c4 Add initial notes and report
+```
+
+Your history is intact, and the unwanted edit is gone. You've used the full Git workflow: init, status, add, commit, log, diff, and restore.
 
 ## Summary
 
-Table of core Git commands: `init`, `status`, `add`, `commit`, `log`, `diff`, `restore`, `revert`. Link to next tutorial.
+Here's a reference table of the core Git commands covered in this tutorial:
+
+| Command | What it does | Example |
+|---|---|---|
+| `git init` | Create a new repository in the current directory | `git init` |
+| `git status` | Show the state of your working directory and staging area | `git status` |
+| `git add` | Stage changes for the next commit | `git add notes.txt` |
+| `git commit` | Save a snapshot of staged changes | `git commit -m "Add notes"` |
+| `git log` | View commit history | `git log --oneline` |
+| `git diff` | Show unstaged changes | `git diff` |
+| `git diff --staged` | Show staged changes | `git diff --staged` |
+| `git restore --staged` | Remove a file from the staging area | `git restore --staged file.txt` |
+| `git restore` | Discard uncommitted changes to a file | `git restore file.txt` |
+| `git revert` | Create a new commit that undoes a previous commit | `git revert HEAD` |
+
+: Core Git commands {.striped .hover}
+
+All of these commands operate on your local machine. In the next tutorial, we'll connect your local repository to GitHub and learn how to share your work and collaborate with others.
 
 **Next tutorial:** [GitHub collaboration](github-collaboration.qmd)
