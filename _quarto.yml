@@ -12,6 +12,7 @@ website:
   site-url: https://wfu-agentic-ai.github.io/workgroup/
   repo-url: https://github.com/wfu-agentic-ai/workgroup
   repo-actions: [edit, issue]
+  favicon: favicon.ico
   search:
     location: navbar
     type: overlay
